@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
 <script>
-	<var name="global1">NULL</var>
 	<que name="que_1" loop="no">
 		<timer/><!-- timer starts the internal timer -->
 		<if true="{global1 == NULL}">
