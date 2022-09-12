@@ -1,0 +1,134 @@
+{
+	"digest": "The virtual representation of a projector",
+	"description" : {
+        "desc1" : "A Beamer represents a real world projector inside SPARCK's 3D space",
+        "desc2" : "It has a calibration mode to find the orientation and lense properties (extrinsic and intrinsic transformations) of the projector."
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"}
+,
+	"seealso": {
+        "SceneCapture" : "",
+        "TfmMirror" : "",
+        "TfmLookAt" : ""
+  	}
+,
+	"NodeReference": {
+  	}
+, 
+	"PropertyReference" : {
+        "parent" : {
+            "digest" : "",
+            "descript" : "reference to parent transformation node."
+        },
+        "calibfile" : {
+            "digest" : "",
+            "descript" : "select the transformation RIG. The file needs to be located inside the ~/_assets/_projectors folder. You need first create a calibration file by selecting 'save as..' and choosing a file name. Once a file exists and is selected the calibration button is enabled."
+        },
+        "calibrate" : {
+            "digest" : "",
+            "descript" : "opens the calibration editor"
+       },
+        "dimensions" : {
+            "digest" : "",
+            "descript" : "sets the texture size of this render pass"
+        },
+        "bgcolor" : {
+            "digest" : "",
+            "descript" : "the background color"
+        },
+        "stereo" : {
+            "digest" : "",
+            "descript" : "creates two renderpasses for each stereo texture"
+        },
+        "blend" : {
+            "digest" : "",
+            "descript" : "enables blending"
+        },
+        "antialias" : {
+            "digest" : "",
+            "descript" : "enables antialiasing"
+        },
+        "identify" : {
+            "digest" : "",
+            "descript" : "use the calibration-color as backgroud color"
+        },
+        "gizmo" : {
+            "digest" : "",
+            "descript" : "set the render group to draw the gizmo to."
+        }
+    }
+, 
+	"RIGReference" : {
+        "Color" : {
+            "digest" : "",
+            "descript" : "identifies the Beamer/Calibrator in the 3DViewer"
+        },
+        "Model" : {
+            "digest" : "",
+            "descript" : "Calibration model. Needs to be of type Wavefront OBJ."
+        },
+        "use Model transformation" : {
+            "digest" : "toggle",
+            "descript" : "additional transformations on the calibration model to place it correctly to the world reference"
+        },
+        "implement parent transformation" : {
+            "digest" : "toggle",
+            "descript" : "you can calibrate the beamer while attached to a mocap rigidbody that is referenced by the parent transformation node. If this is the case, the calibration process automatically calculates the local transformation from the actual transformation of the projectors lens and stores it here."
+        },
+        "focus editor" : {
+            "digest" : "button",
+            "descript" : "opens the editor window and focuses it to this calibration"
+        },
+        "gather 3DViewer lookat" : {
+            "digest" : "button",
+            "descript" : "takes the current 3DViewer point of view and applies it as a temporary solution"
+        },
+        "display.." : {
+            "digest" : "button",
+            "descript" : "opens the display window to select the display the projector is currently connected to gather the correct resolution"
+        },
+        "width" : {
+            "digest" : "[px]",
+            "descript" : "projector resolution width"
+        },
+        "height" : {
+            "digest" : "[px]",
+            "descript" : "projector resolution height"
+        },
+        "enable calibration" : {
+            "digest" : "toggle",
+            "descript" : "enables the calibration button. Only enable once the correct resolution is set"
+        },
+        "show/hide" : {
+            "digest" : "button",
+            "descript" : "shows / hides calibration flags"
+        },
+        "frustum" : {
+            "digest" : "",
+            "descript" : "shows the solutions frustum"
+        },
+        "transformation" : {
+            "digest" : "matrix",
+            "descript" : "shows the solutions transformation matrix"
+        },
+        "reset" : {
+            "digest" : "",
+            "descript" : "resets values"
+        },
+        "save and close" : {
+            "digest" : "button",
+            "descript" : "saves the solution and closes the calibration window"
+        }
+    }
+,
+	"Notes" : {
+        "note1" : "..."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 	<project name="Lib_Sparck2" default="default" basedir=".">
+		<description>
+ 		======================================================================================
+			Processing.org -> Eclipse Ant Builder for Applets and Application
+ 		======================================================================================
+ 		</description>
+        <property name="project.name" value="Lib_Sparck2"/>
+ 		<property name="main.class.name" value="Calibrator"/>
+ 		<property name="jar.name" value="sparck2.jar"/>
+ 		<property name="export.dir" value="${PROJECT_LOC}/../../../java-classes/lib"/>
+
+ 		<!--
+ 	 	 		==================================================================
+ 	 	 			DO NOT CHANGE BELOW UNLESS YOU KNOW WHAT YOU ARE DOIN
+ 	 	 		==================================================================-->
+
+ 		<property name="project.javadoc.dir" value="javadoc" />
+ 		<property name="project.bin.dir" value="bin/classes" />
+ 		<property name="project.jar.build.dir" value="bin" />
+
+		<property name="target.jar.path" value="${project.jar.build.dir}/${jar.name}" />
+
+ 		<!-- load the javadoc properties -->
+ 		<property file="${project.javadoc.dir}/building.properties" />
+
+ 		<target name="default" description="check conditions">
+ 			<!-- create jar inside bin-->
+			<antcall target="jar.build" />
+
+ 			<!-- classes to export dir-->
+			<copy todir="${export.dir}">
+				<!--
+	 			    <fileset dir="${project.bin.dir}"/>
+				-->
+				<resources>
+				  <file file="${target.jar.path}"/>
+				</resources>
+			 </copy>
+
+ 		</target>
+
+ 		<target name="jar.build">
+ 			<jar jarfile="${target.jar.path}">
+ 				<fileset dir="${project.bin.dir}">
+ 					<include name="**/*.class" />
+ 				</fileset>
+ 				<fileset dir="extra">
+ 					<include name="queListSchema.xsd" />
+ 				</fileset>
+				<manifest>
+ 					<attribute name="Built-By" value="${user.name}" />
+ 					<attribute name="Main-Class" value="${main.class.name}" />
+ 				</manifest>
+ 			</jar>
+ 		</target>
+ 		
+
+ 	</project>
