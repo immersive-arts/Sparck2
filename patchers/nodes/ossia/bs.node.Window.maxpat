@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 0,
+			"minor" : 5,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 381.0, 208.0, 782.0, 619.0 ],
+		"rect" : [ 646.0, 366.0, 782.0, 619.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -50,14 +50,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 169.0, 203.0, 1210.0, 650.0 ],
+						"rect" : [ 361.0, 401.0, 1210.0, 650.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -207,7 +207,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 802.083374000000049, 182.025878999999975, 139.0, 116.0 ],
+									"patching_rect" : [ 802.083374000000049, 182.025878999999975, 139.0, 119.0 ],
 									"text" : "ossia.parameter position/output @type list @default 100 100 420 340 @description \"window position in output mode, upper left corner and lower right corner\" @priority 1"
 								}
 
@@ -270,7 +270,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 30.083373999999992, 195.333373999999992, 130.0, 129.0 ],
+									"patching_rect" : [ 30.083373999999992, 195.333373999999992, 130.0, 133.0 ],
 									"text" : "ossia.parameter position/desktop @type list @default 100 100 420 340 @description \"window position in desktop mode, upper left corner and lower right corner\" @priority 1"
 								}
 
@@ -286,14 +286,14 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 0,
+											"minor" : 5,
+											"revision" : 1,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 519.0, 158.0, 887.0, 792.0 ],
+										"rect" : [ 899.0, 273.0, 887.0, 792.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -322,6 +322,66 @@
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
+												"box" : 												{
+													"id" : "obj-26",
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 457.083333333333485, 582.0, 43.0, 22.0 ],
+													"text" : "sync 1"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-18",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "bang" ],
+													"patching_rect" : [ 394.666666666666799, 582.0, 54.0, 22.0 ],
+													"text" : "delay 50"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-25",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 2,
+													"outlettype" : [ "bang", "" ],
+													"patching_rect" : [ 404.666666666666799, 539.0, 34.0, 22.0 ],
+													"text" : "sel 1"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-21",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 2,
+													"outlettype" : [ "int", "int" ],
+													"patching_rect" : [ 404.666666666666799, 490.333374000000049, 29.5, 22.0 ],
+													"text" : "t i i"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-19",
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 394.666666666666799, 617.0, 43.0, 22.0 ],
+													"text" : "sync 0"
+												}
+
+											}
+, 											{
 												"box" : 												{
 													"comment" : "",
 													"id" : "obj-17",
@@ -462,7 +522,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 421.583333333333428, 515.0, 59.0, 22.0 ],
+													"patching_rect" : [ 510.083333333333428, 582.0, 59.0, 22.0 ],
 													"text" : "visible $1"
 												}
 
@@ -830,6 +890,20 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-19", 0 ],
+													"source" : [ "obj-18", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-42", 0 ],
+													"source" : [ "obj-19", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-42", 0 ],
 													"source" : [ "obj-2", 0 ]
 												}
@@ -846,6 +920,20 @@
 												"patchline" : 												{
 													"destination" : [ "obj-13", 0 ],
 													"source" : [ "obj-20", 1 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-25", 0 ],
+													"source" : [ "obj-21", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-3", 0 ],
+													"source" : [ "obj-21", 1 ]
 												}
 
 											}
@@ -881,6 +969,29 @@
 												"patchline" : 												{
 													"destination" : [ "obj-8", 0 ],
 													"source" : [ "obj-24", 1 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-18", 0 ],
+													"order" : 1,
+													"source" : [ "obj-25", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-26", 0 ],
+													"order" : 0,
+													"source" : [ "obj-25", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-42", 0 ],
+													"source" : [ "obj-26", 0 ]
 												}
 
 											}
@@ -932,22 +1043,22 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-24", 0 ],
-													"source" : [ "obj-29", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-3", 0 ],
+													"destination" : [ "obj-21", 0 ],
 													"source" : [ "obj-29", 3 ]
 												}
 
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-3", 0 ],
+													"destination" : [ "obj-21", 0 ],
 													"source" : [ "obj-29", 2 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-24", 0 ],
+													"source" : [ "obj-29", 0 ]
 												}
 
 											}
@@ -981,14 +1092,14 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-3", 0 ],
+													"destination" : [ "obj-21", 0 ],
 													"source" : [ "obj-30", 3 ]
 												}
 
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-3", 0 ],
+													"destination" : [ "obj-21", 0 ],
 													"source" : [ "obj-30", 2 ]
 												}
 
@@ -1009,7 +1120,7 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-3", 0 ],
+													"destination" : [ "obj-21", 0 ],
 													"source" : [ "obj-34", 0 ]
 												}
 
@@ -1129,13 +1240,13 @@
 												"name" : "AudioStatus_Menu",
 												"default" : 												{
 													"bgfillcolor" : 													{
-														"type" : "color",
+														"angle" : 270.0,
+														"autogradient" : 0,
 														"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 														"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 														"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-														"angle" : 270.0,
 														"proportion" : 0.39,
-														"autogradient" : 0
+														"type" : "color"
 													}
 
 												}
@@ -1198,7 +1309,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 191.125, 19.025878999999975, 98.0, 129.0 ],
+									"patching_rect" : [ 191.125, 19.025878999999975, 98.0, 133.0 ],
 									"text" : "ossia.parameter desktop/floating @type bool @default 0 @description \"window is floating when in position mode desktop\""
 								}
 
@@ -1212,7 +1323,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 294.0, 19.025878999999975, 98.0, 129.0 ],
+									"patching_rect" : [ 294.0, 19.025878999999975, 98.0, 133.0 ],
 									"text" : "ossia.parameter desktop/border @type bool @default 1 @description \"show border of window when in position mode desktop\""
 								}
 
@@ -1226,7 +1337,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 401.75, 161.718383999999958, 276.0, 49.0 ],
+									"patching_rect" : [ 401.75, 161.718383999999958, 276.0, 50.0 ],
 									"text" : "ossia.parameter position/mode @type bool @default 0 @description \"position mode, select between desktop (0) and output (1)\" @priority 0"
 								}
 
@@ -1240,7 +1351,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 405.555541999999832, 19.025878999999975, 327.0, 49.0 ],
+									"patching_rect" : [ 405.555541999999832, 19.025878999999975, 327.0, 50.0 ],
 									"text" : "ossia.parameter internal/escape @invisible 1 @type bool @default 1 @description \"enable escape key to set window position to desktop\""
 								}
 
@@ -1653,13 +1764,13 @@
 								"name" : "AudioStatus_Menu",
 								"default" : 								{
 									"bgfillcolor" : 									{
-										"type" : "color",
+										"angle" : 270.0,
+										"autogradient" : 0,
 										"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 										"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "color"
 									}
 
 								}
@@ -1785,8 +1896,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2053,13 +2164,13 @@
 								"name" : "AudioStatus_Menu",
 								"default" : 								{
 									"bgfillcolor" : 									{
-										"type" : "color",
+										"angle" : 270.0,
+										"autogradient" : 0,
 										"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 										"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "color"
 									}
 
 								}
@@ -2110,7 +2221,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 117.65277900000001, 352.166625999999951, 92.0, 98.0 ],
+					"patching_rect" : [ 117.65277900000001, 352.166625999999951, 92.0, 100.0 ],
 					"text" : "ossia.parameter slice/rows @type int @default 0 @range 0 1 @clip both @description \"slice this window into so many rows\""
 				}
 
@@ -2124,7 +2235,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 7.041663999999997, 352.166625999999951, 98.999999999999972, 87.0 ],
+					"patching_rect" : [ 7.041663999999997, 352.166625999999951, 98.999999999999972, 89.0 ],
 					"text" : "ossia.parameter slice/columns @type int @default 0 @description \"slice this window into so many columns\""
 				}
 
@@ -2164,8 +2275,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2392,13 +2503,13 @@
 								"name" : "AudioStatus_Menu",
 								"default" : 								{
 									"bgfillcolor" : 									{
-										"type" : "color",
+										"angle" : 270.0,
+										"autogradient" : 0,
 										"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 										"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "color"
 									}
 
 								}
@@ -2451,8 +2562,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2779,8 +2890,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2825,8 +2936,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 0,
+											"minor" : 5,
+											"revision" : 1,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3205,7 +3316,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 30.5, 288.0, 113.0, 36.0 ],
-									"text" : "to_texture u202033903"
+									"text" : "to_texture u290000776"
 								}
 
 							}
@@ -3229,7 +3340,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 178.5, 391.0, 835.0, 22.0 ],
-									"text" : "exportimage MacintoshHD:/Users/maybites/Arbeiten/01_projekte/150816_SPARCK/00_projects/_testbed/_export/_textures/Window.png png"
+									"text" : "exportimage D:/03_personal/MartinFroehlich/Sparck_TestBed/_export/_textures/Window.png png"
 								}
 
 							}
@@ -3553,6 +3664,7 @@
 					"hint" : "",
 					"id" : "obj-7",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.vpl.util.inlet.maxpat",
 					"numinlets" : 1,
@@ -3618,6 +3730,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-48",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.vpl.node.logic.maxpat",
 					"numinlets" : 4,
@@ -3952,125 +4065,132 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "bs.vpl.node.logic.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/vpl",
-				"patcherrelativepath" : "../../vpl",
+				"name" : "bs.app.contexter.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/app",
+				"patcherrelativepath" : "../../app",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.vpl.node.logic.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/vpl",
-				"patcherrelativepath" : "../../../javascript/vpl",
+				"name" : "bs.display.selection.gate.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/gui",
+				"patcherrelativepath" : "../../gui",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.math.fov.js",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/math",
+				"patcherrelativepath" : "../../../javascript/math",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.vpl.node.title.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/vpl",
-				"patcherrelativepath" : "../../../javascript/vpl",
-				"type" : "TEXT",
+				"name" : "bs.mouse.orbiter.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/utils",
+				"patcherrelativepath" : "../../utils",
+				"type" : "JSON",
 				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.msg.receive.key.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/_obsolete",
+				"patcherrelativepath" : "../../_obsolete",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.msg.receive.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "bs.msg.send.mxe64",
+				"type" : "mx64"
 			}
 , 			{
 				"name" : "bs.node.gui.button.menu.png",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/media",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/media",
 				"patcherrelativepath" : "../../../media",
 				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.vpl.node.pbody.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/vpl",
+				"name" : "bs.node.logo.power.png",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/media",
+				"patcherrelativepath" : "../../../media",
+				"type" : "PNG",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.node.output.unique.js",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/nodes",
+				"patcherrelativepath" : "../../../javascript/nodes",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.util.global.keys.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/utils",
+				"patcherrelativepath" : "../../utils",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.vpl.node.logic.js",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/vpl",
+				"patcherrelativepath" : "../../../javascript/vpl",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.vpl.node.logic.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/vpl",
 				"patcherrelativepath" : "../../vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.pbody.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/vpl",
 				"patcherrelativepath" : "../../../javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.node.logo.power.png",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/media",
-				"patcherrelativepath" : "../../../media",
-				"type" : "PNG",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.vpl.util.inlet.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/vpl",
+				"name" : "bs.vpl.node.pbody.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/vpl",
 				"patcherrelativepath" : "../../vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.node.output.unique.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/nodes",
-				"patcherrelativepath" : "../../../javascript/nodes",
+				"name" : "bs.vpl.node.title.js",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/vpl",
+				"patcherrelativepath" : "../../../javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.mouse.orbiter.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/utils",
-				"patcherrelativepath" : "../../utils",
+				"name" : "bs.vpl.util.inlet.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/vpl",
+				"patcherrelativepath" : "../../vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.math.fov.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/math",
-				"patcherrelativepath" : "../../../javascript/math",
+				"name" : "node.classes.js",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/vpl/classes",
+				"patcherrelativepath" : "../../../javascript/vpl/classes",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.msg.receive.key.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/_obsolete",
-				"patcherrelativepath" : "../../_obsolete",
-				"type" : "JSON",
-				"implicit" : 1
+				"name" : "ossia.model.mxe64",
+				"type" : "mx64"
 			}
 , 			{
-				"name" : "bs.app.contexter.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/app",
-				"patcherrelativepath" : "../../app",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.util.global.keys.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/utils",
-				"patcherrelativepath" : "../../utils",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.display.selection.gate.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/gui",
-				"patcherrelativepath" : "../../gui",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ossia.parameter.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "bs.msg.send.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "bs.msg.receive.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "ossia.model.mxo",
-				"type" : "iLaX"
+				"name" : "ossia.parameter.mxe64",
+				"type" : "mx64"
 			}
  ],
 		"autosave" : 0,
@@ -4078,13 +4198,13 @@
 				"name" : "AudioStatus_Menu",
 				"default" : 				{
 					"bgfillcolor" : 					{
-						"type" : "color",
+						"angle" : 270.0,
+						"autogradient" : 0,
 						"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 						"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "color"
 					}
 
 				}

@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
-			"revision" : 2,
+			"minor" : 5,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 173.0, 172.0, 741.0, 421.0 ],
+		"rect" : [ 79.0, 555.0, 741.0, 421.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -38,7 +38,7 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
-		"globalpatchername" : "SpoutSender",
+		"globalpatchername" : "SpoutSender_1",
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-1",
@@ -75,8 +75,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 2,
+							"minor" : 5,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -309,8 +309,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 2,
+							"minor" : 5,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -733,8 +733,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_gl_texture", "" ],
-					"patching_rect" : [ 314.111084000000005, 318.0, 181.0, 22.0 ],
-					"text" : "jit.gl.slab special @file bs.flip.jxs"
+					"patching_rect" : [ 314.111084000000005, 318.0, 177.0, 22.0 ],
+					"text" : "jit.gl.slab sparck @file bs.flip.jxs"
 				}
 
 			}
@@ -1032,55 +1032,64 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "bs.node.gui.button.menu.png",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/media",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/media",
+				"patcherrelativepath" : "../../../../media",
 				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.node.logo.power.png",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/media",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/media",
+				"patcherrelativepath" : "../../../../media",
 				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.util.special.render.gate.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/utils",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/utils",
+				"patcherrelativepath" : "../../../utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.logic.js",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/vpl",
+				"patcherrelativepath" : "../../../../javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.logic.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/vpl",
+				"patcherrelativepath" : "../../../vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.pbody.js",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/vpl",
+				"patcherrelativepath" : "../../../../javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.pbody.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/vpl",
+				"patcherrelativepath" : "../../../vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.title.js",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/vpl",
+				"patcherrelativepath" : "../../../../javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.util.inlet.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/vpl",
+				"patcherrelativepath" : "../../../vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -1090,7 +1099,8 @@
 			}
 , 			{
 				"name" : "node.classes.js",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/vpl/classes",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/vpl/classes",
+				"patcherrelativepath" : "../../../../javascript/vpl/classes",
 				"type" : "TEXT",
 				"implicit" : 1
 			}

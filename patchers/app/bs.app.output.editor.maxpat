@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
+			"minor" : 5,
 			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 114.0, 551.0, 752.0, 413.0 ],
+		"rect" : [ 849.0, 293.0, 752.0, 413.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 10.0,
@@ -39,6 +39,32 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-22",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 420.435181000000057, 205.0, 46.0, 20.0 ],
+					"text" : "delay 50"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 9.0,
+					"id" : "obj-20",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 420.435181000000057, 232.0, 35.0, 19.0 ],
+					"text" : "sync 0"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
@@ -88,7 +114,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
+							"minor" : 5,
 							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -372,8 +398,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 456.935181, 238.5, 46.0, 19.0 ],
-					"text" : "visible $1"
+					"patching_rect" : [ 473.935181, 203.0, 72.0, 19.0 ],
+					"text" : "visible 1, sync 1"
 				}
 
 			}
@@ -468,9 +494,9 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 4,
-					"outlettype" : [ "int", "bang", "int", "bang" ],
+					"outlettype" : [ "int", "bang", "bang", "bang" ],
 					"patching_rect" : [ 57.0, 100.0, 50.5, 20.0 ],
-					"text" : "t 1 b 1 b"
+					"text" : "t 1 b b b"
 				}
 
 			}
@@ -534,7 +560,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 315.0, 186.0, 77.0, 60.0 ],
+					"patching_rect" : [ 327.0, 205.0, 77.0, 60.0 ],
 					"text" : "getrect, pickray $1, mousewheel $1, idlemouse $1, border $1, visible $1"
 				}
 
@@ -564,7 +590,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-15", 0 ],
-					"source" : [ "obj-1", 2 ]
+					"source" : [ "obj-1", 3 ]
 				}
 
 			}
@@ -572,6 +598,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-17", 0 ],
 					"source" : [ "obj-1", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-22", 0 ],
+					"source" : [ "obj-1", 2 ]
 				}
 
 			}
@@ -668,8 +701,22 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-23", 0 ],
+					"source" : [ "obj-20", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
 					"source" : [ "obj-21", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-20", 0 ],
+					"source" : [ "obj-22", 0 ]
 				}
 
 			}
@@ -770,7 +817,7 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "bs.app.contexter.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/app",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/app",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1

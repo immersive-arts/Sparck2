@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 2,
+			"minor" : 5,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -50,8 +50,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 2,
+							"minor" : 5,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -172,7 +172,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "parent", "@types", "anim", "@out1", "anim", "@out2", "anim_tree_nodes", "><", "@outoff2", "<root>", "@offname", "<none>", "@fontsize", 9, "@presentation_size", 124, 16, "@outoff1", "anim", "@description", "parent transformation", "@text", "parent" ],
+									"args" : [ "parent", "@types", "anim", "@out1", "anim", "@out2", "anim_tree_nodes", "><", "@outoff2", "<root>", "@offname", "<none>", "@outoff1", "anim", "@description", "parent transformation", "@text", "parent" ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -410,13 +410,13 @@
 								"name" : "AudioStatus_Menu",
 								"default" : 								{
 									"bgfillcolor" : 									{
-										"type" : "color",
+										"angle" : 270.0,
+										"autogradient" : 0,
 										"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 										"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "color"
 									}
 
 								}
@@ -469,8 +469,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 2,
+							"minor" : 5,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -947,8 +947,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 2,
+							"minor" : 5,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1295,13 +1295,13 @@
 								"name" : "AudioStatus_Menu",
 								"default" : 								{
 									"bgfillcolor" : 									{
-										"type" : "color",
+										"angle" : 270.0,
+										"autogradient" : 0,
 										"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 										"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "color"
 									}
 
 								}
@@ -1367,8 +1367,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 2,
+							"minor" : 5,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2078,25 +2078,29 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "bs.anim.node.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/utils",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/utils",
+				"patcherrelativepath" : "../../utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.draw.box.camera.js",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/draw",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/draw",
+				"patcherrelativepath" : "../../../javascript/draw",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.gui.svg.button.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/gui",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/gui",
+				"patcherrelativepath" : "../../gui",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.math.frustum2pMatrix.js",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/math",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/math",
+				"patcherrelativepath" : "../../../javascript/math",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
@@ -2110,80 +2114,100 @@
 			}
 , 			{
 				"name" : "bs.node.gui.button.menu.png",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/media",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/media",
+				"patcherrelativepath" : "../../../media",
 				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.node.logo.power.png",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/media",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/media",
+				"patcherrelativepath" : "../../../media",
 				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.parameter.msg.js",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/ossia",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/ossia",
+				"patcherrelativepath" : "../../../javascript/ossia",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.parameter.msg.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia/msg",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/ossia/msg",
+				"patcherrelativepath" : "../../ossia/msg",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.parameter.rendergroup.drawto.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia/rendergroup",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/ossia/rendergroup",
+				"patcherrelativepath" : "../../ossia/rendergroup",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.parameter.tfm.local.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia/transforms",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/ossia/transforms",
+				"patcherrelativepath" : "../../ossia/transforms",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.rendergroup.js",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/misc",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/misc",
+				"patcherrelativepath" : "../../../javascript/misc",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.logic.js",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/vpl",
+				"patcherrelativepath" : "../../../javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.logic.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/vpl",
+				"patcherrelativepath" : "../../vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.pbody.js",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/vpl",
+				"patcherrelativepath" : "../../../javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.pbody.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/vpl",
+				"patcherrelativepath" : "../../vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.title.js",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/vpl",
+				"patcherrelativepath" : "../../../javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.util.inlet.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/vpl",
+				"patcherrelativepath" : "../../vpl",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "node.classes.js",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/vpl/classes",
+				"patcherrelativepath" : "../../../javascript/vpl/classes",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
@@ -2200,13 +2224,13 @@
 				"name" : "AudioStatus_Menu",
 				"default" : 				{
 					"bgfillcolor" : 					{
-						"type" : "color",
+						"angle" : 270.0,
+						"autogradient" : 0,
 						"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 						"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "color"
 					}
 
 				}

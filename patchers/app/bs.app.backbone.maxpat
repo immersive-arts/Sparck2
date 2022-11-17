@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 0,
+			"minor" : 5,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -132,7 +132,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 234.0, 611.158020000000079, 147.0, 52.0 ],
+					"patching_rect" : [ 234.0, 611.158020000000079, 147.0, 53.0 ],
 					"text" : "jit.gl.render Output_4 @enable 0 @erase_color 0. 0. 0. 1."
 				}
 
@@ -147,7 +147,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
 					"patching_rect" : [ 382.5, 611.158020000000079, 643.0, 22.0 ],
-					"text" : "jit.window Output_4 @fsmenubar 0 @sync 0 @pos 820 105 @size 43 20 @border 0 @floating 1 @shared 1 @visible 1"
+					"text" : "jit.window Output_4 @fsmenubar 0 @sync 1 @pos 820 105 @size 43 20 @border 0 @floating 1 @shared 1 @visible 1"
 				}
 
 			}
@@ -175,7 +175,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 234.0, 516.158020000000079, 147.0, 52.0 ],
+					"patching_rect" : [ 234.0, 516.158020000000079, 147.0, 53.0 ],
 					"text" : "jit.gl.render Output_3 @enable 0 @erase_color 0. 0. 0. 1."
 				}
 
@@ -190,7 +190,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
 					"patching_rect" : [ 382.5, 516.158020000000079, 643.0, 22.0 ],
-					"text" : "jit.window Output_3 @fsmenubar 0 @sync 0 @pos 775 105 @size 43 20 @border 0 @floating 1 @shared 1 @visible 1"
+					"text" : "jit.window Output_3 @fsmenubar 0 @sync 1 @pos 775 105 @size 43 20 @border 0 @floating 1 @shared 1 @visible 1"
 				}
 
 			}
@@ -218,7 +218,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 237.25, 421.158020000000022, 147.0, 52.0 ],
+					"patching_rect" : [ 237.25, 421.158020000000022, 147.0, 53.0 ],
 					"text" : "jit.gl.render Output_2 @enable 0 @erase_color 0. 0. 0. 1."
 				}
 
@@ -233,7 +233,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
 					"patching_rect" : [ 389.0, 421.158020000000022, 643.0, 22.0 ],
-					"text" : "jit.window Output_2 @fsmenubar 0 @sync 0 @pos 730 105 @size 43 20 @border 0 @floating 1 @shared 1 @visible 1"
+					"text" : "jit.window Output_2 @fsmenubar 0 @sync 1 @pos 730 105 @size 43 20 @border 0 @floating 1 @shared 1 @visible 1"
 				}
 
 			}
@@ -248,8 +248,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -454,13 +454,13 @@
 								"name" : "AudioStatus_Menu",
 								"default" : 								{
 									"bgfillcolor" : 									{
-										"type" : "color",
+										"angle" : 270.0,
+										"autogradient" : 0,
 										"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 										"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "color"
 									}
 
 								}
@@ -521,8 +521,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1003,13 +1003,13 @@
 								"name" : "AudioStatus_Menu",
 								"default" : 								{
 									"bgfillcolor" : 									{
-										"type" : "color",
+										"angle" : 270.0,
+										"autogradient" : 0,
 										"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 										"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "color"
 									}
 
 								}
@@ -1066,7 +1066,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
 					"patching_rect" : [ 136.5, 689.105285999999978, 631.0, 22.0 ],
-					"text" : "jit.window special @fsmenubar 0 @sync 0 @pos 865 105 @size 43 20 @border 0 @floating 1 @shared 1 @visible 1"
+					"text" : "jit.window special @fsmenubar 0 @sync 1 @pos 865 105 @size 43 20 @border 0 @floating 1 @shared 1 @visible 1"
 				}
 
 			}
@@ -1081,7 +1081,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
 					"patching_rect" : [ 153.5, 50.15802001953125, 547.0, 22.0 ],
-					"text" : "jit.window sparck @sync 0 @pos 550 105 @size 43 20 @shared 1 @floating 1 @border 0 @visible 1"
+					"text" : "jit.window sparck @sync 1 @pos 550 105 @size 43 20 @shared 1 @floating 1 @border 0 @visible 1"
 				}
 
 			}
@@ -1095,8 +1095,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 124.5, 77.15802001953125, 115.0, 23.0 ],
-					"text" : "jit.gl.render sparck"
+					"patching_rect" : [ 124.5, 77.15802001953125, 181.0, 23.0 ],
+					"text" : "jit.gl.render sparck @enable 0"
 				}
 
 			}
@@ -1177,7 +1177,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
 					"patching_rect" : [ 351.5, 143.158019999999993, 718.0, 22.0 ],
-					"text" : "jit.window viewer @fsmenubar 0 @sync 0 @pos 595 105 @size 43 20 @shared 1 @floating 1 @border 0 @visible 1 @title 3DViewer"
+					"text" : "jit.window viewer @fsmenubar 0 @sync 1 @pos 595 105 @size 43 20 @shared 1 @floating 1 @border 0 @visible 1 @title 3DViewer"
 				}
 
 			}
@@ -1207,7 +1207,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "", "" ],
 					"patching_rect" : [ 346.5, 243.158020000000022, 662.0, 22.0 ],
-					"text" : "Jay3DeeWindow editor @fsmenubar 0 @sync 0 @pos 640 105 @size 43 20 @shared 1 @border 0 @floating 1 @visible 1"
+					"text" : "Jay3DeeWindow editor @fsmenubar 0 @sync 1 @pos 640 105 @size 43 20 @shared 1 @border 0 @floating 1 @visible 1"
 				}
 
 			}
@@ -1221,7 +1221,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 234.0, 327.158020000000022, 147.0, 52.0 ],
+					"patching_rect" : [ 234.0, 327.158020000000022, 147.0, 53.0 ],
 					"text" : "jit.gl.render Output_1 @enable 0 @erase_color 0. 0. 0. 1."
 				}
 
@@ -1236,7 +1236,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
 					"patching_rect" : [ 382.5, 327.158020000000022, 643.0, 22.0 ],
-					"text" : "jit.window Output_1 @fsmenubar 0 @sync 0 @pos 685 105 @size 43 20 @border 0 @floating 1 @shared 1 @visible 1"
+					"text" : "jit.window Output_1 @fsmenubar 0 @sync 1 @pos 685 105 @size 43 20 @border 0 @floating 1 @shared 1 @visible 1"
 				}
 
 			}
@@ -1537,24 +1537,28 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "Jay3DeeWindow.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/externals",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/externals",
 				"patcherrelativepath" : "../../externals",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.app.backbone.contexter.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/app",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/app",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.util.visibilityFix.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/utils",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/utils",
 				"patcherrelativepath" : "../utils",
 				"type" : "JSON",
 				"implicit" : 1
+			}
+, 			{
+				"name" : "mxj.mxe64",
+				"type" : "mx64"
 			}
  ],
 		"autosave" : 0,
@@ -1562,13 +1566,13 @@
 				"name" : "AudioStatus_Menu",
 				"default" : 				{
 					"bgfillcolor" : 					{
-						"type" : "color",
+						"angle" : 270.0,
+						"autogradient" : 0,
 						"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 						"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "color"
 					}
 
 				}

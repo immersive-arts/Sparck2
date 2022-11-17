@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 0,
+			"minor" : 5,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 221.0, 45.0, 1219.0, 664.0 ],
+		"rect" : [ 221.0, 51.0, 1219.0, 664.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -85,7 +85,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "jit_gl_texture", "", "" ],
-					"patching_rect" : [ 632.5, 429.0, 111.0, 62.0 ],
+					"patching_rect" : [ 632.5, 429.0, 111.0, 64.0 ],
 					"text" : "jit.gl.node sparck @name stageview @capture 1 @adapt 0"
 				}
 
@@ -177,8 +177,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -448,13 +448,13 @@
 								"name" : "AudioStatus_Menu",
 								"default" : 								{
 									"bgfillcolor" : 									{
-										"type" : "color",
+										"angle" : 270.0,
+										"autogradient" : 0,
 										"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 										"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "color"
 									}
 
 								}
@@ -498,8 +498,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -652,8 +652,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 0,
+											"minor" : 5,
+											"revision" : 1,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -698,8 +698,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 2,
-															"revision" : 0,
+															"minor" : 5,
+															"revision" : 1,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2093,13 +2093,13 @@
 												"name" : "AudioStatus_Menu",
 												"default" : 												{
 													"bgfillcolor" : 													{
-														"type" : "color",
+														"angle" : 270.0,
+														"autogradient" : 0,
 														"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 														"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 														"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-														"angle" : 270.0,
 														"proportion" : 0.39,
-														"autogradient" : 0
+														"type" : "color"
 													}
 
 												}
@@ -2531,13 +2531,13 @@
 								"name" : "AudioStatus_Menu",
 								"default" : 								{
 									"bgfillcolor" : 									{
-										"type" : "color",
+										"angle" : 270.0,
+										"autogradient" : 0,
 										"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 										"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "color"
 									}
 
 								}
@@ -2583,8 +2583,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2822,13 +2822,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-68",
-					"linecount" : 4,
+					"linecount" : 3,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 360.833373999999992, 201.0, 97.0, 62.0 ],
-					"text" : "visible $1, border $1, idlemouse $1, mousewheel $1"
+					"patching_rect" : [ 354.499999999999886, 197.8333740234375, 168.000000000000114, 50.0 ],
+					"text" : "sync 1, visible $1, border $1, idlemouse $1, mousewheel $1, sync 0"
 				}
 
 			}
@@ -2993,8 +2993,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3063,8 +3063,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 0,
+											"minor" : 5,
+											"revision" : 1,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3239,13 +3239,13 @@
 												"name" : "AudioStatus_Menu",
 												"default" : 												{
 													"bgfillcolor" : 													{
-														"type" : "color",
+														"angle" : 270.0,
+														"autogradient" : 0,
 														"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 														"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 														"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-														"angle" : 270.0,
 														"proportion" : 0.39,
-														"autogradient" : 0
+														"type" : "color"
 													}
 
 												}
@@ -3388,13 +3388,13 @@
 								"name" : "AudioStatus_Menu",
 								"default" : 								{
 									"bgfillcolor" : 									{
-										"type" : "color",
+										"angle" : 270.0,
+										"autogradient" : 0,
 										"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 										"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "color"
 									}
 
 								}
@@ -3460,7 +3460,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_matrix", "" ],
-					"patching_rect" : [ 889.0, 502.0, 328.0, 35.0 ],
+					"patching_rect" : [ 889.0, 502.0, 328.0, 36.0 ],
 					"text" : "jit.gl.gridshape stageview @shape sphere @scale 50 50 50 @smooth_shading 1 @layer -1 @enable 0"
 				}
 
@@ -3476,14 +3476,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 727.0, 121.0, 526.0, 462.0 ],
+						"rect" : [ 1093.0, 165.0, 526.0, 462.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3513,12 +3513,38 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-7",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 42.0, 68.0, 85.0, 22.0 ],
+									"text" : "sync 1, sync 0"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontface" : 0,
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-4",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 42.0, 101.0, 191.0, 22.0 ],
+									"text" : "forward bs::app::rc::stage::window"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-5",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 145.0, 154.0, 104.0, 22.0 ],
+									"patching_rect" : [ 145.0, 238.0, 104.0, 22.0 ],
 									"text" : "prepend 3dviewer"
 								}
 
@@ -3530,7 +3556,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 253.0, 154.0, 93.0, 22.0 ],
+									"patching_rect" : [ 253.0, 238.0, 93.0, 22.0 ],
 									"text" : "prepend render"
 								}
 
@@ -3543,7 +3569,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 253.0, 204.0, 30.0, 30.0 ]
+									"patching_rect" : [ 253.0, 288.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -3556,7 +3582,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 5,
 									"outlettype" : [ "int", "erase", "bang", "int", "mono" ],
-									"patching_rect" : [ 11.75, 93.0, 92.0, 20.0 ],
+									"patching_rect" : [ 11.75, 177.0, 92.0, 20.0 ],
 									"text" : "t 0 erase b 1 mono"
 								}
 
@@ -3584,7 +3610,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 30.0, 204.0, 198.0, 22.0 ],
+									"patching_rect" : [ 30.0, 288.0, 198.0, 22.0 ],
 									"text" : "forward bs::app::rc::stage::renderer"
 								}
 
@@ -3610,7 +3636,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 355.0, 208.0, 30.0, 30.0 ]
+									"patching_rect" : [ 355.0, 292.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -3623,7 +3649,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 355.0, 154.0, 54.0, 20.0 ],
+									"patching_rect" : [ 355.0, 238.0, 54.0, 20.0 ],
 									"text" : "enable $1"
 								}
 
@@ -3637,7 +3663,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 11.75, 57.5, 182.0, 20.0 ],
+									"patching_rect" : [ 11.75, 141.5, 182.0, 20.0 ],
 									"text" : "gate 2"
 								}
 
@@ -3646,6 +3672,15 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-23", 0 ],
+									"order" : 1,
+									"source" : [ "obj-11", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-7", 0 ],
+									"order" : 0,
 									"source" : [ "obj-11", 0 ]
 								}
 
@@ -3738,18 +3773,25 @@
 								}
 
 							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-4", 0 ],
+									"source" : [ "obj-7", 0 ]
+								}
+
+							}
  ],
 						"styles" : [ 							{
 								"name" : "AudioStatus_Menu",
 								"default" : 								{
 									"bgfillcolor" : 									{
-										"type" : "color",
+										"angle" : 270.0,
+										"autogradient" : 0,
 										"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 										"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "color"
 									}
 
 								}
@@ -3836,6 +3878,7 @@
 					"hint" : "stage's scene groups",
 					"id" : "obj-50",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.rendergroup.capture.gui.maxpat",
 					"numinlets" : 3,
@@ -4460,65 +4503,65 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "bs.mouse.orbiter.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/utils",
-				"patcherrelativepath" : "../utils",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.math.fov.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/math",
-				"patcherrelativepath" : "../../javascript/math",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.rendergroup.capture.gui.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/rendergroup",
-				"patcherrelativepath" : "../ossia/rendergroup",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.rendergroup.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/misc",
-				"patcherrelativepath" : "../../javascript/misc",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "RenderGroupCell_capture_C.png",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/media",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/media",
 				"patcherrelativepath" : "../../media",
 				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.app.contexter.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/app",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/app",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
+				"name" : "bs.math.fov.js",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/math",
+				"patcherrelativepath" : "../../javascript/math",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.mouse.orbiter.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/utils",
+				"patcherrelativepath" : "../utils",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "bs.msg.receive.key.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/_obsolete",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/_obsolete",
 				"patcherrelativepath" : "../_obsolete",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "icst.button.mxo",
-				"type" : "iLaX"
+				"name" : "bs.msg.receive.mxe64",
+				"type" : "mx64"
 			}
 , 			{
-				"name" : "bs.msg.send.mxo",
-				"type" : "iLaX"
+				"name" : "bs.msg.send.mxe64",
+				"type" : "mx64"
 			}
 , 			{
-				"name" : "bs.msg.receive.mxo",
-				"type" : "iLaX"
+				"name" : "bs.rendergroup.capture.gui.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/ossia/rendergroup",
+				"patcherrelativepath" : "../ossia/rendergroup",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.rendergroup.js",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/misc",
+				"patcherrelativepath" : "../../javascript/misc",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "icst.button.mxe64",
+				"type" : "mx64"
 			}
  ],
 		"autosave" : 0,
@@ -4526,13 +4569,13 @@
 				"name" : "AudioStatus_Menu",
 				"default" : 				{
 					"bgfillcolor" : 					{
-						"type" : "color",
+						"angle" : 270.0,
+						"autogradient" : 0,
 						"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 						"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "color"
 					}
 
 				}
