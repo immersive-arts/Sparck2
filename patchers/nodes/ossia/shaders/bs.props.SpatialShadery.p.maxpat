@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 0,
+			"minor" : 3,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 132.0, 161.0, 1012.0, 624.0 ],
+		"rect" : [ 172.0, 115.0, 1012.0, 624.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -272,7 +272,7 @@
 					"outlettype" : [ "int", "", "", "" ],
 					"patching_rect" : [ 405.0, 166.0, 125.0, 19.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 120.0, 161.0, 120.0, 19.0 ],
+					"presentation_rect" : [ 120.0, 181.0, 120.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -725,7 +725,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "", "", "" ],
+					"outlettype" : [ "list", "", "" ],
 					"patching_rect" : [ 269.0, 320.0, 247.0, 26.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 321.0, 240.0, 19.0 ],
@@ -804,9 +804,9 @@
 					"mode" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 0.0, 0.0, 242.0, 546.0 ],
+					"patching_rect" : [ 0.0, 0.0, 242.0, 584.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 242.0, 546.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 242.0, 584.0 ],
 					"proportion" : 0.39,
 					"varname" : "vpl_canvas_unfolded"
 				}
@@ -832,7 +832,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-23", 2 ],
-					"order" : 3,
+					"order" : 4,
 					"source" : [ "obj-13", 0 ]
 				}
 
@@ -840,7 +840,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-24", 2 ],
-					"order" : 4,
+					"order" : 3,
 					"source" : [ "obj-13", 0 ]
 				}
 
@@ -963,90 +963,101 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "bs.ossia.remote.color.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.ossia.remote.js",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/ossia",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.ossia.remote.toggle.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.ossia.remote.menu.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "bs.gui.svg.button.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/gui",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.ossia.remote.select.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.ossia.remote.float.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.ossia.remote.vec3f.rgb.set.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia/custom/blend",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.ossia.remote.gradient.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.ossia.remote.impulse.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparckTwo/patchers/gui",
+				"patcherrelativepath" : "../../../gui",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.remote.button.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparckTwo/patchers/ossia",
+				"patcherrelativepath" : "../../../ossia",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.view.mxe64",
-				"type" : "mx64"
+				"name" : "bs.ossia.remote.color.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparckTwo/patchers/ossia",
+				"patcherrelativepath" : "../../../ossia",
+				"type" : "JSON",
+				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.remote.mxe64",
-				"type" : "mx64"
+				"name" : "bs.ossia.remote.float.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparckTwo/patchers/ossia",
+				"patcherrelativepath" : "../../../ossia",
+				"type" : "JSON",
+				"implicit" : 1
 			}
 , 			{
-				"name" : "icst.button.mxe64",
-				"type" : "mx64"
+				"name" : "bs.ossia.remote.gradient.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparckTwo/patchers/ossia",
+				"patcherrelativepath" : "../../../ossia",
+				"type" : "JSON",
+				"implicit" : 1
 			}
 , 			{
-				"name" : "mxj.mxe64",
-				"type" : "mx64"
+				"name" : "bs.ossia.remote.impulse.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparckTwo/patchers/ossia",
+				"patcherrelativepath" : "../../../ossia",
+				"type" : "JSON",
+				"implicit" : 1
 			}
 , 			{
-				"name" : "icst.floatui.mxe64",
-				"type" : "mx64"
+				"name" : "bs.ossia.remote.js",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparckTwo/javascript/ossia",
+				"patcherrelativepath" : "../../../../javascript/ossia",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.ossia.remote.menu.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparckTwo/patchers/ossia",
+				"patcherrelativepath" : "../../../ossia",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.ossia.remote.select.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparckTwo/patchers/ossia",
+				"patcherrelativepath" : "../../../ossia",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.ossia.remote.toggle.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparckTwo/patchers/ossia",
+				"patcherrelativepath" : "../../../ossia",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.ossia.remote.vec3f.rgb.set.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparckTwo/patchers/ossia/custom/blend",
+				"patcherrelativepath" : "../../../ossia/custom/blend",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "icst.button.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "icst.floatui.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "mxj.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "ossia.remote.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "ossia.view.mxo",
+				"type" : "iLaX"
 			}
  ],
 		"autosave" : 0,
@@ -1054,13 +1065,13 @@
 				"name" : "AudioStatus_Menu",
 				"default" : 				{
 					"bgfillcolor" : 					{
-						"type" : "color",
+						"angle" : 270.0,
+						"autogradient" : 0,
 						"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 						"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "color"
 					}
 
 				}

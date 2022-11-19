@@ -157,6 +157,7 @@
 		<bind param="textureMatrix3" program="vp" />
 		<bind param="textureMatrix4" program="vp" />
 		<bind param="textureMatrix5" program="vp" />
+		<bind param="textureMatrix6" program="vp" />
 	    <bind param="modelViewProjectionMatrix" program="vp" />
 
 		<bind param="tex0" program="fp" />

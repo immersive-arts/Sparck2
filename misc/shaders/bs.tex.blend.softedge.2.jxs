@@ -76,7 +76,7 @@ void main()
 	vec3 gammaCorr = v0.rgb + v0.rgb * (1.- pow(vec3(alphaBlend), 1. / gamma));
 
 	vec4 wiped = vec4(gammaCorr, alphaBlend * v0.a);
-
+         
 	// output texture
 	if(setupmode == 0){
 		gl_FragColor = wiped;

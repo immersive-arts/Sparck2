@@ -52,6 +52,7 @@
 	<param name="textureMatrix3" type="mat4" state="TEXTURE3_MATRIX" />
 	<param name="textureMatrix4" type="mat4" state="TEXTURE4_MATRIX" />
 	<param name="textureMatrix5" type="mat4" state="TEXTURE5_MATRIX" />
+	<param name="textureMatrix6" type="mat4" state="TEXTURE6_MATRIX" />
 	<param name="modelViewProjectionMatrix" type="mat4" state="MODELVIEW_PROJECTION_MATRIX" />
 
     <param name="tex0" type="int" default="0" />
@@ -157,6 +158,7 @@
 		<bind param="textureMatrix3" program="vp" />
 		<bind param="textureMatrix4" program="vp" />
 		<bind param="textureMatrix5" program="vp" />
+		<bind param="textureMatrix6" program="vp" />
 	    <bind param="modelViewProjectionMatrix" program="vp" />
 
 		<bind param="tex0" program="fp" />
