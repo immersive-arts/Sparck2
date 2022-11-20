@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
-			"revision" : 1,
+			"minor" : 5,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 505.0, 187.0, 462.0, 323.0 ],
+		"rect" : [ 503.0, 187.0, 491.0, 249.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -40,28 +40,6 @@
 		"assistshowspatchername" : 0,
 		"title" : "Dependencies",
 		"boxes" : [ 			{
-				"box" : 				{
-					"args" : [ "@package", "Miraweb", "@version", "1.2.6" ],
-					"bgmode" : 0,
-					"border" : 0,
-					"clickthrough" : 0,
-					"enablehscroll" : 0,
-					"enablevscroll" : 0,
-					"id" : "obj-14",
-					"lockeddragscroll" : 0,
-					"lockedsize" : 0,
-					"maxclass" : "bpatcher",
-					"name" : "bs.dep.packageTest.maxpat",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "int" ],
-					"patching_rect" : [ 222.0, 503.285714285714334, 440.0, 24.0 ],
-					"viewvisibility" : 1
-				}
-
-			}
-, 			{
 				"box" : 				{
 					"args" : [ "@package", "MaxMSP", "8.2.+", "@version", 820, "@url", "https://cycling74.com/downloads" ],
 					"bgmode" : 0,
@@ -102,9 +80,9 @@
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 207.0, 463.285714285714334, 440.0, 24.0 ],
+					"patching_rect" : [ 140.0, 392.285714285714334, 440.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 11.0, 263.0, 440.0, 24.0 ],
+					"presentation_rect" : [ 11.0, 211.0, 440.0, 24.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -214,7 +192,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
 					"patching_rect" : [ 207.0, 578.5, 34.0, 22.0 ],
-					"text" : "sel 9"
+					"text" : "sel 7"
 				}
 
 			}
@@ -225,10 +203,10 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 31.0, 8.0, 527.0, 34.0 ],
+					"patching_rect" : [ 31.0, 8.0, 527.0, 33.0 ],
 					"presentation" : 1,
 					"presentation_linecount" : 2,
-					"presentation_rect" : [ 11.0, 7.0, 317.0, 34.0 ],
+					"presentation_rect" : [ 11.0, 7.0, 317.0, 33.0 ],
 					"text" : "In order to run SPARCK without issues, \nall the following packages need to be installed"
 				}
 
@@ -253,7 +231,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 19.5, 595.0, 83.0, 50.0 ],
+					"patching_rect" : [ 19.5, 595.0, 83.0, 49.0 ],
 					"text" : "window flags nomenu, window exec"
 				}
 
@@ -273,7 +251,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "@package", "Java", "13+", "@version", "13.0.1", "@url", "https://github.com/tecartlab/max-mxj/wiki/Install-Open-JDK13" ],
+					"args" : [ "@package", "Java", "8+", "@version", "1.8.0", "@url", "https://github.com/immersive-arts/Sparck2/wiki/Java-installation" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -288,7 +266,7 @@
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 60.0, 208.0, 440.0, 24.0 ],
+					"patching_rect" : [ 54.0, 208.0, 440.0, 24.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 11.0, 81.0, 440.0, 24.0 ],
 					"viewvisibility" : 1
@@ -312,9 +290,9 @@
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 170.0, 389.071428571428555, 440.0, 24.0 ],
+					"patching_rect" : [ 103.0, 318.071428571428555, 440.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 11.0, 211.0, 440.0, 24.0 ],
+					"presentation_rect" : [ 11.0, 159.0, 440.0, 24.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -336,33 +314,9 @@
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 148.0, 352.85714285714289, 440.0, 24.0 ],
+					"patching_rect" : [ 81.0, 281.85714285714289, 440.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 11.0, 185.0, 440.0, 24.0 ],
-					"viewvisibility" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"args" : [ "@package", "gl3", "@version", "0.2.1" ],
-					"bgmode" : 0,
-					"border" : 0,
-					"clickthrough" : 0,
-					"enablehscroll" : 0,
-					"enablevscroll" : 0,
-					"id" : "obj-10",
-					"lockeddragscroll" : 0,
-					"lockedsize" : 0,
-					"maxclass" : "bpatcher",
-					"name" : "bs.dep.packageTest.maxpat",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "int" ],
-					"patching_rect" : [ 126.5, 316.64285714285711, 440.0, 24.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 11.0, 159.0, 440.0, 24.0 ],
+					"presentation_rect" : [ 11.0, 133.0, 440.0, 24.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -384,9 +338,9 @@
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 193.0, 425.285714285714334, 440.0, 24.0 ],
+					"patching_rect" : [ 126.0, 354.285714285714334, 440.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 11.0, 237.0, 440.0, 24.0 ],
+					"presentation_rect" : [ 11.0, 185.0, 440.0, 24.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -408,31 +362,7 @@
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 104.5, 280.428571428571445, 440.0, 24.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 11.0, 133.0, 440.0, 24.0 ],
-					"viewvisibility" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"args" : [ "@package", "max-mxj", "@version", "8.2.0", "@url", "https://github.com/tecartlab/max-mxj/releases" ],
-					"bgmode" : 0,
-					"border" : 0,
-					"clickthrough" : 0,
-					"enablehscroll" : 0,
-					"enablevscroll" : 0,
-					"id" : "obj-7",
-					"lockeddragscroll" : 0,
-					"lockedsize" : 0,
-					"maxclass" : "bpatcher",
-					"name" : "bs.dep.packageTest.maxpat",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "int" ],
-					"patching_rect" : [ 78.0, 244.214285714285722, 440.0, 24.0 ],
+					"patching_rect" : [ 65.5, 245.428571428571445, 440.0, 24.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 11.0, 107.0, 440.0, 24.0 ],
 					"viewvisibility" : 1
@@ -442,15 +372,8 @@
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
-					"destination" : [ "obj-7", 0 ],
+					"destination" : [ "obj-8", 0 ],
 					"source" : [ "obj-1", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-12", 0 ],
-					"source" : [ "obj-10", 0 ]
 				}
 
 			}
@@ -570,14 +493,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-8", 0 ],
-					"source" : [ "obj-7", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-10", 0 ],
+					"destination" : [ "obj-12", 0 ],
 					"source" : [ "obj-8", 0 ]
 				}
 
@@ -592,28 +508,28 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "bs.dep.javaTest.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/dependency",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparckTwo/patchers/dependency",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.dep.maxVersion.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/dependency",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparckTwo/patchers/dependency",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.dep.packageTest.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/dependency",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparckTwo/patchers/dependency",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "mxj.mxe64",
-				"type" : "mx64"
+				"name" : "mxj.mxo",
+				"type" : "iLaX"
 			}
  ],
 		"autosave" : 0,

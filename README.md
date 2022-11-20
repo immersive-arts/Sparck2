@@ -37,15 +37,16 @@ based on
 
 includes / requires
 
-* [Java 8](https://jdk.java.net) JDK 8
-* [MXJ](https://github.com/tecartlab/max-mxj) max package
+* [Java 8](https://www.java.com/en/download/manual.jsp) JRE 8 or anything above
+* [ossia](https://github.com/ossia/libossia/releases) manual max package
 * [OpenCV](https://opencv.org/) for Java
-* [Syphon](http://syphon.v002.info/) max package (OSX only)
-* [Spout](spout.zeal.co) max package (WIN only)
-* [HAP](cycling74.com/toolbox/jit-gl-hap/) max package
-* [Worldmaking](https://github.com/worldmaking/Max_Worldmaking_Package) max package (WIN only)
-* [shell](https://github.com/jeremybernstein/shell) max external
-* [toxiclib](http://toxiclibs.org/) for Processing
+* [ICST Ambisonics] managed max package
+* [CNMAT Externals] managed max package
+* [Syphon](http://syphon.v002.info/) managed max package (OSX only)
+* [Spout](spout.zeal.co) managed max package (WIN only)
+* [HAP](cycling74.com/toolbox/jit-gl-hap/) managed max package
+* [Worldmaking](https://github.com/worldmaking/Max_Worldmaking_Package) managed max package (WIN only)
+* [toxiclib](http://toxiclibs.org/) for Processing - Java library
 * [PixelPusher-java](https://github.com/robot-head/PixelPusher) Java library
 
 ## Special Thanks
