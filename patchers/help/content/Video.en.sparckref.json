@@ -15,6 +15,9 @@
   	}
 ,
 	"NodeReference": {
+  	}
+, 
+	"PropertyReference" : {
         "file" : {
             "digest" : "",
             "descript" : "load and playback file"
@@ -30,10 +33,7 @@
         "stop" : {
             "digest" : "",
             "descript" : "stop the video file"
-        }
-  	}
-, 
-	"PropertyReference" : {
+        },
         "loop" : {
             "digest" : "",
             "descript" : "loop mode"

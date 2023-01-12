@@ -15,40 +15,52 @@
   	}
 ,
 	"NodeReference": {
-	   "desktop" : {
-           "digest" : "",
-           "descript" : "switch between the desktop position and the designated output position"
-       },
-	   "display..." : {
-           "digest" : "",
-           "descript" : "opens the display-setup tool to define the output position of this window."
-       },
-	   "slice into" : {
-           "digest" : "",
-           "descript" : "slice the frame into the designated amount of rows (max 2) and columns (max 12)"
-       }
   	}
 , 
 	"PropertyReference" : {
-        "border" : {
+		"position" : {
+		   "digest" : "",
+		   "descript" : "switch between the 'ouput' position and the 'desktop' position"
+		},
+		"columns and rows" : {
+		   "digest" : "",
+		   "descript" : "slice the window into the designated amount of rows (max 2) and columns (max 12)"
+		},
+        "vsync" : {
             "digest" : "",
-            "descript" : "when selected the windows borders are shown when positioned on the desktop."
-        },
+            "descript" : "tries to sync the output framerate with the displays update frequency. not recomended."
+       	},
+        "antialias" : {
+            "digest" : "",
+            "descript" : "render with antialiasing."
+       	},
         "floating" : {
             "digest" : "",
-            "descript" : "window will always stay on the foreground"
+            "descript" : "for 'desktop': window will always stay on the foreground"
         },
-        "esc" : {
+        "border" : {
             "digest" : "",
-            "descript" : "when pressing 'esc' the Window will display mode will switch between desktop and output position."
-       },
-        "sync" : {
+            "descript" : "for 'desktop': when selected the windows borders are shown when positioned on the desktop."
+        },
+        "escape" : {
             "digest" : "",
-            "descript" : "tries to sync the output framerate with the displays update frequency"
-       },
+            "descript" : "for 'output': when pressing 'esc' the Window will swithc to 'desktop' position."
+       	},
         "interact" : {
             "digest" : "",
             "descript" : "exposes an internal transformation node for direct 3d handling similar to the 3DViewer. The transformation node needs to be attached to a Camera-node, and its Capture-node renders out to this Window."
+       	},
+		"display" : {
+		   "digest" : "",
+		   "descript" : "opens the display-settings tool to define the 'output' position of this window."
+		},
+        "desktop" : {
+            "digest" : "",
+            "descript" : "the 'desktop' position of this window. Is set automatically by draging and resizing the window"
+       	},
+        "output" : {
+            "digest" : "",
+            "descript" : "the 'output' position of this window. Is set via display settings."
        }
 	}
 ,

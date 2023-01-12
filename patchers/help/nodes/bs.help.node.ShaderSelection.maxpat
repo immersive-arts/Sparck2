@@ -3,13 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 0,
-			"revision" : 0,
+			"minor" : 5,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 5.0, 50.0, 540.0, 650.0 ],
+		"classnamespace" : "box",
+		"rect" : [ 5.0, 66.0, 540.0, 650.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -36,6 +37,7 @@
 		"tags" : "",
 		"style" : "default",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"title" : "ShaderSelection - Help",
 		"boxes" : [ 			{
 				"box" : 				{
@@ -47,6 +49,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-4",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.help.util.node.links.maxpat",
 					"numinlets" : 0,
@@ -69,6 +72,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-3",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.help.util.node.textblock.maxpat",
 					"numinlets" : 0,
@@ -91,6 +95,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-2",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.help.util.node.textblock.maxpat",
 					"numinlets" : 0,
@@ -105,7 +110,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "ShaderSelection", "n", "NodeReference" ],
+					"args" : [ "ShaderSelection", "p", "PropertyReference" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -113,8 +118,9 @@
 					"enablevscroll" : 0,
 					"id" : "obj-1",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.help.util.node.reference.maxpat",
+					"name" : "bs.help.util.ossia.reference.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
@@ -136,6 +142,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-36",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.help.util.node.head.maxpat",
 					"numinlets" : 2,
@@ -159,9 +166,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 32.5, 303.0, 72.0, 17.0 ],
-					"presentation_rect" : [ 32.5, 303.0, 72.0, 17.0 ],
 					"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
-					"style" : "",
 					"text" : "thispatcher"
 				}
 
@@ -175,9 +180,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 309.5, 303.0, 17.0, 17.0 ],
-					"presentation_rect" : [ 309.5, 303.0, 17.0, 17.0 ],
-					"style" : ""
+					"patching_rect" : [ 309.5, 303.0, 17.0, 17.0 ]
 				}
 
 			}
@@ -190,9 +193,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 7.0, 303.0, 17.0, 17.0 ],
-					"presentation_rect" : [ 7.0, 303.0, 17.0, 17.0 ],
-					"style" : ""
+					"patching_rect" : [ 7.0, 303.0, 17.0, 17.0 ]
 				}
 
 			}
@@ -206,9 +207,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 309.5, 1.0, 17.0, 17.0 ],
-					"presentation_rect" : [ 309.5, 1.0, 17.0, 17.0 ],
-					"style" : ""
+					"patching_rect" : [ 309.5, 1.0, 17.0, 17.0 ]
 				}
 
 			}
@@ -222,9 +221,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 32.5, 1.0, 17.0, 17.0 ],
-					"presentation_rect" : [ 32.5, 1.0, 17.0, 17.0 ],
-					"style" : ""
+					"patching_rect" : [ 32.5, 1.0, 17.0, 17.0 ]
 				}
 
 			}
@@ -239,7 +236,6 @@
 					"patching_rect" : [ 2.0, 631.0, 522.0, 21.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 2.0, 631.0, 522.0, 21.0 ],
-					"style" : "",
 					"text" : "*__________________________________________________________*",
 					"varname" : "lastLine"
 				}
@@ -255,8 +251,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 69.5, 764.0, 231.0, 31.0 ],
-					"presentation_rect" : [ 69.5, 764.0, 231.0, 31.0 ],
-					"style" : "",
+					"presentation_linecount" : 2,
 					"text" : ";\rmax launchbrowser http://tecartlab.com/feedback/"
 				}
 
@@ -276,7 +271,6 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 148.0, 589.0, 168.0, 23.0 ],
 					"rounded" : 10.0,
-					"style" : "",
 					"text" : "http://tecartlab.com/feedback/",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"textjustification" : 0,
@@ -327,74 +321,110 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "bs.help.util.node.head.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/help/util",
-				"patcherrelativepath" : "../util",
-				"type" : "JSON",
+				"name" : "bs.help.node.head.js",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/javascript/help",
+				"patcherrelativepath" : "../../../javascript/help",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.help.node.head.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/help",
+				"name" : "bs.help.node.links.js",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/javascript/help",
+				"patcherrelativepath" : "../../../javascript/help",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.help.node.notes.js",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/javascript/help",
+				"patcherrelativepath" : "../../../javascript/help",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.help.node.reference.js",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/javascript/help",
 				"patcherrelativepath" : "../../../javascript/help",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.help.util.getpos.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/help",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/javascript/help",
 				"patcherrelativepath" : "../../../javascript/help",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.help.util.node.reference.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/help/util",
+				"name" : "bs.help.util.node.head.maxpat",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/help/util",
 				"patcherrelativepath" : "../util",
 				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.help.node.reference.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/help",
-				"patcherrelativepath" : "../../../javascript/help",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ShaderSelection_n.png",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/media/nodes",
-				"patcherrelativepath" : "../../../media/nodes",
-				"type" : "PNG ",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.help.util.node.textblock.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/help/util",
-				"patcherrelativepath" : "../util",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.help.node.notes.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/help",
-				"patcherrelativepath" : "../../../javascript/help",
-				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.help.util.node.links.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/help/util",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/help/util",
 				"patcherrelativepath" : "../util",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.help.node.links.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/help",
-				"patcherrelativepath" : "../../../javascript/help",
+				"name" : "bs.help.util.node.textblock.maxpat",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/help/util",
+				"patcherrelativepath" : "../util",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.help.util.ossia.reference.maxpat",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/help/util",
+				"patcherrelativepath" : "../util",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.ossia.remote.js",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/javascript/ossia",
+				"patcherrelativepath" : "../../../javascript/ossia",
 				"type" : "TEXT",
 				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.ossia.remote.select.maxpat",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/ossia",
+				"patcherrelativepath" : "../../ossia",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.props.ShaderSelection.p.maxpat",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/nodes/ossia/shaders",
+				"patcherrelativepath" : "../../nodes/ossia/shaders",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.vpl.node.pbody.js",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/javascript/vpl",
+				"patcherrelativepath" : "../../../javascript/vpl",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.vpl.node.pbody.maxpat",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/vpl",
+				"patcherrelativepath" : "../../vpl",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ossia.remote.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "ossia.view.mxo",
+				"type" : "iLaX"
 			}
  ],
 		"autosave" : 0,
@@ -402,13 +432,13 @@
 				"name" : "AudioStatus_Menu",
 				"default" : 				{
 					"bgfillcolor" : 					{
-						"type" : "color",
+						"angle" : 270.0,
+						"autogradient" : 0,
 						"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 						"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "color"
 					}
 
 				}

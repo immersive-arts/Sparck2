@@ -13,7 +13,7 @@
  		"Model" : ""
   	}
 ,
-	"NodeReference": {
+	"PropertyReference": {
         "selection" : {
             "digest" : "",
             "descript" : "selection of shaders"

@@ -1,0 +1,119 @@
+{
+	"digest": "Generates Spatial Softedge",
+	"description" : {
+        "desc1" : "This shader is spatialy aware and is used for multi projector installation where the use of softedge is necessary.",
+        "desc2" : "It is mainly used for Spatial Augmented Reality installations where there is the need for the creation of dynamic softedges."
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"
+    }
+,
+	"seealso": {
+        "BlendSoftedge" : "",
+ 		"SceneCapture" : ""
+  	}
+,
+	"NodeReference": {
+  	}
+, 
+	"PropertyReference" : {
+        "shader" : {
+            "digest" : "",
+            "descript" : "the shader type: \n\t<li>'edge' is used \n\t\t in combination with \n\t\t the BlendSoftedge node \n\t<li>'edge & blend' calculates \n\t\t softedge combined with \n\t\t the blending."
+        },
+        "project to" : {
+            "digest" : "",
+            "descript" : "projection type: \n\t<li>'canvas' is used \n\t\t to render the projector weights \n\t<li>'baked texture' implements all \n\t\t render passes for generating \n\t\t the final pixel."
+        },
+        "BeamerA-F" : {
+            "digest" : "",
+            "descript" : "Select the Camera/Beamer from where to project."
+        },
+        "occlusion" : {
+            "digest" : "",
+            "descript" : "tries to adjust for occlusions of objects."
+        },
+        "depth dim" : {
+            "digest" : "",
+            "descript" : "depth texture size of the occlusion pass."
+        },
+        "projection" : {
+            "digest" : "",
+            "descript" : "use only front, back or both side of the canvas"
+        },
+        "angle mode" : {
+            "digest" : "",
+            "descript" : "angle differentiation: \n\t<li>'viewray' will \n\t\t  differentiate based on the angle \n\t\t  between the surface normal \n\t\t  and the viewray, \n\t<li>'direction' will differentiate \n\t\t  based on the angle between \n\t\t  the surface normal and \n\t\t  the camera direction"
+        },
+        "spread" : {
+            "digest" : "",
+            "descript" : "spread factor will increase the differentiation between overlapping projections"
+        },
+        "distance" : {
+            "digest" : "",
+            "descript" : "use distance as an additional differentiator. It will show its influence when the spread is increased. (0 = no influence)"
+        },
+        "blend bg" : {
+            "digest" : "",
+            "descript" : "enables blending with the background "
+        },
+        "interpolation" : {
+            "digest" : "",
+            "descript" : "interpolation"
+        },
+        "angle limit" : {
+            "digest" : "",
+            "descript" : "angle limit (how much of the visible surface area is considered, 0 = no limit)"
+        },
+        "angle falloff" : {
+            "digest" : "",
+            "descript" : "angle-limit falloff (defines the size of the angle blend transition at the angle limit)  {/sparck/node ::<nodename>::property::angleFalloff <float>} "
+        },
+        "bevel size" : {
+            "digest" : "",
+            "descript" : "bevel size"
+        },
+        "bevel curve" : {
+            "digest" : "",
+            "descript" : "bevel curve"
+        },
+        "bevel round" : {
+            "digest" : "",
+            "descript" : "use rounded bevel"
+        },
+        "offcolor" : {
+            "digest" : "",
+            "descript" : "surface color of uncovered areas"
+        },
+        "output" : {
+            "digest" : "",
+            "descript" : "display mode of the model on which this shader is applied onto. \n\t<li>'result' shows the final texture \n\t<li>'content' shows the input texture \n\t<li>'mask' shows the Beamer weights"
+        },
+        "power" : {
+            "digest" : "",
+            "descript" : "blend power - softegde blend parameter"
+        },
+        "luminance" : {
+            "digest" : "",
+            "descript" : "luminance - softegde blend parameter"
+        },
+        "gradient curve" : {
+            "digest" : "",
+            "descript" : "adjusts the softedge curve"
+        },
+        "gamma" : {
+            "digest" : "",
+            "descript" : "gamma correction"
+        }
+    }
+,
+	"Notes" : {
+        "note1" : "..."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

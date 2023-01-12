@@ -16,20 +16,20 @@
  		"SceneCamera" : ""
   	}
 ,
-	"NodeReference": {
-        "Mirror" : {
+	"PropertyReference": {
+        "mirror" : {
             "digest" : "",
             "descript" : "mirror node"
         },
-        "Mirrored" : {
+        "mirrored" : {
             "digest" : "",
             "descript" : "mirrored node - can also be a Beamer or Camera node"
         },
-        "transform" : {
+        "mode" : {
             "digest" : "",
             "descript" : "the kind of mirror transformation"
         },
-        "direction" : {
+        "mirrorplane" : {
             "digest" : "",
             "descript" : "set which two axis become the mirror plane"
         },

@@ -14,6 +14,9 @@
   	}
 ,
 	"NodeReference": {
+  	}
+, 
+	"PropertyReference" : {
         "mesh" : {
             "digest" : "drag n' drop",
             "descript" : "select the 3d model file to draw. the file needs to be located inside the ~/_assets/_models/_warps folder. you can also drag'n drop files, which will be copied into the _warps folder and autmatically selected. It needs to be of type Wavefront OBJ."
@@ -33,10 +36,7 @@
         "export" : {
             "digest" : "",
             "descript" : "exports the final mesh (Wavefront OBJ) to the ~/_export folder. The file will be named after the node."
-       }
-  	}
-, 
-	"PropertyReference" : {
+       },
         "RenderGroup" : {
             "digest" : "",
             "descript" : "set the render group. Capture/Beamer/3DViewer have an equivalent in which you can choose which group to render."

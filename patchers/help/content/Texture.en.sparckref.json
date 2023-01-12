@@ -12,7 +12,7 @@
  		"Video" : ""
   	}
 ,
-	"NodeReference": {
+	"PropertyReference": {
         "file" : {
             "digest" : "(drag'n drop)",
             "descript" : "load image file"

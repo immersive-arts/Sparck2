@@ -13,6 +13,9 @@
   	}
 ,
 	"NodeReference": {
+  	}
+, 
+	"PropertyReference" : {
         "Material file" : {
             "digest" : "",
             "descript" : "load a material file (needs to be in the MaxMSP-Jitter Material format)"
@@ -24,10 +27,7 @@
         "R" : {
             "digest" : "",
             "descript" : "open material editor"
-       }
-  	}
-, 
-	"PropertyReference" : {
+       },
         "diffuse model" : {
             "digest" : "",
             "descript" : "Diffuse shading model: \n\t<li>'lambert' (Lambertian diffuse shading)\n\t<li>'oren_nayer' (Oren-Nayer diffuse shading)\n\t<li>'toon' (Toon diffuse shading) \n\t<li>'minnaert' (Minnaert diffuse shading)"

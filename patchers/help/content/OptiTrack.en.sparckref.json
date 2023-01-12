@@ -8,46 +8,56 @@
 	"links" : {
         "Video" : "http://tecartlab.com/tutorials",
         "Optitrack" : "http://www.optitrack.com/",
-        "NatNet2Osc" : "https://github.com/tecartlab/app_NatNet2OSC/releases"
+        "NatNet2Osc" : "https://github.com/tecartlab/app_NatNetThree2OSC/releases"
     }
 ,
 	"seealso": {
- 		"TfmNode" : "",
- 		"HeadRoom" : "",
- 		"TurnTable" : ""
+ 		"Rigidbody" : ""
   	}
 ,
 	"NodeReference": {
-        "body" : {
-            "digest" : "",
-            "descript" : "Optitracks body ID"
-        },
-        "body tag" : {
-            "digest" : "",
-            "descript" : "the name of the transformation node for the use inside SPARCK"
-        }
   	}
 , 
 	"PropertyReference" : {
+        "reply indicator" : {
+            "digest" : "",
+            "descript" : "lights up when bidirectional connection to motive works"
+        },
+        "connection indicator" : {
+            "digest" : "",
+            "descript" : "lights up when optitrack data is received"
+        },
+        "stream 1 - 8" : {
+            "digest" : "",
+            "descript" : "chosen optitrack rigidbody to be used with rigidbody abstraction"
+        },
+        "in port" : {
+            "digest" : "",
+            "descript" : "listening port, port where the NatNet2Osc-app send the osc stream."
+        },
+        "out port" : {
+            "digest" : "",
+            "descript" : "sending port, NatNetThree2Osc-app listening port to receive commands."
+        },
+        "out port IP" : {
+            "digest" : "",
+            "descript" : "sending IP address, where the NatNetThree2Osc-app runs."
+        },
+        "leap forward" : {
+            "digest" : "",
+            "descript" : "calculate forward prediction. [ms]"
+        },
+        "leap filter" : {
+            "digest" : "",
+            "descript" : "smooth forward prediction. [%]"
+        },
         "parent" : {
             "digest" : "",
             "descript" : "parent transformation node"
         },
-        "position" : {
-            "digest" : "(local transformation)",
-            "descript" : "position x y z"
-        },
-        "rotation" : {
-            "digest" : "(local transformation)",
-            "descript" : "rotation x y z - the optitrack space is rotated in its x-axis, the default value for x-rotation is 90."
-        },
         "scale" : {
             "digest" : "(local transformation)",
             "descript" : "scale in x y z"
-        },
-        "port" : {
-            "digest" : "",
-            "descript" : "listening port, port where the NatNet2Osc-app send the osc stream."
         }
     }
 ,

@@ -14,13 +14,13 @@
   	}
 ,
 	"NodeReference": {
-	   "Name" : {
-           "digest" : "",
-           "descript" : "give it a more meaning full name."
-       }
   	}
 , 
 	"PropertyReference" : {
+	   "Name" : {
+           "digest" : "",
+           "descript" : "give it a more meaning full name."
+       },
 	   "PropertyOne" : {
            "digest" : "TEXT HERE",
            "descript" : "and more text here."

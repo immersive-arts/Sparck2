@@ -16,26 +16,30 @@
   	}
 ,
 	"NodeReference": {
-        "offstage" : {
+  	}
+, 
+	"PropertyReference" : {
+        "gizmo" : {
             "digest" : "",
             "descript" : "show Camera icon on 3DViewer"
         },
-        "mode" : {
+        "look at" : {
             "digest" : "",
-            "descript" : "frustum calculation mode"
+            "descript" : "transformation node to look at"
+        },
+        "orient to" : {
+            "digest" : "",
+            "descript" : "local lookat plane orientation"
+        },
+        "plane up vector" : {
+            "digest" : "",
+            "descript" : "local lookat plane up vector"
         },
         "parent" : {
             "digest" : "",
             "descript" : "parent transformation node"
         },
-        "cutplane" : {
-            "digest" : "",
-            "descript" : "cutplane transformaion node"
-        }
-  	}
-, 
-	"PropertyReference" : {
-        "transform" : {
+        "tfm pass" : {
             "digest" : "",
             "descript" : "select transformation pass"
         },"position" : {
@@ -50,21 +54,37 @@
             "digest" : "(local transformation)",
             "descript" : "scale x y z"
         },
-        "orientation" : {
+        "dimension" : {
             "digest" : "",
-            "descript" : "local lookat plane orientation"
+            "descript" : "suggested capture dimension"
         },
-        "plane up vector" : {
+        "lens" : {
             "digest" : "",
-            "descript" : "local lookat plane up vector"
+            "descript" : "lens type"
         },
-        "view ratio" : {
+        "adapt" : {
             "digest" : "",
-            "descript" : "ratio"
+            "descript" : "automatically adapt frustum to distance from lookat plane"
         },
-        "fov" : {
+        "adapt factor" : {
+            "digest" : "",
+            "descript" : "adjust the adaptation"
+        },
+        "ratio" : {
+            "digest" : "",
+            "descript" : "view ratio"
+        },
+        "angle" : {
             "digest" : "",
             "descript" : "field of view"
+        },
+        "width" : {
+            "digest" : "",
+            "descript" : "width"
+        },
+        "height" : {
+            "digest" : "",
+            "descript" : "height"
         },
         "near" : {
             "digest" : "",
@@ -73,14 +93,6 @@
         "far" : {
             "digest" : "",
             "descript" : "far frustum clip"
-        },
-        "adapt" : {
-            "digest" : "",
-            "descript" : "automatically adapt frustum to distance from lookat plane"
-        },
-        "adapt ratio" : {
-            "digest" : "",
-            "descript" : "adjust the adaptation"
         }
     }
 ,

@@ -15,7 +15,7 @@
  		"TfmMirror" : ""
   	}
 ,
-	"NodeReference": {
+	"PropertyReference": {
         "look from" : {
             "digest" : "",
             "descript" : "from where to look"

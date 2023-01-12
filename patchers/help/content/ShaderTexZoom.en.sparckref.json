@@ -1,0 +1,56 @@
+{
+	"digest": "Zooms into or out of textures",
+	"description" : {
+        "desc1" : "Can be also used as a texture render pass, for two textures."
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"
+    }
+,
+	"seealso": {
+ 		"ShaderTexOP" : "",
+ 		"ShaderTexColorMap" : "",
+ 		"ShaderTexBlur" : ""
+  	}
+,
+	"PropertyReference": {
+        "src scale" : {
+            "digest" : "",
+            "descript" : "source x and y scale"
+        },
+        "src pos" : {
+            "digest" : "",
+            "descript" : "source x and y position"
+        },
+        "dest scale" : {
+            "digest" : "",
+            "descript" : "dest x and y scale"
+        },
+        "dest pos" : {
+            "digest" : "",
+            "descript" : "dest x and y position"
+        },
+        "interpolate" : {
+            "digest" : "",
+            "descript" : "use interpolation on output texture"
+        },
+        "texture one" : {
+            "digest" : "",
+            "descript" : "use this node as texture render pass"
+        },
+        "texture two" : {
+            "digest" : "",
+            "descript" : "use this node as texture render pass"
+        }
+  	}
+,
+	"Notes" : {
+        "note1" : "..."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

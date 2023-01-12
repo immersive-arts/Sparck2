@@ -15,9 +15,13 @@
   	}
 , 
 	"PropertyReference" : {
-        "render group" : {
+        "draw to" : {
             "digest" : "",
-            "descript" : "render group to drap to"
+            "descript" : "render group to draw to"
+        },
+        "infinite" : {
+            "digest" : "",
+            "descript" : "make it infinite"
         },
         "position" : {
             "digest" : "(local transformation)",
@@ -27,9 +31,9 @@
             "digest" : "(local transformation)",
             "descript" : "rotation x y z"
         },
-        "infinite" : {
-            "digest" : "",
-            "descript" : "make it infinite"
+        "scale" : {
+            "digest" : "(local transformation)",
+            "descript" : "scale x y z"
         }
     }
 ,

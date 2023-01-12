@@ -17,28 +17,36 @@
   	}
 ,
 	"NodeReference": {
-        "parent" : {
+  	}
+, 
+	"PropertyReference" : {
+        "drawto" : {
             "digest" : "",
-            "descript" : "parent transformation node"
+            "descript" : "set the render group. Capture/Beamer/3DViewer have an equivalent in which you can choose which group to render."
         },
         "file" : {
             "digest" : "",
             "descript" : "animation path file"
         },
+        "fileWatch" : {
+            "digest" : "",
+            "descript" : "reload animation path file if it was changes"
+        },
         "segment" : {
             "digest" : "",
             "descript" : "segment inside pathfile"
         },
+        "closeSegment" : {
+            "digest" : "",
+            "descript" : "force closing the segement if it has a gap between the first and the last vertice"
+        },
         "playbar" : {
             "digest" : "",
             "descript" : "relative position on path. Best animated with QueScript"
-        }
-  	}
-, 
-	"PropertyReference" : {
-        "RenderGroup" : {
+        },
+        "parent" : {
             "digest" : "",
-            "descript" : "set the render group. Capture/Beamer/3DViewer have an equivalent in which you can choose which group to render."
+            "descript" : "parent transformation node"
         },
         "position" : {
             "digest" : "(local transformation)",
@@ -52,21 +60,9 @@
             "digest" : "(local transformation)",
             "descript" : "scale x y z"
         },
-        "color" : {
+        "object color" : {
             "digest" : "",
             "descript" : "display color"
-        },
-        "layer" : {
-            "digest" : "",
-            "descript" : "depth layer"
-        },
-        "closeSegment" : {
-            "digest" : "",
-            "descript" : "force closing the segement if it has a gap between the first and the last vertice"
-        },
-        "fileWatch" : {
-            "digest" : "",
-            "descript" : "reload animation path file if it was changes"
         }
     }
 ,

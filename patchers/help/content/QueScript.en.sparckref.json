@@ -17,19 +17,22 @@
   	}
 ,
 	"NodeReference": {
-        "file" : {
+  	}
+, 
+	"PropertyReference" : {
+        "scriptfile" : {
             "digest" : "",
             "descript" : "load and execute que script"
         },
-        "edit" : {
+        "fileWatch" : {
             "digest" : "",
-            "descript" : "edit the loaded file. You can set your prefered editor inside properties."
+            "descript" : "reloads the script file if it has changed by an external editor. Usually a good idea while you are editing."
         },
-        "play que" : {
+        "ques" : {
             "digest" : "",
             "descript" : "lists all ques inside the script and allows you to manually execute the chosen one."
         },
-        "show progress bar" : {
+        "progress.." : {
             "digest" : "",
             "descript" : "shows how each que is progressing"
         },
@@ -40,10 +43,15 @@
         "stop" : {
             "digest" : "",
             "descript" : "stops the execution"
-        }
-  	}
-, 
-	"PropertyReference" : {
+        },
+        "Editor" : {
+            "digest" : "",
+            "descript" : "select your prefered editor or add your own."
+        },
+        "edit" : {
+            "digest" : "",
+            "descript" : "edit the loaded file. You can set your prefered editor inside properties."
+        },
         "update mode" : {
             "digest" : "",
             "descript" : "there are two modes to choose: \n\t<li>automatic will update the script with each frame-pass. \n\t<li>custom will allow you to set your own update frequency."
@@ -52,25 +60,13 @@
             "digest" : "",
             "descript" : "custom update frequency"
         },
-        "osc node" : {
+        "osc send" : {
             "digest" : "",
             "descript" : "Que script can create OSC messages, but needs an OscSend node to send them to."
-        },
-        "autostart" : {
-            "digest" : "",
-            "descript" : "autostart the script after loading it. It will execute the first <que> inside the script."
-        },
-        "Editor" : {
-            "digest" : "",
-            "descript" : "select your prefered editor or add your own."
         },
         "debug" : {
             "digest" : "",
             "descript" : "will output debug information to the console"
-        },
-        "fileWatch" : {
-            "digest" : "",
-            "descript" : "reloads the script file if it has changed by an external editor. Usually a good idea while you are editing."
         }
     }
 ,

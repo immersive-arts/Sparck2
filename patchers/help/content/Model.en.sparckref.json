@@ -17,6 +17,9 @@
   	}
 ,
 	"NodeReference": {
+  	}
+, 
+	"PropertyReference" : {
         "file" : {
             "digest" : "drag n' drop",
             "descript" : "select the model file to draw. the file needs to be located inside the ~/_assets/_model folder. you can also drag'n drop file, which will be copied into the _model folder and autmatically selected."
@@ -24,10 +27,7 @@
         "parent" : {
             "digest" : "",
             "descript" : "parent transformation node"
-       }
-  	}
-, 
-	"PropertyReference" : {
+       },
         "RenderGroup" : {
             "digest" : "",
             "descript" : "set the render group. Capture/Beamer/3DViewer have an equivalent in which you can choose which group to render."

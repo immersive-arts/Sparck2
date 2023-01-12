@@ -1,0 +1,99 @@
+{
+	"digest": "Projects textures",
+	"description" : {
+        "desc1" : "Projects textures outwards from the location of the Camera",
+        "desc2" : "This is a shader and can be applied to any model node."
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"
+    }
+,
+	"seealso": {
+        "SceneCamera" : "",
+        "BoxMapCamera" : "",
+        "SceneCapture" : ""
+  	}
+,
+	"NodeReference": {
+  	}
+,
+	"PropertyReference" : {
+        "shader" : {
+            "digest" : "",
+            "descript" : "choose between the different projection types. \n\t<li>'single' to project one texture \n\t<li>'multiblend' to project multiple \n\t\t textures \n\t<li>'360VR.single' project equirectangular \n\t\t textures. For this the camera needs \n\t\t to be a BoxMapCamera \n\t<li>'360VR.multiblend' project normal \n\t\t and equirectangular textures. \n\t\t To project a equirectangular \n\t\t texture, the camera needs \n\t\t to be a BoxMapCamera \n\t<li>'boxmap' for projecting boxmap textures"
+        }
+        ,"project to" : {
+            "digest" : "",
+            "descript" : "\n\t<li>'canvas' to us it as a \n\t\t standard shader \n\t<li>'bake texture' to bake the result \n\t\t into a texture."
+        }
+        ,"projectionA-F" : {
+            "digest" : "",
+            "descript" : "select the SceneCamera or BoxMapCamera"
+        },
+        "3d viewer" : {
+            "digest" : "",
+            "descript" : "display mode of the model on which this shader is applied onto. \n\t<li>'Textured' shows the projected texture(s) \n\t<li>'Colored' shows the projections in colors \n\t<li>'Overlap' shows the amount of overlap \n\t<li>'Map' shows the differentiation \n\t<li>'BeamX' shows projection X"
+        },
+        "project on" : {
+            "digest" : "",
+            "descript" : "Onto which face of the model this texture is projected: \n\t<li>'back' \n\t<li>'both sides' \n\t<li>'front'"
+        },
+        "blend bg" : {
+            "digest" : "",
+            "descript" : "benables blending with the background"
+        },
+        "use bgcolor" : {
+            "digest" : "",
+            "descript" : "use this color if no specific background texture is used"
+        },
+        "bgcolor" : {
+            "digest" : "",
+            "descript" : "color if no projected texture reaches the surface"
+        },
+        "angle mode" : {
+            "digest" : "",
+            "descript" : "angle differentiation: \n\t<li>'viewray' will differentiate based on the \n\t\t angle between the surface normal and \n\t\t the viewray, \n\t<li>'direction' will differentiate based on \n\t\t the angle between the surface normal \n\t\t and the camera direction."
+        },
+        "spread" : {
+            "digest" : "",
+            "descript" : "spread factor will increase the differentiation between overlapping projections (1 = full spread)"
+        },
+        "distance" : {
+            "digest" : "",
+            "descript" : "use distance as an additional differentiator. It will show its influence when the spread is increased. (0 = no influence)"
+        },
+        "angle limit" : {
+            "digest" : "",
+            "descript" : "angle limit, how much of the visible surface area is considered (0 = no limit) "
+        },
+        "angle falloff" : {
+            "digest" : "",
+            "descript" : "size of falloff gradient at the angle limit"
+        },
+        "bevel size" : {
+            "digest" : "",
+            "descript" : "bevel size. it creates a gradient falloff defined by the frustum cone of the camera"
+        },
+        "bevel curve" : {
+            "digest" : "",
+            "descript" : "bevel gradient shape"
+        },
+        "bevel rounded" : {
+            "digest" : "",
+            "descript" : "use rounded bevel"
+        },
+        "interpolation" : {
+            "digest" : "",
+            "descript" : "interpolation correction. if strange artefacts start to appear, raise the value until the artefacts disappear. the artefacts are a result of interpolation errors between the vertex and fragment shader and occur close to the local x-y plane of the camera. increasing the subdivisions of the model can help, too"
+        }
+    }
+,	"Notes" : {
+        "note1" : "..."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

@@ -16,7 +16,7 @@
  		"TfmMirror" : ""
   	}
 ,
-	"NodeReference": {
+	"PropertyReference": {
         "parent" : {
             "digest" : "",
             "descript" : "parent transformation node"

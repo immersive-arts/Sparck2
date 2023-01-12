@@ -16,13 +16,13 @@
   	}
 ,
 	"NodeReference": {
-        "parent" : {
-            "digest" : "",
-            "descript" : "parent transformation node"
-        }
   	}
 , 
 	"PropertyReference" : {
+        "parent" : {
+            "digest" : "",
+            "descript" : "parent transformation node"
+        },
         "RenderGroup" : {
             "digest" : "",
             "descript" : "set the render group. Capture/Beamer/3DViewer have an equivalent in which you can choose which group to render."

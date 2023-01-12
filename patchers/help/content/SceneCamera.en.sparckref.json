@@ -15,45 +15,17 @@
   	}
 ,
 	"NodeReference": {
-        "3DViewer" : {
+  	}
+, 
+	"PropertyReference" : {
+        "gizmo" : {
             "digest" : "",
-            "descript" : "show Camera icon on 3DViewer"
+            "descript" : "show Camera icon in selected render group"
         },
         "parent" : {
             "digest" : "",
             "descript" : "parent transformation node"
         },
-        "stereo" : {
-            "digest" : "",
-            "descript" : "set stereo mode."
-        },
-        "ratio" : {
-            "digest" : "",
-            "descript" : "render image ratio."
-        },
-        "fov" : {
-            "digest" : "",
-            "descript" : "field of view [deg]"
-        },
-        "near" : {
-            "digest" : "",
-            "descript" : "near frustum clip"
-        },
-        "far" : {
-            "digest" : "",
-            "descript" : "far frustum clip"
-        },
-        "spread" : {
-            "digest" : "(only stereo mode)",
-            "descript" : "sets spread between two eyes"
-        },
-        "rotation" : {
-            "digest" : "(only stereo mode)",
-            "descript" : "sets rotation between two eyes"
-        }
-  	}
-, 
-	"PropertyReference" : {
         "position" : {
             "digest" : "(local transformation)",
             "descript" : "position x y z"
@@ -65,6 +37,42 @@
         "scale" : {
             "digest" : "(local transformation)",
             "descript" : "scale x y z"
+        },
+        "dimension" : {
+            "digest" : "",
+            "descript" : "suggested captured texture size."
+        },
+        "lens" : {
+            "digest" : "",
+            "descript" : "lens type."
+        },
+        "ratio" : {
+            "digest" : "",
+            "descript" : "render image ratio."
+        },
+        "angle" : {
+            "digest" : "",
+            "descript" : "field of view [deg]"
+        },
+        "near" : {
+            "digest" : "",
+            "descript" : "near frustum clip"
+        },
+        "far" : {
+            "digest" : "",
+            "descript" : "far frustum clip"
+        },
+        "stereo" : {
+            "digest" : "",
+            "descript" : "set stereo mode."
+        },
+        "spread" : {
+            "digest" : "(only stereo mode)",
+            "descript" : "sets spread between two eyes"
+        },
+        "rotate" : {
+            "digest" : "(only stereo mode)",
+            "descript" : "sets rotation between two eyes"
         }
     }
 ,

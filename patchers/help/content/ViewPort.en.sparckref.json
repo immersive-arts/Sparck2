@@ -16,6 +16,9 @@
   	}
 ,
 	"NodeReference": {
+  	}
+, 
+	"PropertyReference" : {
 	   "window" : {
            "digest" : "",
            "descript" : "select the Window-node"
@@ -23,17 +26,10 @@
 	   "slice" : {
            "digest" : "",
            "descript" : "select the slice inside the Window for output"
-       }
-  	}
-, 
-	"PropertyReference" : {
-	   "Reset" : {
-           "digest" : "",
-           "descript" : "Resets the node to ist default state"
        },
-	   "viewport mesh" : {
+	   "mesh" : {
            "digest" : "",
-           "descript" : "choose the type of mesh. \n\t<li>'default' is a simple mesh \n\t<li>'warp' links to a MeshWarp-node \n\t<li>'file' loads custom mesh \n\t<li>'none' no mesh at all"
+           "descript" : "choose the type of mesh. \n\t<li>'default' is a simple mesh \n\t<li>'warp' links to a MeshWarp-node \n\t<li>'file' loads custom mesh \n\t<li>'none' no mesh at all. \n\t\t used with Cornerpin-node"
        },
 	   "fx shader" : {
            "digest" : "",
@@ -74,6 +70,10 @@
 	   "filewatch" : {
            "digest" : "",
            "descript" : "if using a loaded custom mesh, load the mesh once the file was changed."
+       },
+	   "Reset" : {
+           "digest" : "",
+           "descript" : "Resets the node to ist default state"
        }
 	}
 ,
