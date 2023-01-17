@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 2,
+			"minor" : 5,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 328.0, 184.0, 540.0, 493.0 ],
+		"rect" : [ 328.0, 184.0, 598.0, 478.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -38,20 +38,20 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
-		"globalpatchername" : "RigidBody",
+		"globalpatchername" : "RigidBody_1",
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-33",
 					"maxclass" : "newobj",
 					"numinlets" : 3,
-					"numoutlets" : 4,
-					"outlettype" : [ "", "", "", "bang" ],
+					"numoutlets" : 5,
+					"outlettype" : [ "", "", "", "bang", "" ],
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 2,
+							"minor" : 5,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -87,6 +87,18 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"comment" : "markerlist",
+									"id" : "obj-4",
+									"index" : 5,
+									"maxclass" : "outlet",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 378.372916666666697, 609.500029999999924, 30.0, 30.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-19",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
@@ -96,8 +108,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 2,
+											"minor" : 5,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -408,19 +420,20 @@
 									"id" : "obj-48",
 									"maxclass" : "newobj",
 									"numinlets" : 4,
-									"numoutlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 2,
+											"minor" : 5,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 58.0, 867.0, 1322.0, 630.0 ],
+										"rect" : [ 109.0, 363.0, 1322.0, 630.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -450,6 +463,66 @@
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
+													"id" : "obj-47",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 941.0, 523.0, 108.0, 22.0 ],
+													"text" : "prepend markerlist"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"comment" : "",
+													"id" : "obj-46",
+													"index" : 1,
+													"maxclass" : "outlet",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 941.0, 560.0, 30.0, 30.0 ]
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-45",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 2,
+													"outlettype" : [ "zlclear", "bang" ],
+													"patching_rect" : [ 863.0, 436.0, 80.0, 22.0 ],
+													"text" : "t zlclear bang"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-31",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
+													"patching_rect" : [ 905.0, 272.0, 55.0, 22.0 ],
+													"text" : "zl.slice 1"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-24",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
+													"patching_rect" : [ 941.0, 488.0, 68.0, 22.0 ],
+													"text" : "zl.group 90"
+												}
+
+											}
+, 											{
+												"box" : 												{
 													"id" : "obj-21",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
@@ -459,8 +532,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 2,
-															"revision" : 2,
+															"minor" : 5,
+															"revision" : 3,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -762,13 +835,13 @@
 																"name" : "AudioStatus_Menu",
 																"default" : 																{
 																	"bgfillcolor" : 																	{
-																		"type" : "color",
+																		"angle" : 270.0,
+																		"autogradient" : 0,
 																		"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 																		"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 																		"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-																		"angle" : 270.0,
 																		"proportion" : 0.39,
-																		"autogradient" : 0
+																		"type" : "color"
 																	}
 
 																}
@@ -907,7 +980,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 5,
 													"outlettype" : [ "", "", "int", "", "" ],
-													"patching_rect" : [ 56.0, 17.0, 229.0, 50.0 ],
+													"patching_rect" : [ 56.0, 17.0, 229.0, 49.0 ],
 													"text" : "bs.ossia.parameter.rendergroup.drawto marker/renderGroup \"Selection of the rendergroups to render the markers\""
 												}
 
@@ -1009,8 +1082,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 2,
-															"revision" : 2,
+															"minor" : 5,
+															"revision" : 3,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1239,8 +1312,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 2,
-															"revision" : 2,
+															"minor" : 5,
+															"revision" : 3,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1822,7 +1895,23 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-10", 0 ],
+													"order" : 1,
 													"source" : [ "obj-23", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-45", 0 ],
+													"order" : 0,
+													"source" : [ "obj-23", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-47", 0 ],
+													"source" : [ "obj-24", 0 ]
 												}
 
 											}
@@ -1844,6 +1933,13 @@
 												"patchline" : 												{
 													"destination" : [ "obj-15", 0 ],
 													"source" : [ "obj-3", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-24", 0 ],
+													"source" : [ "obj-31", 1 ]
 												}
 
 											}
@@ -1898,6 +1994,27 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-24", 0 ],
+													"source" : [ "obj-45", 1 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-24", 0 ],
+													"source" : [ "obj-45", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-46", 0 ],
+													"source" : [ "obj-47", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-12", 1 ],
 													"source" : [ "obj-5", 0 ]
 												}
@@ -1929,6 +2046,15 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-17", 0 ],
+													"order" : 1,
+													"source" : [ "obj-6", 1 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-31", 0 ],
+													"order" : 0,
 													"source" : [ "obj-6", 1 ]
 												}
 
@@ -1959,13 +2085,13 @@
 												"name" : "AudioStatus_Menu",
 												"default" : 												{
 													"bgfillcolor" : 													{
-														"type" : "color",
+														"angle" : 270.0,
+														"autogradient" : 0,
 														"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 														"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 														"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-														"angle" : 270.0,
 														"proportion" : 0.39,
-														"autogradient" : 0
+														"type" : "color"
 													}
 
 												}
@@ -2018,8 +2144,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 2,
+											"minor" : 5,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2148,8 +2274,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 2,
-															"revision" : 2,
+															"minor" : 5,
+															"revision" : 3,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2319,13 +2445,13 @@
 																"name" : "AudioStatus_Menu",
 																"default" : 																{
 																	"bgfillcolor" : 																	{
-																		"type" : "color",
+																		"angle" : 270.0,
+																		"autogradient" : 0,
 																		"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 																		"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 																		"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-																		"angle" : 270.0,
 																		"proportion" : 0.39,
-																		"autogradient" : 0
+																		"type" : "color"
 																	}
 
 																}
@@ -2378,8 +2504,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 2,
-															"revision" : 2,
+															"minor" : 5,
+															"revision" : 3,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2729,13 +2855,13 @@
 																"name" : "AudioStatus_Menu",
 																"default" : 																{
 																	"bgfillcolor" : 																	{
-																		"type" : "color",
+																		"angle" : 270.0,
+																		"autogradient" : 0,
 																		"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 																		"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 																		"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-																		"angle" : 270.0,
 																		"proportion" : 0.39,
-																		"autogradient" : 0
+																		"type" : "color"
 																	}
 
 																}
@@ -2922,13 +3048,13 @@
 												"name" : "AudioStatus_Menu",
 												"default" : 												{
 													"bgfillcolor" : 													{
-														"type" : "color",
+														"angle" : 270.0,
+														"autogradient" : 0,
 														"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 														"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 														"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-														"angle" : 270.0,
 														"proportion" : 0.39,
-														"autogradient" : 0
+														"type" : "color"
 													}
 
 												}
@@ -2979,7 +3105,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 491.260416666666742, 310.254515999999967, 320.0, 36.0 ],
+									"patching_rect" : [ 491.260416666666742, 310.254515999999967, 320.0, 35.0 ],
 									"text" : "ossia.parameter tracked @default false @type bool @description \"rigidbody is tracked\" @clip both @mode get"
 								}
 
@@ -2993,7 +3119,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 410.538541666666788, 356.0, 342.0, 36.0 ],
+									"patching_rect" : [ 410.538541666666788, 356.0, 342.0, 35.0 ],
 									"text" : "ossia.parameter flow @default false @type bool @description \"rigidbody is streaming data\" @clip both @mode get"
 								}
 
@@ -3297,6 +3423,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-4", 0 ],
+									"source" : [ "obj-48", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-3", 4 ],
 									"midpoints" : [ 398.872916666666697, 417.5, 239.180555555555543, 417.5 ],
 									"source" : [ "obj-6", 2 ]
@@ -3360,13 +3493,13 @@
 								"name" : "AudioStatus_Menu",
 								"default" : 								{
 									"bgfillcolor" : 									{
-										"type" : "color",
+										"angle" : 270.0,
+										"autogradient" : 0,
 										"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 										"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "color"
 									}
 
 								}
@@ -3447,13 +3580,13 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "dump of 'anim' , (get-)values and transformation bang",
+					"comment" : "dump of 'anim' , (get-)values and transformation bang. also outputs 'markerlist' if markers are received.",
 					"id" : "obj-25",
 					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 452.905353833333265, 411.0, 30.0, 30.0 ]
+					"patching_rect" : [ 467.720457999999894, 411.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -3777,6 +3910,13 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-25", 0 ],
+					"source" : [ "obj-33", 4 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-25", 0 ],
 					"order" : 0,
 					"source" : [ "obj-33", 3 ]
 				}
@@ -3837,113 +3977,135 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "bs.anim.node.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/utils",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/utils",
+				"patcherrelativepath" : "../../utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.gui.svg.button.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/gui",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/gui",
+				"patcherrelativepath" : "../../gui",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.latencycomp.mxe64",
-				"type" : "mx64"
+				"name" : "bs.latencycomp.mxo",
+				"type" : "iLaX"
 			}
 , 			{
-				"name" : "bs.msg.receive.selector.mxe64",
-				"type" : "mx64"
+				"name" : "bs.msg.receive.selector.mxo",
+				"type" : "iLaX"
 			}
 , 			{
-				"name" : "bs.msg.send.mxe64",
-				"type" : "mx64"
+				"name" : "bs.msg.send.mxo",
+				"type" : "iLaX"
 			}
 , 			{
 				"name" : "bs.node.gui.button.menu.png",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/media",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/media",
+				"patcherrelativepath" : "../../../media",
 				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.node.logo.power.png",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/media",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/media",
+				"patcherrelativepath" : "../../../media",
 				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.parameter.msg.js",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/ossia",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/javascript/ossia",
+				"patcherrelativepath" : "../../../javascript/ossia",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.parameter.msg.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia/msg",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/ossia/msg",
+				"patcherrelativepath" : "../../ossia/msg",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.parameter.rendergroup.drawto.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia/rendergroup",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/ossia/rendergroup",
+				"patcherrelativepath" : "../../ossia/rendergroup",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.parameter.tfm.local.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia/transforms",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/ossia/transforms",
+				"patcherrelativepath" : "../../ossia/transforms",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.rendergroup.js",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/misc",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/javascript/misc",
+				"patcherrelativepath" : "../../../javascript/misc",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.logic.js",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/vpl",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/javascript/vpl",
+				"patcherrelativepath" : "../../../javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.logic.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/vpl",
+				"patcherrelativepath" : "../../vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.pbody.js",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/vpl",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/javascript/vpl",
+				"patcherrelativepath" : "../../../javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.pbody.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/vpl",
+				"patcherrelativepath" : "../../vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.title.js",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/vpl",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/javascript/vpl",
+				"patcherrelativepath" : "../../../javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.util.inlet.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/vpl",
+				"patcherrelativepath" : "../../vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.model.mxe64",
-				"type" : "mx64"
+				"name" : "node.classes.js",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/javascript/vpl/classes",
+				"patcherrelativepath" : "../../../javascript/vpl/classes",
+				"type" : "TEXT",
+				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.parameter.mxe64",
-				"type" : "mx64"
+				"name" : "ossia.model.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "ossia.parameter.mxo",
+				"type" : "iLaX"
 			}
  ],
 		"autosave" : 0,
@@ -3951,13 +4113,13 @@
 				"name" : "AudioStatus_Menu",
 				"default" : 				{
 					"bgfillcolor" : 					{
-						"type" : "color",
+						"angle" : 270.0,
+						"autogradient" : 0,
 						"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 						"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "color"
 					}
 
 				}

@@ -141,6 +141,19 @@ public class ModelContainer implements CallBackInterface {
 		model.create(verts, plane);
 	}
 
+	/**
+	 * adds to a loaded model the specified points.
+	 * three point make a vertice, with each vertice drawing a line to the XY plane
+	 * @param vertices
+	 */
+	public void add(Atom[] vertices, int plane){
+		ArrayList<Vertice> verts = new ArrayList<Vertice>(vertices.length);
+		for(int i = 0; i < vertices.length; i = i + 3){
+			verts.add(new Vertice(vertices[i].toFloat(), vertices[i+1].toFloat(), vertices[i+2].toFloat()));
+		}
+		model.add(verts, plane);
+	}
+
 	public void load(String filename) {
 		fileManager.load(model, filename);
 	}

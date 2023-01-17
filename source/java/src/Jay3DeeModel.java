@@ -96,6 +96,20 @@ public class Jay3DeeModel extends MaxObject {
 			Debug.error("Jay3DeeModel", "'createToZ' the number of values need to be multiple of 3.");
 		}
 	}
+	
+	/**
+	 * creates a model with the specified points.
+	 * three point make a vertice, with each vertice drawing a line to the XY plane
+	 * @param vertices
+	 */
+	public void addToXY(Atom[] vertices) {
+		if((vertices.length % 3) == 0){
+			if(sketch != null)
+				sketch.add(vertices, 0);
+		} else {
+			Debug.error("Jay3DeeModel", "'addToXY' the number of values need to be multiple of 3.");
+		}
+	}
 
 
 }

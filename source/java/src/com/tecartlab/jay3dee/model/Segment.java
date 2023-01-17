@@ -107,5 +107,9 @@ public class Segment {
 		clone.indexIB = this.indexIB;
 		return clone;
 	}
+	
+	public void clear(){
+		faces.clear();
+	}
 
 }

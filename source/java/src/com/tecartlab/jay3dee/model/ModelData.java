@@ -64,7 +64,8 @@ public class ModelData implements Constants{
 	String name = "default";
 
 	private Group defaultGroup = new Group("default");
-	private Segment defaultSegment = new Segment();
+	private Segment defaultSegment = new Segment(); // used for model file
+	private Segment customSegment = new Segment();  // used for added custom vertices
 
 	// runtime rendering variables
 	private int shapeMode = TRIANGLES; // render mode (ex. POLYGON,
@@ -765,6 +766,60 @@ public class ModelData implements Constants{
 
 					currentModelSegment.faces.add(f);
 				}
+				updateSegments();
+				refreshGeometry();
+				myContainer.dataEvent("fileparsed");
+
+			}
+		};
+		t.start();
+	}
+
+	/**
+	 * This adds to the 3d model a list of vertices
+	 * Lines from the vertices to the indicated plane are drawn
+	 * @param _vertices
+	 * @param _plane 0 = xy, 1 = xz, 2 = yz
+	 */
+	public void add(final ArrayList<Vertice> _vertices, final int _plane){
+		Thread t = new Thread(){
+			public void run(){
+
+				if(!segments.contains(customSegment)) {
+					// creating the default model segment
+					segments.add(customSegment);
+				} else {
+					// if this segment has been created before, we need to remove all the vertices from modelVertices
+					for(Face f: customSegment.faces) {
+						for(Vertice vertice: f.vertices) {
+							modelVertices.remove(vertice);
+						}
+					}
+					customSegment.clear();
+				}
+
+				// this factor will determine which plan the vector will be projected to.
+				float[] fac = new float[]{(_plane == 2)?0:1, (_plane == 1)?0:1, (_plane == 0)?0:1};
+
+				for(Vertice vertice: _vertices){
+					Face f = new Face();
+					f.indexType = LINE;
+
+					Vertice tmpvOrig = new Vertice(vertice);
+					modelVertices.add(tmpvOrig);
+					tmpvOrig.index = modelVertices.indexOf(tmpvOrig);
+					Vertice tmpvPrj = new Vertice(vertice.x() * fac[0], vertice.y() * fac[1], vertice.z() * fac[2]);
+					tmpvPrj.isPickable = false;
+					modelVertices.add(tmpvPrj);
+					tmpvPrj.index = modelVertices.indexOf(tmpvPrj);
+
+					// we have to add a 1 here because obj files start their indices with 1 and not with 0
+					f.vertexIndices.add(tmpvOrig.index + 1);
+					f.vertexIndices.add(tmpvPrj.index + 1);
+
+					customSegment.faces.add(f);
+				}
+				
 				updateSegments();
 				refreshGeometry();
 				myContainer.dataEvent("fileparsed");
