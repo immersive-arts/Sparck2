@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
-			"revision" : 0,
+			"minor" : 5,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 786.0, 467.0, 897.0, 480.0 ],
+		"rect" : [ 803.0, 477.0, 924.0, 495.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -38,7 +38,7 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
-		"globalpatchername" : "OptiTrack_1",
+		"globalpatchername" : "OptiTrack",
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-35",
@@ -46,7 +46,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "int", "int" ],
-					"patching_rect" : [ 454.683999666666637, 98.0, 41.0, 20.0 ],
+					"patching_rect" : [ 469.683999666666637, 81.0, 41.0, 20.0 ],
 					"text" : "change"
 				}
 
@@ -58,7 +58,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "int", "int" ],
-					"patching_rect" : [ 385.683999666666637, 98.0, 41.0, 20.0 ],
+					"patching_rect" : [ 400.683999666666637, 81.0, 41.0, 20.0 ],
 					"text" : "change"
 				}
 
@@ -70,7 +70,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 454.683999666666637, 126.148224000000056, 112.0, 20.0 ],
+					"patching_rect" : [ 469.683999666666637, 109.148224000000056, 112.0, 20.0 ],
 					"text" : "prepend maxqueuesize"
 				}
 
@@ -84,7 +84,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 454.683999666666637, 62.5, 432.0, 31.0 ],
+					"patching_rect" : [ 469.683999666666637, 45.5, 432.0, 31.0 ],
 					"text" : "ossia.parameter maxQueueSize @type int @default 512 @description \"maximal queue size for incomming messages\" @clip both @min 512 @max 65535"
 				}
 
@@ -96,7 +96,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 385.683999666666637, 126.148224000000056, 65.0, 20.0 ],
+					"patching_rect" : [ 400.683999666666637, 109.148224000000056, 65.0, 20.0 ],
 					"text" : "prepend port"
 				}
 
@@ -110,7 +110,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 385.683999666666637, 29.0, 508.0, 31.0 ],
+					"patching_rect" : [ 400.683999666666637, 12.0, 508.0, 31.0 ],
 					"text" : "ossia.parameter incommingPort @type int @default 10201 @description \"incomming port for motive data\" @clip both @min 1000 @max 65535"
 				}
 
@@ -121,7 +121,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 474.183999666666637, 259.958922999999913, 148.0, 20.0 ],
+					"patching_rect" : [ 489.183999666666637, 280.958922999999913, 148.0, 20.0 ],
 					"text" : "bs.node.OptiTrack.stream  #0 8",
 					"varname" : "body01[8]"
 				}
@@ -133,7 +133,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 454.683999666666637, 283.60764828571422, 148.0, 20.0 ],
+					"patching_rect" : [ 469.683999666666637, 304.60764828571422, 148.0, 20.0 ],
 					"text" : "bs.node.OptiTrack.stream  #0 7",
 					"varname" : "body01[7]"
 				}
@@ -145,7 +145,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 435.183999666666637, 307.256373571428526, 148.0, 20.0 ],
+					"patching_rect" : [ 450.183999666666637, 328.256373571428526, 148.0, 20.0 ],
 					"text" : "bs.node.OptiTrack.stream  #0 6",
 					"varname" : "body01[6]"
 				}
@@ -157,7 +157,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 415.683999666666637, 330.905098857142832, 148.0, 20.0 ],
+					"patching_rect" : [ 430.683999666666637, 351.905098857142832, 148.0, 20.0 ],
 					"text" : "bs.node.OptiTrack.stream  #0 5",
 					"varname" : "body01[5]"
 				}
@@ -169,7 +169,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 396.183999666666637, 354.553824142857138, 148.0, 20.0 ],
+					"patching_rect" : [ 411.183999666666637, 375.553824142857138, 148.0, 20.0 ],
 					"text" : "bs.node.OptiTrack.stream  #0 4",
 					"varname" : "body01[4]"
 				}
@@ -181,7 +181,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 376.683999666666637, 378.202549428571444, 148.0, 20.0 ],
+					"patching_rect" : [ 391.683999666666637, 399.202549428571444, 148.0, 20.0 ],
 					"text" : "bs.node.OptiTrack.stream  #0 3",
 					"varname" : "body01[3]"
 				}
@@ -193,7 +193,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 357.183999666666637, 401.851274714285751, 148.0, 20.0 ],
+					"patching_rect" : [ 372.183999666666637, 422.851274714285751, 148.0, 20.0 ],
 					"text" : "bs.node.OptiTrack.stream  #0 2",
 					"varname" : "body01[2]"
 				}
@@ -217,7 +217,7 @@
 					"numoutlets" : 2,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 526.461709666666707, 220.5, 48.0, 30.0 ],
+					"patching_rect" : [ 433.461709666666707, 179.5, 48.0, 30.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 166.0, 26.0, 10.0, 10.0 ],
 					"varname" : "vpl_outlet[2/2]",
@@ -227,13 +227,13 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "raw output stream without rigidbody and skeleton messages",
 					"id" : "obj-20",
 					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 493.683999666666637, 220.5, 25.0, 25.0 ]
+					"patching_rect" : [ 400.683999666666637, 179.5, 25.0, 25.0 ]
 				}
 
 			}
@@ -286,8 +286,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -520,7 +520,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 600.0, 69.0, 81.0, 22.0 ],
+									"patching_rect" : [ 600.0, 69.0, 85.0, 22.0 ],
 									"text" : "route /rb /skel"
 								}
 
@@ -895,7 +895,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 337.683999666666637, 182.5, 175.0, 20.0 ],
+					"patching_rect" : [ 352.683999666666637, 223.5, 175.0, 20.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -917,8 +917,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1466,7 +1466,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 337.683999666666637, 425.851274714285751, 148.0, 20.0 ],
+					"patching_rect" : [ 352.683999666666637, 446.851274714285751, 148.0, 20.0 ],
 					"text" : "bs.node.OptiTrack.stream  #0 1",
 					"varname" : "body01"
 				}
@@ -1482,8 +1482,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1517,7 +1517,6 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-50",
@@ -2541,7 +2540,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 590.517282666666688, 220.5, 92.0, 20.0 ],
+					"patching_rect" : [ 508.683999666666637, 253.5, 92.0, 20.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -2560,7 +2559,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 385.683999666666637, 157.140471999999988, 131.0, 20.0 ],
+					"patching_rect" : [ 400.683999666666637, 140.140471999999988, 131.0, 20.0 ],
 					"text" : "udpreceive 54321 @quiet 1"
 				}
 
@@ -2611,7 +2610,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 337.683999666666637, 47.436920000000043, 25.0, 25.0 ]
+					"patching_rect" : [ 352.683999666666637, 30.436920000000043, 25.0, 25.0 ]
 				}
 
 			}
@@ -2852,7 +2851,16 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-20", 0 ],
+					"order" : 0,
+					"source" : [ "obj-3", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-33", 0 ],
+					"order" : 1,
 					"source" : [ "obj-3", 0 ]
 				}
 
@@ -2895,15 +2903,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-18", 0 ],
-					"order" : 0,
-					"source" : [ "obj-33", 8 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-20", 0 ],
-					"order" : 1,
 					"source" : [ "obj-33", 8 ]
 				}
 
@@ -2988,14 +2987,14 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "bs.anim.node.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/utils",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/utils",
 				"patcherrelativepath" : "../../utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.gui.svg.button.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/gui",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/gui",
 				"patcherrelativepath" : "../../gui",
 				"type" : "JSON",
 				"implicit" : 1
@@ -3014,93 +3013,100 @@
 			}
 , 			{
 				"name" : "bs.node.OptiTrack.stream.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/nodes/ossia",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/nodes/ossia",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.node.gui.button.menu.png",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/media",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/media",
 				"patcherrelativepath" : "../../../media",
 				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.node.logo.power.png",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/media",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/media",
 				"patcherrelativepath" : "../../../media",
 				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.parameter.msg.js",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/ossia",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/ossia",
 				"patcherrelativepath" : "../../../javascript/ossia",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.parameter.msg.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia/msg",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/ossia/msg",
 				"patcherrelativepath" : "../../ossia/msg",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.util.doubleBang.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/utils",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/utils",
 				"patcherrelativepath" : "../../utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.logic.js",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/vpl",
 				"patcherrelativepath" : "../../../javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.logic.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/vpl",
 				"patcherrelativepath" : "../../vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.pbody.js",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/vpl",
 				"patcherrelativepath" : "../../../javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.pbody.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/vpl",
 				"patcherrelativepath" : "../../vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.title.js",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/vpl",
 				"patcherrelativepath" : "../../../javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.util.inlet.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/vpl",
 				"patcherrelativepath" : "../../vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.util.outlet.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/vpl",
 				"patcherrelativepath" : "../../vpl",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "node.classes.js",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/vpl/classes",
+				"patcherrelativepath" : "../../../javascript/vpl/classes",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
