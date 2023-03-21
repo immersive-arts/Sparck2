@@ -76,6 +76,7 @@ uniform float interpolation_correction;
 in jit_PerVertex {
     vec4 beamer_uv[6];
     vec2 beamer_texcoord[6];
+    vec2 texcoord7;
     float depth[6];
     vec3 normal;
     vec3 worldPos;
