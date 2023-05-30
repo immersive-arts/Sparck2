@@ -2,13 +2,14 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 7,
-			"minor" : 3,
-			"revision" : 5,
+			"major" : 8,
+			"minor" : 5,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
+		"classnamespace" : "box",
 		"rect" : [ 65.0, 332.0, 819.0, 477.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -36,7 +37,22 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-7",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 129.666672000000005, 253.0, 108.0, 22.0 ],
+					"text" : "prepend set matrix"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
@@ -45,8 +61,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 51.0, 205.0, 127.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 287.777754777777773, 253.0, 127.0, 22.0 ],
 					"text" : "prepend set cubemap"
 				}
 
@@ -60,8 +75,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 311.777771, 205.0, 120.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 393.111088111111087, 198.0, 120.0, 22.0 ],
 					"text" : "prepend set boxmap"
 				}
 
@@ -75,8 +89,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 160.676453, 32.0, 159.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 160.676453000000009, 32.0, 159.0, 22.0 ],
 					"text" : "import bs.vpl.colortable.json"
 				}
 
@@ -90,8 +103,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 414.941162, 17.0, 207.0, 33.0 ],
-					"style" : "",
+					"patching_rect" : [ 414.94116200000002, 17.0, 207.0, 34.0 ],
 					"text" : "sets the relation of the used types and the colors"
 				}
 
@@ -106,7 +118,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"patching_rect" : [ 60.0, 17.0, 60.0, 22.0 ],
-					"style" : "",
 					"text" : "loadbang"
 				}
 
@@ -120,8 +131,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 467.941162, 407.0, 117.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 467.94116200000002, 407.0, 117.0, 22.0 ],
 					"text" : "prepend set camera"
 				}
 
@@ -135,8 +145,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 461.941162, 373.0, 109.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 461.94116200000002, 373.0, 109.0, 22.0 ],
 					"text" : "prepend set scene"
 				}
 
@@ -150,8 +159,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 182.444427, 205.0, 100.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 182.444421444444458, 205.0, 100.0, 22.0 ],
 					"text" : "prepend set type"
 				}
 
@@ -165,8 +173,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 455.941162, 205.0, 131.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 49.444421444444458, 205.0, 131.0, 22.0 ],
 					"text" : "prepend set properties"
 				}
 
@@ -180,8 +187,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 467.941162, 345.0, 107.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 467.94116200000002, 345.0, 107.0, 22.0 ],
 					"text" : "prepend set driver"
 				}
 
@@ -195,8 +201,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 638.888855, 205.0, 114.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 624.473661210526416, 205.0, 114.0, 22.0 ],
 					"text" : "prepend set texture"
 				}
 
@@ -210,8 +215,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 190.666672, 115.0, 49.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 195.333333333333343, 114.0, 49.0, 22.0 ],
 					"text" : "zl.iter 1"
 				}
 
@@ -225,8 +229,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 166.166672, 359.0, 37.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 166.166672000000005, 359.0, 37.0, 22.0 ],
 					"text" : "clear"
 				}
 
@@ -240,8 +243,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 461.941162, 317.0, 177.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 461.94116200000002, 317.0, 177.0, 22.0 ],
 					"text" : "prepend set transformhierarchy"
 				}
 
@@ -252,12 +254,11 @@
 					"fontsize" : 12.0,
 					"id" : "obj-9",
 					"maxclass" : "newobj",
-					"numinlets" : 19,
-					"numoutlets" : 19,
-					"outlettype" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
-					"patching_rect" : [ 41.999977, 159.0, 651.0, 22.0 ],
-					"style" : "",
-					"text" : "routepass aqua beige brown green grey ice lila magenta moss orange pink purple salmon seafoam sky white yellow blue"
+					"numinlets" : 20,
+					"numoutlets" : 20,
+					"outlettype" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
+					"patching_rect" : [ 41.999977000000001, 159.0, 670.0, 22.0 ],
+					"text" : "routepass aqua beige brown green grey ice lila magenta moss orange pink purple salmon seafoam sky white yellow blue red"
 				}
 
 			}
@@ -270,13 +271,13 @@
 					"numinlets" : 2,
 					"numoutlets" : 4,
 					"outlettype" : [ "dictionary", "", "", "" ],
-					"patching_rect" : [ 129.666672, 401.0, 110.0, 22.0 ],
+					"patching_rect" : [ 129.666672000000005, 401.0, 110.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
-						"parameter_enable" : 0
+						"parameter_enable" : 0,
+						"parameter_mappable" : 0
 					}
 ,
-					"style" : "",
 					"text" : "dict vpl::type2color"
 				}
 
@@ -291,7 +292,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 60.0, 48.0, 52.0, 22.0 ],
-					"style" : "",
 					"text" : "getkeys"
 				}
 
@@ -308,10 +308,10 @@
 					"patching_rect" : [ 60.0, 78.0, 222.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
-						"parameter_enable" : 0
+						"parameter_enable" : 0,
+						"parameter_mappable" : 0
 					}
 ,
-					"style" : "",
 					"text" : "dict vpl::colortable bs.vpl.colortable.json"
 				}
 
@@ -424,6 +424,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-5", 0 ],
+					"source" : [ "obj-7", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-18", 0 ],
 					"source" : [ "obj-9", 17 ]
 				}
@@ -432,7 +439,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-20", 0 ],
-					"source" : [ "obj-9", 13 ]
+					"source" : [ "obj-9", 2 ]
 				}
 
 			}
@@ -454,6 +461,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-4", 0 ],
 					"source" : [ "obj-9", 7 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-7", 0 ],
+					"source" : [ "obj-9", 3 ]
 				}
 
 			}

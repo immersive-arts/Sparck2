@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 2,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 1061.0, 579.0, 817.0, 418.0 ],
+		"rect" : [ 925.0, 161.0, 817.0, 418.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -38,8 +38,34 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
-		"globalpatchername" : "Canvas_2",
+		"globalpatchername" : "Canvas",
 		"boxes" : [ 			{
+				"box" : 				{
+					"args" : [ "#2", "#4", 4, "matrix", 1, "@hint", "custom jit.matrix" ],
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"hint" : "",
+					"id" : "obj-8",
+					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "bs.vpl.util.inlet.maxpat",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"offset" : [ 0.0, 0.0 ],
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 542.972244500000215, 7.0, 44.0, 31.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 112.0, 0.0, 10.0, 10.0 ],
+					"varname" : "vpl_inlet[3/4]",
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-17",
 					"maxclass" : "newobj",
@@ -51,7 +77,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 2,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -414,21 +440,21 @@
 				"box" : 				{
 					"id" : "obj-10",
 					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "bang" ],
+					"numinlets" : 3,
+					"numoutlets" : 2,
+					"outlettype" : [ "bang", "int" ],
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 2,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 354.0, 176.0, 1258.0, 605.0 ],
+						"rect" : [ 453.0, 439.0, 1258.0, 605.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -457,6 +483,55 @@
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-36",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 524.416686999999911, 214.070434570312557, 122.0, 22.0 ],
+									"text" : "prepend matrixoutput"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-35",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "int", "int" ],
+									"patching_rect" : [ 589.416686999999911, 125.000000000000057, 32.0, 22.0 ],
+									"text" : "t 1 0"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"comment" : "",
+									"id" : "obj-33",
+									"index" : 2,
+									"maxclass" : "outlet",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 802.0, 534.0, 30.0, 30.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"comment" : "",
+									"id" : "obj-28",
+									"index" : 3,
+									"maxclass" : "inlet",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 750.916687000000024, 10.999998597656287, 30.0, 30.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-27",
 									"maxclass" : "message",
@@ -579,7 +654,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 2,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -625,7 +700,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 2,
+															"revision" : 3,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1333,8 +1408,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 682.916687000000024, 209.0704345703125, 502.0, 36.0 ],
-									"text" : "ossia.parameter mesh/torus/radius @type float @default 0. @min 0. @clip low @description \"internal radius of torus\""
+									"patching_rect" : [ 851.916687000000024, 211.0704345703125, 509.0, 36.0 ],
+									"text" : "ossia.parameter mesh/torus/radius @type float @default 0.1 @min 0. @clip low @description \"internal radius of torus\""
 								}
 
 							}
@@ -1345,7 +1420,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 591.916687000000024, 212.070434570312557, 75.0, 22.0 ],
+									"patching_rect" : [ 760.916687000000024, 214.070434570312557, 75.0, 22.0 ],
 									"text" : "prepend dim"
 								}
 
@@ -1359,7 +1434,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 591.916687000000024, 167.000000000000057, 618.0, 36.0 ],
+									"patching_rect" : [ 760.916687000000024, 169.000000000000057, 618.0, 36.0 ],
 									"text" : "ossia.parameter mesh/dim @type vec2f @default 20 20 @min 0 0 @description \"The dimensions of the mesh grid (if it is not a file)\" @clip low"
 								}
 
@@ -1371,7 +1446,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 487.916686999999911, 212.070434570312557, 89.0, 22.0 ],
+									"patching_rect" : [ 656.916686999999911, 214.070434570312557, 89.0, 22.0 ],
 									"text" : "prepend shape"
 								}
 
@@ -1381,10 +1456,10 @@
 									"id" : "obj-12",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "bang" ],
-									"patching_rect" : [ 557.916686999999911, 125.000000000000057, 31.0, 22.0 ],
-									"text" : "t s b"
+									"numoutlets" : 4,
+									"outlettype" : [ "", "bang", "int", "int" ],
+									"patching_rect" : [ 656.916686999999911, 125.000000000000057, 51.0, 22.0 ],
+									"text" : "t s b 0 1"
 								}
 
 							}
@@ -1393,10 +1468,10 @@
 									"id" : "obj-11",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 521.916686999999911, 125.000000000000057, 22.0, 22.0 ],
-									"text" : "t b"
+									"numoutlets" : 2,
+									"outlettype" : [ "bang", "int" ],
+									"patching_rect" : [ 521.916686999999911, 125.000000000000057, 32.0, 22.0 ],
+									"text" : "t b 0"
 								}
 
 							}
@@ -1404,11 +1479,11 @@
 								"box" : 								{
 									"id" : "obj-13",
 									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 521.916686999999911, 96.000000000000057, 55.0, 22.0 ],
-									"text" : "route file"
+									"numinlets" : 3,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "" ],
+									"patching_rect" : [ 521.916686999999911, 96.000000000000057, 154.0, 22.0 ],
+									"text" : "route file matrix"
 								}
 
 							}
@@ -1416,13 +1491,13 @@
 								"box" : 								{
 									"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
 									"id" : "obj-16",
-									"linecount" : 5,
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 521.916686999999911, 10.999998597656287, 263.0, 77.0 ],
-									"text" : "ossia.parameter mesh/shape @type string @default plane @range file plane sphere torus cylinders opencylinder cube opencube circle cone capsule @description \"mesh shape\" @priority 1"
+									"patching_rect" : [ 521.916686999999911, 47.0, 697.0, 36.0 ],
+									"text" : "ossia.parameter mesh/shape @type string @default plane @range file plane sphere torus cylinders opencylinder cube opencube circle cone capsule matrix @description \"mesh shape\" @priority 1"
 								}
 
 							}
@@ -1435,7 +1510,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 682.916687000000024, 252.362243652343807, 112.0, 22.0 ],
+									"patching_rect" : [ 851.916687000000024, 254.362243652343807, 112.0, 22.0 ],
 									"text" : "prepend rad_minor"
 								}
 
@@ -1447,7 +1522,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 487.916686999999911, 273.070434570312557, 29.5, 22.0 ],
+									"patching_rect" : [ 524.416686999999911, 271.070434570312557, 29.5, 22.0 ],
 									"text" : "t b l"
 								}
 
@@ -1559,6 +1634,22 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-33", 0 ],
+									"order" : 0,
+									"source" : [ "obj-11", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-36", 0 ],
+									"order" : 1,
+									"source" : [ "obj-11", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-46", 1 ],
 									"source" : [ "obj-11", 0 ]
 								}
@@ -1568,6 +1659,20 @@
 								"patchline" : 								{
 									"destination" : [ "obj-14", 0 ],
 									"source" : [ "obj-12", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-33", 0 ],
+									"source" : [ "obj-12", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-36", 0 ],
+									"source" : [ "obj-12", 3 ]
 								}
 
 							}
@@ -1588,6 +1693,13 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-12", 0 ],
+									"source" : [ "obj-13", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-35", 0 ],
 									"source" : [ "obj-13", 1 ]
 								}
 
@@ -1729,8 +1841,36 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-4", 0 ],
+									"source" : [ "obj-28", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-8", 0 ],
 									"source" : [ "obj-34", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-33", 0 ],
+									"source" : [ "obj-35", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-36", 0 ],
+									"source" : [ "obj-35", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-17", 0 ],
+									"source" : [ "obj-36", 0 ]
 								}
 
 							}
@@ -1970,7 +2110,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 2,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2070,7 +2210,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 2,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2609,7 +2749,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 2,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2874,7 +3014,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 2,
+															"revision" : 3,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -3047,7 +3187,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 2,
+															"revision" : 3,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -3220,7 +3360,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 2,
+															"revision" : 3,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -3393,7 +3533,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 2,
+															"revision" : 3,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -3566,7 +3706,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 2,
+															"revision" : 3,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -3739,7 +3879,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 2,
+															"revision" : 3,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -4386,7 +4526,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 2,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -4888,7 +5028,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 2,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -5301,7 +5441,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 2,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -5633,7 +5773,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 2,
+															"revision" : 3,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -7226,7 +7366,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 2,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -7736,7 +7876,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 2,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -7955,7 +8095,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 530.208344000000011, 7.0, 25.0, 25.0 ]
+					"patching_rect" : [ 631.555557500000191, 7.0, 25.0, 25.0 ]
 				}
 
 			}
@@ -7968,7 +8108,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 479.208343999999954, 7.0, 25.0, 25.0 ]
+					"patching_rect" : [ 510.555557500000134, 7.0, 25.0, 25.0 ]
 				}
 
 			}
@@ -8079,13 +8219,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 2,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ -26.0, 90.0, 890.0, 1033.0 ],
+						"rect" : [ 915.0, 208.0, 890.0, 906.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -8121,7 +8261,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 425.5, 835.070435000000089, 118.0, 22.0 ],
+									"patching_rect" : [ 133.0, 652.070435000000089, 118.0, 22.0 ],
 									"text" : "prepend tex_plane_t"
 								}
 
@@ -8133,7 +8273,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 425.5, 758.0, 121.0, 22.0 ],
+									"patching_rect" : [ 133.0, 577.0, 121.0, 22.0 ],
 									"text" : "prepend tex_plane_s"
 								}
 
@@ -8147,8 +8287,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 425.5, 789.0, 212.0, 36.0 ],
-									"text" : "ossia.parameter texture/planeT @type vec4 @default 0 0.5 0 0.5"
+									"patching_rect" : [ 133.0, 607.0, 873.0, 36.0 ],
+									"text" : "ossia.parameter texture/planeT @type vec4 @default 0 1 0 1 @description \"The four coefficients define a plane which is used to generate the t texture coordinate, which corresponds to the y axis of the texture image.\""
 								}
 
 							}
@@ -8161,8 +8301,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 425.5, 711.0, 212.0, 36.0 ],
-									"text" : "ossia.parameter texture/planeS @type vec4 @default 0.5 0 0 0.5"
+									"patching_rect" : [ 133.0, 537.0, 883.0, 36.0 ],
+									"text" : "ossia.parameter texture/planeS @type vec4 @default 1 0 0 1 @description \"The four coefficients define a plane used to generate the s texture coordinate, which corresponds to the x axis of the texture image. If the tex_map mode is 1, s = ax + by + cz + dw, where x, y, z, and w are the homogeneous coordinates of the vertex.\""
 								}
 
 							}
@@ -8176,7 +8316,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 403.25024400000018, 677.333374000000049, 92.0, 19.0 ],
+									"patching_rect" : [ 376.25024400000018, 758.333374000000049, 92.0, 19.0 ],
 									"text" : "prepend bakeUnique"
 								}
 
@@ -8190,7 +8330,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 403.25024400000018, 601.55291748046875, 486.0, 64.0 ],
+									"patching_rect" : [ 376.25024400000018, 682.55291748046875, 486.0, 64.0 ],
 									"text" : "ossia.parameter bake/unique @type bool @default false @description \"Enable unique renderpass for baking textures. If there are multiple canvas that have this enabled, each canvas will bake is textures in subsequent frames. This means on each frame only one of the canvas will bake and this reduce the render load.\""
 								}
 
@@ -8203,7 +8343,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 166.757019000000014, 683.333374000000049, 24.0, 24.0 ]
+									"patching_rect" : [ 162.757019000000014, 779.333374000000049, 24.0, 24.0 ]
 								}
 
 							}
@@ -8215,7 +8355,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 166.757019000000014, 814.570434999999975, 25.0, 25.0 ]
+									"patching_rect" : [ 162.757019000000014, 822.570434999999975, 25.0, 25.0 ]
 								}
 
 							}
@@ -8226,7 +8366,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 338.201598999999987, 640.333374000000049, 19.0, 22.0 ],
+									"patching_rect" : [ 334.201598999999987, 736.333374000000049, 19.0, 22.0 ],
 									"text" : "t l"
 								}
 
@@ -8238,7 +8378,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 254.757019000000014, 640.333374000000049, 19.0, 22.0 ],
+									"patching_rect" : [ 250.757019000000014, 736.333374000000049, 19.0, 22.0 ],
 									"text" : "t l"
 								}
 
@@ -8251,7 +8391,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 338.201598999999987, 814.570434999999975, 25.0, 25.0 ]
+									"patching_rect" : [ 334.201598999999987, 822.570434999999975, 25.0, 25.0 ]
 								}
 
 							}
@@ -8264,7 +8404,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 30.0, 539.570434999999975, 775.0, 50.0 ],
+									"patching_rect" : [ 31.0, 476.570434999999975, 775.0, 50.0 ],
 									"text" : "ossia.parameter texture/mapping @type int @default 0 @range 0 3 @description \"texture mapping (0 = no coordinates are generated., 1 = GL_OBJECT_LINEAR. This applies the texture in a fixed orientation relative to the object., 2 = GL_SPHERE_MAP. This can be used to create a reflection effect., 3 = GL_EYE_LINEAR. This applies the texture in a fixed orientation relative to OpenGL's eye coordinates.)\""
 								}
 
@@ -8277,7 +8417,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 30.0, 468.333374000000049, 613.0, 22.0 ],
+									"patching_rect" : [ 31.0, 405.333374000000049, 613.0, 22.0 ],
 									"text" : "ossia.parameter texture/init @type string @default none @range none black @description \"sets a default texture.\""
 								}
 
@@ -8290,7 +8430,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 182.56970200000012, 394.333374000000049, 857.0, 22.0 ],
+									"patching_rect" : [ 183.56970200000012, 331.333374000000049, 857.0, 22.0 ],
 									"text" : "ossia.parameter smooth/angle @type float @default 0 @range 0 89. @clip both @description \"Specifies the edge angle above which to smooth vertex normals\""
 								}
 
@@ -8303,7 +8443,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 25.0, 362.5, 794.0, 22.0 ],
+									"patching_rect" : [ 26.0, 299.5, 794.0, 22.0 ],
 									"text" : "ossia.parameter smooth/enable @type bool @default false @description \"Smooth shading.Works only if materialmode = 0 and no Material is linked\""
 								}
 
@@ -8316,7 +8456,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 246.0, 277.0, 571.0, 22.0 ],
+									"patching_rect" : [ 179.0, 239.5, 571.0, 22.0 ],
 									"text" : "ossia.parameter depth/layer @type int @default 0 @min -1 @clip low @description \"Manual render order\""
 								}
 
@@ -8330,7 +8470,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 110.0, 236.5, 466.0, 36.0 ],
+									"patching_rect" : [ 43.0, 199.0, 466.0, 36.0 ],
 									"text" : "ossia.parameter depth/enable @type bool @default 1 @description \"Sorting the model autmatically to its z-depth. Switching this off allows to use the layer property. \""
 								}
 
@@ -8436,7 +8576,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 30.0, 596.55291748046875, 81.0, 19.0 ],
+									"patching_rect" : [ 31.0, 533.55291748046875, 81.0, 19.0 ],
 									"text" : "prepend tex_map"
 								}
 
@@ -8448,7 +8588,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 30.0, 494.903809000000024, 166.0, 22.0 ],
+									"patching_rect" : [ 31.0, 431.903809000000024, 166.0, 22.0 ],
 									"text" : "sprintf texture bs::texture::%s"
 								}
 
@@ -8477,7 +8617,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 182.56970200000012, 437.070434999999975, 149.0, 22.0 ],
+									"patching_rect" : [ 183.56970200000012, 374.070434999999975, 149.0, 22.0 ],
 									"text" : "prepend smoothing_angle"
 								}
 
@@ -8491,7 +8631,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 25.0, 394.333374000000049, 146.0, 22.0 ],
+									"patching_rect" : [ 26.0, 331.333374000000049, 146.0, 22.0 ],
 									"text" : "prepend smooth_shading"
 								}
 
@@ -8503,7 +8643,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 110.0, 281.140868999999952, 130.0, 22.0 ],
+									"patching_rect" : [ 43.0, 243.640868999999952, 130.0, 22.0 ],
 									"text" : "prepend depth_enable"
 								}
 
@@ -8559,7 +8699,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 246.0, 305.140868999999952, 84.0, 22.0 ],
+									"patching_rect" : [ 179.0, 267.640868999999952, 84.0, 22.0 ],
 									"text" : "prepend layer"
 								}
 
@@ -8572,7 +8712,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 254.757019000000014, 814.570434999999975, 25.0, 25.0 ]
+									"patching_rect" : [ 250.757019000000014, 822.570434999999975, 25.0, 25.0 ]
 								}
 
 							}
@@ -8703,15 +8843,6 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-14", 0 ],
-									"order" : 1,
-									"source" : [ "obj-23", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-19", 0 ],
-									"order" : 0,
 									"source" : [ "obj-23", 0 ]
 								}
 
@@ -8726,15 +8857,6 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-14", 0 ],
-									"order" : 1,
-									"source" : [ "obj-25", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-19", 0 ],
-									"order" : 0,
 									"source" : [ "obj-25", 0 ]
 								}
 
@@ -8986,6 +9108,14 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-8", 0 ],
+					"midpoints" : [ 520.055557500000077, 302.184631999999965, 576.590294250000056, 302.184631999999965, 576.590294250000056, -4.0, 552.472244500000215, -4.0 ],
+					"source" : [ "obj-10", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-28", 2 ],
 					"source" : [ "obj-13", 0 ]
 				}
@@ -9167,6 +9297,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-10", 2 ],
+					"source" : [ "obj-7", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-19", 1 ],
 					"source" : [ "obj-9", 0 ]
 				}
@@ -9185,28 +9322,24 @@
 		"dependency_cache" : [ 			{
 				"name" : "bs.anim.node.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/utils",
-				"patcherrelativepath" : "../../utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.bake.uniquebang.js",
 				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/misc",
-				"patcherrelativepath" : "../../../javascript/misc",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.gui.svg.button.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/gui",
-				"patcherrelativepath" : "../../gui",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.msg.receive.key.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/_obsolete",
-				"patcherrelativepath" : "../../_obsolete",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -9225,140 +9358,120 @@
 , 			{
 				"name" : "bs.node.gui.button.menu.png",
 				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/media",
-				"patcherrelativepath" : "../../../media",
 				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.node.logo.power.png",
 				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/media",
-				"patcherrelativepath" : "../../../media",
 				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.parameter.file.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/ossia/file",
-				"patcherrelativepath" : "../../ossia/file",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.parameter.msg.js",
 				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/ossia",
-				"patcherrelativepath" : "../../../javascript/ossia",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.parameter.msg.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/ossia/msg",
-				"patcherrelativepath" : "../../ossia/msg",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.parameter.rendergroup.drawto.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/ossia/rendergroup",
-				"patcherrelativepath" : "../../ossia/rendergroup",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.parameter.tfm.local.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/ossia/transforms",
-				"patcherrelativepath" : "../../ossia/transforms",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.rendergroup.js",
 				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/misc",
-				"patcherrelativepath" : "../../../javascript/misc",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.util.dialog.saveas.slim.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/utils",
-				"patcherrelativepath" : "../../utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.util.doubleBang.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/utils",
-				"patcherrelativepath" : "../../utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.util.global.keys.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/utils",
-				"patcherrelativepath" : "../../utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.util.render.pass.reciever.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/utils",
-				"patcherrelativepath" : "../../utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.util.win.reactive.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/utils",
-				"patcherrelativepath" : "../../utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.logic.js",
 				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/vpl",
-				"patcherrelativepath" : "../../../javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.logic.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/vpl",
-				"patcherrelativepath" : "../../vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.pbody.js",
 				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/vpl",
-				"patcherrelativepath" : "../../../javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.pbody.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/vpl",
-				"patcherrelativepath" : "../../vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.title.js",
 				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/vpl",
-				"patcherrelativepath" : "../../../javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.util.inlet.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/vpl",
-				"patcherrelativepath" : "../../vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.util.outlet.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/vpl",
-				"patcherrelativepath" : "../../vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -9369,7 +9482,6 @@
 , 			{
 				"name" : "node.classes.js",
 				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/vpl/classes",
-				"patcherrelativepath" : "../../../javascript/vpl/classes",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
