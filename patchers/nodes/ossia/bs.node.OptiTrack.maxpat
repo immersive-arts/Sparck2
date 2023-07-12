@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 803.0, 477.0, 924.0, 495.0 ],
+		"rect" : [ 308.0, 520.0, 924.0, 479.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -38,7 +38,7 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
-		"globalpatchername" : "OptiTrack",
+		"globalpatchername" : "OptiTrack_1",
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-35",
@@ -287,7 +287,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -918,7 +918,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1210,8 +1210,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 476.0, 65.851775999999973, 584.0, 36.0 ],
-									"text" : "ossia.parameter leap @type int @default 0 @description \"latency compensation\" @clip both @min 0 @max 500"
+									"patching_rect" : [ 476.0, 65.851775999999973, 604.0, 36.0 ],
+									"text" : "ossia.parameter leap @type int @default 0 @description \"latency compensation (positive values) / forced frame delay (negative values)\" @clip both @min -100 @max 500"
 								}
 
 							}
@@ -1483,7 +1483,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
