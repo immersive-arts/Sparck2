@@ -25,15 +25,19 @@ uniform vec2 flip;
 
 void main()
 {
-	//where is the point
-	vec2 point = texcoord0/texdim0;
+	if(flip.x==1 || flip.y==1){		
+		//where is the point
+		vec2 point = texcoord0/texdim0;
 
-	//flip the picture
-	vec2 seta = vec2(flip.x - sign(flip.x * 2. - 1.) * point.x, flip.y - sign(flip.y * 2. - 1.) * point.y);
+		//flip the picture
+		vec2 seta = vec2(flip.x - sign(flip.x * 2. - 1.) * point.x, flip.y - sign(flip.y * 2. - 1.) * point.y);
 
-	//output texture
-	vec4 a = texture2DRect(tex0,seta*texdim0);
-	gl_FragColor = a;
+		//output texture
+		vec4 a = texture2DRect(tex0,seta*texdim0);
+		gl_FragColor = a;
+	} else {
+		gl_FragColor = texture2DRect(tex0, texcoord0);
+	}
 }
 ]]>
 		</program>
