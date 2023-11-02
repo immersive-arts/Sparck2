@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 6,
-			"revision" : 0,
+			"minor" : 5,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -248,8 +248,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 6,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -408,8 +408,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 6,
-											"revision" : 0,
+											"minor" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -687,8 +687,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 6,
-															"revision" : 0,
+															"minor" : 5,
+															"revision" : 6,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1713,8 +1713,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 6,
-											"revision" : 0,
+											"minor" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2072,8 +2072,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 6,
-											"revision" : 0,
+											"minor" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2799,8 +2799,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 6,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3074,8 +3074,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 6,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3144,8 +3144,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 6,
-											"revision" : 0,
+											"minor" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3692,8 +3692,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 6,
-											"revision" : 0,
+											"minor" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3832,8 +3832,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 6,
-															"revision" : 0,
+															"minor" : 5,
+															"revision" : 6,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -4065,8 +4065,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 6,
-															"revision" : 0,
+															"minor" : 5,
+															"revision" : 6,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -4790,8 +4790,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 6,
-											"revision" : 0,
+											"minor" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -5579,8 +5579,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 6,
-											"revision" : 0,
+											"minor" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -6151,7 +6151,7 @@
 					"autopopulate" : 1,
 					"fontsize" : 9.0,
 					"id" : "obj-3",
-					"items" : [ "select...", ",", "SaveAs...", ",", "Save", ",", "<separator>", ",", "_assets", ",", "_export", ",", "_settings", ",", "_tmp", ",", "BoxMap.maxpat", ",", "BoxMap_projection.maxpat", ",", "CalibrationCross.maxpat", ",", "Canvas.maxpat", ",", "CornerPin.maxpat", ",", "Debug_Beamer.maxpat", ",", "DrawMask.maxpat", ",", "DynBeamer.maxpat", ",", "Empty.maxpat", ",", "FaceStream.maxpat", ",", "HookContext.maxpat", ",", "Light.maxpat", ",", "LookAtCamera.maxpat", ",", "Material.maxpat", ",", "MeshWarp.maxpat", ",", "Optitrack.maxpat", ",", "OssiaTest.maxpat", ",", "OutputWin.maxpat", ",", "PointCloud.maxpat", ",", "QueScript.maxpat", ",", "RayMarcher.maxpat", ",", "ShaderAnaglyph.maxpat", ",", "ShaderBlur.maxpat", ",", "ShaderBrCoSa.maxpat", ",", "ShaderColormap.maxpat", ",", "ShaderFSAA.maxpat", ",", "ShaderSelection.maxpat", ",", "ShaderSSAO.maxpat", ",", "ShaderTexOP.maxpat", ",", "ShaderTexStitch.maxpat", ",", "ShaderTexZoom.maxpat", ",", "SkyBox.maxpat", ",", "SpatialBakery_Basic.maxpat", ",", "SpatialBakery_MaskAndBlend.maxpat", ",", "SpatialBakery_occlusion.maxpat", ",", "SpatialBakery_occlusion_fpsTest.maxpat", ",", "SpatialShadery_Basic.maxpat", ",", "SpatialShadery_edgeAndBlend.maxpat", ",", "SpoutTestbed.maxpat", ",", "SyphonTestbed.maxpat", ",", "Texture.maxpat", ",", "TextureProjectory_360VR.maxpat", ",", "TextureProjectory_360VR_Multiple.maxpat", ",", "TextureProjectory_Multiple.maxpat", ",", "TfmLookAt.maxpat", ",", "TfmMerge.maxpat", ",", "TfmMirror.maxpat", ",", "Video.maxpat", ",", "VR.maxpat" ],
+					"items" : [ "select...", ",", "SaveAs...", ",", "Save", ",", "<separator>", ",", "_assets", ",", "_export", ",", "_settings", ",", "_tmp", ",", "line.fonts.maxpat", ",", "line.textGenerator.maxpat", ",", "MoviePlayer.maxpat", ",", "SpoutLinFeeder.maxpat", ",", "SpoutLinFeeder2.maxpat", ",", "Zangesi_monitors.maxpat" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -6159,7 +6159,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 95.0, 527.0, 128.333333333333371, 19.0 ],
 					"pattrmode" : 1,
-					"prefix" : "/Volumes/Ddrive/04_projects/I.A[projects]/1508_SPARCK/00_projects/_testbed/",
+					"prefix" : "D:/04_projects/2328_Zangesi/01_Spout/",
 					"prefix_mode" : 2,
 					"presentation" : 1,
 					"presentation_rect" : [ 68.0, 0.0, 132.0, 19.0 ],
@@ -6451,43 +6451,43 @@
 ,
 		"dependency_cache" : [ 			{
 				"name" : "bs.gui.svg.button.maxpat",
-				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/gui",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/gui",
 				"patcherrelativepath" : "../../gui",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.msg.receive.mxo",
-				"type" : "iLaX"
+				"name" : "bs.msg.receive.mxe64",
+				"type" : "mx64"
 			}
 , 			{
 				"name" : "bs.util.dialog.saveas.slim.maxpat",
-				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/utils",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/utils",
 				"patcherrelativepath" : "../../utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.util.global.keys.maxpat",
-				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/utils",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/utils",
 				"patcherrelativepath" : "../../utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.util.win.reactive.maxpat",
-				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/utils",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/utils",
 				"patcherrelativepath" : "../../utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "mxj.mxo",
-				"type" : "iLaX"
+				"name" : "mxj.mxe64",
+				"type" : "mx64"
 			}
 , 			{
-				"name" : "ossia.parameter.mxo",
-				"type" : "iLaX"
+				"name" : "ossia.parameter.mxe64",
+				"type" : "mx64"
 			}
  ],
 		"autosave" : 0,
