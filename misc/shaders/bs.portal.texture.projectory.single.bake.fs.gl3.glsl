@@ -92,7 +92,7 @@ void main()
 	vec4 fragColor = getProjectorColor(i) * sign(clamp(min(col.x,col.y), 0., 1.)) * angle;
 
     // create gbcolor - either taking it from the background texture or the flat color
-    vec4 bgColor = texture2DRect(tex6, jit_in.texcoord6) * (1. - use_bgcolor) + offColor * use_bgcolor;
+    vec4 bgColor = texture(tex6, jit_in.texcoord6) * (1. - use_bgcolor) + offColor * use_bgcolor;
 
 	outColor0 = alphablend(fragColor, bgColor);
 }
