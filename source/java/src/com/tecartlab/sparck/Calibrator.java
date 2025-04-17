@@ -396,7 +396,7 @@ public class Calibrator extends MaxObject implements ProjProps.Listener{
 				//virtualCamera.viewport = new Viewport(tracker.getCameraHandler().getViewport());
 				//String context = tracker.getCameraHandler().getContext();
 				//calibObject.addContext(context);
-				if(calibObject.isLoaded() && modelObject.isOperational()){
+				if(calibObject.isLoaded() && modelObject != null && modelObject.isOperational()){
 					calibObject.link(modelObject);
 					try{
 						calibObject.update(virtualCamera);

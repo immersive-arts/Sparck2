@@ -78,6 +78,7 @@ public class Jay3DeeModel extends MaxObject {
 	}
 
 	public void read(String filepath) {
+		Debug.verbose("Jay3DeeModel["+ sketch.modelname +"]", "reading model file.. ["+filepath+"]");
 		file = filepath;
 		if(sketch != null)
 			sketch.load(file);

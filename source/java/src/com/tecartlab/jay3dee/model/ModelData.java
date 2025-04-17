@@ -30,6 +30,7 @@ package com.tecartlab.jay3dee.model;
 import com.tecartlab.tools.math.la.*;
 import com.tecartlab.utils.Debug;
 import com.tecartlab.jay3dee.CallBackInterface;
+import com.tecartlab.jay3dee.ModelContainer;
 import com.tecartlab.tools.Utils;
 
 import java.io.BufferedInputStream;
@@ -768,7 +769,7 @@ public class ModelData implements Constants{
 				}
 				updateSegments();
 				refreshGeometry();
-				myContainer.dataEvent("fileparsed");
+				myContainer.dataEvent(ModelContainer.LIST_MSG_FILEPARSED);
 
 			}
 		};
@@ -822,7 +823,7 @@ public class ModelData implements Constants{
 				
 				updateSegments();
 				refreshGeometry();
-				myContainer.dataEvent("fileparsed");
+				myContainer.dataEvent(ModelContainer.LIST_MSG_FILEPARSED);
 
 			}
 		};
@@ -1023,7 +1024,7 @@ public class ModelData implements Constants{
 
 				printModelInfo();
 
-				myContainer.dataEvent("fileparsed");
+				myContainer.dataEvent(ModelContainer.LIST_MSG_FILEPARSED);
 			}
 		};
 		t.start();

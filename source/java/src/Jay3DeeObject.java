@@ -62,6 +62,8 @@ public class Jay3DeeObject extends MaxObject{
 		}
 		jayobject = new ObjectContainer();
 		setobjectname(objectname);
+		
+		enable(0);
 
 		declareIO(1,1);
 		declareAttribute("drawto", null, "drawto");

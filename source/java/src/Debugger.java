@@ -36,7 +36,11 @@ public class Debugger extends MaxObject implements DebugLogger{
 	private boolean print = false;
 
 	public Debugger(Atom[] args){
-		Debug.setLevelToError();
+		if (args.length == 1) {
+			debugger(args[0].toString());
+		} else {
+			Debug.setLevelToError();
+		}
 		declareOutlets(new int[]{DataTypes.ALL, DataTypes.ALL});
 		this.setOutletAssist(new String[]{"info messages", "error messages"});
 		this.declareAttribute("print", "getprint", "setprint");
@@ -57,16 +61,24 @@ public class Debugger extends MaxObject implements DebugLogger{
 	public void debugger(String _level){
 		if(_level.equals("verbose")){
 			Debug.setLevelToVerbose();
+			Debug.verbose("Debugger", "set debug level to verbose");
 		}else if(_level.equals("debug")){
 			Debug.setLevelToDebug();
+			Debug.verbose("Debugger", "set debug level to debug");
 		}else if(_level.equals("info")){
 			Debug.setLevelToInfo();
+			Debug.verbose("Debugger", "set debug level to info");
 		}else if(_level.equals("warning")){
 			Debug.setLevelToWarning();
+			Debug.verbose("Debugger", "set debug level to warning");
 		}else if(_level.equals("error")){
 			Debug.setLevelToError();
+			Debug.verbose("Debugger", "set debug level to error");
 		}else if(_level.equals("fatal")){
 			Debug.setLevelToFatal();
+			Debug.verbose("Debugger", "set debug level to fatal");
+		}else {
+			Debug.warning("Debugger", "set invalid debug level: " + _level);			
 		}
 	}
 

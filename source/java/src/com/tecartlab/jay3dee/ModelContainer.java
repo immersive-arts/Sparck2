@@ -42,7 +42,7 @@ public class ModelContainer implements CallBackInterface {
 
 	ModelPublisher publisher;
 	ModelData model;
-	String modelname;
+	public String modelname;
 
 	public static final String LIST_MSG_SELECTED	 	= "selectedVertice";
 	public static final String LIST_MSG_MODIFIED_MODEL	= "modifiedModel";
@@ -1393,6 +1393,7 @@ public class ModelContainer implements CallBackInterface {
 			if(_message.equals(ModelContainer.LIST_MSG_MODIFIED_TEX))
 				listeningDrawer.textureChange();
 			if(_message.equals(ModelContainer.LIST_MSG_FILEPARSED)){
+				Debug.verbose("ModelContainer" , "..file parsed");
 				listeningDrawer.modelChange();
 				listeningDrawer.textureChange();
 			}

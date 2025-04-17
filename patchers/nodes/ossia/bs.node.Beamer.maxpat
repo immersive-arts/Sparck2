@@ -1253,7 +1253,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 91.0, 235.0, 1179.0, 594.0 ],
+						"rect" : [ 244.0, 622.0, 1458.0, 594.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1283,6 +1283,33 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-39",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 804.2777099609375, 314.5, 18.0, 22.0 ],
+									"text" : "t l"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontface" : 0,
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-25",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 691.848754999999983, 526.0, 317.0, 22.0 ],
+									"text" : "mxj Jay3DeeObject #0.obj.viewer @modelname #0.model"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-24",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
@@ -1295,24 +1322,12 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-20",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 689.694376627604129, 540.0, 389.0, 22.0 ],
-									"text" : "Jay3DeeObject @setobjectname #0.obj.viewer @modelname #0.model"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-27",
 									"linecount" : 4,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 943.0, 428.0, 150.0, 62.0 ],
+									"patching_rect" : [ 1015.0, 526.0, 150.0, 62.0 ],
 									"text" : "Jay3DeeObject @setobjectname #0.obj.viewer @modelname #0.model"
 								}
 
@@ -1360,7 +1375,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 946.348754999999983, 220.5, 126.0, 48.0 ],
+									"patching_rect" : [ 946.348754999999983, 212.0, 126.0, 48.0 ],
 									"text" : "videoplane as background for video camera calibration"
 								}
 
@@ -1371,7 +1386,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 864.348754999999983, 389.5, 69.0, 20.0 ],
+									"patching_rect" : [ 891.194376627604015, 503.0, 69.0, 20.0 ],
 									"text" : "editor node"
 								}
 
@@ -1471,7 +1486,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "jit_matrix", "" ],
-									"patching_rect" : [ 804.2777099609375, 207.5, 140.071045039062483, 98.0 ],
+									"patching_rect" : [ 804.348754999999983, 199.0, 140.071045039062483, 98.0 ],
 									"text" : "jit.gl.videoplane editor @enable 0 @transform_reset 2 @layer -1 @depth_enable 0 @drawto #0.editor"
 								}
 
@@ -1487,23 +1502,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "jit_gl_texture", "", "" ],
-									"patching_rect" : [ 783.0277099609375, 413.0, 106.0, 77.0 ],
+									"patching_rect" : [ 783.194376627604015, 439.0, 106.0, 77.0 ],
 									"text" : "jit.gl.node editor @name #0.editor @adapt 0 @enable 0  @fsaa 1 "
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontface" : 0,
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-54",
-									"linecount" : 5,
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 782.0277099609375, 309.934203999999966, 155.0, 77.0 ],
-									"text" : "Jay3DeeTracker @setname #0.tracker  @setcameraname #0.cam.editor @setcontext editor "
 								}
 
 							}
@@ -3033,6 +3033,36 @@
 								}
 
 							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-37",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 825.2777099609375, 354.0, 151.0, 22.0 ],
+									"text" : "Jay3DeeMouseKeyEvents"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontface" : 0,
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-38",
+									"linecount" : 2,
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 804.2777099609375, 386.5, 281.0, 36.0 ],
+									"text" : "mxj com.tecartlab.jay3dee.tracker.Jay3DeeTracker #0.tracker editor #0.cam.editor "
+								}
+
+							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
@@ -3059,16 +3089,16 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-5", 0 ],
-									"order" : 3,
+									"destination" : [ "obj-39", 0 ],
+									"order" : 0,
 									"source" : [ "obj-18", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-54", 0 ],
-									"order" : 0,
+									"destination" : [ "obj-5", 0 ],
+									"order" : 3,
 									"source" : [ "obj-18", 0 ]
 								}
 
@@ -3089,7 +3119,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-20", 0 ],
+									"destination" : [ "obj-25", 0 ],
 									"source" : [ "obj-24", 1 ]
 								}
 
@@ -3105,6 +3135,29 @@
 								"patchline" : 								{
 									"destination" : [ "obj-7", 0 ],
 									"source" : [ "obj-35", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-38", 0 ],
+									"source" : [ "obj-37", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-37", 0 ],
+									"order" : 0,
+									"source" : [ "obj-39", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-38", 0 ],
+									"order" : 1,
+									"source" : [ "obj-39", 0 ]
 								}
 
 							}
@@ -4381,20 +4434,6 @@
 			}
 , 			{
 				"name" : "Jay3DeeMouseKeyEvents.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/externals",
-				"patcherrelativepath" : "../../../externals",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "Jay3DeeObject.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/externals",
-				"patcherrelativepath" : "../../../externals",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "Jay3DeeTracker.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/externals",
 				"patcherrelativepath" : "../../../externals",
 				"type" : "JSON",
