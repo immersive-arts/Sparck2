@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 260.0, 161.0, 244.0, 606.0 ],
+		"rect" : [ 260.0, 161.0, 243.0, 608.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -58,7 +58,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 812.0, 368.0, 54.0, 22.0 ],
+					"patching_rect" : [ 812.0, 347.0, 54.0, 22.0 ],
 					"text" : "deferlow"
 				}
 
@@ -71,7 +71,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1013.0, 278.0, 76.0, 91.0 ],
+					"patching_rect" : [ 1013.0, 290.5, 76.0, 91.0 ],
 					"text" : "loadmess drawto  #1.left #1.right #1.editor stageview"
 				}
 
@@ -7408,7 +7408,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 4,
 					"outlettype" : [ "", "", "", "" ],
-					"patching_rect" : [ 554.667605798941963, 260.631591695312522, 197.997182603174338, 50.0 ],
+					"patching_rect" : [ 554.667605798941963, 260.631591695312522, 200.0, 50.0 ],
 					"text" : "mxj com.tecartlab.sparck.Calibrator #1.editor #1.tracker @objectname #1.obj.editor"
 				}
 
@@ -8646,20 +8646,6 @@
 					"destination" : [ "obj-35", 4 ],
 					"midpoints" : [ 443.595319428570974, 465.631591695312522, 517.5, 465.631591695312522 ],
 					"source" : [ "obj-27", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-24", 0 ],
-					"source" : [ "obj-29", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-24", 0 ],
-					"source" : [ "obj-3", 0 ]
 				}
 
 			}

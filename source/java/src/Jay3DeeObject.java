@@ -55,7 +55,7 @@ public class Jay3DeeObject extends MaxObject{
 	{
 		String objectname = null;
 
-		if (args.length < 1 || args[0].toString().contains("0"))
+		if (args.length < 1)
 			Debug.info("Jay3DeeObject", "no objectname set. use 'setobjectname'. BEWARE: all messages are discarded as long no object name is set");
 		else{
 			objectname = args[0].toString();
