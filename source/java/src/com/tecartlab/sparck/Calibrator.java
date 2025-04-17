@@ -543,7 +543,8 @@ public class Calibrator extends MaxObject implements ProjProps.Listener{
 							modelObject.pickVertice(virtualCamera.getViewportRay( tevent.mouseNormPosX, tevent.mouseNormPosY));
 							// ... if not, select the picked model vertice..
 							if(tevent.keyDown_mouse){
-								outlet(OUTLET_DUMP, "mouse_in_canvas");
+								// outlet(OUTLET_DUMP, "mouse_in_canvas");
+								modelObject.drawer.updateRenderMode();
 								modelObject.selectPickVertice();
 								calibObject.setModifyModeToModel();
 								calibObject.setEditModeToSelected();
