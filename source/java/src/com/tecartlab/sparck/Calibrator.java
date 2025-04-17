@@ -721,7 +721,12 @@ public class Calibrator extends MaxObject implements ProjProps.Listener{
 
 						//Adjust this vertice
 						if(tevent.keyDown_Char == tevent.KEY_C){
-							calibObject.toggleCrossHairMode();
+							boolean crossHair = calibObject.toggleCrossHairMode();
+							if(crossHair) {
+								modelObject.drawer.anything("enable", Atom.newAtom(1));
+							} else {
+								modelObject.drawer.anything("enable", Atom.newAtom(0));								
+							}
 						}
 
 						// move vertice with arrowkeys
@@ -754,6 +759,7 @@ public class Calibrator extends MaxObject implements ProjProps.Listener{
 									calibObject.setEditModeToSelected();
 								}
 							}
+							modelObject.drawer.anything("enable", Atom.newAtom(1));
 						}
 
 						// grab vertice with mouse
