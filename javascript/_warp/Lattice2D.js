@@ -139,19 +139,19 @@ WARP.Lattice2D.prototype = {
                 if(_drawMode == 'edit'){
                     _lattice_sketch.glcolor(1., 0., 0., 1.);
                     // _lattice_sketch.glpointsize(5.);
-                    _lattice_sketch.point(this.vertices[i][j].x, this.vertices[i][j].y, this.vertices[i][j].z);
+                    _lattice_sketch.moveto(this.vertices[i][j].x, this.vertices[i][j].y, this.vertices[i][j].z);
+                    _lattice_sketch.sphere(0.02);
                     if(this.pickrayindx[0] == i && this.pickrayindx[1] == j){
                         _lattice_sketch.glcolor(0.9, 0., 0., 1.);
                         // _lattice_sketch.glpointsize(10.);
-                        _lattice_sketch.point(this.vertices[i][j].x, this.vertices[i][j].y, this.vertices[i][j].z);
+                        _lattice_sketch.moveto(this.vertices[i][j].x, this.vertices[i][j].y, this.vertices[i][j].z);
+                        _lattice_sketch.sphere(0.02);
                     }
                     if(this.selectedVertices[i][j] == 1){
                         _lattice_sketch.glcolor(0., 0., 0., 1.);
                         // _lattice_sketch.glpointsize(8.);
-                        _lattice_sketch.point(this.vertices[i][j].x, this.vertices[i][j].y, this.vertices[i][j].z);
-                        _lattice_sketch.glcolor(1., 1., 1., 1.);
-                        // _lattice_sketch.glpointsize(6.);
-                        _lattice_sketch.point(this.vertices[i][j].x, this.vertices[i][j].y, this.vertices[i][j].z);
+                        _lattice_sketch.moveto(this.vertices[i][j].x, this.vertices[i][j].y, this.vertices[i][j].z);
+                        _lattice_sketch.sphere(0.03);
                     }
                 }
             }

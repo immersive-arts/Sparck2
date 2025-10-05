@@ -360,42 +360,36 @@ WARP.Geometry.prototype = {
                    _lattice_sketch.glcolor(0., 0.9, 0., 1.);
                     // _lattice_sketch.glpointsize(10.);
                     if(_modFlag == 1)
-                        _lattice_sketch.point(this.vertices_mod[j].x, this.vertices_mod[j].y, this.vertices_mod[j].z);
+                        _lattice_sketch.moveto(this.vertices_mod[j].x, this.vertices_mod[j].y, this.vertices_mod[j].z);
                     if(_modFlag == 2)
-                        _lattice_sketch.point(this.vertices_mod_lat[j].x, this.vertices_mod_lat[j].y, this.vertices_mod_lat[j].z);
+                        _lattice_sketch.moveto(this.vertices_mod_lat[j].x, this.vertices_mod_lat[j].y, this.vertices_mod_lat[j].z);
                     else
-                        _lattice_sketch.point(this.vertices[j].x, this.vertices[j].y, this.vertices[j].z);
-                }
+                        _lattice_sketch.moveto(this.vertices[j].x, this.vertices[j].y, this.vertices[j].z);
+                    _lattice_sketch.sphere(0.02);
+                    }
                // DRAW SELECTED POINT
                 if(this.selectedVertices[j] == 1){
                     _lattice_sketch.glcolor(0., 0., 0., 1.);
                     // _lattice_sketch.glpointsize(8.);
                     if(_modFlag == 1){
-                        _lattice_sketch.point(this.vertices_mod[j].x, this.vertices_mod[j].y, this.vertices_mod[j].z);
+                        _lattice_sketch.moveto(this.vertices_mod[j].x, this.vertices_mod[j].y, this.vertices_mod[j].z);
                     } else if(_modFlag == 2){
-                        _lattice_sketch.point(this.vertices_mod_lat[j].x, this.vertices_mod_lat[j].y, this.vertices_mod_lat[j].z);
+                        _lattice_sketch.moveto(this.vertices_mod_lat[j].x, this.vertices_mod_lat[j].y, this.vertices_mod_lat[j].z);
                     } else {
-                        _lattice_sketch.point(this.vertices[j].x, this.vertices[j].y, this.vertices[j].z);
+                        _lattice_sketch.moveto(this.vertices[j].x, this.vertices[j].y, this.vertices[j].z);
                     }
-                    _lattice_sketch.glcolor(1., 1., 1., 1.);
-                    // _lattice_sketch.glpointsize(6.);
-                    if(_modFlag == 1){
-                        _lattice_sketch.point(this.vertices_mod[j].x, this.vertices_mod[j].y, this.vertices_mod[j].z);
-                    } else if(_modFlag == 2){
-                        _lattice_sketch.point(this.vertices_mod_lat[j].x, this.vertices_mod_lat[j].y, this.vertices_mod_lat[j].z);
-                    } else {
-                        _lattice_sketch.point(this.vertices[j].x, this.vertices[j].y, this.vertices[j].z);
-                    }
+                    _lattice_sketch.sphere(0.03);
                 } else {
                     //IF NO SELECTION, DRAW IT NORMALLY
                     _lattice_sketch.glcolor(0., 1., 0., 1.);
                     // _lattice_sketch.glpointsize(5.);
                     if(_modFlag == 1)
-                        _lattice_sketch.point(this.vertices_mod[j].x, this.vertices_mod[j].y, this.vertices_mod[j].z);
+                        _lattice_sketch.moveto(this.vertices_mod[j].x, this.vertices_mod[j].y, this.vertices_mod[j].z);
                     if(_modFlag == 2)
-                        _lattice_sketch.point(this.vertices_mod_lat[j].x, this.vertices_mod_lat[j].y, this.vertices_mod_lat[j].z);
+                        _lattice_sketch.moveto(this.vertices_mod_lat[j].x, this.vertices_mod_lat[j].y, this.vertices_mod_lat[j].z);
                     else
-                        _lattice_sketch.point(this.vertices[j].x, this.vertices[j].y, this.vertices[j].z);
+                        _lattice_sketch.moveto(this.vertices[j].x, this.vertices[j].y, this.vertices[j].z);
+                    _lattice_sketch.sphere(0.02);
                 }
             }
             // draw cursor:
