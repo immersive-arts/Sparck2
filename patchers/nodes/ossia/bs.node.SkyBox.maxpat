@@ -108,7 +108,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 67.666655999999989, 140.81591796875, 490.0, 22.0 ],
-									"text" : "ossia.parameter infinite @type bool @default 1 @description \"set the skybox infinitly large\""
+									"text" : "sparck.parameter infinite @type bool @default 1 @description \"set the skybox infinitly large\""
 								}
 
 							}
@@ -282,7 +282,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 4.499984999999995, 190.850646999999981, 62.0, 20.0 ],
-					"text" : "ossia.model"
+					"text" : "sparck.model"
 				}
 
 			}
@@ -993,11 +993,11 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.model.mxe64",
+				"name" : "sparck.model.mxe64",
 				"type" : "mx64"
 			}
 , 			{
-				"name" : "ossia.parameter.mxe64",
+				"name" : "sparck.parameter.mxe64",
 				"type" : "mx64"
 			}
  ],

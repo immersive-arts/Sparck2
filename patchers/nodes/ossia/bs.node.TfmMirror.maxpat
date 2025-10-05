@@ -95,7 +95,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 262.0, 16.070434999999975, 191.0, 76.0 ],
-									"text" : "ossia.parameter mirrorplane @type int @default 0 @range 0 2 @clip both @description \"mirror plane (0 = x-y plane, 1 = x-z plane, 2 = y-z plane)\""
+									"text" : "sparck.parameter mirrorplane @type int @default 0 @range 0 2 @clip both @description \"mirror plane (0 = x-y plane, 1 = x-z plane, 2 = y-z plane)\""
 								}
 
 							}
@@ -109,7 +109,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 50.0, 16.070434999999975, 200.0, 76.0 ],
-									"text" : "ossia.parameter mode @type int @default 0 @range 0 2 @clip both @description \"transformation mode (0 = translation & rotation, 1 = translation only, 2=  rotation only)\""
+									"text" : "sparck.parameter mode @type int @default 0 @range 0 2 @clip both @description \"transformation mode (0 = translation & rotation, 1 = translation only, 2=  rotation only)\""
 								}
 
 							}
@@ -529,7 +529,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 271.999980444444532, 82.184966999999972, 62.0, 20.0 ],
-					"text" : "ossia.model"
+					"text" : "sparck.model"
 				}
 
 			}
@@ -901,7 +901,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 276.0, 89.894470000000013, 304.0, 49.0 ],
-									"text" : "ossia.parameter tfm/pass @type string @default pass1 @range pass1 pass2 pass3 @description \"transformation pass\""
+									"text" : "sparck.parameter tfm/pass @type string @default pass1 @range pass1 pass2 pass3 @description \"transformation pass\""
 								}
 
 							}
@@ -1386,7 +1386,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 305.0, 410.0, 312.0, 22.0 ],
-									"text" : "ossia.parameter indicator/hidden @type bool @default 1."
+									"text" : "sparck.parameter indicator/hidden @type bool @default 1."
 								}
 
 							}
@@ -1399,7 +1399,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 305.0, 379.0, 344.0, 22.0 ],
-									"text" : "ossia.parameter indicator/color @type vec4 @default 0. 0. 0. 0."
+									"text" : "sparck.parameter indicator/color @type vec4 @default 0. 0. 0. 0."
 								}
 
 							}
@@ -2715,7 +2715,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.parameter.mxo",
+				"name" : "sparck.parameter.mxo",
 				"type" : "iLaX"
 			}
 , 			{
@@ -2727,7 +2727,7 @@
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "ossia.model.mxo",
+				"name" : "sparck.model.mxo",
 				"type" : "iLaX"
 			}
  ],

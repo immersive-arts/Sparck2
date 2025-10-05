@@ -140,7 +140,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 441.87151033333339, 59.0, 93.0, 22.0 ],
-													"text" : "ossia.model tfm"
+													"text" : "sparck.model tfm"
 												}
 
 											}
@@ -905,7 +905,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 808.0, 143.0, 593.0, 22.0 ],
-													"text" : "ossia.parameter marker/size @type float @default 0 @range 0.005 0.1 @clip both @description \"marker size\""
+													"text" : "sparck.parameter marker/size @type float @default 0 @range 0.005 0.1 @clip both @description \"marker size\""
 												}
 
 											}
@@ -930,7 +930,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 740.183670000000006, 83.5, 487.0, 22.0 ],
-													"text" : "ossia.parameter marker/color @type rgba @default 1. 1. 1. 1. @description \"marker color\""
+													"text" : "sparck.parameter marker/color @type rgba @default 1. 1. 1. 1. @description \"marker color\""
 												}
 
 											}
@@ -2465,7 +2465,7 @@
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "" ],
 																	"patching_rect" : [ 240.5, 101.0, 545.0, 22.0 ],
-																	"text" : "ossia.parameter velocityFilter @type float @default 0. @description \"velocity filter\" @min 0. @max 1."
+																	"text" : "sparck.parameter velocityFilter @type float @default 0. @description \"velocity filter\" @min 0. @max 1."
 																}
 
 															}
@@ -2479,7 +2479,7 @@
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "" ],
 																	"patching_rect" : [ 101.0, 44.351775999999973, 735.0, 36.0 ],
-																	"text" : "ossia.parameter leap @type int @default 0 @description \"latency compensation (positive values) / forced frame delay (negative values)\" @clip both @min -100 @max 500"
+																	"text" : "sparck.parameter leap @type int @default 0 @description \"latency compensation (positive values) / forced frame delay (negative values)\" @clip both @min -100 @max 500"
 																}
 
 															}
@@ -2722,7 +2722,7 @@
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "" ],
 																	"patching_rect" : [ 162.5, 21.0, 515.0, 22.0 ],
-																	"text" : "ossia.parameter scale @type float @default 1. @description \"scale incomming translation data\""
+																	"text" : "sparck.parameter scale @type float @default 1. @description \"scale incomming translation data\""
 																}
 
 															}
@@ -3269,7 +3269,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 491.260416666666742, 310.254515999999967, 320.0, 36.0 ],
-									"text" : "ossia.parameter tracked @default false @type bool @description \"rigidbody is tracked\" @clip both @mode get"
+									"text" : "sparck.parameter tracked @default false @type bool @description \"rigidbody is tracked\" @clip both @mode get"
 								}
 
 							}
@@ -3283,7 +3283,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 410.538541666666788, 356.0, 342.0, 36.0 ],
-									"text" : "ossia.parameter flow @default false @type bool @description \"rigidbody is streaming data\" @clip both @mode get"
+									"text" : "sparck.parameter flow @default false @type bool @description \"rigidbody is streaming data\" @clip both @mode get"
 								}
 
 							}
@@ -3730,7 +3730,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 33.94442699999999, 274.211303999999984, 62.0, 20.0 ],
-					"text" : "ossia.model"
+					"text" : "sparck.model"
 				}
 
 			}
@@ -4255,11 +4255,11 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.model.mxe64",
+				"name" : "sparck.model.mxe64",
 				"type" : "mx64"
 			}
 , 			{
-				"name" : "ossia.parameter.mxe64",
+				"name" : "sparck.parameter.mxe64",
 				"type" : "mx64"
 			}
  ],

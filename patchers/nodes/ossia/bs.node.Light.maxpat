@@ -118,7 +118,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 43.4444580078125, 88.5704345703125, 93.0, 22.0 ],
-									"text" : "ossia.model tfm"
+									"text" : "sparck.model tfm"
 								}
 
 							}
@@ -217,7 +217,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 33.650879000000032, 178.386352968749975, 149.0, 64.0 ],
-									"text" : "ossia.parameter publish @type bool @default false @description \"publish transformation\""
+									"text" : "sparck.parameter publish @type bool @default false @description \"publish transformation\""
 								}
 
 							}
@@ -512,7 +512,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 20.4444580078125, 168.5704345703125, 62.0, 20.0 ],
-					"text" : "ossia.model"
+					"text" : "sparck.model"
 				}
 
 			}
@@ -855,7 +855,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 445.84381099999996, 160.534789999999987, 190.0, 49.0 ],
-									"text" : "ossia.parameter render/showaxis @type bool @default false @description \"render object axes\""
+									"text" : "sparck.parameter render/showaxis @type bool @default false @description \"render object axes\""
 								}
 
 							}
@@ -929,7 +929,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 50.0, 175.228333000000021, 173.999999999999943, 62.0 ],
-													"text" : "ossia.parameter gizmo/size @type float @default 0.2 @min 0. @clip low @description \"gizmo size\""
+													"text" : "sparck.parameter gizmo/size @type float @default 0.2 @min 0. @clip low @description \"gizmo size\""
 												}
 
 											}
@@ -1066,7 +1066,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 32.754944000000023, 110.833618000000001, 158.0, 62.0 ],
-													"text" : "ossia.parameter spot/angle @type float @default 45. @range 0. 180 @clip both @description \"Spot angle\""
+													"text" : "sparck.parameter spot/angle @type float @default 45. @range 0. 180 @clip both @description \"Spot angle\""
 												}
 
 											}
@@ -1092,7 +1092,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 440.798401000000013, 424.59619140625, 581.0, 35.0 ],
-													"text" : "ossia.parameter shadow/quality @type string @default spot @range lo med-lo med med-hi hi @description \"shadow quality\""
+													"text" : "sparck.parameter shadow/quality @type string @default spot @range lo med-lo med med-hi hi @description \"shadow quality\""
 												}
 
 											}
@@ -1106,7 +1106,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 416.754944000000023, 249.43890399999998, 598.0, 62.0 ],
-													"text" : "ossia.parameter shadow/range @type float @default 10. @min 0. @clip low @description \"Shadow range value (default = 50.0). For directional lights, this represents the the maximum distance a shadow-caster can be from shadow-receiver. For spot/point lights the maximum range a light will affect other objects. Setting this as low as possible in the scene generally gives better shadow results.\""
+													"text" : "sparck.parameter shadow/range @type float @default 10. @min 0. @clip low @description \"Shadow range value (default = 50.0). For directional lights, this represents the the maximum distance a shadow-caster can be from shadow-receiver. For spot/point lights the maximum range a light will affect other objects. Setting this as low as possible in the scene generally gives better shadow results.\""
 												}
 
 											}
@@ -1120,7 +1120,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 393.754944000000023, 172.333374000000049, 553.0, 35.0 ],
-													"text" : "ossia.parameter shadow/blur @type float @default 0.2 @min 0. @clip low @description \"Shadow blur amount (default = 0.2)\""
+													"text" : "sparck.parameter shadow/blur @type float @default 0.2 @min 0. @clip low @description \"Shadow blur amount (default = 0.2)\""
 												}
 
 											}
@@ -1134,7 +1134,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 286.754944000000023, 84.0, 518.0, 35.0 ],
-													"text" : "ossia.parameter shadows/enable @type bool @default 0 @description \"Enable shadow casting from this light\""
+													"text" : "sparck.parameter shadows/enable @type bool @default 0 @description \"Enable shadow casting from this light\""
 												}
 
 											}
@@ -1159,7 +1159,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 189.798401000000013, 34.59619140625, 550.0, 22.0 ],
-													"text" : "ossia.parameter type @type string @default spot @range spot point directional @description lighttype"
+													"text" : "sparck.parameter type @type string @default spot @range spot point directional @description lighttype"
 												}
 
 											}
@@ -1516,7 +1516,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 314.878479000000084, 261.422851374999993, 438.0, 35.0 ],
-													"text" : "ossia.parameter power/falloff @type float @default 0 @range 0. 135. @clip both @description \"fall off\""
+													"text" : "sparck.parameter power/falloff @type float @default 0 @range 0. 135. @clip both @description \"fall off\""
 												}
 
 											}
@@ -1530,7 +1530,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 302.878479000000084, 156.422851374999993, 495.0, 62.0 ],
-													"text" : "ossia.parameter power/atten/quadratic @type float @default 0 @min 0. @clip low @description \"The quadratic factor in the attenuation formula: adds a curvature to the attenuation formula. The attenuation parameters determine how the light source diminishes with distance.\""
+													"text" : "sparck.parameter power/atten/quadratic @type float @default 0 @min 0. @clip low @description \"The quadratic factor in the attenuation formula: adds a curvature to the attenuation formula. The attenuation parameters determine how the light source diminishes with distance.\""
 												}
 
 											}
@@ -1544,7 +1544,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 176.878479000000084, 88.422851374999993, 455.555419999999913, 62.0 ],
-													"text" : "ossia.parameter power/atten/linear @type float @default 0 @min 0. @clip low @description \"The linear factor in the attenuation formula: 1 means attenuate evenly over the distance. The attenuation parameters determine how the light source diminishes with distance. \""
+													"text" : "sparck.parameter power/atten/linear @type float @default 0 @min 0. @clip low @description \"The linear factor in the attenuation formula: 1 means attenuate evenly over the distance. The attenuation parameters determine how the light source diminishes with distance. \""
 												}
 
 											}
@@ -1558,7 +1558,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 54.444580000000087, 32.333374000000049, 575.0, 49.0 ],
-													"text" : "ossia.parameter power/atten/const @type float @default 0 @min 0. @clip low @description \"The constant factor in the attenuation formula: 1.0 means never attenuate, 0.0 is complete attenuation. The attenuation parameters determine how the light source diminishes with distance.\""
+													"text" : "sparck.parameter power/atten/const @type float @default 0 @min 0. @clip low @description \"The constant factor in the attenuation formula: 1.0 means never attenuate, 0.0 is complete attenuation. The attenuation parameters determine how the light source diminishes with distance.\""
 												}
 
 											}
@@ -1850,7 +1850,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 93.0, 137.0, 533.0, 22.0 ],
-													"text" : "ossia.parameter color/ambient @type rgba @default 0. 0. 0. 1. @description \"object ambient color\""
+													"text" : "sparck.parameter color/ambient @type rgba @default 0. 0. 0. 1. @description \"object ambient color\""
 												}
 
 											}
@@ -1875,7 +1875,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 69.0, 78.0, 565.0, 22.0 ],
-													"text" : "ossia.parameter color/specular @type rgba @default 0.5 0.5 0.5 1. @description \"object specular color\""
+													"text" : "sparck.parameter color/specular @type rgba @default 0.5 0.5 0.5 1. @description \"object specular color\""
 												}
 
 											}
@@ -1900,7 +1900,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 50.0, 15.0, 538.0, 22.0 ],
-													"text" : "ossia.parameter color/diffuse @type rgba @default 0.5 0.5 0.5 1. @description \"object diffuse color\""
+													"text" : "sparck.parameter color/diffuse @type rgba @default 0.5 0.5 0.5 1. @description \"object diffuse color\""
 												}
 
 											}
@@ -2577,11 +2577,11 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.model.mxe64",
+				"name" : "sparck.model.mxe64",
 				"type" : "mx64"
 			}
 , 			{
-				"name" : "ossia.parameter.mxe64",
+				"name" : "sparck.parameter.mxe64",
 				"type" : "mx64"
 			}
  ],

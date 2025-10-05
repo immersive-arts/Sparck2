@@ -587,7 +587,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 301.0, 63.0, 64.0, 22.0 ],
-					"text" : "ossia.view"
+					"text" : "sparck.view"
 				}
 
 			}
@@ -873,11 +873,11 @@
 				"type" : "mx64"
 			}
 , 			{
-				"name" : "ossia.remote.mxe64",
+				"name" : "sparck.remote.mxe64",
 				"type" : "mx64"
 			}
 , 			{
-				"name" : "ossia.view.mxe64",
+				"name" : "sparck.view.mxe64",
 				"type" : "mx64"
 			}
  ],

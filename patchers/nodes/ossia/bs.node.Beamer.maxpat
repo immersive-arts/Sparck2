@@ -134,7 +134,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 220.290518986762322, 249.5, 467.0, 22.0 ],
-									"text" : "ossia.parameter calibrate @type bool @default false @description \"enable calibration\""
+									"text" : "sparck.parameter calibrate @type bool @default false @description \"enable calibration\""
 								}
 
 							}
@@ -305,7 +305,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 789.290518986762322, 366.9554443359375, 611.0, 22.0 ],
-									"text" : "ossia.parameter lens/stereo/enable @type bool @default 0 @description \"stereo enable\" @priority 1"
+									"text" : "sparck.parameter lens/stereo/enable @type bool @default 0 @description \"stereo enable\" @priority 1"
 								}
 
 							}
@@ -318,7 +318,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 789.290518986762322, 298.929566000000023, 519.0, 22.0 ],
-									"text" : "ossia.parameter render/blend/enable @type bool @default false @description \"enable blending\""
+									"text" : "sparck.parameter render/blend/enable @type bool @default false @description \"enable blending\""
 								}
 
 							}
@@ -344,7 +344,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 769.290518986762322, 228.5, 581.0, 36.0 ],
-									"text" : "ossia.parameter render/antialias/enable @type bool @default false @description \"use antialias - works well for fine lines and even better with blend enabled\""
+									"text" : "sparck.parameter render/antialias/enable @type bool @default false @description \"use antialias - works well for fine lines and even better with blend enabled\""
 								}
 
 							}
@@ -357,7 +357,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 748.290518986762322, 166.5, 448.0, 22.0 ],
-									"text" : "ossia.parameter identify @type bool @default false @description \"identify beamer\""
+									"text" : "sparck.parameter identify @type bool @default false @description \"identify beamer\""
 								}
 
 							}
@@ -382,7 +382,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 724.040518986762322, 107.5, 614.0, 22.0 ],
-									"text" : "ossia.parameter render/background/color @type rgba @default 0. 0. 0. 1. @description \"render background color\""
+									"text" : "sparck.parameter render/background/color @type rgba @default 0. 0. 0. 1. @description \"render background color\""
 								}
 
 							}
@@ -407,7 +407,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 699.111746986762341, 49.500000000000028, 582.0, 22.0 ],
-									"text" : "ossia.parameter render/texture/dim/size @type vec2f @default 1920 1080 @description \"texture dimension\""
+									"text" : "sparck.parameter render/texture/dim/size @type vec2f @default 1920 1080 @description \"texture dimension\""
 								}
 
 							}
@@ -1201,7 +1201,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 13.381769824797288, 194.197387999999876, 62.0, 20.0 ],
-					"text" : "ossia.model"
+					"text" : "sparck.model"
 				}
 
 			}
@@ -4734,15 +4734,15 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.model.mxe64",
+				"name" : "sparck.model.mxe64",
 				"type" : "mx64"
 			}
 , 			{
-				"name" : "ossia.parameter.mxe64",
+				"name" : "sparck.parameter.mxe64",
 				"type" : "mx64"
 			}
 , 			{
-				"name" : "ossia.remote.mxe64",
+				"name" : "sparck.remote.mxe64",
 				"type" : "mx64"
 			}
  ],

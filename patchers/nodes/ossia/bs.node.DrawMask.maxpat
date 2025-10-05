@@ -121,7 +121,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 39.0, 261.0, 218.0, 76.0 ],
-									"text" : "ossia.parameter texture/planes @type int @default 2 @range 0 2 @clip both @description \"texture planes, where argb and w(hite) / m(ask): (0 = wmmm, 1= mwww, 2= mmmm)\""
+									"text" : "sparck.parameter texture/planes @type int @default 2 @range 0 2 @clip both @description \"texture planes, where argb and w(hite) / m(ask): (0 = wmmm, 1= mwww, 2= mmmm)\""
 								}
 
 							}
@@ -147,7 +147,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 241.0, 59.0, 367.0, 35.0 ],
-									"text" : "ossia.parameter texture/dim/size @type vec2f @default 1920 1080 @min 0 0 @clip low @description \"mask dimension\""
+									"text" : "sparck.parameter texture/dim/size @type vec2f @default 1920 1080 @min 0 0 @clip low @description \"mask dimension\""
 								}
 
 							}
@@ -237,7 +237,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 39.0, 58.570435000000003, 181.0, 62.0 ],
-									"text" : "ossia.parameter mesh/filewatch @type bool @default 0 @description \"enable autoload of changed file\" @priority 2"
+									"text" : "sparck.parameter mesh/filewatch @type bool @default 0 @description \"enable autoload of changed file\" @priority 2"
 								}
 
 							}
@@ -726,7 +726,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 7.999985, 169.859131000000019, 73.0, 22.0 ],
-					"text" : "ossia.model"
+					"text" : "sparck.model"
 				}
 
 			}
@@ -1367,7 +1367,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 208.0, 63.894470000000013, 166.0, 116.0 ],
-									"text" : "ossia.parameter render/pass @type string @default manualA @range passA passB passC passD passE passF passG passH passZ manualA manualB manualC manualD beamer @description \"render pass\""
+									"text" : "sparck.parameter render/pass @type string @default manualA @range passA passB passC passD passE passF passG passH passZ manualA manualB manualC manualD beamer @description \"render pass\""
 								}
 
 							}
@@ -2243,11 +2243,11 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.parameter.mxo",
+				"name" : "sparck.parameter.mxo",
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "ossia.model.mxo",
+				"name" : "sparck.model.mxo",
 				"type" : "iLaX"
 			}
 , 			{

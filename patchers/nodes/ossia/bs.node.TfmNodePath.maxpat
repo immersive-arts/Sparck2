@@ -73,7 +73,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 558.333374000000049, 229.0, 121.0, 66.0 ],
-					"text" : "ossia.parameter playbar @type float @default 0 @range 0. 1. @clip both @description \"playbar (0....1) \""
+					"text" : "sparck.parameter playbar @type float @default 0 @range 0. 1. @clip both @description \"playbar (0....1) \""
 				}
 
 			}
@@ -98,7 +98,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 393.0, 607.5, 386.0, 20.0 ],
-					"text" : "ossia.parameter color @type rgba @default 0.5 0.5 0.5 1. @description \"object color\""
+					"text" : "sparck.parameter color @type rgba @default 0.5 0.5 0.5 1. @description \"object color\""
 				}
 
 			}
@@ -125,7 +125,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 389.333374000000049, 117.0, 92.0, 100.0 ],
-					"text" : "ossia.parameter closeSegment @type bool @default true @description \"closes segment if the path is not closed\""
+					"text" : "sparck.parameter closeSegment @type bool @default true @description \"closes segment if the path is not closed\""
 				}
 
 			}
@@ -177,7 +177,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 540.791686988281299, 102.561095999999949, 153.0, 54.0 ],
-					"text" : "ossia.parameter path/filewatch @type bool @default 0 @description \"enable autoload of changed file\" @priority 2"
+					"text" : "sparck.parameter path/filewatch @type bool @default 0 @description \"enable autoload of changed file\" @priority 2"
 				}
 
 			}
@@ -252,7 +252,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 19.25, 161.184632402343709, 62.0, 20.0 ],
-					"text" : "ossia.model"
+					"text" : "sparck.model"
 				}
 
 			}
@@ -372,7 +372,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 73.0, 112.5, 118.0, 102.0 ],
-									"text" : "ossia.parameter tfm/orientToPath @type bool @default true @description \"orientation is along the path\""
+									"text" : "sparck.parameter tfm/orientToPath @type bool @default true @description \"orientation is along the path\""
 								}
 
 							}
@@ -385,7 +385,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 30.0, 46.5, 546.0, 22.0 ],
-									"text" : "ossia.parameter tfm/local/scale/inherit @type bool @default false @description \"passes on the scale\""
+									"text" : "sparck.parameter tfm/local/scale/inherit @type bool @default false @description \"passes on the scale\""
 								}
 
 							}
@@ -979,7 +979,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 292.549987999999985, 166.0, 410.0, 22.0 ],
-									"text" : "ossia.parameter direction @type bool @default false @description direction"
+									"text" : "sparck.parameter direction @type bool @default false @description direction"
 								}
 
 							}
@@ -1016,7 +1016,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 100.5, 387.333374000000049, 283.0, 22.0 ],
-									"text" : "ossia.parameter segment @type string @default off"
+									"text" : "sparck.parameter segment @type string @default off"
 								}
 
 							}
@@ -2217,11 +2217,11 @@
 				"type" : "mx64"
 			}
 , 			{
-				"name" : "ossia.model.mxe64",
+				"name" : "sparck.model.mxe64",
 				"type" : "mx64"
 			}
 , 			{
-				"name" : "ossia.parameter.mxe64",
+				"name" : "sparck.parameter.mxe64",
 				"type" : "mx64"
 			}
  ],

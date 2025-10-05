@@ -94,7 +94,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 36.499984999999995, 39.999999968749997, 93.0, 22.0 ],
-									"text" : "ossia.model tfm"
+									"text" : "sparck.model tfm"
 								}
 
 							}
@@ -675,7 +675,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 133.0, 101.070434999999975, 389.0, 35.0 ],
-									"text" : "ossia.parameter direction @type int @default 1 @range 0 1 @clip both @description \"look at direction (0 = positive z, 1 = negative z)\""
+									"text" : "sparck.parameter direction @type int @default 1 @range 0 1 @clip both @description \"look at direction (0 = positive z, 1 = negative z)\""
 								}
 
 							}
@@ -689,7 +689,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 48.805542000000059, 42.070434999999975, 451.0, 35.0 ],
-									"text" : "ossia.parameter up @type int @default 2 @range 0 5 @clip both @description \"up orientaion (0 = x-Up, 1 = y-Up, 2 = z-Up, 3 = x-Down, 4= y-Down, 5 = z-Down)\""
+									"text" : "sparck.parameter up @type int @default 2 @range 0 5 @clip both @description \"up orientaion (0 = x-Up, 1 = y-Up, 2 = z-Up, 3 = x-Down, 4= y-Down, 5 = z-Down)\""
 								}
 
 							}
@@ -882,7 +882,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 276.0, 89.894470000000013, 304.0, 49.0 ],
-									"text" : "ossia.parameter tfm/pass @type string @default pass1 @range pass1 pass2 pass3 @description \"transformation pass\""
+									"text" : "sparck.parameter tfm/pass @type string @default pass1 @range pass1 pass2 pass3 @description \"transformation pass\""
 								}
 
 							}
@@ -1055,7 +1055,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 44.499984999999995, 189.850646999999981, 62.0, 20.0 ],
-					"text" : "ossia.model"
+					"text" : "sparck.model"
 				}
 
 			}
@@ -2155,11 +2155,11 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.model.mxe64",
+				"name" : "sparck.model.mxe64",
 				"type" : "mx64"
 			}
 , 			{
-				"name" : "ossia.parameter.mxe64",
+				"name" : "sparck.parameter.mxe64",
 				"type" : "mx64"
 			}
  ],

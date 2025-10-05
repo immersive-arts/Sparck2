@@ -143,7 +143,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 216.361073333333309, 244.640869000000009, 576.0, 35.0 ],
-									"text" : "ossia.parameter base @type float @default 1. @range 1. 4. @clip both @description \"base (each iteration increases the blur, the base controlls how much more the amout is increase for each iteration)\""
+									"text" : "sparck.parameter base @type float @default 1. @range 1. 4. @clip both @description \"base (each iteration increases the blur, the base controlls how much more the amout is increase for each iteration)\""
 								}
 
 							}
@@ -156,7 +156,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 127.027739999999994, 210.640869000000009, 499.0, 22.0 ],
-									"text" : "ossia.parameter blur @type float @default 1. @min 0. @clip low @description \"blur amount\""
+									"text" : "sparck.parameter blur @type float @default 1. @min 0. @clip low @description \"blur amount\""
 								}
 
 							}
@@ -169,7 +169,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 71.027739999999994, 179.640869000000009, 514.0, 22.0 ],
-									"text" : "ossia.parameter iterations @type int @default 1 @range 1 4 @clip both @description iterations"
+									"text" : "sparck.parameter iterations @type int @default 1 @range 1 4 @clip both @description iterations"
 								}
 
 							}
@@ -325,7 +325,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 49.592595333333328, 173.0, 62.0, 20.0 ],
-					"text" : "ossia.model"
+					"text" : "sparck.model"
 				}
 
 			}
@@ -16683,11 +16683,11 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.parameter.mxo",
+				"name" : "sparck.parameter.mxo",
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "ossia.model.mxo",
+				"name" : "sparck.model.mxo",
 				"type" : "iLaX"
 			}
  ],

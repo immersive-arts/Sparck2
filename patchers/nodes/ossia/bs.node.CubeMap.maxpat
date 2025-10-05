@@ -49,7 +49,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 528.226844999999912, 139.570435000000003, 267.0, 31.0 ],
-					"text" : "ossia.parameter image/filewatch @type bool @default 0 @description \"enable autoload of changed file\" @priority 2"
+					"text" : "sparck.parameter image/filewatch @type bool @default 0 @description \"enable autoload of changed file\" @priority 2"
 				}
 
 			}
@@ -197,7 +197,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 276.0, 60.894470000000013, 247.0, 76.0 ],
-									"text" : "ossia.parameter render/pass @type string @default manualA @range passA passB passC passD passE passF passG passH passZ manualA manualB manualC manualD beamer @description \"render pass\""
+									"text" : "sparck.parameter render/pass @type string @default manualA @range passA passB passC passD passE passF passG passH passZ manualA manualB manualC manualD beamer @description \"render pass\""
 								}
 
 							}
@@ -377,7 +377,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 12.499984999999995, 185.0, 62.0, 20.0 ],
-					"text" : "ossia.model"
+					"text" : "sparck.model"
 				}
 
 			}
@@ -1159,11 +1159,11 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.parameter.mxo",
+				"name" : "sparck.parameter.mxo",
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "ossia.model.mxo",
+				"name" : "sparck.model.mxo",
 				"type" : "iLaX"
 			}
 , 			{

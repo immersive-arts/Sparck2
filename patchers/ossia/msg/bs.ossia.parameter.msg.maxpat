@@ -180,7 +180,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 277.642822499999966, 213.0, 143.0, 35.0 ],
-					"text" : "ossia.parameter #1 @type string @critical 1"
+					"text" : "sparck.parameter #1 @type string @critical 1"
 				}
 
 			}
@@ -1064,7 +1064,7 @@
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "ossia.parameter.mxo",
+				"name" : "sparck.parameter.mxo",
 				"type" : "iLaX"
 			}
  ],

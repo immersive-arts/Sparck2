@@ -381,7 +381,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 152.953529500000059, 332.0, 485.0, 35.0 ],
-													"text" : "ossia.parameter texture/dim/size @type vec2f @default 1920 1080 @description \"texture dimension\""
+													"text" : "sparck.parameter texture/dim/size @type vec2f @default 1920 1080 @description \"texture dimension\""
 												}
 
 											}
@@ -395,7 +395,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 137.953529500000059, 7.5, 509.0, 49.0 ],
-													"text" : "ossia.parameter texture/dim/inherit @type string @default custom @range custom inherit_1/1 inherit_3/4 inherit_1/2 inherit_1/4 @description \"inherit the texture dimension from parent as a fraction\" @priority 1"
+													"text" : "sparck.parameter texture/dim/inherit @type string @default custom @range custom inherit_1/1 inherit_3/4 inherit_1/2 inherit_1/4 @description \"inherit the texture dimension from parent as a fraction\" @priority 1"
 												}
 
 											}
@@ -760,7 +760,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 37.150879000000032, 35.0, 172.0, 76.0 ],
-													"text" : "ossia.parameter background/color @type rgba @default 0. 0. 0. 1. @description \"render background color\""
+													"text" : "sparck.parameter background/color @type rgba @default 0. 0. 0. 1. @description \"render background color\""
 												}
 
 											}
@@ -774,7 +774,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 651.400879000000032, 35.052734999999984, 241.0, 102.0 ],
-													"text" : "ossia.parameter texture/output @type int @default color @range 0 2 @description \"textures captured. 0 = color = ouputs color texture only, 1 = +normal/depth = outputs color + normal(->rgb)/depth(->alpha) texture, 2 = +velocity = ouputs color + normal/depth + velocity texture\" @priority 1"
+													"text" : "sparck.parameter texture/output @type int @default color @range 0 2 @description \"textures captured. 0 = color = ouputs color texture only, 1 = +normal/depth = outputs color + normal(->rgb)/depth(->alpha) texture, 2 = +velocity = ouputs color + normal/depth + velocity texture\" @priority 1"
 												}
 
 											}
@@ -788,7 +788,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 416.400879000000032, 35.052734999999984, 218.0, 49.0 ],
-													"text" : "ossia.parameter blend/enable @type bool @default false @description \"enable blending\""
+													"text" : "sparck.parameter blend/enable @type bool @default false @description \"enable blending\""
 												}
 
 											}
@@ -802,7 +802,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 213.0, 35.0, 196.0, 76.0 ],
-													"text" : "ossia.parameter antialias @type bool @default false @description \"use antialias - works well for fine lines and even better with blend enabled \""
+													"text" : "sparck.parameter antialias @type bool @default false @description \"use antialias - works well for fine lines and even better with blend enabled \""
 												}
 
 											}
@@ -1001,7 +1001,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 30.302353000000039, 116.263549999999952, 178.0, 89.0 ],
-													"text" : "ossia.parameter inherit/camera/stereomode @type int @default 0 @description \"stereomode. inherits value from parent camera\" @invisible 1"
+													"text" : "sparck.parameter inherit/camera/stereomode @type int @default 0 @description \"stereomode. inherits value from parent camera\" @invisible 1"
 												}
 
 											}
@@ -1077,7 +1077,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 244.302353000000039, 116.263549999999952, 168.697646999999961, 89.0 ],
-													"text" : "ossia.parameter inherit/camera/type @type int @default 0 @description \"camera type. inherits value from parent camera\" @invisible 1"
+													"text" : "sparck.parameter inherit/camera/type @type int @default 0 @description \"camera type. inherits value from parent camera\" @invisible 1"
 												}
 
 											}
@@ -1412,7 +1412,7 @@
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "" ],
 																	"patching_rect" : [ 276.0, 60.894470000000013, 210.0, 89.0 ],
-																	"text" : "ossia.parameter render/pass @type string @default passA @range passA passB passC passD passE passF passG passH passZ manualA manualB manualC manualD beamer @description \"render pass\""
+																	"text" : "sparck.parameter render/pass @type string @default passA @range passA passB passC passD passE passF passG passH passZ manualA manualB manualC manualD beamer @description \"render pass\""
 																}
 
 															}
@@ -3559,7 +3559,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 610.106505999999968, 40.263549999999952, 112.0, 89.0 ],
-													"text" : "ossia.parameter frustum/flip/vertical @type bool @default false @description \"flip frustum verticaly\""
+													"text" : "sparck.parameter frustum/flip/vertical @type bool @default false @description \"flip frustum verticaly\""
 												}
 
 											}
@@ -3573,7 +3573,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 478.106505999999968, 40.263549999999952, 126.0, 89.0 ],
-													"text" : "ossia.parameter frustum/flip/horizontal @type bool @default false @description \"flip frustum horizontaly\""
+													"text" : "sparck.parameter frustum/flip/horizontal @type bool @default false @description \"flip frustum horizontaly\""
 												}
 
 											}
@@ -6520,7 +6520,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 9.277791333333312, 258.85064697265625, 76.0, 20.0 ],
-					"text" : "ossia.model #0"
+					"text" : "sparck.model #0"
 				}
 
 			}
@@ -8335,11 +8335,11 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.model.mxo",
+				"name" : "sparck.model.mxo",
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "ossia.parameter.mxo",
+				"name" : "sparck.parameter.mxo",
 				"type" : "iLaX"
 			}
  ],

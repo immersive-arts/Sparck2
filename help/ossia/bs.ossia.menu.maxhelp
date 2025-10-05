@@ -310,7 +310,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 41.5, 301.0, 195.0, 22.0 ],
-					"text" : "ossia.parameter menuint @type int"
+					"text" : "sparck.parameter menuint @type int"
 				}
 
 			}
@@ -380,7 +380,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 39.0, 179.0, 284.0, 62.0 ],
-					"text" : "ossia.parameter menustring @type string @description \"lens string\" @default One @range Zero Uno Due Tre <separator> One Two Three @tags enableitem_1_1_1_1_0_0_0_0 @clip both"
+					"text" : "sparck.parameter menustring @type string @description \"lens string\" @default One @range Zero Uno Due Tre <separator> One Two Three @tags enableitem_1_1_1_1_0_0_0_0 @clip both"
 				}
 
 			}
@@ -878,7 +878,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 50.0, 434.0, 108.0, 22.0 ],
-					"text" : "ossia.device folder"
+					"text" : "sparck.device folder"
 				}
 
 			}

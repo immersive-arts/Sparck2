@@ -48,7 +48,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 16.999984999999995, 243.85064697265625, 62.0, 20.0 ],
-					"text" : "ossia.model"
+					"text" : "sparck.model"
 				}
 
 			}
@@ -1051,7 +1051,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 165.999984999999981, 66.81591796875, 93.0, 22.0 ],
-									"text" : "ossia.model tfm"
+									"text" : "sparck.model tfm"
 								}
 
 							}
@@ -1523,7 +1523,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 298.548584000000005, 77.5, 254.0, 62.0 ],
-									"text" : "ossia.parameter mesh/interpolate @type bool @default false @description \"Upon loading a new mesh, the old mesh will be used to interpolate the new mesh\""
+									"text" : "sparck.parameter mesh/interpolate @type bool @default false @description \"Upon loading a new mesh, the old mesh will be used to interpolate the new mesh\""
 								}
 
 							}
@@ -1560,7 +1560,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 39.0, 20.5, 502.0, 22.0 ],
-									"text" : "ossia.parameter editor/bgcolor @type rgba @default 1. 1. 1. 1. @description \"editor bg color\""
+									"text" : "sparck.parameter editor/bgcolor @type rgba @default 1. 1. 1. 1. @description \"editor bg color\""
 								}
 
 							}
@@ -1622,7 +1622,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 82.715087999999923, 89.570435000000003, 181.0, 62.0 ],
-									"text" : "ossia.parameter mesh/filewatch @type bool @default 0 @description \"enable autoload of changed file\" @priority 2"
+									"text" : "sparck.parameter mesh/filewatch @type bool @default 0 @description \"enable autoload of changed file\" @priority 2"
 								}
 
 							}
@@ -1942,7 +1942,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 33.201598999999987, 455.737060570312451, 514.0, 22.0 ],
-									"text" : "ossia.parameter render/showaxis @type bool @default false @description \"render object axes\""
+									"text" : "sparck.parameter render/showaxis @type bool @default false @description \"render object axes\""
 								}
 
 							}
@@ -1982,7 +1982,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 353.65621950000002, 381.570434999999975, 475.201598999999987, 35.0 ],
-									"text" : "ossia.parameter transform @type int @default 0 @range 0 2 @description \"transform (0: Off, 1: Orthographic (Aspect preserve), 2: Orthographic (Normalize both axes)\""
+									"text" : "sparck.parameter transform @type int @default 0 @range 0 2 @description \"transform (0: Off, 1: Orthographic (Aspect preserve), 2: Orthographic (Normalize both axes)\""
 								}
 
 							}
@@ -1995,7 +1995,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 248.201598999999987, 229.0, 571.0, 22.0 ],
-									"text" : "ossia.parameter depth/layer @type int @default 0 @min -1 @clip low @description \"Manual render order\""
+									"text" : "sparck.parameter depth/layer @type int @default 0 @min -1 @clip low @description \"Manual render order\""
 								}
 
 							}
@@ -2009,7 +2009,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 112.201598999999987, 188.5, 704.0, 35.0 ],
-									"text" : "ossia.parameter depth/enable @type bool @default true @description \"Sorting the model autmatically to its z-depth. Switching this off allows to use the layer property. \""
+									"text" : "sparck.parameter depth/enable @type bool @default true @description \"Sorting the model autmatically to its z-depth. Switching this off allows to use the layer property. \""
 								}
 
 							}
@@ -2034,7 +2034,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 572.201598999999987, 316.5, 441.0, 22.0 ],
-									"text" : "ossia.parameter color @type rgba @default 1. 1. 1. 1. @description \"object color\""
+									"text" : "sparck.parameter color @type rgba @default 1. 1. 1. 1. @description \"object color\""
 								}
 
 							}
@@ -2048,7 +2048,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 188.055420000000026, 67.0, 457.0, 49.0 ],
-									"text" : "ossia.parameter blend/mode @type string @default alphablend @range alphablend add multiply screen exclusion colorblend coloradd alphaadd @description \"blend type\""
+									"text" : "sparck.parameter blend/mode @type string @default alphablend @range alphablend add multiply screen exclusion colorblend coloradd alphaadd @description \"blend type\""
 								}
 
 							}
@@ -2062,7 +2062,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 48.257019000000014, 25.40380859375, 432.0, 35.0 ],
-									"text" : "ossia.parameter blend/enable @type bool @default false @description \"enable blending\""
+									"text" : "sparck.parameter blend/enable @type bool @default false @description \"enable blending\""
 								}
 
 							}
@@ -2075,7 +2075,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 395.0, 285.070434999999918, 714.0, 22.0 ],
-									"text" : "ossia.parameter polyMode/back @type int @default 0 @range 0 2 @description \"drawmode for backface (0=poly, 1=lines, 2=points)\""
+									"text" : "sparck.parameter polyMode/back @type int @default 0 @range 0 2 @description \"drawmode for backface (0=poly, 1=lines, 2=points)\""
 								}
 
 							}
@@ -2100,7 +2100,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 353.5, 261.070434999999918, 772.0, 22.0 ],
-									"text" : "ossia.parameter polyMode/front @type int @default 0 @range 0 2 @clip both @description \"drawmode for frontface (0=poly, 1=lines, 2=points)\""
+									"text" : "sparck.parameter polyMode/front @type int @default 0 @range 0 2 @clip both @description \"drawmode for frontface (0=poly, 1=lines, 2=points)\""
 								}
 
 							}
@@ -3998,11 +3998,11 @@
 				"type" : "mx64"
 			}
 , 			{
-				"name" : "ossia.model.mxe64",
+				"name" : "sparck.model.mxe64",
 				"type" : "mx64"
 			}
 , 			{
-				"name" : "ossia.parameter.mxe64",
+				"name" : "sparck.parameter.mxe64",
 				"type" : "mx64"
 			}
  ],

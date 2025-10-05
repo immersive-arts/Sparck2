@@ -60,7 +60,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 13.333344, 203.5, 62.0, 20.0 ],
-					"text" : "ossia.model"
+					"text" : "sparck.model"
 				}
 
 			}
@@ -555,7 +555,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 371.499908999999889, 169.0, 444.0, 20.0 ],
-					"text" : "ossia.parameter flipY @type bool @default false @description \"flip incomming image on its Y axis\""
+					"text" : "sparck.parameter flipY @type bool @default false @description \"flip incomming image on its Y axis\""
 				}
 
 			}
@@ -568,7 +568,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 349.777618533203054, 147.0, 445.0, 20.0 ],
-					"text" : "ossia.parameter flipX @type bool @default false @description \"flip incomming image on its X axis\""
+					"text" : "sparck.parameter flipX @type bool @default false @description \"flip incomming image on its X axis\""
 				}
 
 			}
@@ -1105,11 +1105,11 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.model.mxe64",
+				"name" : "sparck.model.mxe64",
 				"type" : "mx64"
 			}
 , 			{
-				"name" : "ossia.parameter.mxe64",
+				"name" : "sparck.parameter.mxe64",
 				"type" : "mx64"
 			}
  ],

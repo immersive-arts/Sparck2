@@ -219,7 +219,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 327.354155999999989, 273.973174999999969, 553.0, 22.0 ],
-					"text" : "ossia.parameter streamIDs @default 0 0 0 @type list @description \"stream 1 config data\" @invisible 1"
+					"text" : "sparck.parameter streamIDs @default 0 0 0 @type list @description \"stream 1 config data\" @invisible 1"
 				}
 
 			}
@@ -284,7 +284,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 149.5, 11.999999999999943, 111.0, 22.0 ],
-					"text" : "ossia.model #2.slot"
+					"text" : "sparck.model #2.slot"
 				}
 
 			}
@@ -393,7 +393,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 595.5, 196.473174999999969, 470.0, 22.0 ],
-					"text" : "ossia.parameter flow @default false @type bool @description \"stream 1 receives data\""
+					"text" : "sparck.parameter flow @default false @type bool @description \"stream 1 receives data\""
 				}
 
 			}
@@ -2486,7 +2486,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 88.0, 116.973174999999941, 486.0, 22.0 ],
-					"text" : "ossia.parameter stream @default off @type string @description \"stream 1 tracking object\""
+					"text" : "sparck.parameter stream @default off @type string @description \"stream 1 tracking object\""
 				}
 
 			}
@@ -3000,11 +3000,11 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.model.mxe64",
+				"name" : "sparck.model.mxe64",
 				"type" : "mx64"
 			}
 , 			{
-				"name" : "ossia.parameter.mxe64",
+				"name" : "sparck.parameter.mxe64",
 				"type" : "mx64"
 			}
  ],

@@ -144,7 +144,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 17.650879000000032, 166.184632402343709, 93.0, 22.0 ],
-									"text" : "ossia.model tfm"
+									"text" : "sparck.model tfm"
 								}
 
 							}
@@ -255,7 +255,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 17.650879000000032, 286.386352968749975, 156.0, 64.0 ],
-									"text" : "ossia.parameter publish @type bool @default false @description \"publish transformation\""
+									"text" : "sparck.parameter publish @type bool @default false @description \"publish transformation\""
 								}
 
 							}
@@ -615,7 +615,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 33.0, 234.184632402343709, 62.0, 20.0 ],
-					"text" : "ossia.model"
+					"text" : "sparck.model"
 				}
 
 			}
@@ -640,7 +640,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 364.880981499999848, 157.5, 252.0, 20.0 ],
-					"text" : "ossia.parameter gridsize @type vec2f @default 0.5 0.5"
+					"text" : "sparck.parameter gridsize @type vec2f @default 0.5 0.5"
 				}
 
 			}
@@ -712,7 +712,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 721.0, 7.0, 296.0, 62.0 ],
-									"text" : "ossia.parameter depth/enable @type bool @default 1 @description \"Sorting the model autmatically to its z-depth. Switching this off allows to use the layer property. \""
+									"text" : "sparck.parameter depth/enable @type bool @default 1 @description \"Sorting the model autmatically to its z-depth. Switching this off allows to use the layer property. \""
 								}
 
 							}
@@ -750,7 +750,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 419.150879000000032, 12.333373999999992, 283.0, 35.0 ],
-									"text" : "ossia.parameter depth/layer @type int @default 10 @description \"depth layer\""
+									"text" : "sparck.parameter depth/layer @type int @default 10 @description \"depth layer\""
 								}
 
 							}
@@ -794,7 +794,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 490.250015000000019, 88.0, 193.000000000000057, 49.0 ],
-									"text" : "ossia.parameter render/showaxis @type bool @default 0 @description \"draw axis\""
+									"text" : "sparck.parameter render/showaxis @type bool @default 0 @description \"draw axis\""
 								}
 
 							}
@@ -2642,11 +2642,11 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.model.mxe64",
+				"name" : "sparck.model.mxe64",
 				"type" : "mx64"
 			}
 , 			{
-				"name" : "ossia.parameter.mxe64",
+				"name" : "sparck.parameter.mxe64",
 				"type" : "mx64"
 			}
  ],

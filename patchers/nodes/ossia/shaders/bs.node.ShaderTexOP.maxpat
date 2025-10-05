@@ -49,7 +49,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 668.388793999999962, 139.894470000000013, 383.0, 53.0 ],
-					"text" : "ossia.parameter mode @type string @default mult @description \"shader operation\" @range mult add sub div mod min max abs avg absdiff and or xor not gt lt gte lte eq neq gtp ltp gtep ltep eqp neqp sin cos tan asin acos atan atan2 sinh cosh tanh asinh acosh atanh exp exp2 ln log2 log10 hypot pow sqrt ceil floor fract normsin normcos"
+					"text" : "sparck.parameter mode @type string @default mult @description \"shader operation\" @range mult add sub div mod min max abs avg absdiff and or xor not gt lt gte lte eq neq gtp ltp gtep ltep eqp neqp sin cos tan asin acos atan atan2 sinh cosh tanh asinh acosh atanh exp exp2 ln log2 log10 hypot pow sqrt ceil floor fract normsin normcos"
 				}
 
 			}
@@ -157,7 +157,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 246.0, 185.0, 465.0, 22.0 ],
-									"text" : "ossia.parameter outscale @type float @default 1. @description \"output texture  scale\""
+									"text" : "sparck.parameter outscale @type float @default 1. @description \"output texture  scale\""
 								}
 
 							}
@@ -182,7 +182,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 557.0, 261.077392999999972, 464.0, 22.0 ],
-									"text" : "ossia.parameter outoffset @type float @default 0. @description \"output texture offset\""
+									"text" : "sparck.parameter outoffset @type float @default 0. @description \"output texture offset\""
 								}
 
 							}
@@ -207,7 +207,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 451.0, 235.718261999999982, 478.0, 22.0 ],
-									"text" : "ossia.parameter in2offset @type float @default 0. @description \"input texture two offset\""
+									"text" : "sparck.parameter in2offset @type float @default 0. @description \"input texture two offset\""
 								}
 
 							}
@@ -232,7 +232,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 351.0, 210.359130999999991, 479.0, 22.0 ],
-									"text" : "ossia.parameter in1offset @type float @default 0. @description \"input texture one offset\""
+									"text" : "sparck.parameter in1offset @type float @default 0. @description \"input texture one offset\""
 								}
 
 							}
@@ -257,7 +257,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 139.0, 159.640869000000009, 476.0, 22.0 ],
-									"text" : "ossia.parameter in2scale @type float @default 1. @description \"input texture two scale\""
+									"text" : "sparck.parameter in2scale @type float @default 1. @description \"input texture two scale\""
 								}
 
 							}
@@ -282,7 +282,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 36.0, 129.640869000000009, 477.0, 22.0 ],
-									"text" : "ossia.parameter in1scale @type float @default 1. @description \"input texture one scale\""
+									"text" : "sparck.parameter in1scale @type float @default 1. @description \"input texture one scale\""
 								}
 
 							}
@@ -500,7 +500,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 329.055542000000003, 92.0, 688.0, 20.0 ],
-					"text" : "ossia.parameter renderOne @type bool @default 0 @description \"render alteration of texture one (if node is enabled - otherwise unaltered pass through)\""
+					"text" : "sparck.parameter renderOne @type bool @default 0 @description \"render alteration of texture one (if node is enabled - otherwise unaltered pass through)\""
 				}
 
 			}
@@ -513,7 +513,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 21.333327999999995, 178.0, 62.0, 20.0 ],
-					"text" : "ossia.model"
+					"text" : "sparck.model"
 				}
 
 			}
@@ -2767,7 +2767,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.parameter.mxo",
+				"name" : "sparck.parameter.mxo",
 				"type" : "iLaX"
 			}
 , 			{
@@ -2775,7 +2775,7 @@
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "ossia.model.mxo",
+				"name" : "sparck.model.mxo",
 				"type" : "iLaX"
 			}
  ],

@@ -108,7 +108,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 684.0, 25.833251999999987, 205.0, 50.0 ],
-					"text" : "ossia.parameter internal/nodeid @default #1 @invisible 1 @type string @description \"internal node id\""
+					"text" : "sparck.parameter internal/nodeid @default #1 @invisible 1 @type string @description \"internal node id\""
 				}
 
 			}
@@ -2149,7 +2149,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 86.481491000000005, 398.666626000000065, 139.0, 50.0 ],
-					"text" : "ossia.parameter enable @type bool @range 0 1 @default 0. @critical 1"
+					"text" : "sparck.parameter enable @type bool @range 0 1 @default 0. @critical 1"
 				}
 
 			}
@@ -2187,7 +2187,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 611.75, 221.666626000000008, 174.0, 50.0 ],
-					"text" : "ossia.parameter internal/body @type string @range expand collapse fold @default collapse"
+					"text" : "sparck.parameter internal/body @type string @range expand collapse fold @default collapse"
 				}
 
 			}
@@ -2605,7 +2605,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.parameter.mxe64",
+				"name" : "sparck.parameter.mxe64",
 				"type" : "mx64"
 			}
  ],

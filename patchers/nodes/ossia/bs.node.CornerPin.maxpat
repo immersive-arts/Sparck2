@@ -249,7 +249,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 103.999984999999981, 48.000000406250024, 111.0, 22.0 ],
-													"text" : "ossia.model render"
+													"text" : "sparck.model render"
 												}
 
 											}
@@ -528,7 +528,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 311.5, 502.40380859375, 571.0, 22.0 ],
-									"text" : "ossia.parameter interpolate @type bool @default false @description \"enable interpolation of input texture\""
+									"text" : "sparck.parameter interpolate @type bool @default false @description \"enable interpolation of input texture\""
 								}
 
 							}
@@ -555,7 +555,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 291.857818500000008, 446.0, 592.0, 22.0 ],
-									"text" : "ossia.parameter corner/radius @type int @default 30 @range 10 127 @clip both @description \"corner radius\""
+									"text" : "sparck.parameter corner/radius @type int @default 30 @range 10 127 @clip both @description \"corner radius\""
 								}
 
 							}
@@ -582,7 +582,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 256.757019000000014, 387.40380859375, 516.0, 22.0 ],
-									"text" : "ossia.parameter corner/draw @type bool @default false @description \"draws corners in output\""
+									"text" : "sparck.parameter corner/draw @type bool @default false @description \"draws corners in output\""
 								}
 
 							}
@@ -621,7 +621,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 367.257019000000014, 319.40380859375, 441.0, 22.0 ],
-									"text" : "ossia.parameter color @type rgba @default 1. 1. 1. 1. @description \"object color\""
+									"text" : "sparck.parameter color @type rgba @default 1. 1. 1. 1. @description \"object color\""
 								}
 
 							}
@@ -634,7 +634,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 216.055420000000026, 288.40380859375, 491.0, 22.0 ],
-									"text" : "ossia.parameter smooth/enable @type bool @default false @description \"enable blending\""
+									"text" : "sparck.parameter smooth/enable @type bool @default false @description \"enable blending\""
 								}
 
 							}
@@ -782,7 +782,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 255.5, 329.40380859375, 393.0, 22.0 ],
-													"text" : "ossia.parameter corner/lower/right @type list @default 1. 1. @invisible 1"
+													"text" : "sparck.parameter corner/lower/right @type list @default 1. 1. @invisible 1"
 												}
 
 											}
@@ -795,7 +795,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 227.0, 272.40380859375, 386.0, 22.0 ],
-													"text" : "ossia.parameter corner/lower/left @type list @default 0. 1. @invisible 1"
+													"text" : "sparck.parameter corner/lower/left @type list @default 0. 1. @invisible 1"
 												}
 
 											}
@@ -808,7 +808,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 161.0, 202.40380859375, 395.0, 22.0 ],
-													"text" : "ossia.parameter corner/upper/right @type list @default 1. 0. @invisible 1"
+													"text" : "sparck.parameter corner/upper/right @type list @default 1. 0. @invisible 1"
 												}
 
 											}
@@ -821,7 +821,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 50.0, 151.40380859375, 388.0, 22.0 ],
-													"text" : "ossia.parameter corner/upper/left @type list @default 0. 0. @invisible 1"
+													"text" : "sparck.parameter corner/upper/left @type list @default 0. 0. @invisible 1"
 												}
 
 											}
@@ -1065,7 +1065,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 342.857818500000008, 233.0, 571.0, 22.0 ],
-									"text" : "ossia.parameter depth/layer @type int @default 0 @min -1 @clip low @description \"Manual render order\""
+									"text" : "sparck.parameter depth/layer @type int @default 0 @min -1 @clip low @description \"Manual render order\""
 								}
 
 							}
@@ -1078,7 +1078,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 188.055420000000026, 196.5, 547.0, 22.0 ],
-									"text" : "ossia.parameter aspect/ratio/preserve @type bool @default true @description \"preserve aspect ratio\""
+									"text" : "sparck.parameter aspect/ratio/preserve @type bool @default true @description \"preserve aspect ratio\""
 								}
 
 							}
@@ -1092,7 +1092,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 278.055420000000026, 117.0, 457.0, 49.0 ],
-									"text" : "ossia.parameter blend/mode @type string @default alphablend @range alphablend add multiply screen exclusion colorblend coloradd alphaadd @description \"blend type\""
+									"text" : "sparck.parameter blend/mode @type string @default alphablend @range alphablend add multiply screen exclusion colorblend coloradd alphaadd @description \"blend type\""
 								}
 
 							}
@@ -1106,7 +1106,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 138.257019000000014, 75.40380859375, 432.0, 35.0 ],
-									"text" : "ossia.parameter blend/enable @type bool @default false @description \"enable blending\""
+									"text" : "sparck.parameter blend/enable @type bool @default false @description \"enable blending\""
 								}
 
 							}
@@ -1488,7 +1488,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 17.999984999999981, 194.85064697265625, 62.0, 20.0 ],
-					"text" : "ossia.model"
+					"text" : "sparck.model"
 				}
 
 			}
@@ -2727,11 +2727,11 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.model.mxo",
+				"name" : "sparck.model.mxo",
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "ossia.parameter.mxo",
+				"name" : "sparck.parameter.mxo",
 				"type" : "iLaX"
 			}
  ],

@@ -798,7 +798,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 18.0, 210.363768999999991, 62.0, 20.0 ],
-					"text" : "ossia.model"
+					"text" : "sparck.model"
 				}
 
 			}
@@ -1591,7 +1591,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 257.333282000000054, 17.570435000000003, 444.0, 35.0 ],
-									"text" : "ossia.parameter editor/name @type string @default atom @range Atom Brackets TextWrangler Textpad BBEdit \"Visual Studio Code\" @description \"editor name\""
+									"text" : "sparck.parameter editor/name @type string @default atom @range Atom Brackets TextWrangler Textpad BBEdit \"Visual Studio Code\" @description \"editor name\""
 								}
 
 							}
@@ -1640,7 +1640,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 15.0, 17.570435000000003, 226.0, 49.0 ],
-									"text" : "ossia.parameter script/filewatch @type bool @default 0 @description \"enable autoload of changed file\" @priority 2"
+									"text" : "sparck.parameter script/filewatch @type bool @default 0 @description \"enable autoload of changed file\" @priority 2"
 								}
 
 							}
@@ -2254,7 +2254,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 351.708312999999976, 335.0, 470.0, 22.0 ],
-									"text" : "ossia.parameter script/debug @type bool @default 0 @description \"enable debugging\""
+									"text" : "sparck.parameter script/debug @type bool @default 0 @description \"enable debugging\""
 								}
 
 							}
@@ -2303,7 +2303,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 527.0, 123.0, 222.0, 89.0 ],
-									"text" : "ossia.parameter update/frequency @type string @default \"20 hz\" @range \"0 hz\" \"1 hz\" \"2 hz\" \"5 hz\" \"10 hz\" \"15 hz\" \"20 hz\" \"24 hz\" \"25 hz\" \"30 hz\" \"50 hz\" \"60 hz\" \"120 hz\" @description \"update custom frequency\""
+									"text" : "sparck.parameter update/frequency @type string @default \"20 hz\" @range \"0 hz\" \"1 hz\" \"2 hz\" \"5 hz\" \"10 hz\" \"15 hz\" \"20 hz\" \"24 hz\" \"25 hz\" \"30 hz\" \"50 hz\" \"60 hz\" \"120 hz\" @description \"update custom frequency\""
 								}
 
 							}
@@ -2316,7 +2316,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 312.708312999999976, 73.5, 578.0, 35.0 ],
-									"text" : "ossia.parameter update/mode @type int @default 0 @range 0 1 @clip both @description \"update mode. 0 = automatic, 1 = custom\""
+									"text" : "sparck.parameter update/mode @type int @default 0 @range 0 1 @clip both @description \"update mode. 0 = automatic, 1 = custom\""
 								}
 
 							}
@@ -3088,7 +3088,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.parameter.mxo",
+				"name" : "sparck.parameter.mxo",
 				"type" : "iLaX"
 			}
 , 			{
@@ -3100,11 +3100,11 @@
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "ossia.remote.mxo",
+				"name" : "sparck.remote.mxo",
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "ossia.model.mxo",
+				"name" : "sparck.model.mxo",
 				"type" : "iLaX"
 			}
 , 			{

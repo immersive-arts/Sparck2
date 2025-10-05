@@ -286,7 +286,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 95.0, 39.0, 431.0, 50.0 ],
-									"text" : "ossia.parameter renderOne @type bool @default 0 @description \"render alteration of texture one (if node is enabled - otherwise unaltered pass through)\""
+									"text" : "sparck.parameter renderOne @type bool @default 0 @description \"render alteration of texture one (if node is enabled - otherwise unaltered pass through)\""
 								}
 
 							}
@@ -486,7 +486,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 106.0, 44.0, 299.0, 49.0 ],
-									"text" : "ossia.parameter renderTwo @type bool @default 0 @description \"render alteration of texture two (if node is enabled - otherwise unaltered pass through)\""
+									"text" : "sparck.parameter renderTwo @type bool @default 0 @description \"render alteration of texture two (if node is enabled - otherwise unaltered pass through)\""
 								}
 
 							}
@@ -855,7 +855,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 138.333333333333314, 227.5, 62.0, 20.0 ],
-					"text" : "ossia.model"
+					"text" : "sparck.model"
 				}
 
 			}
@@ -5569,7 +5569,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 715.861083999999892, 361.5, 248.694457999999941, 64.0 ],
-									"text" : "ossia.parameter editor/name @type string @default Atom @description \"editor name\" @range Atom Brackets TextWrangler Textpad BBEdit \"Visual Studio Code\""
+									"text" : "sparck.parameter editor/name @type string @default Atom @description \"editor name\" @range Atom Brackets TextWrangler Textpad BBEdit \"Visual Studio Code\""
 								}
 
 							}
@@ -5582,7 +5582,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 214.597075999999902, 306.184632402343709, 460.0, 22.0 ],
-									"text" : "ossia.parameter reference/scale @type float @default 1. @description \"render scale\""
+									"text" : "sparck.parameter reference/scale @type float @default 1. @description \"render scale\""
 								}
 
 							}
@@ -5608,7 +5608,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 297.041648999999893, 86.184632402343709, 395.0, 22.0 ],
-									"text" : "ossia.parameter time/speed @type float @default 1. @description speed"
+									"text" : "sparck.parameter time/speed @type float @default 1. @description speed"
 								}
 
 							}
@@ -5621,7 +5621,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 214.541648999999865, 56.640869000000009, 400.0, 22.0 ],
-									"text" : "ossia.parameter time/use @type bool @default 1 @description \"use time\""
+									"text" : "sparck.parameter time/use @type bool @default 1 @description \"use time\""
 								}
 
 							}
@@ -5671,7 +5671,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 11.208312999999862, 294.684632402343766, 188.0, 64.0 ],
-									"text" : "ossia.parameter shader/filewatch @type bool @default 0 @description \"enable autoload of changed file\" @priority 2"
+									"text" : "sparck.parameter shader/filewatch @type bool @default 0 @description \"enable autoload of changed file\" @priority 2"
 								}
 
 							}
@@ -7264,11 +7264,11 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.model.mxe64",
+				"name" : "sparck.model.mxe64",
 				"type" : "mx64"
 			}
 , 			{
-				"name" : "ossia.parameter.mxe64",
+				"name" : "sparck.parameter.mxe64",
 				"type" : "mx64"
 			}
  ],

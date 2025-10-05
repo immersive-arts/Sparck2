@@ -48,7 +48,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 280.333312999999976, 106.0, 466.0, 20.0 ],
-					"text" : "ossia.parameter iterations @type int @default 1 @range 0 3 @clip both @description \"FSAA Iterations\""
+					"text" : "sparck.parameter iterations @type int @default 1 @range 0 3 @clip both @description \"FSAA Iterations\""
 				}
 
 			}
@@ -61,7 +61,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 86.777775999999989, 263.0, 62.0, 20.0 ],
-					"text" : "ossia.model"
+					"text" : "sparck.model"
 				}
 
 			}
@@ -1676,11 +1676,11 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.parameter.mxo",
+				"name" : "sparck.parameter.mxo",
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "ossia.model.mxo",
+				"name" : "sparck.model.mxo",
 				"type" : "iLaX"
 			}
  ],

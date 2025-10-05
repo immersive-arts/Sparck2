@@ -228,7 +228,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 45.0, 218.0, 369.0, 22.0 ],
-					"text" : "ossia.parameter #1 @type string @default select... @description #2"
+					"text" : "sparck.parameter #1 @type string @default select... @description #2"
 				}
 
 			}
@@ -398,7 +398,7 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "ossia.parameter.mxe64",
+				"name" : "sparck.parameter.mxe64",
 				"type" : "mx64"
 			}
  ],

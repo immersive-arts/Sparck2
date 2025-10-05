@@ -208,7 +208,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 802.083374000000049, 182.025878999999975, 139.0, 119.0 ],
-									"text" : "ossia.parameter position/output @type list @default 100 100 420 340 @description \"window position in output mode, upper left corner and lower right corner\" @priority 1"
+									"text" : "sparck.parameter position/output @type list @default 100 100 420 340 @description \"window position in output mode, upper left corner and lower right corner\" @priority 1"
 								}
 
 							}
@@ -271,7 +271,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 30.083373999999992, 195.333373999999992, 130.0, 133.0 ],
-									"text" : "ossia.parameter position/desktop @type list @default 100 100 420 340 @description \"window position in desktop mode, upper left corner and lower right corner\" @priority 1"
+									"text" : "sparck.parameter position/desktop @type list @default 100 100 420 340 @description \"window position in desktop mode, upper left corner and lower right corner\" @priority 1"
 								}
 
 							}
@@ -1310,7 +1310,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 191.125, 19.025878999999975, 98.0, 133.0 ],
-									"text" : "ossia.parameter desktop/floating @type bool @default 0 @description \"window is floating when in position mode desktop\""
+									"text" : "sparck.parameter desktop/floating @type bool @default 0 @description \"window is floating when in position mode desktop\""
 								}
 
 							}
@@ -1324,7 +1324,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 294.0, 19.025878999999975, 98.0, 133.0 ],
-									"text" : "ossia.parameter desktop/border @type bool @default 1 @description \"show border of window when in position mode desktop\""
+									"text" : "sparck.parameter desktop/border @type bool @default 1 @description \"show border of window when in position mode desktop\""
 								}
 
 							}
@@ -1338,7 +1338,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 401.75, 161.718383999999958, 276.0, 50.0 ],
-									"text" : "ossia.parameter position/mode @type bool @default 0 @description \"position mode, select between desktop (0) and output (1)\" @priority 0"
+									"text" : "sparck.parameter position/mode @type bool @default 0 @description \"position mode, select between desktop (0) and output (1)\" @priority 0"
 								}
 
 							}
@@ -1352,7 +1352,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 405.555541999999832, 19.025878999999975, 327.0, 50.0 ],
-									"text" : "ossia.parameter internal/escape @invisible 1 @type bool @default 1 @description \"enable escape key to set window position to desktop\""
+									"text" : "sparck.parameter internal/escape @invisible 1 @type bool @default 1 @description \"enable escape key to set window position to desktop\""
 								}
 
 							}
@@ -1881,7 +1881,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 32.333343999999997, 239.833373999999992, 62.0, 20.0 ],
-					"text" : "ossia.model"
+					"text" : "sparck.model"
 				}
 
 			}
@@ -1941,7 +1941,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 290.0, 190.333373999999992, 115.0, 91.0 ],
-									"text" : "ossia.parameter interact @type bool @default 0 @description tpublishes an interactive camera"
+									"text" : "sparck.parameter interact @type bool @default 0 @description tpublishes an interactive camera"
 								}
 
 							}
@@ -1955,7 +1955,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 170.097381999999925, 17.025878999999975, 150.0, 133.0 ],
-									"text" : "ossia.parameter antialias @type bool @default 0 @description \"takes the vertical sync frequency of the use antialias. This has only an effect if you are using NOT the default mesh inside the linked ViewPort Nodes\""
+									"text" : "sparck.parameter antialias @type bool @default 0 @description \"takes the vertical sync frequency of the use antialias. This has only an effect if you are using NOT the default mesh inside the linked ViewPort Nodes\""
 								}
 
 							}
@@ -1969,7 +1969,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 15.833313000000061, 17.025878999999975, 139.0, 146.0 ],
-									"text" : "ossia.parameter vsync @type bool @default 0 @description \"takes the vertical sync frequency of the output device this window is displayed on and synchronizes it with the main metro. Only one window should use this feature \""
+									"text" : "sparck.parameter vsync @type bool @default 0 @description \"takes the vertical sync frequency of the output device this window is displayed on and synchronizes it with the main metro. Only one window should use this feature \""
 								}
 
 							}
@@ -2222,7 +2222,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 117.65277900000001, 352.166625999999951, 92.0, 100.0 ],
-					"text" : "ossia.parameter slice/rows @type int @default 0 @range 0 1 @clip both @description \"slice this window into so many rows\""
+					"text" : "sparck.parameter slice/rows @type int @default 0 @range 0 1 @clip both @description \"slice this window into so many rows\""
 				}
 
 			}
@@ -2236,7 +2236,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 7.041663999999997, 352.166625999999951, 98.999999999999972, 89.0 ],
-					"text" : "ossia.parameter slice/columns @type int @default 0 @description \"slice this window into so many columns\""
+					"text" : "sparck.parameter slice/columns @type int @default 0 @description \"slice this window into so many columns\""
 				}
 
 			}
@@ -4185,11 +4185,11 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.model.mxe64",
+				"name" : "sparck.model.mxe64",
 				"type" : "mx64"
 			}
 , 			{
-				"name" : "ossia.parameter.mxe64",
+				"name" : "sparck.parameter.mxe64",
 				"type" : "mx64"
 			}
  ],

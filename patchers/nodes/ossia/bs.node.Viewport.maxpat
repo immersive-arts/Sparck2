@@ -84,7 +84,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 15.555541999999946, 245.833373999999992, 62.0, 20.0 ],
-					"text" : "ossia.model"
+					"text" : "sparck.model"
 				}
 
 			}
@@ -514,7 +514,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 36.722228999999913, 70.850646999999981, 169.0, 62.0 ],
-									"text" : "ossia.parameter mesh/render @type bool @default 0 @description \"mesh render type (0=flat, 1=wireframe)\""
+									"text" : "sparck.parameter mesh/render @type bool @default 0 @description \"mesh render type (0=flat, 1=wireframe)\""
 								}
 
 							}
@@ -540,7 +540,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 616.222045999999978, 61.0, 165.0, 62.0 ],
-									"text" : "ossia.parameter mesh/wireframe/color @type rgba @default 1. 1. 1. 1. @description \"mesh color\""
+									"text" : "sparck.parameter mesh/wireframe/color @type rgba @default 1. 1. 1. 1. @description \"mesh color\""
 								}
 
 							}
@@ -1357,7 +1357,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 50.0, 60.833373999999992, 93.0, 22.0 ],
-													"text" : "ossia.model tfm"
+													"text" : "sparck.model tfm"
 												}
 
 											}
@@ -1371,7 +1371,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 183.224365000000034, 100.0, 438.0, 36.0 ],
-													"text" : "ossia.parameter reset @description \"transformation reset (0 = off, 1 = Normalize both axes)\" @default 1 @type bool"
+													"text" : "sparck.parameter reset @description \"transformation reset (0 = off, 1 = Normalize both axes)\" @default 1 @type bool"
 												}
 
 											}
@@ -1673,7 +1673,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 1038.860961999999972, 130.5, 247.0, 91.0 ],
-									"text" : "ossia.parameter render/depth/enable @type bool @default 1 @description \"automatically draws the viewport mesh according to its z-depth. Switching this off allows to use the layer property of warp2d meshes that are drawn directly to the viewport.\""
+									"text" : "sparck.parameter render/depth/enable @type bool @default 1 @description \"automatically draws the viewport mesh according to its z-depth. Switching this off allows to use the layer property of warp2d meshes that are drawn directly to the viewport.\""
 								}
 
 							}
@@ -1687,7 +1687,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 867.860961999999972, 130.5, 158.0, 91.0 ],
-									"text" : "ossia.parameter render/blend/enable @type bool @default 1 @description \"Use alpha channel to blend with black background\""
+									"text" : "sparck.parameter render/blend/enable @type bool @default 1 @description \"Use alpha channel to blend with black background\""
 								}
 
 							}
@@ -1701,7 +1701,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 867.860961999999972, 340.000000000000057, 424.0, 36.0 ],
-									"text" : "ossia.parameter mesh/filewatch @type bool @default 0 @description \"enable autoload of changed file\" @priority 2"
+									"text" : "sparck.parameter mesh/filewatch @type bool @default 0 @description \"enable autoload of changed file\" @priority 2"
 								}
 
 							}
@@ -3053,11 +3053,11 @@
 				"type" : "mx64"
 			}
 , 			{
-				"name" : "ossia.model.mxe64",
+				"name" : "sparck.model.mxe64",
 				"type" : "mx64"
 			}
 , 			{
-				"name" : "ossia.parameter.mxe64",
+				"name" : "sparck.parameter.mxe64",
 				"type" : "mx64"
 			}
  ],

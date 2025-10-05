@@ -614,7 +614,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 358.56970200000012, 739.403809000000024, 598.0, 22.0 ],
-									"text" : "ossia.parameter cullFace @type int @default 0 @range 0 2 @description \"face culling (0=off, 1=back, 2=front)\""
+									"text" : "sparck.parameter cullFace @type int @default 0 @range 0 2 @description \"face culling (0=off, 1=back, 2=front)\""
 								}
 
 							}
@@ -653,7 +653,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 413.055479999999989, 680.894469999999956, 655.0, 22.0 ],
-									"text" : "ossia.parameter polyMode/back @type int @default 2 @description \"front mesh render mode, 0=mesh, 1=lines, 2=points\""
+									"text" : "sparck.parameter polyMode/back @type int @default 2 @description \"front mesh render mode, 0=mesh, 1=lines, 2=points\""
 								}
 
 							}
@@ -666,7 +666,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 371.555479999999989, 652.894469999999956, 654.0, 22.0 ],
-									"text" : "ossia.parameter polyMode/front @type int @default 2 @description \"front mesh render mode, 0=mesh, 1=lines, 2=points\""
+									"text" : "sparck.parameter polyMode/front @type int @default 2 @description \"front mesh render mode, 0=mesh, 1=lines, 2=points\""
 								}
 
 							}
@@ -694,7 +694,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 371.555479999999989, 580.640869000000066, 670.0, 36.0 ],
-									"text" : "ossia.parameter holeDetect @type float @default 0.02 @min 0. @clip low @description \"difference to neighbours to remove vertice\""
+									"text" : "sparck.parameter holeDetect @type float @default 0.02 @min 0. @clip low @description \"difference to neighbours to remove vertice\""
 								}
 
 							}
@@ -707,7 +707,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 366.555479999999989, 523.640869000000066, 515.0, 22.0 ],
-									"text" : "ossia.parameter pointSize @type float @default 1. @min 1. @clip low @description \"point size\""
+									"text" : "sparck.parameter pointSize @type float @default 1. @min 1. @clip low @description \"point size\""
 								}
 
 							}
@@ -789,7 +789,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 354.555479999999989, 455.640869000000009, 701.0, 36.0 ],
-									"text" : "ossia.parameter encodeMode @type int @default 0 @range 0 4 @clip both @description \"encoding mode:  0=linear 8bit, 1=linear 16bit, 2=uniformHue, 3=inverseHue, 4=HSL\""
+									"text" : "sparck.parameter encodeMode @type int @default 0 @range 0 4 @clip both @description \"encoding mode:  0=linear 8bit, 1=linear 16bit, 2=uniformHue, 3=inverseHue, 4=HSL\""
 								}
 
 							}
@@ -816,7 +816,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 354.555479999999989, 398.640869000000066, 592.0, 22.0 ],
-									"text" : "ossia.parameter focal @type vec2 @default 386.323 386.323 @min 0 0 @clip low @description \"focal length\""
+									"text" : "sparck.parameter focal @type vec2 @default 386.323 386.323 @min 0 0 @clip low @description \"focal length\""
 								}
 
 							}
@@ -843,7 +843,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 337.555479999999989, 338.640869000000066, 634.0, 22.0 ],
-									"text" : "ossia.parameter pOff @type vec2 @default 319.909 240.728 @min 0 0 @clip low @description \"principal point offset\""
+									"text" : "sparck.parameter pOff @type vec2 @default 319.909 240.728 @min 0 0 @clip low @description \"principal point offset\""
 								}
 
 							}
@@ -870,7 +870,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 324.055479999999989, 277.640869000000009, 678.0, 22.0 ],
-									"text" : "ossia.parameter distanceMax @type float @default 10. @min 0. @clip low @description \"distance minimum (depth clip near)\""
+									"text" : "sparck.parameter distanceMax @type float @default 10. @min 0. @clip low @description \"distance minimum (depth clip near)\""
 								}
 
 							}
@@ -883,7 +883,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 192.055479999999989, 190.640869000000009, 568.0, 22.0 ],
-									"text" : "ossia.parameter cullFar @type float @default 10. @min 0. @clip low @description \"far culling pointcloud\""
+									"text" : "sparck.parameter cullFar @type float @default 10. @min 0. @clip low @description \"far culling pointcloud\""
 								}
 
 							}
@@ -924,7 +924,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 280.555479999999989, 220.640869000000009, 666.0, 22.0 ],
-									"text" : "ossia.parameter distanceMin @type float @default 0. @min 0. @clip low @description \"distance minimum (depth clip near)\""
+									"text" : "sparck.parameter distanceMin @type float @default 0. @min 0. @clip low @description \"distance minimum (depth clip near)\""
 								}
 
 							}
@@ -949,7 +949,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 32.555479999999989, 132.640869000000009, 594.0, 22.0 ],
-									"text" : "ossia.parameter resolution @type vec2 @default 640 480 @min 0 0 @clip low @description \"cloud resolution\""
+									"text" : "sparck.parameter resolution @type vec2 @default 640 480 @min 0 0 @clip low @description \"cloud resolution\""
 								}
 
 							}
@@ -974,7 +974,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 95.055479999999989, 160.640869000000009, 579.0, 22.0 ],
-									"text" : "ossia.parameter cullNear @type float @default 0. @min 0. @clip low @description \"near culling pointcloud\""
+									"text" : "sparck.parameter cullNear @type float @default 0. @min 0. @clip low @description \"near culling pointcloud\""
 								}
 
 							}
@@ -1386,7 +1386,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 49.592595333333328, 195.0, 62.0, 20.0 ],
-					"text" : "ossia.model"
+					"text" : "sparck.model"
 				}
 
 			}
@@ -2454,11 +2454,11 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.parameter.mxe64",
+				"name" : "sparck.parameter.mxe64",
 				"type" : "mx64"
 			}
 , 			{
-				"name" : "ossia.model.mxe64",
+				"name" : "sparck.model.mxe64",
 				"type" : "mx64"
 			}
 , 			{

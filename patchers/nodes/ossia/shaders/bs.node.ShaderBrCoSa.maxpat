@@ -48,7 +48,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 430.247925000000009, 55.807616999999993, 686.0, 20.0 ],
-					"text" : "ossia.parameter renderTwo @type bool @default 0 @description \"render alteration of texture two (if node is enabled - otherwise unaltered pass through)\""
+					"text" : "sparck.parameter renderTwo @type bool @default 0 @description \"render alteration of texture two (if node is enabled - otherwise unaltered pass through)\""
 				}
 
 			}
@@ -61,7 +61,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 330.247925000000009, 89.807616999999993, 688.0, 20.0 ],
-					"text" : "ossia.parameter renderOne @type bool @default 0 @description \"render alteration of texture one (if node is enabled - otherwise unaltered pass through)\""
+					"text" : "sparck.parameter renderOne @type bool @default 0 @description \"render alteration of texture one (if node is enabled - otherwise unaltered pass through)\""
 				}
 
 			}
@@ -121,7 +121,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 449.027739999999994, 288.640869000000009, 393.0, 35.0 ],
-									"text" : "ossia.parameter alpha @type float @default 1. @range 0. 1. @clip both @description alpha"
+									"text" : "sparck.parameter alpha @type float @default 1. @range 0. 1. @clip both @description alpha"
 								}
 
 							}
@@ -135,7 +135,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 347.027739999999994, 241.640869000000009, 460.0, 35.0 ],
-									"text" : "ossia.parameter saturation @type float @default 1. @min 0. @clip low @description saturation"
+									"text" : "sparck.parameter saturation @type float @default 1. @min 0. @clip low @description saturation"
 								}
 
 							}
@@ -148,7 +148,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 241.027739999999994, 211.640869000000009, 518.0, 22.0 ],
-									"text" : "ossia.parameter brightness @type float @default 1. @min 0. @clip low @description brightness"
+									"text" : "sparck.parameter brightness @type float @default 1. @min 0. @clip low @description brightness"
 								}
 
 							}
@@ -161,7 +161,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 144.027739999999994, 179.640869000000009, 492.0, 22.0 ],
-									"text" : "ossia.parameter contrast @type float @default 1. @min 0. @clip low @description contrast"
+									"text" : "sparck.parameter contrast @type float @default 1. @min 0. @clip low @description contrast"
 								}
 
 							}
@@ -187,7 +187,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 71.027739999999994, 142.544738999999993, 450.0, 22.0 ],
-									"text" : "ossia.parameter avg_luma @type float @default 0.62 @description \"average luma\""
+									"text" : "sparck.parameter avg_luma @type float @default 0.62 @description \"average luma\""
 								}
 
 							}
@@ -482,7 +482,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 49.592595333333328, 204.0, 62.0, 20.0 ],
-					"text" : "ossia.model"
+					"text" : "sparck.model"
 				}
 
 			}
@@ -2301,7 +2301,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.parameter.mxo",
+				"name" : "sparck.parameter.mxo",
 				"type" : "iLaX"
 			}
 , 			{
@@ -2309,7 +2309,7 @@
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "ossia.model.mxo",
+				"name" : "sparck.model.mxo",
 				"type" : "iLaX"
 			}
  ],

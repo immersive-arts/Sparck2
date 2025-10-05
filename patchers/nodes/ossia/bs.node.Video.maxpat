@@ -101,7 +101,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 339.333344000000011, 45.570435000000003, 121.0, 54.0 ],
-					"text" : "ossia.parameter play @type bool @default 0 @description \"play video\" @priority 2"
+					"text" : "sparck.parameter play @type bool @default 0 @description \"play video\" @priority 2"
 				}
 
 			}
@@ -114,7 +114,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 7.0, 212.0, 62.0, 20.0 ],
-					"text" : "ossia.model"
+					"text" : "sparck.model"
 				}
 
 			}
@@ -325,7 +325,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 530.226844999999912, 78.570435000000003, 205.0, 43.0 ],
-					"text" : "ossia.parameter video/filewatch @type bool @default 0 @description \"enable autoload of changed file\" @priority 2"
+					"text" : "sparck.parameter video/filewatch @type bool @default 0 @description \"enable autoload of changed file\" @priority 2"
 				}
 
 			}
@@ -727,7 +727,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 570.110428100000149, 471.474243000000001, 419.0, 36.0 ],
-									"text" : "ossia.parameter trigger/frame @type int @default 0 @description \"set trigger frame n frames from end of moovie (0 = off)\""
+									"text" : "sparck.parameter trigger/frame @type int @default 0 @description \"set trigger frame n frames from end of moovie (0 = off)\""
 								}
 
 							}
@@ -741,7 +741,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 510.897934300000088, 428.042419500000051, 477.0, 36.0 ],
-									"text" : "ossia.parameter trigger/time @type int @default 0 @description \"set trigger time n millis from end of moovie (0 = off)\""
+									"text" : "sparck.parameter trigger/time @type int @default 0 @description \"set trigger time n millis from end of moovie (0 = off)\""
 								}
 
 							}
@@ -754,7 +754,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 8.708344000000011, 459.542419499999994, 404.0, 22.0 ],
-									"text" : "ossia.parameter frame @type int @default 0 @description \"frame number\""
+									"text" : "sparck.parameter frame @type int @default 0 @description \"frame number\""
 								}
 
 							}
@@ -782,7 +782,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 8.708344000000011, 291.893678902343709, 556.0, 22.0 ],
-									"text" : "ossia.parameter volume @type float @default 1. @range 0. 3. @clip both @description \"audio volume\""
+									"text" : "sparck.parameter volume @type float @default 1. @range 0. 3. @clip both @description \"audio volume\""
 								}
 
 							}
@@ -811,7 +811,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 8.708344000000011, 215.27948049999992, 433.0, 36.0 ],
-									"text" : "ossia.parameter cache/size @type float @default 0.1 @range 0.1 2. @clip both @description \"cache size for the video engine [GByte]\""
+									"text" : "sparck.parameter cache/size @type float @default 0.1 @range 0.1 2. @clip both @description \"cache size for the video engine [GByte]\""
 								}
 
 							}
@@ -839,7 +839,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 8.708344000000011, 145.542419499999994, 496.0, 22.0 ],
-									"text" : "ossia.parameter rate @type float @default 1. @range -10. 10. @clip both @description rate"
+									"text" : "sparck.parameter rate @type float @default 1. @range -10. 10. @clip both @description rate"
 								}
 
 							}
@@ -867,7 +867,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 8.708344000000011, 364.474243000000001, 551.0, 22.0 ],
-									"text" : "ossia.parameter colormode @type string @default uyvy @range uyvy argb @description \"color mode\""
+									"text" : "sparck.parameter colormode @type string @default uyvy @range uyvy argb @description \"color mode\""
 								}
 
 							}
@@ -953,7 +953,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 182.798401000000013, 375.640868999999952, 462.0, 22.0 ],
-													"text" : "ossia.parameter time/report @type bool @default 0 @description \"report time in [ms]\""
+													"text" : "sparck.parameter time/report @type bool @default 0 @description \"report time in [ms]\""
 												}
 
 											}
@@ -980,7 +980,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 145.5, 324.640868999999952, 427.0, 49.0 ],
-													"text" : "ossia.parameter frame/report @type bool @default 0 @description \"report framenumber. It also renders the playbar. WARNING: rendering the play bar is resource intensive(GUI redrawing)!! \""
+													"text" : "sparck.parameter frame/report @type bool @default 0 @description \"report framenumber. It also renders the playbar. WARNING: rendering the play bar is resource intensive(GUI redrawing)!! \""
 												}
 
 											}
@@ -993,7 +993,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 132.798401000000013, 261.59619140625, 477.0, 22.0 ],
-													"text" : "ossia.parameter loop/mode @type int @default 0 @range 0 2 @description \"loop mode\""
+													"text" : "sparck.parameter loop/mode @type int @default 0 @range 0 2 @description \"loop mode\""
 												}
 
 											}
@@ -1020,7 +1020,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 104.0, 199.0, 510.0, 22.0 ],
-													"text" : "ossia.parameter loop/report @type bool @default 1 @description \"report loop or end of movie\""
+													"text" : "sparck.parameter loop/report @type bool @default 1 @description \"report loop or end of movie\""
 												}
 
 											}
@@ -1045,7 +1045,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 85.0, 143.0, 441.0, 22.0 ],
-													"text" : "ossia.parameter interp @type bool @default 1 @description \"output interpolation\""
+													"text" : "sparck.parameter interp @type bool @default 1 @description \"output interpolation\""
 												}
 
 											}
@@ -1070,7 +1070,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 62.0, 86.0, 483.0, 22.0 ],
-													"text" : "ossia.parameter autostart @type bool @default 1 @description \"auto-play movie on load\""
+													"text" : "sparck.parameter autostart @type bool @default 1 @description \"auto-play movie on load\""
 												}
 
 											}
@@ -1095,7 +1095,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 33.0, 30.0, 373.0, 22.0 ],
-													"text" : "ossia.parameter unique @type bool @default 1 @description unique"
+													"text" : "sparck.parameter unique @type bool @default 1 @description unique"
 												}
 
 											}
@@ -1342,7 +1342,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 45.069580000000002, 155.368469000000005, 113.0, 160.0 ],
-													"text" : "ossia.parameter render/pass @type string @default passA @range passA passB passC passD passE passF passG passH passZ @description \"render pass\""
+													"text" : "sparck.parameter render/pass @type string @default passA @range passA passB passC passD passE passF passG passH passZ @description \"render pass\""
 												}
 
 											}
@@ -4356,7 +4356,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 592.748290999999995, 311.0, 519.0, 22.0 ],
-									"text" : "ossia.parameter playbar @type float @default 0 @range 0 100 @clip both @description playbar"
+									"text" : "sparck.parameter playbar @type float @default 0 @range 0 100 @clip both @description playbar"
 								}
 
 							}
@@ -6600,11 +6600,11 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.model.mxe64",
+				"name" : "sparck.model.mxe64",
 				"type" : "mx64"
 			}
 , 			{
-				"name" : "ossia.parameter.mxe64",
+				"name" : "sparck.parameter.mxe64",
 				"type" : "mx64"
 			}
  ],

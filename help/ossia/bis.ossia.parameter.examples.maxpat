@@ -62,7 +62,7 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 33.0, 371.394469999999956, 617.0, 22.0 ],
 					"presentation_linecount" : 2,
-					"text" : "ossia.parameter mesh/filewatch @type bool @default 0 @description \"enable autoload of changed file\" @priority 2"
+					"text" : "sparck.parameter mesh/filewatch @type bool @default 0 @description \"enable autoload of changed file\" @priority 2"
 				}
 
 			}
@@ -136,7 +136,7 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 15.150879000000032, 198.5, 582.0, 22.0 ],
 					"presentation_linecount" : 2,
-					"text" : "ossia.parameter render/texture/dim/size @type vec2f @default 1920 1080 @description \"texture dimension\""
+					"text" : "sparck.parameter render/texture/dim/size @type vec2f @default 1920 1080 @description \"texture dimension\""
 				}
 
 			}
@@ -150,7 +150,7 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 20.400879000000032, 473.894470000000013, 1094.0, 22.0 ],
 					"presentation_linecount" : 8,
-					"text" : "ossia.parameter render/pass @type string @default passA @range passA passB passC passD passE passF passG passH passZ manualA manualB manualC manualD beamer @description \"render pass\""
+					"text" : "sparck.parameter render/pass @type string @default passA @range passA passB passC passD passE passF passG passH passZ manualA manualB manualC manualD beamer @description \"render pass\""
 				}
 
 			}
@@ -229,7 +229,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 15.150879000000032, 13.0, 614.0, 22.0 ],
-					"text" : "ossia.parameter render/background/color @type rgba @default 0. 0. 0. 1. @description \"render background color\""
+					"text" : "sparck.parameter render/background/color @type rgba @default 0. 0. 0. 1. @description \"render background color\""
 				}
 
 			}
@@ -243,7 +243,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 20.400879000000032, 544.052734999999984, 1253.0, 35.0 ],
-					"text" : "ossia.parameter render/texture/output @type int @default color @range 0 2 @description \"textures captured. 0 = color = ouputs color texture only, 1 = +normal/depth = outputs color + normal(->rgb)/depth(->alpha) texture, 2 = +velocity = ouputs color + normal/depth + velocity texture\" @priority 1"
+					"text" : "sparck.parameter render/texture/output @type int @default color @range 0 2 @description \"textures captured. 0 = color = ouputs color texture only, 1 = +normal/depth = outputs color + normal(->rgb)/depth(->alpha) texture, 2 = +velocity = ouputs color + normal/depth + velocity texture\" @priority 1"
 				}
 
 			}
@@ -256,7 +256,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 75.400879000000032, 93.0, 519.0, 22.0 ],
-					"text" : "ossia.parameter render/blend/enable @type bool @default false @description \"enable blending\""
+					"text" : "sparck.parameter render/blend/enable @type bool @default false @description \"enable blending\""
 				}
 
 			}
@@ -269,7 +269,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 15.150879000000032, 68.0, 804.0, 22.0 ],
-					"text" : "ossia.parameter render/antialias @type bool @default false @description \"use antialias - works well for fine lines and even better with blend enabled \""
+					"text" : "sparck.parameter render/antialias @type bool @default false @description \"use antialias - works well for fine lines and even better with blend enabled \""
 				}
 
 			}
@@ -480,7 +480,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.parameter.mxo",
+				"name" : "sparck.parameter.mxo",
 				"type" : "iLaX"
 			}
 , 			{

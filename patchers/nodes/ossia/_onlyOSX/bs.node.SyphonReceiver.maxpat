@@ -48,7 +48,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 416.111053466796875, 27.0, 444.0, 20.0 ],
-					"text" : "ossia.parameter flipY @type bool @default false @description \"flip incomming image on its Y axis\""
+					"text" : "sparck.parameter flipY @type bool @default false @description \"flip incomming image on its Y axis\""
 				}
 
 			}
@@ -61,7 +61,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 396.611053000000027, 4.0, 445.0, 20.0 ],
-					"text" : "ossia.parameter flipX @type bool @default false @description \"flip incomming image on its X axis\""
+					"text" : "sparck.parameter flipX @type bool @default false @description \"flip incomming image on its X axis\""
 				}
 
 			}
@@ -86,7 +86,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 23.0, 266.0, 62.0, 20.0 ],
-					"text" : "ossia.model"
+					"text" : "sparck.model"
 				}
 
 			}
@@ -567,7 +567,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 156.0, 13.0, 440.0, 35.0 ],
-									"text" : "ossia.parameter render/pass @type string @default passA @range passA passB passC passD passE passF passG passH passZ @description \"render pass\""
+									"text" : "sparck.parameter render/pass @type string @default passA @range passA passB passC passD passE passF passG passH passZ @description \"render pass\""
 								}
 
 							}
@@ -1441,7 +1441,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.parameter.mxo",
+				"name" : "sparck.parameter.mxo",
 				"type" : "iLaX"
 			}
 , 			{
@@ -1449,7 +1449,7 @@
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "ossia.model.mxo",
+				"name" : "sparck.model.mxo",
 				"type" : "iLaX"
 			}
  ],

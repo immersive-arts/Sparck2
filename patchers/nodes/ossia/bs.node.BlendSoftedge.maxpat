@@ -84,7 +84,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 8.666663999999997, 172.833373999999992, 62.0, 20.0 ],
-					"text" : "ossia.model"
+					"text" : "sparck.model"
 				}
 
 			}
@@ -168,7 +168,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 86.5, 89.0, 512.0, 35.0 ],
-									"text" : "ossia.parameter render/textureOne @type bool @default 0 @description \"render alteration of texture one (if node is enabled - otherwise unaltered pass through\""
+									"text" : "sparck.parameter render/textureOne @type bool @default 0 @description \"render alteration of texture one (if node is enabled - otherwise unaltered pass through\""
 								}
 
 							}
@@ -438,7 +438,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 183.561278999999985, 233.570434999999975, 169.0, 49.0 ],
-									"text" : "ossia.parameter gamma/blue @type float @default 4. @description \"gamma blue\""
+									"text" : "sparck.parameter gamma/blue @type float @default 4. @description \"gamma blue\""
 								}
 
 							}
@@ -452,7 +452,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 133.78063933333334, 178.0, 172.0, 49.0 ],
-									"text" : "ossia.parameter gamma/green @type float @default 4. @description \"gamma green\""
+									"text" : "sparck.parameter gamma/green @type float @default 4. @description \"gamma green\""
 								}
 
 							}
@@ -466,7 +466,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 83.999999666666668, 123.070435000000003, 164.0, 49.0 ],
-									"text" : "ossia.parameter gamma/red @type float @default 4. @description \"gamma red\""
+									"text" : "sparck.parameter gamma/red @type float @default 4. @description \"gamma red\""
 								}
 
 							}
@@ -492,7 +492,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 401.5, 246.570434999999975, 331.0, 49.0 ],
-									"text" : "ossia.parameter render/result @type int @default 0 @range 0 2 @clip both @description \"ouput (0=result, 1=content texure, 2=mask texture)\""
+									"text" : "sparck.parameter render/result @type int @default 0 @range 0 2 @clip both @description \"ouput (0=result, 1=content texure, 2=mask texture)\""
 								}
 
 							}
@@ -506,7 +506,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 401.5, 133.570435000000003, 331.0, 35.0 ],
-									"text" : "ossia.parameter blend/luminance @type float @default 0.62 @range 0. 1. @clip both @description \"blend luminance\""
+									"text" : "sparck.parameter blend/luminance @type float @default 0.62 @range 0. 1. @clip both @description \"blend luminance\""
 								}
 
 							}
@@ -520,7 +520,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 401.5, 16.070435000000003, 296.0, 35.0 ],
-									"text" : "ossia.parameter blend/power @type float @default 2. @range 0. 3. @clip low @description \"blend power\""
+									"text" : "sparck.parameter blend/power @type float @default 2. @range 0. 3. @clip low @description \"blend power\""
 								}
 
 							}
@@ -2950,7 +2950,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.parameter.mxe64",
+				"name" : "sparck.parameter.mxe64",
 				"type" : "mx64"
 			}
 , 			{
@@ -2962,7 +2962,7 @@
 				"type" : "mx64"
 			}
 , 			{
-				"name" : "ossia.model.mxe64",
+				"name" : "sparck.model.mxe64",
 				"type" : "mx64"
 			}
  ],

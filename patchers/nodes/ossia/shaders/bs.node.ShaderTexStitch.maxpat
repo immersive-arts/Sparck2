@@ -416,7 +416,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 374.0, 196.105286000000035, 519.0, 35.0 ],
-									"text" : "ossia.parameter stitches @type int @default 6 @range 2 6 @clip both @description \"number of textures to stitch\""
+									"text" : "sparck.parameter stitches @type int @default 6 @range 2 6 @clip both @description \"number of textures to stitch\""
 								}
 
 							}
@@ -430,7 +430,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 162.055450000000008, 92.640869000000009, 663.0, 35.0 ],
-									"text" : "ossia.parameter dim @type vec2 @default 6144 1024 @min 0 0 @clip low @description \"dimensions of the newly stitched texture\""
+									"text" : "sparck.parameter dim @type vec2 @default 6144 1024 @min 0 0 @clip low @description \"dimensions of the newly stitched texture\""
 								}
 
 							}
@@ -541,7 +541,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 276.0, 60.894470000000013, 235.0, 62.0 ],
-													"text" : "ossia.parameter render/pass @type string @default manualA @range passA passB passC passD passE passF passG passH passZ @description \"render pass\""
+													"text" : "sparck.parameter render/pass @type string @default manualA @range passA passB passC passD passE passF passG passH passZ @description \"render pass\""
 												}
 
 											}
@@ -947,7 +947,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 10.592595333333328, 191.0, 62.0, 20.0 ],
-					"text" : "ossia.model"
+					"text" : "sparck.model"
 				}
 
 			}
@@ -2126,11 +2126,11 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.parameter.mxo",
+				"name" : "sparck.parameter.mxo",
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "ossia.model.mxo",
+				"name" : "sparck.model.mxo",
 				"type" : "iLaX"
 			}
  ],

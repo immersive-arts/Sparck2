@@ -119,7 +119,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 149.666666666666657, 433.5, 436.0, 22.0 ],
-					"text" : "ossia.parameter #1/name @type string @critical 1 @priority 1 @default select...."
+					"text" : "sparck.parameter #1/name @type string @critical 1 @priority 1 @default select...."
 				}
 
 			}
@@ -132,7 +132,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 204.333333333333314, 338.0, 350.0, 22.0 ],
-					"text" : "ossia.parameter #1/path @type string @priority 1 @invisible 1"
+					"text" : "sparck.parameter #1/path @type string @priority 1 @invisible 1"
 				}
 
 			}
@@ -6486,7 +6486,7 @@
 				"type" : "mx64"
 			}
 , 			{
-				"name" : "ossia.parameter.mxe64",
+				"name" : "sparck.parameter.mxe64",
 				"type" : "mx64"
 			}
  ],

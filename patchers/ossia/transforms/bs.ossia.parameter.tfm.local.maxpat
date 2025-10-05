@@ -47,7 +47,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 900.805542000000059, 23.0, 89.0, 22.0 ],
-					"text" : "ossia.model #1"
+					"text" : "sparck.model #1"
 				}
 
 			}
@@ -687,7 +687,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 141.638878000000062, 23.0, 739.0, 22.0 ],
-					"text" : "ossia.parameter matrix @type list @default 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. @description \"local transformation matrix\" @priority 3"
+					"text" : "sparck.parameter matrix @type list @default 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. @description \"local transformation matrix\" @priority 3"
 				}
 
 			}
@@ -749,7 +749,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 1262.305542000000059, 349.070434999999975, 159.0, 64.0 ],
-					"text" : "ossia.parameter scaleZ @type float @default 1. @description \"local scale z\" @priority 1"
+					"text" : "sparck.parameter scaleZ @type float @default 1. @description \"local scale z\" @priority 1"
 				}
 
 			}
@@ -763,7 +763,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 1100.805542000000059, 349.070434999999975, 158.0, 64.0 ],
-					"text" : "ossia.parameter scaleY @type float @default 1. @description \"local scale y\" @priority 1"
+					"text" : "sparck.parameter scaleY @type float @default 1. @description \"local scale y\" @priority 1"
 				}
 
 			}
@@ -789,7 +789,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 939.305542000000059, 273.0, 426.0, 36.0 ],
-					"text" : "ossia.parameter scale @type vec3f @default 1. 1. 1. @description \"local scale x y z\""
+					"text" : "sparck.parameter scale @type vec3f @default 1. 1. 1. @description \"local scale x y z\""
 				}
 
 			}
@@ -803,7 +803,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 939.305542000000059, 349.070434999999975, 160.0, 64.0 ],
-					"text" : "ossia.parameter scaleX @type float @default 1. @description \"local scale x\" @priority 1"
+					"text" : "sparck.parameter scaleX @type float @default 1. @description \"local scale x\" @priority 1"
 				}
 
 			}
@@ -853,7 +853,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 751.305542000000059, 349.070434999999975, 138.0, 77.0 ],
-					"text" : "ossia.parameter rotZ @type float @default 0. @description \"local rotation z [deg]\" @priority 1"
+					"text" : "sparck.parameter rotZ @type float @default 0. @description \"local rotation z [deg]\" @priority 1"
 				}
 
 			}
@@ -867,7 +867,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 610.805542000000059, 349.070434999999975, 137.0, 77.0 ],
-					"text" : "ossia.parameter rotY @type float @default 0. @description \"local rotation y [deg]\" @priority 1"
+					"text" : "sparck.parameter rotY @type float @default 0. @description \"local rotation y [deg]\" @priority 1"
 				}
 
 			}
@@ -893,7 +893,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 470.305542000000059, 273.0, 423.0, 36.0 ],
-					"text" : "ossia.parameter rot @type vec3f @default 0. 0. 0. @unit orientation.euler @description \"local rotation x y z\""
+					"text" : "sparck.parameter rot @type vec3f @default 0. 0. 0. @unit orientation.euler @description \"local rotation x y z\""
 				}
 
 			}
@@ -907,7 +907,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 470.305542000000059, 349.070434999999975, 139.0, 77.0 ],
-					"text" : "ossia.parameter rotX @type float @default 0. @description \"local rotation x [deg]\" @priority 1"
+					"text" : "sparck.parameter rotX @type float @default 0. @description \"local rotation x [deg]\" @priority 1"
 				}
 
 			}
@@ -957,7 +957,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 287.305542000000116, 349.070434999999975, 133.999999999999943, 77.0 ],
-					"text" : "ossia.parameter posZ @unit distance.m @type float @default 0. @description \"local position z\" @priority 1"
+					"text" : "sparck.parameter posZ @unit distance.m @type float @default 0. @description \"local position z\" @priority 1"
 				}
 
 			}
@@ -971,7 +971,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 155.805542000000059, 349.070434999999975, 128.0, 77.0 ],
-					"text" : "ossia.parameter posY @unit distance.m @type float @default 0. @description \"local position y\" @priority 1"
+					"text" : "sparck.parameter posY @unit distance.m @type float @default 0. @description \"local position y\" @priority 1"
 				}
 
 			}
@@ -997,7 +997,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 24.305542000000059, 273.0, 402.694457999999941, 36.0 ],
-					"text" : "ossia.parameter pos @type vec3f @default 0. 0. 0. @unit position.cart3D @description \"local position x y z\""
+					"text" : "sparck.parameter pos @type vec3f @default 0. 0. 0. @unit position.cart3D @description \"local position x y z\""
 				}
 
 			}
@@ -1011,7 +1011,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 24.305542000000059, 349.070434999999975, 129.5, 77.0 ],
-					"text" : "ossia.parameter posX @unit distance.m @type float @default 0. @description \"local position x\" @priority 1"
+					"text" : "sparck.parameter posX @unit distance.m @type float @default 0. @description \"local position x\" @priority 1"
 				}
 
 			}
@@ -1562,11 +1562,11 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "ossia.model.mxe64",
+				"name" : "sparck.model.mxe64",
 				"type" : "mx64"
 			}
 , 			{
-				"name" : "ossia.parameter.mxe64",
+				"name" : "sparck.parameter.mxe64",
 				"type" : "mx64"
 			}
  ],

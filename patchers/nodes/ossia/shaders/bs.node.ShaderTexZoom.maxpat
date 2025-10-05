@@ -144,7 +144,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 220.288452000000007, 146.640869000000009, 679.0, 22.0 ],
-									"text" : "ossia.parameter src/dim/pos @type vec2 @range -0.5 0.5 @clip both @default 0. 0. @description \"source dimension position\""
+									"text" : "sparck.parameter src/dim/pos @type vec2 @range -0.5 0.5 @clip both @default 0. 0. @description \"source dimension position\""
 								}
 
 							}
@@ -169,7 +169,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 113.038269000000014, 120.640869000000009, 657.0, 22.0 ],
-									"text" : "ossia.parameter src/dim/scale @type vec2 @range 0. 1. @clip both @default 1. 1. @description \"source dimension scale\""
+									"text" : "sparck.parameter src/dim/scale @type vec2 @range 0. 1. @clip both @default 1. 1. @description \"source dimension scale\""
 								}
 
 							}
@@ -195,7 +195,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 523.288452000000007, 211.640869000000009, 662.0, 35.0 ],
-									"text" : "ossia.parameter dest/dim/pos @type vec2 @range -0.5 0.5 @clip both @default 0. 0. @description \"destination dimension position\""
+									"text" : "sparck.parameter dest/dim/pos @type vec2 @range -0.5 0.5 @clip both @default 0. 0. @description \"destination dimension position\""
 								}
 
 							}
@@ -221,7 +221,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 416.288452000000007, 174.640869000000009, 456.0, 35.0 ],
-									"text" : "ossia.parameter dest/dim/scale @type vec2 @range 0. 1. @clip both @default 1. 1. @description \"destination dimension scale\""
+									"text" : "sparck.parameter dest/dim/scale @type vec2 @range 0. 1. @clip both @default 1. 1. @description \"destination dimension scale\""
 								}
 
 							}
@@ -234,7 +234,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 693.288452000000007, 439.640869000000009, 431.0, 22.0 ],
-									"text" : "ossia.parameter interpolation @type bool @default 0 @description interpolation"
+									"text" : "sparck.parameter interpolation @type bool @default 0 @description interpolation"
 								}
 
 							}
@@ -1322,7 +1322,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 430.730835000000013, 82.640869000000009, 686.0, 20.0 ],
-					"text" : "ossia.parameter renderTwo @type bool @default 0 @description \"render alteration of texture two (if node is enabled - otherwise unaltered pass through)\""
+					"text" : "sparck.parameter renderTwo @type bool @default 0 @description \"render alteration of texture two (if node is enabled - otherwise unaltered pass through)\""
 				}
 
 			}
@@ -1335,7 +1335,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 330.730835000000013, 116.0, 688.0, 20.0 ],
-					"text" : "ossia.parameter renderOne @type bool @default 0 @description \"render alteration of texture one (if node is enabled - otherwise unaltered pass through)\""
+					"text" : "sparck.parameter renderOne @type bool @default 0 @description \"render alteration of texture one (if node is enabled - otherwise unaltered pass through)\""
 				}
 
 			}
@@ -1348,7 +1348,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 49.592595333333328, 204.0, 62.0, 20.0 ],
-					"text" : "ossia.model"
+					"text" : "sparck.model"
 				}
 
 			}
@@ -3198,7 +3198,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.parameter.mxo",
+				"name" : "sparck.parameter.mxo",
 				"type" : "iLaX"
 			}
 , 			{
@@ -3206,7 +3206,7 @@
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "ossia.model.mxo",
+				"name" : "sparck.model.mxo",
 				"type" : "iLaX"
 			}
  ],

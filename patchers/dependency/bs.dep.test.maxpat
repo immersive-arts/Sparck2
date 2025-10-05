@@ -2,42 +2,20 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 5,
-			"revision" : 2,
+			"major" : 9,
+			"minor" : 0,
+			"revision" : 9,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 503.0, 187.0, 491.0, 249.0 ],
-		"bglocked" : 0,
+		"rect" : [ 503.0, 187.0, 493.0, 212.0 ],
 		"openinpresentation" : 1,
-		"default_fontsize" : 12.0,
-		"default_fontface" : 0,
-		"default_fontname" : "Arial",
-		"gridonopen" : 1,
 		"gridsize" : [ 15.0, 15.0 ],
-		"gridsnaponopen" : 1,
-		"objectsnaponopen" : 1,
-		"statusbarvisible" : 2,
 		"toolbarvisible" : 0,
-		"lefttoolbarpinned" : 0,
-		"toptoolbarpinned" : 0,
-		"righttoolbarpinned" : 0,
-		"bottomtoolbarpinned" : 0,
-		"toolbars_unpinned_last_save" : 0,
-		"tallnewobj" : 0,
-		"boxanimatetime" : 200,
 		"enablehscroll" : 0,
 		"enablevscroll" : 0,
-		"devicewidth" : 0.0,
-		"description" : "",
-		"digest" : "",
-		"tags" : "",
-		"style" : "",
-		"subpatcher_template" : "",
-		"assistshowspatchername" : 0,
 		"title" : "Dependencies",
 		"boxes" : [ 			{
 				"box" : 				{
@@ -82,7 +60,7 @@
 					"outlettype" : [ "int" ],
 					"patching_rect" : [ 140.0, 392.285714285714334, 440.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 11.0, 211.0, 440.0, 24.0 ],
+					"presentation_rect" : [ 11.0, 168.0, 440.0, 24.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -192,7 +170,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
 					"patching_rect" : [ 207.0, 578.5, 34.0, 22.0 ],
-					"text" : "sel 7"
+					"text" : "sel 5"
 				}
 
 			}
@@ -292,7 +270,7 @@
 					"outlettype" : [ "int" ],
 					"patching_rect" : [ 103.0, 318.071428571428555, 440.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 11.0, 159.0, 440.0, 24.0 ],
+					"presentation_rect" : [ 11.0, 139.0, 440.0, 24.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -316,55 +294,7 @@
 					"outlettype" : [ "int" ],
 					"patching_rect" : [ 81.0, 281.85714285714289, 440.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 11.0, 133.0, 440.0, 24.0 ],
-					"viewvisibility" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"args" : [ "@package", "CNMAT Externals", "@version", "1.0.4" ],
-					"bgmode" : 0,
-					"border" : 0,
-					"clickthrough" : 0,
-					"enablehscroll" : 0,
-					"enablevscroll" : 0,
-					"id" : "obj-9",
-					"lockeddragscroll" : 0,
-					"lockedsize" : 0,
-					"maxclass" : "bpatcher",
-					"name" : "bs.dep.packageTest.maxpat",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "int" ],
-					"patching_rect" : [ 126.0, 354.285714285714334, 440.0, 24.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 11.0, 185.0, 440.0, 24.0 ],
-					"viewvisibility" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"args" : [ "@package", "ossia", "@url", "https://github.com/ossia/libossia/releases" ],
-					"bgmode" : 0,
-					"border" : 0,
-					"clickthrough" : 0,
-					"enablehscroll" : 0,
-					"enablevscroll" : 0,
-					"id" : "obj-8",
-					"lockeddragscroll" : 0,
-					"lockedsize" : 0,
-					"maxclass" : "bpatcher",
-					"name" : "bs.dep.packageTest.maxpat",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "int" ],
-					"patching_rect" : [ 65.5, 245.428571428571445, 440.0, 24.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 11.0, 107.0, 440.0, 24.0 ],
+					"presentation_rect" : [ 11.0, 110.0, 440.0, 24.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -372,7 +302,7 @@
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
-					"destination" : [ "obj-8", 0 ],
+					"destination" : [ "obj-12", 0 ],
 					"source" : [ "obj-1", 0 ]
 				}
 
@@ -393,7 +323,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-9", 0 ],
+					"destination" : [ "obj-18", 0 ],
 					"source" : [ "obj-13", 0 ]
 				}
 
@@ -491,38 +421,24 @@
 				}
 
 			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-12", 0 ],
-					"source" : [ "obj-8", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-18", 0 ],
-					"source" : [ "obj-9", 0 ]
-				}
-
-			}
  ],
 		"dependency_cache" : [ 			{
 				"name" : "bs.dep.javaTest.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparckTwo/patchers/dependency",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/dependency",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.dep.maxVersion.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparckTwo/patchers/dependency",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/dependency",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.dep.packageTest.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparckTwo/patchers/dependency",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/dependency",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1

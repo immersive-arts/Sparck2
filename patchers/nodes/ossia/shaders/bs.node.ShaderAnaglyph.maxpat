@@ -48,7 +48,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 329.055542000000003, 81.807616999999993, 688.0, 20.0 ],
-					"text" : "ossia.parameter renderOne @type bool @default 0 @description \"render alteration of texture one (if node is enabled - otherwise unaltered pass through)\""
+					"text" : "sparck.parameter renderOne @type bool @default 0 @description \"render alteration of texture one (if node is enabled - otherwise unaltered pass through)\""
 				}
 
 			}
@@ -107,7 +107,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 310.027739999999994, 229.640869000000009, 517.0, 22.0 ],
-									"text" : "ossia.parameter stereo @type float @default 0. @range 0. 255. @clip both @description stereo"
+									"text" : "sparck.parameter stereo @type float @default 0. @range 0. 255. @clip both @description stereo"
 								}
 
 							}
@@ -120,7 +120,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 202.5, 199.640869000000009, 542.0, 22.0 ],
-									"text" : "ossia.parameter deghost @type float @default 0.6 @range 0. 255. @clip both @description deghost"
+									"text" : "sparck.parameter deghost @type float @default 0.6 @range 0. 255. @clip both @description deghost"
 								}
 
 							}
@@ -133,7 +133,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 71.027739999999994, 159.640869000000009, 543.0, 22.0 ],
-									"text" : "ossia.parameter contrast @type float @default 0.4 @range -10. 10 @clip both @description contrast"
+									"text" : "sparck.parameter contrast @type float @default 0.4 @range -10. 10 @clip both @description contrast"
 								}
 
 							}
@@ -352,7 +352,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 32.111114999999998, 174.0, 62.0, 20.0 ],
-					"text" : "ossia.model"
+					"text" : "sparck.model"
 				}
 
 			}
@@ -2298,7 +2298,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.parameter.mxo",
+				"name" : "sparck.parameter.mxo",
 				"type" : "iLaX"
 			}
 , 			{
@@ -2306,7 +2306,7 @@
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "ossia.model.mxo",
+				"name" : "sparck.model.mxo",
 				"type" : "iLaX"
 			}
  ],

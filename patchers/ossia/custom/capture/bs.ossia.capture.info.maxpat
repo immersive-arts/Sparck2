@@ -125,7 +125,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 231.73077400000011, 23.0, 161.0, 22.0 ],
-					"text" : "ossia.remote #2/stereomode"
+					"text" : "sparck.remote #2/stereomode"
 				}
 
 			}
@@ -138,7 +138,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 82.73077400000011, 23.0, 120.0, 22.0 ],
-					"text" : "ossia.remote #2/type"
+					"text" : "sparck.remote #2/type"
 				}
 
 			}
@@ -239,7 +239,7 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "ossia.remote.mxo",
+				"name" : "sparck.remote.mxo",
 				"type" : "iLaX"
 			}
  ],

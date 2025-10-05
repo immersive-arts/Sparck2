@@ -323,7 +323,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 316.555541999999946, 198.464904999999987, 419.0, 35.0 ],
-									"text" : "ossia.parameter kernelSize @type int @default 12 @range 0 128 @clip both @description \"kernel size\""
+									"text" : "sparck.parameter kernelSize @type int @default 12 @range 0 128 @clip both @description \"kernel size\""
 								}
 
 							}
@@ -336,7 +336,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 428.555541999999946, 259.131652999999972, 472.0, 22.0 ],
-									"text" : "ossia.parameter power @type float @default 0. @min 0. @clip low @description power"
+									"text" : "sparck.parameter power @type float @default 0. @min 0. @clip low @description power"
 								}
 
 							}
@@ -349,7 +349,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 467.027739999999994, 312.307616999999993, 472.0, 22.0 ],
-									"text" : "ossia.parameter radius @type float @default 0. @min 0. @clip low @description radius"
+									"text" : "sparck.parameter radius @type float @default 0. @min 0. @clip low @description radius"
 								}
 
 							}
@@ -919,7 +919,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 64.592595333333321, 232.0, 62.0, 20.0 ],
-					"text" : "ossia.model"
+					"text" : "sparck.model"
 				}
 
 			}
@@ -2121,11 +2121,11 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.parameter.mxo",
+				"name" : "sparck.parameter.mxo",
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "ossia.model.mxo",
+				"name" : "sparck.model.mxo",
 				"type" : "iLaX"
 			}
 , 			{

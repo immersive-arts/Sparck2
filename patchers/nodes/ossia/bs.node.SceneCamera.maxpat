@@ -94,7 +94,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 185.222198486328125, 43.999999968749989, 93.0, 22.0 ],
-									"text" : "ossia.model tfm"
+									"text" : "sparck.model tfm"
 								}
 
 							}
@@ -432,7 +432,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 581.052245999999968, 396.105285999999978, 175.0, 54.0 ],
-					"text" : "ossia.parameter render/texture/dim/size @type vec2f @default 1920 1080 @min 0 0 @clip low @description \"texture dimension\""
+					"text" : "sparck.parameter render/texture/dim/size @type vec2f @default 1920 1080 @min 0 0 @clip low @description \"texture dimension\""
 				}
 
 			}
@@ -578,7 +578,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 866.916626000000178, 333.070434999999975, 122.0, 89.0 ],
-									"text" : "ossia.parameter lens/adapt/usable @invisible 1 @type bool @default 0 @description \"adapt enable\" @priority 1"
+									"text" : "sparck.parameter lens/adapt/usable @invisible 1 @type bool @default 0 @description \"adapt enable\" @priority 1"
 								}
 
 							}
@@ -617,7 +617,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 572.611084000000119, 320.070434999999975, 110.388915999999881, 102.0 ],
-									"text" : "ossia.parameter lens/adapt/factor @type float @default 1. @description \"adapt enable\" @priority 1"
+									"text" : "sparck.parameter lens/adapt/factor @type float @default 1. @description \"adapt enable\" @priority 1"
 								}
 
 							}
@@ -643,7 +643,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 454.611084000000119, 320.070434999999975, 107.0, 102.0 ],
-									"text" : "ossia.parameter lens/adapt/enable @type bool @default 0 @description \"adapt enable\" @priority 1"
+									"text" : "sparck.parameter lens/adapt/enable @type bool @default 0 @description \"adapt enable\" @priority 1"
 								}
 
 							}
@@ -694,7 +694,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 18.611084000000119, 101.070434999999975, 159.0, 129.0 ],
-									"text" : "ossia.parameter lens/optics @type string @default fov_perspective @range fov_perspective fov_orthografic frustum_perspective frustum_orthografic @description \"lens type\" @priority 1"
+									"text" : "sparck.parameter lens/optics @type string @default fov_perspective @range fov_perspective fov_orthografic frustum_perspective frustum_orthografic @description \"lens type\" @priority 1"
 								}
 
 							}
@@ -816,7 +816,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 338.611084000000119, 320.070434999999975, 115.0, 116.0 ],
-									"text" : "ossia.parameter lens/fov/angle @type float @default 45. @range 0.01 179.9 @clip both @description \"fov angle\" @priority 1"
+									"text" : "sparck.parameter lens/fov/angle @type float @default 45. @range 0.01 179.9 @clip both @description \"fov angle\" @priority 1"
 								}
 
 							}
@@ -830,7 +830,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 214.611084000000119, 320.070434999999975, 118.0, 102.0 ],
-									"text" : "ossia.parameter lens/fov/ratio @type float @default 1. @min 0.1 @clip low @description \"aspect ratio\" @priority 1"
+									"text" : "sparck.parameter lens/fov/ratio @type float @default 1. @min 0.1 @clip low @description \"aspect ratio\" @priority 1"
 								}
 
 							}
@@ -844,7 +844,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 776.069397000000322, 128.070434999999975, 130.0, 89.0 ],
-									"text" : "ossia.parameter lens/culling/far @type float @default 100. @min 0.000001 @clip low @description \"culling far\" @priority 1"
+									"text" : "sparck.parameter lens/culling/far @type float @default 100. @min 0.000001 @clip low @description \"culling far\" @priority 1"
 								}
 
 							}
@@ -858,7 +858,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 654.611084000000119, 128.070434999999975, 117.0, 116.0 ],
-									"text" : "ossia.parameter lens/culling/near @type float @default 0.05 @min 0.001 @clip both @description \"culling near\" @priority 1"
+									"text" : "sparck.parameter lens/culling/near @type float @default 0.05 @min 0.001 @clip both @description \"culling near\" @priority 1"
 								}
 
 							}
@@ -872,7 +872,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 531.305542000000059, 128.070434999999975, 117.0, 102.0 ],
-									"text" : "ossia.parameter lens/frustum/bottom @type float @default -0.05 @description \"frustum bottom\" @priority 1"
+									"text" : "sparck.parameter lens/frustum/bottom @type float @default -0.05 @description \"frustum bottom\" @priority 1"
 								}
 
 							}
@@ -886,7 +886,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 420.305542000000059, 128.070434999999975, 100.0, 102.0 ],
-									"text" : "ossia.parameter lens/frustum/top @type float @default 0.05 @description \"frustum top\" @priority 1"
+									"text" : "sparck.parameter lens/frustum/top @type float @default 0.05 @description \"frustum top\" @priority 1"
 								}
 
 							}
@@ -900,7 +900,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 302.305542000000059, 128.070434999999975, 104.0, 102.0 ],
-									"text" : "ossia.parameter lens/frustum/right @type float @default -0.05 @description \"frustum right\" @priority 1"
+									"text" : "sparck.parameter lens/frustum/right @type float @default -0.05 @description \"frustum right\" @priority 1"
 								}
 
 							}
@@ -914,7 +914,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 190.305542000000059, 128.070434999999975, 99.0, 102.0 ],
-									"text" : "ossia.parameter lens/frustum/left @type float @default 0.05 @description \"frustum left\" @priority 1"
+									"text" : "sparck.parameter lens/frustum/left @type float @default 0.05 @description \"frustum left\" @priority 1"
 								}
 
 							}
@@ -1253,7 +1253,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 39.222198486328125, 365.850646999999981, 62.0, 20.0 ],
-					"text" : "ossia.model"
+					"text" : "sparck.model"
 				}
 
 			}
@@ -1984,7 +1984,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 241.715331999999989, 14.070434999999975, 336.0, 49.0 ],
-													"text" : "ossia.parameter lens/stereo/spread @type float @default 0.1 @description \"stereo spread\" @priority 1 @range 0. 1. @clip both"
+													"text" : "sparck.parameter lens/stereo/spread @type float @default 0.1 @description \"stereo spread\" @priority 1 @range 0. 1. @clip both"
 												}
 
 											}
@@ -1998,7 +1998,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 595.732665999999995, 4.070434999999975, 152.0, 102.0 ],
-													"text" : "ossia.parameter lens/stereo/rotation @type float @default 0. @description \"stereo rotation\" @priority 1 @range -10. 10. @clip both"
+													"text" : "sparck.parameter lens/stereo/rotation @type float @default 0. @description \"stereo rotation\" @priority 1 @range -10. 10. @clip both"
 												}
 
 											}
@@ -2012,7 +2012,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 88.232665999999995, 4.070434999999975, 113.0, 102.0 ],
-													"text" : "ossia.parameter lens/stereo/enable @type bool @default 0 @description \"stereo enable\" @priority 1"
+													"text" : "sparck.parameter lens/stereo/enable @type bool @default 0 @description \"stereo enable\" @priority 1"
 												}
 
 											}
@@ -3363,11 +3363,11 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.model.mxe64",
+				"name" : "sparck.model.mxe64",
 				"type" : "mx64"
 			}
 , 			{
-				"name" : "ossia.parameter.mxe64",
+				"name" : "sparck.parameter.mxe64",
 				"type" : "mx64"
 			}
  ],

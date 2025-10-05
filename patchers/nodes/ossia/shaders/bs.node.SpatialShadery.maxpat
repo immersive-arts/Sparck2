@@ -120,7 +120,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 183.561278999999985, 233.570434999999975, 169.0, 49.0 ],
-									"text" : "ossia.parameter gamma/blue @type float @default 4. @description \"gamma blue\""
+									"text" : "sparck.parameter gamma/blue @type float @default 4. @description \"gamma blue\""
 								}
 
 							}
@@ -134,7 +134,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 133.78063933333334, 178.0, 175.0, 49.0 ],
-									"text" : "ossia.parameter gamma/green @type float @default 4. @description \"gamma green\""
+									"text" : "sparck.parameter gamma/green @type float @default 4. @description \"gamma green\""
 								}
 
 							}
@@ -148,7 +148,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 83.999999666666668, 123.070435000000003, 164.0, 49.0 ],
-									"text" : "ossia.parameter gamma/red @type float @default 4. @description \"gamma red\""
+									"text" : "sparck.parameter gamma/red @type float @default 4. @description \"gamma red\""
 								}
 
 							}
@@ -174,7 +174,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 401.5, 246.570434999999975, 331.0, 49.0 ],
-									"text" : "ossia.parameter render/result @type int @default 0 @range 0 2 @clip both @description \"ouput (0=result, 1=content texure, 2=mask texture)\""
+									"text" : "sparck.parameter render/result @type int @default 0 @range 0 2 @clip both @description \"ouput (0=result, 1=content texure, 2=mask texture)\""
 								}
 
 							}
@@ -188,7 +188,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 401.5, 133.570435000000003, 331.0, 35.0 ],
-									"text" : "ossia.parameter blend/luminance @type float @default 0.62 @range 0. 1. @clip both @description \"blend luminance\""
+									"text" : "sparck.parameter blend/luminance @type float @default 0.62 @range 0. 1. @clip both @description \"blend luminance\""
 								}
 
 							}
@@ -202,7 +202,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 401.5, 16.070435000000003, 296.0, 35.0 ],
-									"text" : "ossia.parameter blend/power @type float @default 2. @range 0. 3. @clip low @description \"blend power\""
+									"text" : "sparck.parameter blend/power @type float @default 2. @range 0. 3. @clip low @description \"blend power\""
 								}
 
 							}
@@ -1540,7 +1540,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 99.0, 92.500000429687475, 549.0, 22.0 ],
-									"text" : "ossia.parameter shader/bake/enable @type bool @default 0 @description \"enables baking of shader\""
+									"text" : "sparck.parameter shader/bake/enable @type bool @default 0 @description \"enables baking of shader\""
 								}
 
 							}
@@ -1565,7 +1565,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 34.044128999999998, 11.0, 652.0, 22.0 ],
-									"text" : "ossia.parameter shader/name @type string @description shader @default edge @range edge edgeAndBlend @clip both"
+									"text" : "sparck.parameter shader/name @type string @description shader @default edge @range edge edgeAndBlend @clip both"
 								}
 
 							}
@@ -7273,7 +7273,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 189.310547000000042, 175.0, 847.0, 36.0 ],
-									"text" : "ossia.parameter stageMode @type int @default 1 @description \"projection mode (0 =Textured, 1=Colored, 2=Overlap, 3=Map, 4=CamA, 5=CamB, 6=CamC, 7=CamD, 8=CamE, 9=CamF)\" @range 0 9 @clip both"
+									"text" : "sparck.parameter stageMode @type int @default 1 @description \"projection mode (0 =Textured, 1=Colored, 2=Overlap, 3=Map, 4=CamA, 5=CamB, 6=CamC, 7=CamD, 8=CamE, 9=CamF)\" @range 0 9 @clip both"
 								}
 
 							}
@@ -7334,7 +7334,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 628.310485999999855, 427.089477999999929, 549.0, 36.0 ],
-									"text" : "ossia.parameter occlusion/dim @type string @default 1024 @range 64 128 256 512 1024 2048 4096 @description \"occlusion depth texture dimension\""
+									"text" : "sparck.parameter occlusion/dim @type string @default 1024 @range 64 128 256 512 1024 2048 4096 @description \"occlusion depth texture dimension\""
 								}
 
 							}
@@ -7348,7 +7348,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 288.551575000000071, 427.089477999999929, 327.0, 36.0 ],
-									"text" : "ossia.parameter occlusion/enable @type bool @default 0 @description \"enables occlusion detection\""
+									"text" : "sparck.parameter occlusion/enable @type bool @default 0 @description \"enables occlusion detection\""
 								}
 
 							}
@@ -7432,7 +7432,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 644.200032333333525, 173.0, 236.0, 49.0 ],
-													"text" : "ossia.parameter blend/bevel/curve @type float @default 0. @range -1. 1. @clip both @description \"bevel gradient curve\""
+													"text" : "sparck.parameter blend/bevel/curve @type float @default 0. @range -1. 1. @clip both @description \"bevel gradient curve\""
 												}
 
 											}
@@ -7446,7 +7446,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 492.700032333333468, 146.0, 138.0, 89.0 ],
-													"text" : "ossia.parameter blend/bevel/rounded @type bool @default 0. @range 0. 1. @description \"use rounded bevel \""
+													"text" : "sparck.parameter blend/bevel/rounded @type bool @default 0. @range 0. 1. @description \"use rounded bevel \""
 												}
 
 											}
@@ -7460,7 +7460,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 354.004608000000133, 107.0, 523.0, 35.0 ],
-													"text" : "ossia.parameter blend/bevel/size @type float @default 0. @range 0. 1. @clip both @description \"bevel size\""
+													"text" : "sparck.parameter blend/bevel/size @type float @default 0. @range 0. 1. @clip both @description \"bevel size\""
 												}
 
 											}
@@ -7474,7 +7474,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 201.04109633333357, 62.0, 678.0, 35.0 ],
-													"text" : "ossia.parameter blend/angle/falloff @type float @default 0. @range 0. 0.5 @clip both @description \"angle-limit falloff (defines the size of the angle blend transition at the angle limit)\""
+													"text" : "sparck.parameter blend/angle/falloff @type float @default 0. @range 0. 0.5 @clip both @description \"angle-limit falloff (defines the size of the angle blend transition at the angle limit)\""
 												}
 
 											}
@@ -7488,7 +7488,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 58.0, 17.0, 799.0, 35.0 ],
-													"text" : "ossia.parameter blend/angle/limit @type float @default 0. @range 0. 1. @clip both @description \"angle limit (how much of the visible surface area is considered, 0 = no limit) \""
+													"text" : "sparck.parameter blend/angle/limit @type float @default 0. @range 0. 1. @clip both @description \"angle limit (how much of the visible surface area is considered, 0 = no limit) \""
 												}
 
 											}
@@ -8148,7 +8148,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 19.0, 241.307616999999993, 814.0, 22.0 ],
-									"text" : "ossia.parameter distance @type float @default 0. @range 0. 1. @clip both @description \"use distance as an additional differentiator. (0 = no influence)\""
+									"text" : "sparck.parameter distance @type float @default 0. @range 0. 1. @clip both @description \"use distance as an additional differentiator. (0 = no influence)\""
 								}
 
 							}
@@ -8162,7 +8162,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 403.310485999999855, 85.5, 761.0, 36.0 ],
-									"text" : "ossia.parameter blend/interpolation @type float @default 0. @range 0. 1. @clip both @description \"interpolation correction. if strange artefacts start to appear, raise the value until the artefacts disappear. (how much of the overlapping areas are considered / 1=full spread)\""
+									"text" : "sparck.parameter blend/interpolation @type float @default 0. @range 0. 1. @clip both @description \"interpolation correction. if strange artefacts start to appear, raise the value until the artefacts disappear. (how much of the overlapping areas are considered / 1=full spread)\""
 								}
 
 							}
@@ -8175,7 +8175,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 278.551575000000071, 64.0, 606.0, 22.0 ],
-									"text" : "ossia.parameter blend/background @type bool @default 0 @description \"enables blending with the background\""
+									"text" : "sparck.parameter blend/background @type bool @default 0 @description \"enables blending with the background\""
 								}
 
 							}
@@ -8189,7 +8189,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 203.844726499999979, 355.43890399999998, 921.0, 36.0 ],
-									"text" : "ossia.parameter angleMode @type int @default 0 @range 0 1 @clip both @description \"angle differentiation: 'viewray' = 0 will differentiate based on the angle between the surface normal and the viewray, 'direction' = 1 will differentiate based on the angle between the surface normal and the camera direction - ideal for flat surfaces\""
+									"text" : "sparck.parameter angleMode @type int @default 0 @range 0 1 @clip both @description \"angle differentiation: 'viewray' = 0 will differentiate based on the angle between the surface normal and the viewray, 'direction' = 1 will differentiate based on the angle between the surface normal and the camera direction - ideal for flat surfaces\""
 								}
 
 							}
@@ -8202,7 +8202,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 19.0, 145.762878000000001, 833.0, 22.0 ],
-									"text" : "ossia.parameter projectionMode @type int @default 1 @description \"projection mode (0 = back side, 1 = both sides, 2 = front side)\" @range 0 2 @clip both"
+									"text" : "sparck.parameter projectionMode @type int @default 1 @description \"projection mode (0 = back side, 1 = both sides, 2 = front side)\" @range 0 2 @clip both"
 								}
 
 							}
@@ -8216,7 +8216,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 192.551574999999957, 270.307616999999993, 568.0, 50.0 ],
-									"text" : "ossia.parameter model/isCollada @type bool @default 0 @description \"applied to collada model - if the model you apply this shader to is a collada model, it needs this transformational correction, otherwise the rendering is incorrect\""
+									"text" : "sparck.parameter model/isCollada @type bool @default 0 @description \"applied to collada model - if the model you apply this shader to is a collada model, it needs this transformational correction, otherwise the rendering is incorrect\""
 								}
 
 							}
@@ -8229,7 +8229,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 139.810485999999855, 31.544739, 1011.0, 22.0 ],
-									"text" : "ossia.parameter blend/spread @type float @default 0. @range 0. 1. @clip both @description \"spread factor will increase the differentiation between overlapping projections (1 = full spread)\""
+									"text" : "sparck.parameter blend/spread @type float @default 0. @range 0. 1. @clip both @description \"spread factor will increase the differentiation between overlapping projections (1 = full spread)\""
 								}
 
 							}
@@ -8254,7 +8254,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 25.287719750000008, 2.605834999999999, 435.0, 22.0 ],
-									"text" : "ossia.parameter offcolor @type rgba @default 0. 0. 0. 1. @description \"off color\""
+									"text" : "sparck.parameter offcolor @type rgba @default 0. 0. 0. 1. @description \"off color\""
 								}
 
 							}
@@ -8774,7 +8774,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 83.499979666666675, 210.833374000000049, 62.0, 20.0 ],
-					"text" : "ossia.model"
+					"text" : "sparck.model"
 				}
 
 			}
@@ -10397,11 +10397,11 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.model.mxo",
+				"name" : "sparck.model.mxo",
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "ossia.parameter.mxo",
+				"name" : "sparck.parameter.mxo",
 				"type" : "iLaX"
 			}
  ],

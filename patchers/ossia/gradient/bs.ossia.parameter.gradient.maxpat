@@ -487,7 +487,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 20.5, 135.0, 343.0, 49.0 ],
-									"text" : "ossia.parameter #1 @type list @default 0 0. 53.19 0.588889 41.984734 0.561111 31.297707 0.511111 21.628502 0.438889 12.722649 0.311111 100 1."
+									"text" : "sparck.parameter #1 @type list @default 0 0. 53.19 0.588889 41.984734 0.561111 31.297707 0.511111 21.628502 0.438889 12.722649 0.311111 100 1."
 								}
 
 							}
@@ -891,7 +891,7 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "ossia.parameter.mxo",
+				"name" : "sparck.parameter.mxo",
 				"type" : "iLaX"
 			}
  ],

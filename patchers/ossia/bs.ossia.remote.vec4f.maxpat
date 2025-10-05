@@ -477,7 +477,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 61.5, 98.403809000000024, 77.0, 22.0 ],
-					"text" : "ossia.remote"
+					"text" : "sparck.remote"
 				}
 
 			}
@@ -641,7 +641,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.remote.mxo",
+				"name" : "sparck.remote.mxo",
 				"type" : "iLaX"
 			}
 , 			{

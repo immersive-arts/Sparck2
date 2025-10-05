@@ -94,7 +94,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 50.074096999999995, 95.850646999999981, 93.0, 22.0 ],
-									"text" : "ossia.model tfm"
+									"text" : "sparck.model tfm"
 								}
 
 							}
@@ -610,7 +610,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 223.458313000000203, 78.6131591796875, 104.0, 129.0 ],
-									"text" : "ossia.parameter lens/culling/far @type float @default 3. @min 0.000001 @clip low @description \"culling far\" @priority 1"
+									"text" : "sparck.parameter lens/culling/far @type float @default 3. @min 0.000001 @clip low @description \"culling far\" @priority 1"
 								}
 
 							}
@@ -624,7 +624,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 103.0, 78.6131591796875, 101.0, 129.0 ],
-									"text" : "ossia.parameter lens/culling/near @type float @default 0.05 @min 0.001 @clip both @description \"culling near\" @priority 1"
+									"text" : "sparck.parameter lens/culling/near @type float @default 0.05 @min 0.001 @clip both @description \"culling near\" @priority 1"
 								}
 
 							}
@@ -991,7 +991,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 381.539092513672017, 212.999999972656269, 551.0, 22.0 ],
-									"text" : "ossia.parameter cam/bottom/enable @type bool @default false @description \"enable bottom camera\""
+									"text" : "sparck.parameter cam/bottom/enable @type bool @default false @description \"enable bottom camera\""
 								}
 
 							}
@@ -1004,7 +1004,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 347.539092513672017, 182.999999972656269, 509.0, 22.0 ],
-									"text" : "ossia.parameter cam/top/enable @type bool @default false @description \"enable top camera\""
+									"text" : "sparck.parameter cam/top/enable @type bool @default false @description \"enable top camera\""
 								}
 
 							}
@@ -1017,7 +1017,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 319.539092513672017, 152.999999972656269, 527.0, 22.0 ],
-									"text" : "ossia.parameter cam/back/enable @type bool @default false @description \"enable back camera\""
+									"text" : "sparck.parameter cam/back/enable @type bool @default false @description \"enable back camera\""
 								}
 
 							}
@@ -1030,7 +1030,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 295.539092513672017, 119.5, 522.0, 22.0 ],
-									"text" : "ossia.parameter cam/right/enable @type bool @default false @description \"enable right camera\""
+									"text" : "sparck.parameter cam/right/enable @type bool @default false @description \"enable right camera\""
 								}
 
 							}
@@ -1043,7 +1043,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 267.039092513672017, 84.5, 524.0, 22.0 ],
-									"text" : "ossia.parameter cam/front/enable @type bool @default false @description \"enable front camera\""
+									"text" : "sparck.parameter cam/front/enable @type bool @default false @description \"enable front camera\""
 								}
 
 							}
@@ -1056,7 +1056,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 243.039092513672017, 49.5, 508.0, 22.0 ],
-									"text" : "ossia.parameter cam/left/enable @type bool @default false @description \"enable left camera\""
+									"text" : "sparck.parameter cam/left/enable @type bool @default false @description \"enable left camera\""
 								}
 
 							}
@@ -1352,7 +1352,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 35.074096999999995, 255.850646999999981, 62.0, 20.0 ],
-					"text" : "ossia.model"
+					"text" : "sparck.model"
 				}
 
 			}
@@ -2211,11 +2211,11 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.model.mxe64",
+				"name" : "sparck.model.mxe64",
 				"type" : "mx64"
 			}
 , 			{
-				"name" : "ossia.parameter.mxe64",
+				"name" : "sparck.parameter.mxe64",
 				"type" : "mx64"
 			}
  ],

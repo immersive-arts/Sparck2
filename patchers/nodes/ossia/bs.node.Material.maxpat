@@ -48,7 +48,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 10.138916015625, 288.0, 62.0, 20.0 ],
-					"text" : "ossia.model"
+					"text" : "sparck.model"
 				}
 
 			}
@@ -725,7 +725,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 661.805542000000059, 24.684632402343766, 232.0, 49.0 ],
-									"text" : "ossia.parameter material/filewatch @type bool @default 0 @description \"enable autoload of changed file\" @priority 2"
+									"text" : "sparck.parameter material/filewatch @type bool @default 0 @description \"enable autoload of changed file\" @priority 2"
 								}
 
 							}
@@ -848,7 +848,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 34.861022999999932, 161.697388125000003, 291.0, 35.0 ],
-													"text" : "ossia.parameter fog/intensity @type float @default 0 @description \"fog intensity.\""
+													"text" : "sparck.parameter fog/intensity @type float @default 0 @description \"fog intensity.\""
 												}
 
 											}
@@ -876,7 +876,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 12.0, 81.0, 428.0, 35.0 ],
-													"text" : "ossia.parameter fog/type @type string @default none @range none linear exp exp2 @description \"fog type\""
+													"text" : "sparck.parameter fog/type @type string @default none @range none linear exp exp2 @description \"fog type\""
 												}
 
 											}
@@ -890,7 +890,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 52.0, 242.0, 436.0, 35.0 ],
-													"text" : "ossia.parameter fog/color @type rgba @default 0.5 0.5 0.5 1. @description \"fog color\""
+													"text" : "sparck.parameter fog/color @type rgba @default 0.5 0.5 0.5 1. @description \"fog color\""
 												}
 
 											}
@@ -1170,7 +1170,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 120.5, 371.0, 715.0, 22.0 ],
-													"text" : "ossia.parameter shadow/radius @type float @default 0.3 @min 0. @clip low @description \"Adjust shadow blur radius (default = 0.3)\""
+													"text" : "sparck.parameter shadow/radius @type float @default 0.3 @min 0. @clip low @description \"Adjust shadow blur radius (default = 0.3)\""
 												}
 
 											}
@@ -1199,7 +1199,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 106.5, 312.0, 690.0, 22.0 ],
-													"text" : "ossia.parameter shadow/soft @type float @default 0.3 @min 0. @clip low @description \"Adjust shadow softness (default = 0.3)\""
+													"text" : "sparck.parameter shadow/soft @type float @default 0.3 @min 0. @clip low @description \"Adjust shadow softness (default = 0.3)\""
 												}
 
 											}
@@ -1212,7 +1212,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 88.0, 253.0, 699.0, 22.0 ],
-													"text" : "ossia.parameter shadow/hard @type float @default 0.7 @min 0. @clip low @description \"Adjust shadow hardness (default = 0.7)\""
+													"text" : "sparck.parameter shadow/hard @type float @default 0.7 @min 0. @clip low @description \"Adjust shadow hardness (default = 0.7)\""
 												}
 
 											}
@@ -1258,7 +1258,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 70.0, 178.0, 772.0, 35.0 ],
-													"text" : "ossia.parameter shadow/eps @type float @default 0.2 @min 0. @clip low @description \"Shadow epsilon (eps) modifies the shape of shadows, and corrects self-shadowing error (default = 0.2)\""
+													"text" : "sparck.parameter shadow/eps @type float @default 0.2 @min 0. @clip low @description \"Shadow epsilon (eps) modifies the shape of shadows, and corrects self-shadowing error (default = 0.2)\""
 												}
 
 											}
@@ -1287,7 +1287,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 55.294952999999907, 108.0, 606.0, 35.0 ],
-													"text" : "ossia.parameter lighting/shadowcaster @type bool @default false @description \"This object is a shadow caster. Works only if a material is selected\""
+													"text" : "sparck.parameter lighting/shadowcaster @type bool @default false @description \"This object is a shadow caster. Works only if a material is selected\""
 												}
 
 											}
@@ -1585,7 +1585,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 106.0, 244.333374000000049, 257.0, 49.0 ],
-													"text" : "ossia.parameter shininess @type int @default 0 @range 0 255. @clip both @description \"Specifies the shininess of the object\""
+													"text" : "sparck.parameter shininess @type int @default 0 @range 0 255. @clip both @description \"Specifies the shininess of the object\""
 												}
 
 											}
@@ -1613,7 +1613,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 81.0, 157.5, 298.0, 49.0 ],
-													"text" : "ossia.parameter smooth/enable @type bool @default false @description \"Smooth shading.Works only if materialmode = 0 and no Material is linked\""
+													"text" : "sparck.parameter smooth/enable @type bool @default false @description \"Smooth shading.Works only if materialmode = 0 and no Material is linked\""
 												}
 
 											}
@@ -1641,7 +1641,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 37.0, 93.0, 576.0, 35.0 ],
-													"text" : "ossia.parameter lighting/enable @type bool @default false @description \"lighting can have strange results if no Light node exists.\""
+													"text" : "sparck.parameter lighting/enable @type bool @default false @description \"lighting can have strange results if no Light node exists.\""
 												}
 
 											}
@@ -1895,7 +1895,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 204.861022999999932, 235.000000000000028, 315.0, 49.0 ],
-													"text" : "ossia.parameter shader/specular/size @type float @default 0 @description \"Specular toon component size. Only valid when the specular shading model is toon.\""
+													"text" : "sparck.parameter shader/specular/size @type float @default 0 @description \"Specular toon component size. Only valid when the specular shading model is toon.\""
 												}
 
 											}
@@ -1909,7 +1909,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 186.861022999999932, 145.728393124999997, 472.0, 49.0 ],
-													"text" : "ossia.parameter shader/specular/smooth @type float @default 0 @description \"Specular toon component smoothness. Only valid when the specular shading model is toon.\""
+													"text" : "sparck.parameter shader/specular/smooth @type float @default 0 @description \"Specular toon component smoothness. Only valid when the specular shading model is toon.\""
 												}
 
 											}
@@ -1923,7 +1923,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 29.0, 90.0, 421.0, 35.0 ],
-													"text" : "ossia.parameter shader/specular/model @type string @default blinn @range blinn phong toon ward cook_torrance @description \"specular shader model\""
+													"text" : "sparck.parameter shader/specular/model @type string @default blinn @range blinn phong toon ward cook_torrance @description \"specular shader model\""
 												}
 
 											}
@@ -2205,7 +2205,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 257.0, 394.798828125, 377.0, 49.0 ],
-													"text" : "ossia.parameter shader/diffuse/darkness @type float @default 0 @description \"Material darkness. Only valid when the diffuse shading model is minnaert\""
+													"text" : "sparck.parameter shader/diffuse/darkness @type float @default 0 @description \"Material darkness. Only valid when the diffuse shading model is minnaert\""
 												}
 
 											}
@@ -2219,7 +2219,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 238.861022999999932, 303.798828125, 391.0, 49.0 ],
-													"text" : "ossia.parameter shader/diffuse/size @type float @default 0 @description \"Diffuse toon component size. Only valid when the diffuse shading model is toon\""
+													"text" : "sparck.parameter shader/diffuse/size @type float @default 0 @description \"Diffuse toon component size. Only valid when the diffuse shading model is toon\""
 												}
 
 											}
@@ -2233,7 +2233,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 220.861022999999932, 223.798828125, 396.0, 49.0 ],
-													"text" : "ossia.parameter shader/diffuse/smooth @type float @default 0 @description \"Diffuse toon component smoothness. Only valid when the diffuse shading model is toon\""
+													"text" : "sparck.parameter shader/diffuse/smooth @type float @default 0 @description \"Diffuse toon component smoothness. Only valid when the diffuse shading model is toon\""
 												}
 
 											}
@@ -2247,7 +2247,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 197.861022999999932, 133.728393124999997, 435.0, 35.0 ],
-													"text" : "ossia.parameter shader/diffuse/roughness @type float @default 0 @description \"Material roughness. Only valid when the diffuse shading model is oren_nayer\""
+													"text" : "sparck.parameter shader/diffuse/roughness @type float @default 0 @description \"Material roughness. Only valid when the diffuse shading model is oren_nayer\""
 												}
 
 											}
@@ -2261,7 +2261,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 53.0, 78.0, 558.0, 35.0 ],
-													"text" : "ossia.parameter shader/diffuse/model @type string @default lambert @range lambert oren_nayer toon minnaert @description \"diffuse shader mdoel\""
+													"text" : "sparck.parameter shader/diffuse/model @type string @default lambert @range lambert oren_nayer toon minnaert @description \"diffuse shader mdoel\""
 												}
 
 											}
@@ -2606,7 +2606,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 133.0, 307.0, 533.0, 22.0 ],
-													"text" : "ossia.parameter color/ambient @type rgba @default 0. 0. 0. 1. @description \"object ambient color\""
+													"text" : "sparck.parameter color/ambient @type rgba @default 0. 0. 0. 1. @description \"object ambient color\""
 												}
 
 											}
@@ -2631,7 +2631,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 118.0, 249.0, 542.0, 22.0 ],
-													"text" : "ossia.parameter color/emission @type rgba @default 0. 0. 0. 1. @description \"object emission color\""
+													"text" : "sparck.parameter color/emission @type rgba @default 0. 0. 0. 1. @description \"object emission color\""
 												}
 
 											}
@@ -2656,7 +2656,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 103.0, 185.0, 565.0, 22.0 ],
-													"text" : "ossia.parameter color/specular @type rgba @default 0.5 0.5 0.5 1. @description \"object specular color\""
+													"text" : "sparck.parameter color/specular @type rgba @default 0.5 0.5 0.5 1. @description \"object specular color\""
 												}
 
 											}
@@ -2681,7 +2681,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 84.0, 122.0, 538.0, 22.0 ],
-													"text" : "ossia.parameter color/diffuse @type rgba @default 0.5 0.5 0.5 1. @description \"object diffuse color\""
+													"text" : "sparck.parameter color/diffuse @type rgba @default 0.5 0.5 0.5 1. @description \"object diffuse color\""
 												}
 
 											}
@@ -3579,7 +3579,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.parameter.mxo",
+				"name" : "sparck.parameter.mxo",
 				"type" : "iLaX"
 			}
 , 			{
@@ -3595,7 +3595,7 @@
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "ossia.model.mxo",
+				"name" : "sparck.model.mxo",
 				"type" : "iLaX"
 			}
  ],

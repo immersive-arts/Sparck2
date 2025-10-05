@@ -106,7 +106,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 394.0, 175.5, 723.0, 22.0 ],
-									"text" : "ossia.parameter marker/z/negative @type float @default -1 @range -100. 0. @clip high @description \"marker position negative z axis\""
+									"text" : "sparck.parameter marker/z/negative @type float @default -1 @range -100. 0. @clip high @description \"marker position negative z axis\""
 								}
 
 							}
@@ -131,7 +131,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 370.517003333333378, 147.5, 673.0, 22.0 ],
-									"text" : "ossia.parameter marker/z/positive @type float @default 1 @min 0. @clip low @description \"marker position positive z axis\""
+									"text" : "sparck.parameter marker/z/positive @type float @default 1 @min 0. @clip low @description \"marker position positive z axis\""
 								}
 
 							}
@@ -156,7 +156,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 329.517003333333378, 119.5, 723.0, 22.0 ],
-									"text" : "ossia.parameter marker/y/negative @type float @default -1 @range -100. 0. @clip high @description \"marker position negative y axis\""
+									"text" : "sparck.parameter marker/y/negative @type float @default -1 @range -100. 0. @clip high @description \"marker position negative y axis\""
 								}
 
 							}
@@ -181,7 +181,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 288.517003333333378, 91.5, 663.0, 22.0 ],
-									"text" : "ossia.parameter marker/y/positive @type float @default 1 @min 0. @clip low @description \"marker position positive y axis\""
+									"text" : "sparck.parameter marker/y/positive @type float @default 1 @min 0. @clip low @description \"marker position positive y axis\""
 								}
 
 							}
@@ -206,7 +206,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 229.517003333333349, 58.5, 723.0, 22.0 ],
-									"text" : "ossia.parameter marker/x/negative @type float @default -1 @range -100. 0. @clip high @description \"marker position negative x axis\""
+									"text" : "sparck.parameter marker/x/negative @type float @default -1 @range -100. 0. @clip high @description \"marker position negative x axis\""
 								}
 
 							}
@@ -231,7 +231,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 171.517003333333349, 26.5, 663.0, 22.0 ],
-									"text" : "ossia.parameter marker/x/positive @type float @default 1 @min 0. @clip low @description \"marker position positive x axis\""
+									"text" : "sparck.parameter marker/x/positive @type float @default 1 @min 0. @clip low @description \"marker position positive x axis\""
 								}
 
 							}
@@ -282,7 +282,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 429.0, 334.0, 593.0, 22.0 ],
-									"text" : "ossia.parameter marker/size @type float @default 0 @range 0.005 0.1 @clip both @description \"marker size\""
+									"text" : "sparck.parameter marker/size @type float @default 0 @range 0.005 0.1 @clip both @description \"marker size\""
 								}
 
 							}
@@ -307,7 +307,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 361.183670000000006, 274.5, 487.0, 22.0 ],
-									"text" : "ossia.parameter marker/color @type rgba @default 1. 1. 1. 1. @description \"marker color\""
+									"text" : "sparck.parameter marker/color @type rgba @default 1. 1. 1. 1. @description \"marker color\""
 								}
 
 							}
@@ -1325,7 +1325,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 33.0, 234.184632402343709, 62.0, 20.0 ],
-					"text" : "ossia.model"
+					"text" : "sparck.model"
 				}
 
 			}
@@ -1397,7 +1397,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 721.0, 7.0, 296.0, 62.0 ],
-									"text" : "ossia.parameter depth/enable @type bool @default 1 @description \"Sorting the model autmatically to its z-depth. Switching this off allows to use the layer property. \""
+									"text" : "sparck.parameter depth/enable @type bool @default 1 @description \"Sorting the model autmatically to its z-depth. Switching this off allows to use the layer property. \""
 								}
 
 							}
@@ -1435,7 +1435,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 419.150879000000032, 12.333373999999992, 283.0, 35.0 ],
-									"text" : "ossia.parameter depth/layer @type int @default 10 @description \"depth layer\""
+									"text" : "sparck.parameter depth/layer @type int @default 10 @description \"depth layer\""
 								}
 
 							}
@@ -1479,7 +1479,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 490.250015000000019, 88.0, 193.000000000000057, 49.0 ],
-									"text" : "ossia.parameter render/showaxis @type bool @default 0 @description \"draw axis\""
+									"text" : "sparck.parameter render/showaxis @type bool @default 0 @description \"draw axis\""
 								}
 
 							}
@@ -2604,11 +2604,11 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.parameter.mxo",
+				"name" : "sparck.parameter.mxo",
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "ossia.model.mxo",
+				"name" : "sparck.model.mxo",
 				"type" : "iLaX"
 			}
 , 			{

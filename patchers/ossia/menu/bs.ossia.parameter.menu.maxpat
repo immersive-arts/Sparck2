@@ -629,7 +629,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 212.0, 213.2479248046875, 227.0, 22.0 ],
-					"text" : "ossia.parameter #1 @type string "
+					"text" : "sparck.parameter #1 @type string "
 				}
 
 			}

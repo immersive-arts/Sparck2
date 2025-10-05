@@ -48,7 +48,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 429.055542000000003, 92.0, 686.0, 20.0 ],
-					"text" : "ossia.parameter renderTwo @type bool @default 0 @description \"render alteration of texture two (if node is enabled - otherwise unaltered pass through)\""
+					"text" : "sparck.parameter renderTwo @type bool @default 0 @description \"render alteration of texture two (if node is enabled - otherwise unaltered pass through)\""
 				}
 
 			}
@@ -61,7 +61,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 329.055542000000003, 58.0, 688.0, 20.0 ],
-					"text" : "ossia.parameter renderOne @type bool @default 0 @description \"render alteration of texture one (if node is enabled - otherwise unaltered pass through)\""
+					"text" : "sparck.parameter renderOne @type bool @default 0 @description \"render alteration of texture one (if node is enabled - otherwise unaltered pass through)\""
 				}
 
 			}
@@ -197,7 +197,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 278.055479999999989, 310.640869000000009, 506.0, 35.0 ],
-									"text" : "ossia.parameter mapdim @type float @default 255. @range 0. 255. @clip both @description colormap dimension"
+									"text" : "sparck.parameter mapdim @type float @default 255. @range 0. 255. @clip both @description colormap dimension"
 								}
 
 							}
@@ -274,7 +274,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 387.027739999999994, 356.640869000000009, 433.0, 22.0 ],
-									"text" : "ossia.parameter interpolate @type boolean @default 0 @description interpolate"
+									"text" : "sparck.parameter interpolate @type boolean @default 0 @description interpolate"
 								}
 
 							}
@@ -287,7 +287,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 206.055479999999989, 278.640869000000009, 505.0, 22.0 ],
-									"text" : "ossia.parameter factor @type float @default 1. @range -10. 10 @clip both @description fator"
+									"text" : "sparck.parameter factor @type float @default 1. @range -10. 10 @clip both @description fator"
 								}
 
 							}
@@ -601,7 +601,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 49.592595333333328, 195.0, 62.0, 20.0 ],
-					"text" : "ossia.model"
+					"text" : "sparck.model"
 				}
 
 			}
@@ -2666,7 +2666,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.parameter.mxo",
+				"name" : "sparck.parameter.mxo",
 				"type" : "iLaX"
 			}
 , 			{
@@ -2674,7 +2674,7 @@
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "ossia.model.mxo",
+				"name" : "sparck.model.mxo",
 				"type" : "iLaX"
 			}
  ],

@@ -133,7 +133,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 193.222045999999978, 54.0, 194.0, 50.0 ],
-									"text" : "ossia.parameter color @type rgba @default 1. 1. 1. 1. @description \"default color\""
+									"text" : "sparck.parameter color @type rgba @default 1. 1. 1. 1. @description \"default color\""
 								}
 
 							}
@@ -1409,7 +1409,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 851.916687000000024, 211.0704345703125, 509.0, 36.0 ],
-									"text" : "ossia.parameter mesh/torus/radius @type float @default 0.1 @min 0. @clip low @description \"internal radius of torus\""
+									"text" : "sparck.parameter mesh/torus/radius @type float @default 0.1 @min 0. @clip low @description \"internal radius of torus\""
 								}
 
 							}
@@ -1435,7 +1435,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 760.916687000000024, 169.000000000000057, 618.0, 36.0 ],
-									"text" : "ossia.parameter mesh/dim @type vec2f @default 20 20 @min 0 0 @description \"The dimensions of the mesh grid (if it is not a file)\" @clip low"
+									"text" : "sparck.parameter mesh/dim @type vec2f @default 20 20 @min 0 0 @description \"The dimensions of the mesh grid (if it is not a file)\" @clip low"
 								}
 
 							}
@@ -1497,7 +1497,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 521.916686999999911, 47.0, 697.0, 36.0 ],
-									"text" : "ossia.parameter mesh/shape @type string @default plane @range file plane sphere torus cylinders opencylinder cube opencube circle cone capsule matrix @description \"mesh shape\" @priority 1"
+									"text" : "sparck.parameter mesh/shape @type string @default plane @range file plane sphere torus cylinders opencylinder cube opencube circle cone capsule matrix @description \"mesh shape\" @priority 1"
 								}
 
 							}
@@ -1552,7 +1552,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 63.916686999999911, 153.500000000000057, 181.0, 64.0 ],
-									"text" : "ossia.parameter mesh/filewatch @type bool @default 0 @description \"enable autoload of changed file\" @priority 2"
+									"text" : "sparck.parameter mesh/filewatch @type bool @default 0 @description \"enable autoload of changed file\" @priority 2"
 								}
 
 							}
@@ -2155,7 +2155,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 14.833344000000125, 323.631530999999995, 99.0, 105.0 ],
-									"text" : "ossia.parameter showaxis @type bool @default false @description \"render object axes\""
+									"text" : "sparck.parameter showaxis @type bool @default false @description \"render object axes\""
 								}
 
 							}
@@ -2182,7 +2182,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 127.972351000000003, 20.5, 111.0, 22.0 ],
-									"text" : "ossia.model render"
+									"text" : "sparck.model render"
 								}
 
 							}
@@ -2926,7 +2926,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 369.0, 47.0, 448.0, 36.0 ],
-													"text" : "ossia.parameter bake/border @type int @default 0 @range 0 2 @description \"width in pixels to enlarge baking islands. This makes ugly seams disapear. 0 = off\""
+													"text" : "sparck.parameter bake/border @type int @default 0 @range 0 2 @description \"width in pixels to enlarge baking islands. This makes ugly seams disapear. 0 = off\""
 												}
 
 											}
@@ -5545,7 +5545,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 540.0, 107.59619140625, 363.0, 64.0 ],
-													"text" : "ossia.parameter pass @type string @default bake @range bake passA passB passC passD passE passF passG passH passZ manualA manualB manualC manualD beamer @description \"bake render pass\""
+													"text" : "sparck.parameter pass @type string @default bake @range bake passA passB passC passD passE passF passG passH passZ manualA manualB manualC manualD beamer @description \"bake render pass\""
 												}
 
 											}
@@ -5666,7 +5666,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 230.416936333333126, 76.868469000000005, 122.0, 119.0 ],
-													"text" : "ossia.parameter internal/bake/enable @type bool @default 0 @description \"indicates if baking pass is enabled\" @invisible 1 @mode get"
+													"text" : "sparck.parameter internal/bake/enable @type bool @default 0 @description \"indicates if baking pass is enabled\" @invisible 1 @mode get"
 												}
 
 											}
@@ -5889,7 +5889,7 @@
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "" ],
 																	"patching_rect" : [ 260.953529500000059, 81.0, 474.0, 35.0 ],
-																	"text" : "ossia.parameter bake/dim/size @type vec2f @default 1920 1080 @description \"texture dimension\""
+																	"text" : "sparck.parameter bake/dim/size @type vec2f @default 1920 1080 @description \"texture dimension\""
 																}
 
 															}
@@ -5927,7 +5927,7 @@
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "" ],
 																	"patching_rect" : [ 117.086608999999953, 25.0, 499.0, 35.0 ],
-																	"text" : "ossia.parameter bake/dim/square @type string @default 128 @range 64 128 256 512 1024 2048 4096 custom @description \"bake texture dimension\""
+																	"text" : "sparck.parameter bake/dim/square @type string @default 128 @range 64 128 256 512 1024 2048 4096 custom @description \"bake texture dimension\""
 																}
 
 															}
@@ -7350,7 +7350,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 13.138916015625, 231.184632402343709, 62.0, 20.0 ],
-					"text" : "ossia.model"
+					"text" : "sparck.model"
 				}
 
 			}
@@ -7409,7 +7409,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 22.138916015625, 138.184632402343709, 93.0, 22.0 ],
-									"text" : "ossia.model tfm"
+									"text" : "sparck.model tfm"
 								}
 
 							}
@@ -7538,7 +7538,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 17.650879000000032, 286.386352968749975, 148.0, 64.0 ],
-									"text" : "ossia.parameter publish @type bool @default false @description \"publish transformation\""
+									"text" : "sparck.parameter publish @type bool @default false @description \"publish transformation\""
 								}
 
 							}
@@ -8288,7 +8288,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 133.0, 607.0, 873.0, 36.0 ],
-									"text" : "ossia.parameter texture/planeT @type vec4 @default 0 1 0 1 @description \"The four coefficients define a plane which is used to generate the t texture coordinate, which corresponds to the y axis of the texture image.\""
+									"text" : "sparck.parameter texture/planeT @type vec4 @default 0 1 0 1 @description \"The four coefficients define a plane which is used to generate the t texture coordinate, which corresponds to the y axis of the texture image.\""
 								}
 
 							}
@@ -8302,7 +8302,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 133.0, 537.0, 883.0, 36.0 ],
-									"text" : "ossia.parameter texture/planeS @type vec4 @default 1 0 0 1 @description \"The four coefficients define a plane used to generate the s texture coordinate, which corresponds to the x axis of the texture image. If the tex_map mode is 1, s = ax + by + cz + dw, where x, y, z, and w are the homogeneous coordinates of the vertex.\""
+									"text" : "sparck.parameter texture/planeS @type vec4 @default 1 0 0 1 @description \"The four coefficients define a plane used to generate the s texture coordinate, which corresponds to the x axis of the texture image. If the tex_map mode is 1, s = ax + by + cz + dw, where x, y, z, and w are the homogeneous coordinates of the vertex.\""
 								}
 
 							}
@@ -8331,7 +8331,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 376.25024400000018, 682.55291748046875, 486.0, 64.0 ],
-									"text" : "ossia.parameter bake/unique @type bool @default false @description \"Enable unique renderpass for baking textures. If there are multiple canvas that have this enabled, each canvas will bake is textures in subsequent frames. This means on each frame only one of the canvas will bake and this reduce the render load.\""
+									"text" : "sparck.parameter bake/unique @type bool @default false @description \"Enable unique renderpass for baking textures. If there are multiple canvas that have this enabled, each canvas will bake is textures in subsequent frames. This means on each frame only one of the canvas will bake and this reduce the render load.\""
 								}
 
 							}
@@ -8405,7 +8405,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 31.0, 476.570434999999975, 775.0, 50.0 ],
-									"text" : "ossia.parameter texture/mapping @type int @default 0 @range 0 3 @description \"texture mapping (0 = no coordinates are generated., 1 = GL_OBJECT_LINEAR. This applies the texture in a fixed orientation relative to the object., 2 = GL_SPHERE_MAP. This can be used to create a reflection effect., 3 = GL_EYE_LINEAR. This applies the texture in a fixed orientation relative to OpenGL's eye coordinates.)\""
+									"text" : "sparck.parameter texture/mapping @type int @default 0 @range 0 3 @description \"texture mapping (0 = no coordinates are generated., 1 = GL_OBJECT_LINEAR. This applies the texture in a fixed orientation relative to the object., 2 = GL_SPHERE_MAP. This can be used to create a reflection effect., 3 = GL_EYE_LINEAR. This applies the texture in a fixed orientation relative to OpenGL's eye coordinates.)\""
 								}
 
 							}
@@ -8418,7 +8418,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 31.0, 405.333374000000049, 613.0, 22.0 ],
-									"text" : "ossia.parameter texture/init @type string @default none @range none black @description \"sets a default texture.\""
+									"text" : "sparck.parameter texture/init @type string @default none @range none black @description \"sets a default texture.\""
 								}
 
 							}
@@ -8431,7 +8431,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 183.56970200000012, 331.333374000000049, 857.0, 22.0 ],
-									"text" : "ossia.parameter smooth/angle @type float @default 0 @range 0 89. @clip both @description \"Specifies the edge angle above which to smooth vertex normals\""
+									"text" : "sparck.parameter smooth/angle @type float @default 0 @range 0 89. @clip both @description \"Specifies the edge angle above which to smooth vertex normals\""
 								}
 
 							}
@@ -8444,7 +8444,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 26.0, 299.5, 794.0, 22.0 ],
-									"text" : "ossia.parameter smooth/enable @type bool @default false @description \"Smooth shading.Works only if materialmode = 0 and no Material is linked\""
+									"text" : "sparck.parameter smooth/enable @type bool @default false @description \"Smooth shading.Works only if materialmode = 0 and no Material is linked\""
 								}
 
 							}
@@ -8457,7 +8457,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 179.0, 239.5, 571.0, 22.0 ],
-									"text" : "ossia.parameter depth/layer @type int @default 0 @min -1 @clip low @description \"Manual render order\""
+									"text" : "sparck.parameter depth/layer @type int @default 0 @min -1 @clip low @description \"Manual render order\""
 								}
 
 							}
@@ -8471,7 +8471,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 43.0, 199.0, 466.0, 36.0 ],
-									"text" : "ossia.parameter depth/enable @type bool @default 1 @description \"Sorting the model autmatically to its z-depth. Switching this off allows to use the layer property. \""
+									"text" : "sparck.parameter depth/enable @type bool @default 1 @description \"Sorting the model autmatically to its z-depth. Switching this off allows to use the layer property. \""
 								}
 
 							}
@@ -8485,7 +8485,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 531.0, 166.0, 778.0, 36.0 ],
-									"text" : "ossia.parameter blend/mode @type string @default alphablend @range alphablend add multiply screen exclusion colorblend coloradd alphaadd @description \"blend type\""
+									"text" : "sparck.parameter blend/mode @type string @default alphablend @range alphablend add multiply screen exclusion colorblend coloradd alphaadd @description \"blend type\""
 								}
 
 							}
@@ -8498,7 +8498,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 391.201598999999987, 124.40380859375, 463.0, 22.0 ],
-									"text" : "ossia.parameter blend/enable @type bool @default 1 @description \"enable blending\""
+									"text" : "sparck.parameter blend/enable @type bool @default 1 @description \"enable blending\""
 								}
 
 							}
@@ -8511,7 +8511,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 246.201598999999987, 84.903809000000024, 681.0, 22.0 ],
-									"text" : "ossia.parameter lighting/enable @type bool @default 0 @description \"lighting can have strange results if no Light node exists.\""
+									"text" : "sparck.parameter lighting/enable @type bool @default 0 @description \"lighting can have strange results if no Light node exists.\""
 								}
 
 							}
@@ -8524,7 +8524,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 130.56970200000012, 56.403808999999995, 598.0, 22.0 ],
-									"text" : "ossia.parameter cullFace @type int @default 0 @range 0 2 @description \"face culling (0=off, 1=back, 2=front)\""
+									"text" : "sparck.parameter cullFace @type int @default 0 @range 0 2 @description \"face culling (0=off, 1=back, 2=front)\""
 								}
 
 							}
@@ -8537,7 +8537,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 102.0, 32.403808999999995, 714.0, 22.0 ],
-									"text" : "ossia.parameter polyMode/back @type int @default 0 @range 0 2 @description \"drawmode for backface (0=poly, 1=lines, 2=points)\""
+									"text" : "sparck.parameter polyMode/back @type int @default 0 @range 0 2 @description \"drawmode for backface (0=poly, 1=lines, 2=points)\""
 								}
 
 							}
@@ -8562,7 +8562,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 60.5, 8.403808999999995, 772.0, 22.0 ],
-									"text" : "ossia.parameter polyMode/front @type int @default 0 @range 0 2 @clip both @description \"drawmode for frontface (0=poly, 1=lines, 2=points)\""
+									"text" : "sparck.parameter polyMode/front @type int @default 0 @range 0 2 @clip both @description \"drawmode for frontface (0=poly, 1=lines, 2=points)\""
 								}
 
 							}
@@ -9486,11 +9486,11 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.model.mxe64",
+				"name" : "sparck.model.mxe64",
 				"type" : "mx64"
 			}
 , 			{
-				"name" : "ossia.parameter.mxe64",
+				"name" : "sparck.parameter.mxe64",
 				"type" : "mx64"
 			}
  ],

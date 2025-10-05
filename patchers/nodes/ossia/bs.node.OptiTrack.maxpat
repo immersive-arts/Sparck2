@@ -85,7 +85,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 469.683999666666637, 45.5, 432.0, 31.0 ],
-					"text" : "ossia.parameter maxQueueSize @type int @default 512 @description \"maximal queue size for incomming messages\" @clip both @min 512 @max 65535"
+					"text" : "sparck.parameter maxQueueSize @type int @default 512 @description \"maximal queue size for incomming messages\" @clip both @min 512 @max 65535"
 				}
 
 			}
@@ -111,7 +111,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 400.683999666666637, 12.0, 508.0, 31.0 ],
-					"text" : "ossia.parameter incommingPort @type int @default 10201 @description \"incomming port for motive data\" @clip both @min 1000 @max 65535"
+					"text" : "sparck.parameter incommingPort @type int @default 10201 @description \"incomming port for motive data\" @clip both @min 1000 @max 65535"
 				}
 
 			}
@@ -1162,7 +1162,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 508.0, 214.0, 500.0, 36.0 ],
-									"text" : "ossia.parameter leapDebug @type bool @default false @description \"debug flag for latency compensation\""
+									"text" : "sparck.parameter leapDebug @type bool @default false @description \"debug flag for latency compensation\""
 								}
 
 							}
@@ -1186,7 +1186,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 491.0, 143.0, 545.0, 22.0 ],
-									"text" : "ossia.parameter velocityFilter @type float @default 0. @description \"velocity filter\" @min 0. @max 1."
+									"text" : "sparck.parameter velocityFilter @type float @default 0. @description \"velocity filter\" @min 0. @max 1."
 								}
 
 							}
@@ -1211,7 +1211,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 476.0, 65.851775999999973, 604.0, 36.0 ],
-									"text" : "ossia.parameter leap @type int @default 0 @description \"latency compensation (positive values) / forced frame delay (negative values)\" @clip both @min -100 @max 500"
+									"text" : "sparck.parameter leap @type int @default 0 @description \"latency compensation (positive values) / forced frame delay (negative values)\" @clip both @min -100 @max 500"
 								}
 
 							}
@@ -1235,7 +1235,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 371.0, 22.0, 515.0, 22.0 ],
-									"text" : "ossia.parameter scale @type float @default 1. @description \"scale incomming translation data\""
+									"text" : "sparck.parameter scale @type float @default 1. @description \"scale incomming translation data\""
 								}
 
 							}
@@ -1587,7 +1587,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 366.25, 148.0, 199.0, 50.0 ],
-									"text" : "ossia.parameter protocol @default false @type bool @description \"valid data protocol\""
+									"text" : "sparck.parameter protocol @default false @type bool @description \"valid data protocol\""
 								}
 
 							}
@@ -1600,7 +1600,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 520.599999999999795, 455.0, 496.0, 22.0 ],
-									"text" : "ossia.parameter flow @default false @type bool @description \"node receives tracking data\""
+									"text" : "sparck.parameter flow @default false @type bool @description \"node receives tracking data\""
 								}
 
 							}
@@ -1769,7 +1769,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 733.599999999999909, 278.0, 334.0, 50.0 ],
-									"text" : "ossia.parameter outgoingIP @type string @default 127.0.0.1 @description \"outgoing ip-address for sending motive commands to\""
+									"text" : "sparck.parameter outgoingIP @type string @default 127.0.0.1 @description \"outgoing ip-address for sending motive commands to\""
 								}
 
 							}
@@ -1783,7 +1783,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 708.599999999999909, 92.0, 323.0, 50.0 ],
-									"text" : "ossia.parameter outgoingPort @type int @default 10200 @description \"outgoing port for sending motive commands to\" @min 1000 @max 65535"
+									"text" : "sparck.parameter outgoingPort @type int @default 10200 @description \"outgoing port for sending motive commands to\" @min 1000 @max 65535"
 								}
 
 							}
@@ -1808,7 +1808,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 405.0, 510.473174999999969, 531.0, 22.0 ],
-									"text" : "ossia.parameter update @default false @type bool @description \"node receives motive metadata\""
+									"text" : "sparck.parameter update @default false @type bool @description \"node receives motive metadata\""
 								}
 
 							}
@@ -2597,7 +2597,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 175.94442699999999, 310.563079999999957, 62.0, 20.0 ],
-					"text" : "ossia.model"
+					"text" : "sparck.model"
 				}
 
 			}
@@ -3110,11 +3110,11 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.model.mxe64",
+				"name" : "sparck.model.mxe64",
 				"type" : "mx64"
 			}
 , 			{
-				"name" : "ossia.parameter.mxe64",
+				"name" : "sparck.parameter.mxe64",
 				"type" : "mx64"
 			}
  ],

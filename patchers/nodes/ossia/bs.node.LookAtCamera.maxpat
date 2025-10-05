@@ -396,7 +396,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 19.000000000000114, 89.999999968750004, 106.0, 119.0 ],
-									"text" : "ossia.parameter pass @type string @default pass1 @range pass1 pass2 pass3 @description \"transformation pass\""
+									"text" : "sparck.parameter pass @type string @default pass1 @range pass1 pass2 pass3 @description \"transformation pass\""
 								}
 
 							}
@@ -409,7 +409,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 290.499984999999981, 35.999999968749989, 93.0, 22.0 ],
-									"text" : "ossia.model tfm"
+									"text" : "sparck.model tfm"
 								}
 
 							}
@@ -1134,7 +1134,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 581.5, 101.070434999999975, 150.0, 146.0 ],
-									"text" : "ossia.parameter lens/plane/up @type int @default 0 @range 0 1 @clip both @description \"up vector on lookat plane (if you choose 'x-y plane', 'axis a' would be axis x and 'axis b' would be y) where (0 = up 'a', 1 = up 'b')\""
+									"text" : "sparck.parameter lens/plane/up @type int @default 0 @range 0 1 @clip both @description \"up vector on lookat plane (if you choose 'x-y plane', 'axis a' would be axis x and 'axis b' would be y) where (0 = up 'a', 1 = up 'b')\""
 								}
 
 							}
@@ -1160,7 +1160,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 359.569397000000208, 101.070434999999975, 217.0, 77.0 ],
-									"text" : "ossia.parameter lens/plane/orientation @type int @default 0 @range 0 2 @clip both @description \"orientaion of lookat plane (0 = x-y plane ('a'=x), 1 = x-z plane ('a'=x), 2= y-z plane ('a'=y))\""
+									"text" : "sparck.parameter lens/plane/orientation @type int @default 0 @range 0 2 @clip both @description \"orientaion of lookat plane (0 = x-y plane ('a'=x), 1 = x-z plane ('a'=x), 2= y-z plane ('a'=y))\""
 								}
 
 							}
@@ -1224,7 +1224,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 238.611084000000119, 101.070434999999975, 110.388915999999881, 105.0 ],
-									"text" : "ossia.parameter lens/adapt/factor @type float @default 1. @description \"adapt enable\" @priority 1"
+									"text" : "sparck.parameter lens/adapt/factor @type float @default 1. @description \"adapt enable\" @priority 1"
 								}
 
 							}
@@ -1250,7 +1250,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 120.611084000000119, 101.070434999999975, 107.0, 105.0 ],
-									"text" : "ossia.parameter lens/adapt/enable @type bool @default 0 @description \"adapt enable\" @priority 1"
+									"text" : "sparck.parameter lens/adapt/enable @type bool @default 0 @description \"adapt enable\" @priority 1"
 								}
 
 							}
@@ -1288,7 +1288,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 18.611084000000119, 66.070434999999975, 668.0, 22.0 ],
-									"text" : "ossia.parameter lens/optics @type string @default parallel @range parallel turn @description \"calculation mode\" @priority 1"
+									"text" : "sparck.parameter lens/optics @type string @default parallel @range parallel turn @description \"calculation mode\" @priority 1"
 								}
 
 							}
@@ -1314,7 +1314,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 403.611084000000119, 301.070434999999975, 115.0, 119.0 ],
-									"text" : "ossia.parameter lens/fov/angle @type float @default 45. @range 0.01 179.9 @clip both @description \"fov angle\" @priority 1"
+									"text" : "sparck.parameter lens/fov/angle @type float @default 45. @range 0.01 179.9 @clip both @description \"fov angle\" @priority 1"
 								}
 
 							}
@@ -1328,7 +1328,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 279.611084000000119, 301.070434999999975, 118.0, 105.0 ],
-									"text" : "ossia.parameter lens/fov/ratio @type float @default 1. @min 0.1 @clip low @description \"aspect ratio\" @priority 1"
+									"text" : "sparck.parameter lens/fov/ratio @type float @default 1. @min 0.1 @clip low @description \"aspect ratio\" @priority 1"
 								}
 
 							}
@@ -1342,7 +1342,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 647.069397000000322, 301.070434999999975, 130.0, 91.0 ],
-									"text" : "ossia.parameter lens/culling/far @type float @default 100. @min 0.000001 @clip low @description \"culling far\" @priority 1"
+									"text" : "sparck.parameter lens/culling/far @type float @default 100. @min 0.000001 @clip low @description \"culling far\" @priority 1"
 								}
 
 							}
@@ -1356,7 +1356,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 525.611084000000119, 301.070434999999975, 117.0, 119.0 ],
-									"text" : "ossia.parameter lens/culling/near @type float @default 0.05 @min 0.001 @clip both @description \"culling near\" @priority 1"
+									"text" : "sparck.parameter lens/culling/near @type float @default 0.05 @min 0.001 @clip both @description \"culling near\" @priority 1"
 								}
 
 							}
@@ -1370,7 +1370,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 891.069397000000322, 296.570434999999975, 109.0, 91.0 ],
-									"text" : "ossia.parameter lens/fov/height @type float @default 1. @description \"fov height\" @priority 1"
+									"text" : "sparck.parameter lens/fov/height @type float @default 1. @description \"fov height\" @priority 1"
 								}
 
 							}
@@ -1384,7 +1384,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 779.069397000000322, 296.570434999999975, 106.0, 91.0 ],
-									"text" : "ossia.parameter lens/fov/width @type float @default 1. @description \"fov width\" @priority 1"
+									"text" : "sparck.parameter lens/fov/width @type float @default 1. @description \"fov width\" @priority 1"
 								}
 
 							}
@@ -1608,7 +1608,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 810.885620000000017, 421.850646999999981, 175.0, 54.0 ],
-					"text" : "ossia.parameter render/texture/dim/size @type vec2f @default 1920 1080 @min 0 0 @clip low @description \"texture dimension\""
+					"text" : "sparck.parameter render/texture/dim/size @type vec2f @default 1920 1080 @min 0 0 @clip low @description \"texture dimension\""
 				}
 
 			}
@@ -1659,7 +1659,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 30.499984999999995, 214.850646999999981, 62.0, 20.0 ],
-					"text" : "ossia.model"
+					"text" : "sparck.model"
 				}
 
 			}
@@ -2568,7 +2568,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 405.715331999999989, 8.070434999999975, 336.0, 50.0 ],
-													"text" : "ossia.parameter lens/stereo/spread @type float @default 0.1 @description \"stereo spread\" @priority 1 @range 0. 1. @clip both"
+													"text" : "sparck.parameter lens/stereo/spread @type float @default 0.1 @description \"stereo spread\" @priority 1 @range 0. 1. @clip both"
 												}
 
 											}
@@ -2582,7 +2582,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 88.232665999999995, 4.070434999999975, 113.0, 105.0 ],
-													"text" : "ossia.parameter lens/stereo/enable @type bool @default 0 @description \"stereo enable\" @priority 1"
+													"text" : "sparck.parameter lens/stereo/enable @type bool @default 0 @description \"stereo enable\" @priority 1"
 												}
 
 											}
@@ -3911,11 +3911,11 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.model.mxe64",
+				"name" : "sparck.model.mxe64",
 				"type" : "mx64"
 			}
 , 			{
-				"name" : "ossia.parameter.mxe64",
+				"name" : "sparck.parameter.mxe64",
 				"type" : "mx64"
 			}
  ],

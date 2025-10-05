@@ -459,11 +459,11 @@
 				"type" : "mx64"
 			}
 , 			{
-				"name" : "ossia.remote.mxe64",
+				"name" : "sparck.remote.mxe64",
 				"type" : "mx64"
 			}
 , 			{
-				"name" : "ossia.view.mxe64",
+				"name" : "sparck.view.mxe64",
 				"type" : "mx64"
 			}
  ],

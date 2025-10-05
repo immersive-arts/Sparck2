@@ -106,7 +106,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 367.87151033333339, 49.0, 93.0, 22.0 ],
-									"text" : "ossia.model tfm"
+									"text" : "sparck.model tfm"
 								}
 
 							}
@@ -252,7 +252,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 276.0, 89.894470000000013, 304.0, 49.0 ],
-									"text" : "ossia.parameter tfm/pass @type string @default pass1 @range pass1 pass2 pass3 @description \"transformation pass\""
+									"text" : "sparck.parameter tfm/pass @type string @default pass1 @range pass1 pass2 pass3 @description \"transformation pass\""
 								}
 
 							}
@@ -614,7 +614,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 325.0, 129.0, 1106.0, 22.0 ],
-													"text" : "ossia.parameter merge/scaleZ @type int @default 0 @range 0 6 @clip both @description \"merge scaleZ (0 = local.scaleZ, 1 = A.scaleX, 2 = A.scaleY, 3 = A.scaleZ, 4 = B.scaleX, 5 = B.scaleY, 6 = B.scaleZ)\""
+													"text" : "sparck.parameter merge/scaleZ @type int @default 0 @range 0 6 @clip both @description \"merge scaleZ (0 = local.scaleZ, 1 = A.scaleX, 2 = A.scaleY, 3 = A.scaleZ, 4 = B.scaleX, 5 = B.scaleY, 6 = B.scaleZ)\""
 												}
 
 											}
@@ -627,7 +627,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 221.0, 96.0, 1106.0, 22.0 ],
-													"text" : "ossia.parameter merge/scaleY @type int @default 0 @range 0 6 @clip both @description \"merge scaleY (0 = local.scaleY, 1 = A.scaleX, 2 = A.scaleY, 3 = A.scaleZ, 4 = B.scaleX, 5 = B.scaleY, 6 = B.scaleZ)\""
+													"text" : "sparck.parameter merge/scaleY @type int @default 0 @range 0 6 @clip both @description \"merge scaleY (0 = local.scaleY, 1 = A.scaleX, 2 = A.scaleY, 3 = A.scaleZ, 4 = B.scaleX, 5 = B.scaleY, 6 = B.scaleZ)\""
 												}
 
 											}
@@ -640,7 +640,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 106.0, 66.0, 1108.0, 22.0 ],
-													"text" : "ossia.parameter merge/scaleX @type int @default 0 @range 0 6 @clip both @description \"merge scaleX (0 = local.scaleX, 1 = A.scaleX, 2 = A.scaleY, 3 = A.scaleZ, 4 = B.scaleX, 5 = B.scaleY, 6 = B.scaleZ)\""
+													"text" : "sparck.parameter merge/scaleX @type int @default 0 @range 0 6 @clip both @description \"merge scaleX (0 = local.scaleX, 1 = A.scaleX, 2 = A.scaleY, 3 = A.scaleZ, 4 = B.scaleX, 5 = B.scaleY, 6 = B.scaleZ)\""
 												}
 
 											}
@@ -1698,7 +1698,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 106.0, 5.070434999999975, 765.0, 22.0 ],
-													"text" : "ossia.parameter merge/rotation @type int @default 0 @range 0 2 @clip both @description \"merge rotation (0 = local.rot, 1 = A.rot, 2 = B.rot)\""
+													"text" : "sparck.parameter merge/rotation @type int @default 0 @range 0 2 @clip both @description \"merge rotation (0 = local.rot, 1 = A.rot, 2 = B.rot)\""
 												}
 
 											}
@@ -2484,7 +2484,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 297.0, 112.070434999999975, 1056.0, 22.0 ],
-													"text" : "ossia.parameter merge/positionZ @type int @default 0 @range 0 6 @clip both @description \"merge posZ (0 = local Z, 1 = A.posX, 2 = A.posY, 3 = A.posZ, 4 = B.posX, 5 = B.posY, 6 = B.posZ)\""
+													"text" : "sparck.parameter merge/positionZ @type int @default 0 @range 0 6 @clip both @description \"merge posZ (0 = local Z, 1 = A.posX, 2 = A.posY, 3 = A.posZ, 4 = B.posX, 5 = B.posY, 6 = B.posZ)\""
 												}
 
 											}
@@ -2497,7 +2497,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 193.0, 84.070434999999975, 1030.0, 22.0 ],
-													"text" : "ossia.parameter merge/positionY @type int @default 0 @range 0 6 @clip both @description \"merge posY (0 = local Y, 1 = A.posX, 2 = A.posY, 3 = A.posZ, 4 = B.posX, 5 = B.posY, 6 = B.posZ)\""
+													"text" : "sparck.parameter merge/positionY @type int @default 0 @range 0 6 @clip both @description \"merge posY (0 = local Y, 1 = A.posX, 2 = A.posY, 3 = A.posZ, 4 = B.posX, 5 = B.posY, 6 = B.posZ)\""
 												}
 
 											}
@@ -2510,7 +2510,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 78.0, 57.070434999999975, 1032.0, 22.0 ],
-													"text" : "ossia.parameter merge/positionX @type int @default 0 @range 0 6 @clip both @description \"merge posX (0 = local X, 1 = A.posX, 2 = A.posY, 3 = A.posZ, 4 = B.posX, 5 = B.posY, 6 = B.posZ)\""
+													"text" : "sparck.parameter merge/positionX @type int @default 0 @range 0 6 @clip both @description \"merge posX (0 = local X, 1 = A.posX, 2 = A.posY, 3 = A.posZ, 4 = B.posX, 5 = B.posY, 6 = B.posZ)\""
 												}
 
 											}
@@ -3833,7 +3833,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 52.750000444444566, 205.850646999999981, 62.0, 20.0 ],
-					"text" : "ossia.model"
+					"text" : "sparck.model"
 				}
 
 			}
@@ -4821,11 +4821,11 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.model.mxe64",
+				"name" : "sparck.model.mxe64",
 				"type" : "mx64"
 			}
 , 			{
-				"name" : "ossia.parameter.mxe64",
+				"name" : "sparck.parameter.mxe64",
 				"type" : "mx64"
 			}
  ],

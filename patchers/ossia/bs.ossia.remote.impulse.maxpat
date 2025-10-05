@@ -250,7 +250,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 6.5, 183.903809000000024, 159.0, 22.0 ],
-					"text" : "ossia.remote internal/nodeid"
+					"text" : "sparck.remote internal/nodeid"
 				}
 
 			}
@@ -427,7 +427,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.remote.mxe64",
+				"name" : "sparck.remote.mxe64",
 				"type" : "mx64"
 			}
 , 			{
