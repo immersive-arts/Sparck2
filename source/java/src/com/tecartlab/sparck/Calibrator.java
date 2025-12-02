@@ -97,7 +97,6 @@ public class Calibrator extends MaxObject implements ProjProps.Listener{
 	int editMode = 0;
 
 	boolean isEnabled;
-	boolean isOperational = false;
 
 	boolean showCalibModel = true;
 
@@ -543,8 +542,6 @@ public class Calibrator extends MaxObject implements ProjProps.Listener{
 							modelObject.pickVertice(virtualCamera.getViewportRay( tevent.mouseNormPosX, tevent.mouseNormPosY));
 							// ... if not, select the picked model vertice..
 							if(tevent.keyDown_mouse){
-								// outlet(OUTLET_DUMP, "mouse_in_canvas");
-								modelObject.drawer.updateRenderMode();
 								modelObject.selectPickVertice();
 								calibObject.setModifyModeToModel();
 								calibObject.setEditModeToSelected();
@@ -721,12 +718,7 @@ public class Calibrator extends MaxObject implements ProjProps.Listener{
 
 						//Adjust this vertice
 						if(tevent.keyDown_Char == tevent.KEY_C){
-							boolean crossHair = calibObject.toggleCrossHairMode();
-							if(crossHair) {
-								modelObject.drawer.anything("enable", Atom.newAtom(1));
-							} else {
-								modelObject.drawer.anything("enable", Atom.newAtom(0));								
-							}
+							calibObject.toggleCrossHairMode();
 						}
 
 						// move vertice with arrowkeys
@@ -759,7 +751,6 @@ public class Calibrator extends MaxObject implements ProjProps.Listener{
 									calibObject.setEditModeToSelected();
 								}
 							}
-							modelObject.drawer.anything("enable", Atom.newAtom(1));
 						}
 
 						// grab vertice with mouse
@@ -856,7 +847,6 @@ public class Calibrator extends MaxObject implements ProjProps.Listener{
 		//crunchy.notifyDeleted();
 	}
 
-	
 	/**
 	 * checks if there is
 	 * an operational tracker
@@ -869,14 +859,8 @@ public class Calibrator extends MaxObject implements ProjProps.Listener{
 			if(tracker.isOperational())
 				if(modelObject != null)
 					if(modelObject.isOperational())
-						if(props.isOperational()) {
-							if(isOperational == false) {
-								Debug.verbose("Calibrator [" + editorname + "]", "pickVertice");
-								modelObject.pickVertice(virtualCamera.getViewportRay(0.5f, 0.5f));
-							}
-							isOperational = true;
+						if(props.isOperational())
 							return true;
-						}
 						else
 							Debug.warning("Calibrator [" + editorname + "]", "Properties are not operational.");
 					else
@@ -888,7 +872,6 @@ public class Calibrator extends MaxObject implements ProjProps.Listener{
 		else
 			Debug.warning("Calibrator [" + editorname + "]", "Tracker is not connected : " + trackername);
 
-		isOperational = false;
 		return false;
 	}
 

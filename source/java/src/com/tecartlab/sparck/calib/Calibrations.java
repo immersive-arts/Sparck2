@@ -1287,7 +1287,7 @@ public class Calibrations {
 		modifyFlag = true;
 	}
 
-	public boolean toggleCrossHairMode(){
+	public void toggleCrossHairMode(){
 		crossHairMode = !crossHairMode;
 		if(crossHairMode == false){
 			helpText.enable(0);
@@ -1295,7 +1295,6 @@ public class Calibrations {
 			helpText.enable((drawHelp)?1:0);
 		}
 		modifyFlag = true;
-		return crossHairMode;
 	}
 
 	public void notifyDeleted(){
