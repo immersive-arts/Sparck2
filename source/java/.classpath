@@ -6,7 +6,15 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/MaxLibs"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SparckLibs"/>
+	<classpathentry kind="lib" path="/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/java-classes/lib/opencv-4.5.5-1.5.7.jar"/>
+	<classpathentry kind="lib" path="/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/java-classes/lib/javacpp-1.5.7.jar"/>
+	<classpathentry kind="lib" path="/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/java-classes/lib/commons-net-3.6.jar"/>
+	<classpathentry kind="lib" path="/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/java-classes/lib/opencv-platform-4.5.5-1.5.7.jar"/>
+	<classpathentry kind="lib" path="/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/java-classes/lib/toxiclibscore.jar"/>
+	<classpathentry kind="lib" path="/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/java-classes/lib/PixelPusher.jar"/>
+	<classpathentry kind="lib" path="/Applications/_Devel/Max.app/Contents/Resources/C74/packages/max-mxj/java-classes/lib/jitter.jar"/>
+	<classpathentry kind="lib" path="/Applications/_Devel/Max.app/Contents/Resources/C74/packages/max-mxj/java-classes/lib/max.jar"/>
+	<classpathentry kind="lib" path="/Applications/_Devel/Max.app/Contents/Resources/C74/packages/max-mxj/java-classes/lib/jode-1.1.2-pre-embedded.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

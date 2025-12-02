@@ -525,19 +525,23 @@ public class Project extends MaxObject{
 		}
 
 	}
-
-	/**
-	 * Make dir helper method
-	 * @param _foldername
-	 */
+	
 	private void mkdir(String _foldername){
-		if(_foldername.indexOf(":/") > 1){ // it is most probable a mac drive
-			_foldername = _foldername.substring(_foldername.indexOf(":/") + 1);
-		}
-		_foldername = _foldername.replace("\\", "/");
-
-		File newFolder = new File(_foldername);
-
+	    if(_foldername.indexOf(":/") > 1){ 
+	        String os = System.getProperty("os.name").toLowerCase();
+	        if(os.contains("mac") || os.contains("darwin")) {
+	            // macOS: Ddrive:/path -> /Volumes/Ddrive/path
+	            String volumeName = _foldername.substring(0, _foldername.indexOf(":/"));
+	            _foldername = "/Volumes/" + volumeName + _foldername.substring(_foldername.indexOf(":/") + 1);
+	        } else {
+	            // Windows: leave as-is or convert to backslashes
+	            _foldername = _foldername.replace(":/", ":\\");
+	        }
+	    }
+	    _foldername = _foldername.replace("\\", "/");
+	    
+	    File newFolder = new File(_foldername);
+	
 		try{
 			Debug.verbose("Folder creation","check if folder exists: " + _foldername);
 			if(!newFolder.exists()){
@@ -552,8 +556,9 @@ public class Project extends MaxObject{
 		} catch (SecurityException Se){
 			Debug.error("Folder creation","Error creating folder: '" + _foldername + "' -> " + Se.toString());
 		}
-	}
 
+	}
+	
 	/**
 	 * checks if this folder or file exists.
 	 * @param _foldername
