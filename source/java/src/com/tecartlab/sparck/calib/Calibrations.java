@@ -286,7 +286,18 @@ public class Calibrations {
 	}
 
 	public void unlink(){
-		isLinked = false;
+	    for(CalibVertice calVertice: vertices){
+	        if(!calVertice.isWarpOnlyType()){
+	            // Clear the reference to the Vertice object from ObjectContainer
+	            // by creating a new independent Vector3f copy
+	            Vector3f localCopy = calVertice.getModelLocalVertice().clone();
+	            calVertice.update(new Vertice(localCopy.x(), localCopy.y(), localCopy.z()));
+	            
+	            // Reset the index to indicate it's no longer linked
+	            calVertice.setIndex(-1);
+	        }
+	    }
+	    isLinked = false;
 	}
 
 	/**

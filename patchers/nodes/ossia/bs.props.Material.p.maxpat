@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 0,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -615,7 +615,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "material/file/name", "material/file/path", "@text", "meshfile", "@size", 139, 19, "@menutype", "file" ],
+					"args" : [ "#1", "material/file/name", "material/file/path", "@text", "materialfile", "@size", 139, 19, "@menutype", "file" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -693,7 +693,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 301.0, 63.0, 64.0, 22.0 ],
+					"patching_rect" : [ 301.0, 63.0, 71.0, 22.0 ],
 					"text" : "sparck.view"
 				}
 
@@ -735,9 +735,9 @@
 					"mode" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 0.0, 0.0, 242.0, 20.0 ],
+					"patching_rect" : [ 0.0, 0.0, 242.0, 60.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 242.0, 20.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 242.0, 60.0 ],
 					"proportion" : 0.39,
 					"varname" : "vpl_canvas_folded"
 				}

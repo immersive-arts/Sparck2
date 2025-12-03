@@ -865,8 +865,10 @@ public class Calibrator extends MaxObject implements ProjProps.Listener{
 							Debug.warning("Calibrator [" + editorname + "]", "Properties are not operational.");
 					else
 						Debug.warning("Calibrator [" + editorname + "]", "Object is not operational : " + objectName);
-				else
+				else {
+					calibObject.unlink();
 					Debug.warning("Calibrator [" + editorname + "]", "Object is not connected : " + objectName);
+				}
 			else
 				Debug.warning("Calibrator [" + editorname + "]", "Tracker is not operational : " + trackername);
 		else
