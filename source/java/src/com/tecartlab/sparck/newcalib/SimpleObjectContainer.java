@@ -159,8 +159,14 @@ public class SimpleObjectContainer {
 	 * @return true if new vertice was picked
 	 */
 	public boolean pickVertice(Linef pickray){
-		if(model != null && pickray != null)
-			return model.pickVertice(pickray.transform(objTransformation.getInvWorldTransformationMatrix()));
+		if(model != null && pickray != null){
+			if(model.pickVertice(pickray.transform(objTransformation.getInvWorldTransformationMatrix()))){
+				// Update the drawer's selection state and trigger a redraw
+				drawer.selectionChange();
+				drawer.draw();
+				return true;
+			}
+		}
 		return false;
 	}
 
@@ -169,14 +175,23 @@ public class SimpleObjectContainer {
 	 * @return
 	 */
 	public Vertice selectPickVertice(){
-		if(model != null)
-			return model.selectPickedVertice();
+		if(model != null){
+			Vertice result = model.selectPickedVertice();
+			if(result != null){
+				drawer.selectionChange();
+				drawer.draw();
+			}
+			return result;
+		}
 		return null;
 	}
 
 	public void unselectPickVertice(){
-		if(model != null)
+		if(model != null){
 			model.unselectPickedVertice();
+			drawer.selectionChange();
+			drawer.draw();
+		}
 	}
 
 	/**

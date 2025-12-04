@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 403.0, 250.0, 1021.0, 583.0 ],
+		"rect" : [ 405.0, 215.0, 540.0, 583.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -97,7 +97,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 90.0, 168.0, 1171.0, 542.0 ],
+						"rect" : [ 334.0, 519.0, 1171.0, 542.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -134,7 +134,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 220.290518986762322, 249.5, 467.0, 22.0 ],
+									"patching_rect" : [ 220.290518986762322, 249.5, 467.0, 35.0 ],
 									"text" : "sparck.parameter calibrate @type bool @default false @description \"enable calibration\""
 								}
 
@@ -319,7 +319,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 789.290518986762322, 298.929566000000023, 519.0, 22.0 ],
+									"patching_rect" : [ 789.290518986762322, 298.929566000000023, 519.0, 35.0 ],
 									"text" : "sparck.parameter render/blend/enable @type bool @default false @description \"enable blending\""
 								}
 
@@ -345,7 +345,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 769.290518986762322, 228.5, 581.0, 36.0 ],
+									"patching_rect" : [ 769.290518986762322, 228.5, 581.0, 35.0 ],
 									"text" : "sparck.parameter render/antialias/enable @type bool @default false @description \"use antialias - works well for fine lines and even better with blend enabled\""
 								}
 
@@ -359,7 +359,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 748.290518986762322, 166.5, 448.0, 22.0 ],
+									"patching_rect" : [ 748.290518986762322, 166.5, 448.0, 35.0 ],
 									"text" : "sparck.parameter identify @type bool @default false @description \"identify beamer\""
 								}
 
@@ -385,7 +385,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 724.040518986762322, 107.5, 614.0, 22.0 ],
+									"patching_rect" : [ 724.040518986762322, 107.5, 614.0, 35.0 ],
 									"text" : "sparck.parameter render/background/color @type rgba @default 0. 0. 0. 1. @description \"render background color\""
 								}
 
@@ -411,7 +411,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 699.111746986762341, 49.500000000000028, 582.0, 22.0 ],
+									"patching_rect" : [ 699.111746986762341, 49.500000000000028, 582.0, 35.0 ],
 									"text" : "sparck.parameter render/texture/dim/size @type vec2f @default 1920 1080 @description \"texture dimension\""
 								}
 
@@ -490,7 +490,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 454.123320291883715, 414.4295654296875, 244.0, 64.0 ],
+									"patching_rect" : [ 454.123320291883715, 414.4295654296875, 244.0, 62.0 ],
 									"text" : "bs.ossia.parameter.rendergroup.capture render/renderGroup \"capture everything from the selected render groups\" @drawto #0.left #0.right",
 									"varname" : "renderGroup[1]"
 								}
@@ -1288,17 +1288,6 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
-									"id" : "obj-20",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 745.694376627604129, 530.0, 108.0, 22.0 ],
-									"text" : "print drawto_editor"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-39",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
@@ -1311,48 +1300,12 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-24",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 689.694376627604129, 428.0, 75.0, 22.0 ],
-									"text" : "route drawto"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-27",
-									"linecount" : 4,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 1015.0, 526.0, 150.0, 60.0 ],
-									"text" : "Jay3DeeObject @setobjectname #0.obj.viewer @modelname #0.model"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-23",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 631.0, 103.0, 90.0, 20.0 ],
 									"text" : "we ignore color"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-11",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 689.694376627604129, 393.5, 19.0, 22.0 ],
-									"text" : "t l"
 								}
 
 							}
@@ -1389,17 +1342,6 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 891.194376627604015, 503.0, 69.0, 20.0 ],
 									"text" : "editor node"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-26",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 689.694376627604129, 566.0, 293.0, 20.0 ],
-									"text" : "object used on 3dviewer, editor and main render pass"
 								}
 
 							}
@@ -3067,21 +3009,6 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
-									"destination" : [ "obj-24", 0 ],
-									"source" : [ "obj-11", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-11", 0 ],
-									"order" : 2,
-									"source" : [ "obj-18", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-19", 0 ],
 									"order" : 1,
 									"source" : [ "obj-18", 0 ]
@@ -3099,7 +3026,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-5", 0 ],
-									"order" : 3,
+									"order" : 2,
 									"source" : [ "obj-18", 0 ]
 								}
 
@@ -3108,20 +3035,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-61", 0 ],
 									"source" : [ "obj-21", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-11", 0 ],
-									"source" : [ "obj-22", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-20", 0 ],
-									"source" : [ "obj-24", 1 ]
 								}
 
 							}

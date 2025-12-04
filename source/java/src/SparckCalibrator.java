@@ -30,6 +30,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Vector;
@@ -105,14 +106,14 @@ public class SparckCalibrator extends MaxObject implements ProjProps.Listener{
 	{
         Loader.load(opencv_java.class);
 
-        Debug.info("SparckCalibrator v1.0.1", "OpenCV has been initialized");
+        Debug.info("SparckCalibrator v1.0.2", "OpenCV has been initialized");
 
 		virtualCamera = createVirtualCamera();
 		calibObject = new Calibrations();
 		props = new ProjProps(this);
 		trackerSubscriber = new TrackerSubscriber();
 		modelObject = new SimpleObjectContainer();		if (args.length < 1)
-			Debug.warning("Calibrator", "needs an editorname and optionally a trackername as arguments. otherwise use 'seteditorname', 'settracker'.");
+			Debug.warning("SparckCalibrator", "needs an editorname and optionally a trackername as arguments. otherwise use 'seteditorname', 'settracker'.");
 		else{
 			setmsgtitle(args[0].toString());
 			if(args.length >= 2)
@@ -176,14 +177,11 @@ public class SparckCalibrator extends MaxObject implements ProjProps.Listener{
 		}
 	}
 
-	// TODO: Examine if these model transformation methods are needed for calibration workflow
-	// They are added for API compatibility with Jay3DeeObject external
-
 	/**
 	 * Set the World - Position of the model Object
 	 * @param _position - Atom Array with x, y, and z float value
 	 */
-	public void model_position(Atom[] _position){
+	public void position(Atom[] _position){
 		if(modelObject != null && _position.length == 3){
 			modelObject.position(_position);
 			updateCalibrationObject();
@@ -194,7 +192,7 @@ public class SparckCalibrator extends MaxObject implements ProjProps.Listener{
 	 * Set the World - Quaternion of the model Object
 	 * @param _quat - Atom Array with x, y, z and w float value
 	 */
-	public void model_quat(Atom[] _quat){
+	public void quat(Atom[] _quat){
 		if(modelObject != null && _quat.length == 4){
 			modelObject.quat(_quat);
 			updateCalibrationObject();
@@ -205,7 +203,7 @@ public class SparckCalibrator extends MaxObject implements ProjProps.Listener{
 	 * Set the World - Rotation of the model Object
 	 * @param _rotatexyz - Atom Array with Euler Angle float value
 	 */
-	public void model_rotatexyz(Atom[] _rotatexyz){
+	public void rotatexyz(Atom[] _rotatexyz){
 		if(modelObject != null && _rotatexyz.length == 3){
 			modelObject.rotatexyz(_rotatexyz);
 			updateCalibrationObject();
@@ -213,76 +211,13 @@ public class SparckCalibrator extends MaxObject implements ProjProps.Listener{
 	}
 
 	/**
-	 * Alias for model_rotatexyz for backward compatibility
-	 * @param _rotatexyz - Atom Array with Euler Angle float value
-	 */
-	public void rotatexyz(Atom[] _rotatexyz){
-		model_rotatexyz(_rotatexyz);
-	}
-
-	/**
 	 * Set the World - Scale of the model Object
 	 * @param _scale - Atom Array with x, y and z float value
 	 */
-	public void model_scale(Atom[] _scale){
+	public void scale(Atom[] _scale){
 		if(modelObject != null && _scale.length == 3){
 			modelObject.scale(_scale);
 			updateCalibrationObject();
-		}
-	}
-
-	/**
-	 * Set the render mode of the model drawer
-	 * @param mode render mode integer
-	 */
-	public void model_render_mode(int mode){
-		if(modelObject != null){
-			modelObject.drawer.setRenderMode(mode);
-		}
-	}
-
-	/**
-	 * Set the drawing layer of the model
-	 * @param layer layer number
-	 */
-	public void model_layer(int layer){
-		if(modelObject != null){
-			modelObject.drawer.setLayer(layer);
-		}
-	}
-
-	/**
-	 * Set the drawing context for the model
-	 * @param _contexts drawing contexts
-	 */
-	public void model_drawto(Atom[] _contexts){
-		if(modelObject != null){
-			modelObject.drawer.setContext(_contexts);
-		}
-	}
-
-	/**
-	 * Pass any other messages to the model drawer
-	 * @param message message name
-	 * @param args arguments
-	 */
-	public void model_anything(String message, Atom[] args){
-		if(modelObject != null){
-			modelObject.anything(message, args);
-		}
-	}
-
-	/**
-	 * Enable or disable the model rendering
-	 * @param flag 1 to enable, 0 to disable
-	 */
-	public void model_enable(int flag){
-		if(modelObject != null){
-			if(flag == 1){
-				modelObject.drawer.updateRenderMode();
-			} else {
-				modelObject.drawer.anything("enable", Atom.newAtom(0));
-			}
 		}
 	}
 
@@ -296,8 +231,46 @@ public class SparckCalibrator extends MaxObject implements ProjProps.Listener{
 		calibObject.scale(scale);
 	}
 
+	/**
+	 * Set the render mode of the model drawer
+	 * @param mode render mode integer
+	 */
+	public void render_mode(int mode){
+		if(modelObject != null){
+			modelObject.drawer.setRenderMode(mode);
+		}
+	}
+
+	/**
+	 * Set the drawing layer of the model
+	 * @param layer layer number
+	 */
+	public void layer(int layer){
+		if(modelObject != null){
+			modelObject.drawer.setLayer(layer);
+		}
+	}
+
+	/**
+	 * Pass any other messages to the model drawer
+	 * @param message message name
+	 * @param args arguments
+	 */
+	public void anything(String message, Atom[] args){
+		if(modelObject != null){
+			modelObject.anything(message, args);
+		}
+	}
+
 	public void enable(int _enable){
 		isEnabled = (_enable == 0)?false: true;
+		if(modelObject != null){
+			if(_enable == 1){
+				modelObject.drawer.updateRenderMode();
+			} else {
+				modelObject.drawer.anything("enable", Atom.newAtom(0));
+			}
+		}
 		calibObject.enable(_enable);
 		updateCalibrationObject();
 	}
@@ -310,8 +283,15 @@ public class SparckCalibrator extends MaxObject implements ProjProps.Listener{
 		}
 		// then add the new drawing contexts
 		if(newContexts != null){
-			drawingContexts = newContexts;
+			// Remove "stageview" from the array if present
+			// we dont want to render the calibration UI element in the stageview
+			drawingContexts = Arrays.stream(newContexts)
+				.filter(s -> !s.equals("stageview"))
+				.toArray(String[]::new);
 			calibObject.addContexts(drawingContexts);
+		}
+		if(modelObject != null){
+			modelObject.drawer.setContext(_contexts);
 		}
 	}
 
