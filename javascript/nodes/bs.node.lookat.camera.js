@@ -407,7 +407,9 @@ function calcParallelDetail(_camPos){
 
     //near correction
 	if(adapt_state == 1){
-        near = planeDistance * adapt_reference;
+		// we substract a tiny bit to make sure the near frustum starts just a tid bit 
+		// before the plane we are looking at
+        near = planeDistance * adapt_reference - 0.001;
         far = near + far_orig;
         top = top / planeDistance * near;
         bottom = bottom / planeDistance * near;
