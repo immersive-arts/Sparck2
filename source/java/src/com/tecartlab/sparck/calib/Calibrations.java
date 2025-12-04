@@ -61,6 +61,7 @@ import com.tecartlab.tools.math.la.Vector3f;
 import com.tecartlab.tools.threedee.Camera;
 import com.tecartlab.tools.threedee.Viewport;
 import com.tecartlab.utils.Debug;
+import com.tecartlab.sparck.newcalib.*;
 
 /**
  * <Calibration>
@@ -326,6 +327,54 @@ public class Calibrations {
 			}
 		}
 		isLinked = true;
+	}
+
+	/**
+	 * Links the calibration object with the simple model object (for SparckCalibrator)
+	 * @param _object SimpleObjectContainer
+	 */
+	public void link(com.tecartlab.sparck.newcalib.SimpleObjectContainer _object){
+		for(CalibVertice calVertice: vertices){
+			if(!calVertice.isWarpOnlyType()){
+				Vertice model = _object.getModelVerticeLocal(calVertice.getModelLocalVertice());
+				if(calVertice.getModelLocalVertice().distanceSquared(model) < 0.01f){
+					calVertice.update(model);
+					calVertice.setIndex(model.getIndex());
+				}
+			}
+		}
+		isLinked = true;
+	}
+
+	/**
+	 * Adds a calibration vertice from SimpleObjectContainer (for SparckCalibrator)
+	 * @param _object SimpleObjectContainer
+	 * @param _camera Camera used for projection
+	 * @param _isTarget whether this is a target vertice
+	 * @param _isWarp whether this is a warp vertice
+	 */
+	public void add(com.tecartlab.sparck.newcalib.SimpleObjectContainer _object, Camera _camera, boolean _isTarget, boolean _isWarp){
+		if(_object != null && _camera != null){
+			if(!hasVerticeWithSameIndex(_object.getSelectedVerticeWorld())){
+				Vertice localVertice = _object.getSelectedVerticeLocal();
+				Vertice worldVertice = _object.getSelectedVerticeWorld();
+
+				CalibVertice cvertice;
+
+				cvertice = new CalibVertice(localVertice, worldVertice, _isTarget, _isWarp);
+
+				Vector3f screen = _camera.worldToScreen(worldVertice, _camera.getViewProjectionMatrix(), _camera.viewport);
+
+				cvertice.setModelScreenVertice(_camera);
+				cvertice.setTargetVertice(screen);
+				cvertice.setWarpVertice(screen);
+				cvertice.setIndex(localVertice.getIndex());
+
+				vertices.add(cvertice);
+				updateContext();
+				updateDelaunayMesh();
+			}
+		}
 	}
 
 	//***********************************************
