@@ -4,9 +4,7 @@ SPatial Augmented Reality Contruction Kit 2.
 
 ## Documention
 
-A new documention is in the making. Check it out (its a work in progress) -> [Welcome to SPARCK - Sparck Documentation](https://immersive-arts.github.io/Sparck2_Documentation/)
-
-
+Check it out: A new [Documentation](https://immersive-arts.github.io/Sparck2_Documentation/) is in the making.
 
 ## About this Repo
 
