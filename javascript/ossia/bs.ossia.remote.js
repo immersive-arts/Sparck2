@@ -30,6 +30,7 @@ declareattribute("useclip", null, "setuseclip", 1);
 
 var myNodeTitle = undefined;
 var myParamAddress = undefined;
+var myCompleteAddress = undefined;
 
 var myClip = "free";
 var myUnit = "";
@@ -63,6 +64,8 @@ function loadbang(){
     //post("loadbang(): " + "sparck:/node/" + myNodeTitle + "/" + myParamAddress + " \n")
 //    outlet(OUT_REMOTE, "address", "sparck:/node/" + myNodeTitle + "/" + myParamAddress);
     outlet(OUT_REMOTE, "address", myParamAddress);
+    outlet(OUT_REMOTE, "trim_address", 0);
+    outlet(OUT_REMOTE, "dump");
 }
 
 function text(_text){
@@ -238,7 +241,8 @@ function unit(_unit){
 }
 
 function description(_desc){
-    outlet(OUT_GUI, "hint", _desc + myUnit + " | {osc: /node/" + myNodeTitle + "/" + myParamAddress + " <"+myType+">}");
+	clean_address = myCompleteAddress.substring(8);
+    outlet(OUT_GUI, "hint", _desc + myUnit + " | Usage: {set " + clean_address + " <"+myType+">}");
 }
 
 function priority(_clip){
@@ -297,8 +301,8 @@ function max(_max){
 	}
 }
 
-function address(){
-    //ignore
+function address(_val){
+    myCompleteAddress = _val;
 }
 
 function invisible(_val){
