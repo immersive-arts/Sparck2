@@ -26,11 +26,13 @@
 
 package com.tecartlab.sparck.newcalib;
 
+import com.cycling74.max.Atom;
 import com.tecartlab.jay3dee.CallBackInterface;
 import com.tecartlab.jay3dee.FileManager;
 import com.tecartlab.jay3dee.model.*;
 import com.tecartlab.tools.math.la.*;
 import com.tecartlab.utils.Debug;
+import java.util.ArrayList;
 
 /**
  * Simplified ModelContainer without publish/subscribe mechanism.
@@ -77,6 +79,44 @@ public class SimpleModelContainer implements CallBackInterface {
 
 	public void save() {
 		fileManager.save(model);
+	}
+
+	/****************************************************************
+	 * Create / Add Vertices
+	 ****************************************************************/
+
+	/**
+	 * Creates a model with the specified points.
+	 * Three points make a vertice, with each vertice drawing a line to the XY plane.
+	 * @param vertices array of floats (x,y,z triplets)
+	 */
+	public void createToXY(Atom[] vertices) {
+		if((vertices.length % 3) == 0){
+			ArrayList<Vertice> verts = new ArrayList<Vertice>(vertices.length / 3);
+			for(int i = 0; i < vertices.length; i = i + 3){
+				verts.add(new Vertice(vertices[i].toFloat(), vertices[i+1].toFloat(), vertices[i+2].toFloat()));
+			}
+			model.create(verts, 0);
+		} else {
+			Debug.error("SimpleModelContainer", "'createToXY' the number of values need to be multiple of 3.");
+		}
+	}
+
+	/**
+	 * Adds to a loaded model the specified points.
+	 * Three points make a vertice, with each vertice drawing a line to the XY plane.
+	 * @param vertices array of floats (x,y,z triplets)
+	 */
+	public void addToXY(Atom[] vertices) {
+		if((vertices.length % 3) == 0){
+			ArrayList<Vertice> verts = new ArrayList<Vertice>(vertices.length / 3);
+			for(int i = 0; i < vertices.length; i = i + 3){
+				verts.add(new Vertice(vertices[i].toFloat(), vertices[i+1].toFloat(), vertices[i+2].toFloat()));
+			}
+			model.add(verts, 0);
+		} else {
+			Debug.error("SimpleModelContainer", "'addToXY' the number of values need to be multiple of 3.");
+		}
 	}
 
 	/****************************************************************

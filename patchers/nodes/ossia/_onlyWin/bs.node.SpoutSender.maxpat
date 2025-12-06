@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 1,
+			"minor" : 6,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -59,7 +59,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 13.333344, 203.5, 62.0, 20.0 ],
+					"patching_rect" : [ 13.333344, 203.5, 68.0, 20.0 ],
 					"text" : "sparck.model"
 				}
 
@@ -75,8 +75,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 1,
+							"minor" : 6,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -309,8 +309,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 1,
+							"minor" : 6,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -554,7 +554,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 371.499908999999889, 169.0, 444.0, 20.0 ],
+					"patching_rect" : [ 371.499908999999889, 169.0, 450.0, 20.0 ],
 					"text" : "sparck.parameter flipY @type bool @default false @description \"flip incomming image on its Y axis\""
 				}
 
@@ -567,7 +567,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 349.777618533203054, 147.0, 445.0, 20.0 ],
+					"patching_rect" : [ 349.777618533203054, 147.0, 451.0, 20.0 ],
 					"text" : "sparck.parameter flipX @type bool @default false @description \"flip incomming image on its X axis\""
 				}
 
@@ -612,7 +612,7 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "Unused",
 					"id" : "obj-18",
 					"index" : 0,
 					"maxclass" : "inlet",
@@ -625,7 +625,7 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "Unused",
 					"id" : "obj-17",
 					"index" : 0,
 					"maxclass" : "inlet",
@@ -745,9 +745,8 @@
 					"fontsize" : 12.0,
 					"id" : "obj-75",
 					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"numinlets" : 1,
+					"numoutlets" : 0,
 					"patching_rect" : [ 237.555542000000031, 387.5, 140.0, 22.0 ],
 					"text" : "jit.gl.spoutsender special"
 				}
@@ -1032,85 +1031,88 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "bs.node.gui.button.menu.png",
-				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/media",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/media",
 				"patcherrelativepath" : "../../../../media",
 				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.node.logo.power.png",
-				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/media",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/media",
 				"patcherrelativepath" : "../../../../media",
 				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.util.special.render.gate.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/utils",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/utils",
 				"patcherrelativepath" : "../../../utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.logic.js",
-				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/vpl",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/javascript/vpl",
 				"patcherrelativepath" : "../../../../javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.logic.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/vpl",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/vpl",
 				"patcherrelativepath" : "../../../vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.pbody.js",
-				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/vpl",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/javascript/vpl",
 				"patcherrelativepath" : "../../../../javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.pbody.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/vpl",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/vpl",
 				"patcherrelativepath" : "../../../vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.title.js",
-				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/vpl",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/javascript/vpl",
 				"patcherrelativepath" : "../../../../javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.util.inlet.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/vpl",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/vpl",
 				"patcherrelativepath" : "../../../vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "jit.gl.spoutsender.mxe64",
-				"type" : "mx64"
-			}
-, 			{
 				"name" : "node.classes.js",
-				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/vpl/classes",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/javascript/vpl/classes",
 				"patcherrelativepath" : "../../../../javascript/vpl/classes",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "sparck.model.mxe64",
-				"type" : "mx64"
+				"name" : "node.iolets.js",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/javascript/vpl/classes",
+				"patcherrelativepath" : "../../../../javascript/vpl/classes",
+				"type" : "TEXT",
+				"implicit" : 1
 			}
 , 			{
-				"name" : "sparck.parameter.mxe64",
-				"type" : "mx64"
+				"name" : "sparck.model.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "sparck.parameter.mxo",
+				"type" : "iLaX"
 			}
  ],
 		"autosave" : 0,

@@ -262,6 +262,38 @@ public class SparckCalibrator extends MaxObject implements ProjProps.Listener{
 		}
 	}
 
+	/**
+	 * Creates a model with the specified points.
+	 * Three points make a vertice, with each vertice drawing a line to the XY plane.
+	 * @param vertices array of floats (x,y,z triplets)
+	 */
+	public void createToXY(Atom[] vertices) {
+		if((vertices.length % 3) == 0){
+			if(modelObject != null){
+				modelObject.createToXY(vertices);
+				updateCalibrationObject();
+			}
+		} else {
+			Debug.error("SparckCalibrator", "'createToXY' the number of values need to be multiple of 3.");
+		}
+	}
+
+	/**
+	 * Adds to a loaded model the specified points.
+	 * Three points make a vertice, with each vertice drawing a line to the XY plane.
+	 * @param vertices array of floats (x,y,z triplets)
+	 */
+	public void addToXY(Atom[] vertices) {
+		if((vertices.length % 3) == 0){
+			if(modelObject != null){
+				modelObject.addToXY(vertices);
+				updateCalibrationObject();
+			}
+		} else {
+			Debug.error("SparckCalibrator", "'addToXY' the number of values need to be multiple of 3.");
+		}
+	}
+
 	public void enable(int _enable){
 		isEnabled = (_enable == 0)?false: true;
 		if(modelObject != null){

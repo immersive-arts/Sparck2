@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 405.0, 215.0, 540.0, 583.0 ],
+		"rect" : [ 326.0, 384.0, 540.0, 583.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -38,8 +38,34 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
-		"globalpatchername" : "Beamer",
+		"globalpatchername" : "Beamer_1",
 		"boxes" : [ 			{
+				"box" : 				{
+					"args" : [ "#2", "#4", 3, "type", -1, "@hint", "custom comands. message 'createToXY' creates a new model with calibration vertices relative to the XY-plane: 'createToX  x1  y1  z1  x2  y2  z2  x3  y3  z3  ...'. | message 'addToXY' adds calibration vertices relative to the XY-plane: 'addToX  x1  y1  z1  x2  y2  z2  x3  y3  z3  ...'" ],
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"hint" : "",
+					"id" : "obj-4",
+					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "bs.vpl.util.inlet.maxpat",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"offset" : [ 0.0, 0.0 ],
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 874.0, 1.5, 44.0, 31.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 112.0, 0.0, 10.0, 10.0 ],
+					"varname" : "vpl_inlet[3/4]",
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-9",
 					"maxclass" : "message",
@@ -3699,14 +3725,14 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "Unused",
 					"id" : "obj-23",
 					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 916.243505382450962, 4.0, 25.0, 25.0 ]
+					"patching_rect" : [ 949.0, 4.0, 25.0, 25.0 ]
 				}
 
 			}
@@ -3738,7 +3764,7 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "custom comands. message 'createToXY' with a multiple of 3 float values creates calibraion vertices relative to the XY-plane. message 'addToXY' with a multiple of 3 float values adds calibraion vertices relative to the XY-plane. ",
+					"comment" : "custom comands. message 'createToXY' creates a new model with calibration vertices relative to the XY-plane: 'createToX  x1  y1  z1  x2  y2  z2  x3  y3  z3  ...'. | message 'addToXY' adds calibration vertices relative to the XY-plane: 'addToX  x1  y1  z1  x2  y2  z2  x3  y3  z3  ...'",
 					"id" : "obj-42",
 					"ignoreclick" : 1,
 					"index" : 0,
@@ -3746,7 +3772,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 877.076879382451011, 4.0, 25.0, 25.0 ]
+					"patching_rect" : [ 912.5, 4.5, 25.0, 25.0 ]
 				}
 
 			}

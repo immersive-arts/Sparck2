@@ -1092,7 +1092,7 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "Unused",
 					"id" : "obj-49",
 					"index" : 0,
 					"maxclass" : "outlet",
@@ -1104,7 +1104,7 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "Unused",
 					"id" : "obj-44",
 					"index" : 0,
 					"maxclass" : "outlet",
@@ -1116,7 +1116,7 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "Unused",
 					"id" : "obj-40",
 					"index" : 0,
 					"maxclass" : "inlet",

@@ -305,6 +305,28 @@ public class SimpleObjectContainer {
 	}
 
 	/**
+	 * Creates a model with the specified points.
+	 * Three points make a vertice, with each vertice drawing a line to the XY plane.
+	 * @param vertices array of floats (x,y,z triplets)
+	 */
+	public void createToXY(Atom[] vertices) {
+		if(model != null){
+			model.createToXY(vertices);
+		}
+	}
+
+	/**
+	 * Adds to a loaded model the specified points.
+	 * Three points make a vertice, with each vertice drawing a line to the XY plane.
+	 * @param vertices array of floats (x,y,z triplets)
+	 */
+	public void addToXY(Atom[] vertices) {
+		if(model != null){
+			model.addToXY(vertices);
+		}
+	}
+
+	/**
 	 * Checks if the Object fulfills all internal conditions to be operational. It is STRONGLY suggested
 	 * to call the method before any operations are done.
 	 * @return

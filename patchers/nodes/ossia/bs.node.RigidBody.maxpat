@@ -59,7 +59,7 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 488.0, 371.0, 48.0, 30.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 181.0, 41.0, 10.0, 10.0 ],
+					"presentation_rect" : [ 166.0, 26.0, 10.0, 10.0 ],
 					"varname" : "vpl_outlet[2/2]",
 					"viewvisibility" : 1
 				}
@@ -85,7 +85,7 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 425.0, 59.5, 44.0, 31.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 181.0, 15.0, 10.0, 10.0 ],
+					"presentation_rect" : [ 166.0, 0.0, 10.0, 10.0 ],
 					"varname" : "vpl_inlet[2/2]",
 					"viewvisibility" : 1
 				}
@@ -3805,7 +3805,7 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "Unused",
 					"id" : "obj-21",
 					"index" : 0,
 					"maxclass" : "outlet",

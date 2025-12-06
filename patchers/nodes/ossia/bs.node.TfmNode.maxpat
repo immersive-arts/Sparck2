@@ -166,7 +166,7 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "Unused",
 					"id" : "obj-21",
 					"index" : 0,
 					"maxclass" : "outlet",

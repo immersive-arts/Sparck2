@@ -38,7 +38,7 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
-		"globalpatchername" : "Grid",
+		"globalpatchername" : "Grid_1",
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-9",
@@ -60,32 +60,6 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 29.0, 30.5, 42.0, 20.0 ],
 					"text" : "open_p"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"comment" : "",
-					"id" : "obj-5",
-					"index" : 0,
-					"maxclass" : "inlet",
-					"numinlets" : 0,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 494.0, 25.0, 25.0, 25.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"comment" : "",
-					"id" : "obj-3",
-					"index" : 0,
-					"maxclass" : "inlet",
-					"numinlets" : 0,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 322.0, 25.0, 25.0, 25.0 ]
 				}
 
 			}
