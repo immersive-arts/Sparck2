@@ -71,36 +71,38 @@ vec3 rgb2hsv(vec4 c)
     return vec3(abs(q.z + (q.w - q.y) / (6.0 * d + e)), d / (q.x + e), q.x);
 }
 
-int RGBtoD(vec4 colrDepth)
+float RGBtoD(vec4 colrDepth)
 {
-	int r = int(round(colrDepth.r * 255.0));
-	int g = int(round(colrDepth.g * 255.0));
-	int b = int(round(colrDepth.b * 255.0));
-	// conversion from RGB color to quantized depth value
-	if (b + g + r < 255)
-	{
-		return 0;
-	}
-	else if (r >= g && r >= b)
-	{
-		if (g >= b)
-		{
-			return g - b;
-		}
-		else
-		{
-			return (g - b) + 1529;
-		}
-	}
-	else if (g >= r && g >= b)
-	{
-		return b - r + 510;
-	}
-	else if (b >= g && b >= r)
-	{
-		return r - g + 1020;
-	}
-	return 0;
+    // Use floor() + 0.5 as a substitute for round() in GLSL 1.0
+    float r = floor(colrDepth.r * 255.0 + 0.5);
+    float g = floor(colrDepth.g * 255.0 + 0.5);
+    float b = floor(colrDepth.b * 255.0 + 0.5);
+    
+    // conversion from RGB color to quantized depth value
+    if (b + g + r < 255.0)
+    {
+        return 0.0;
+    }
+    else if (r >= g && r >= b)
+    {
+        if (g >= b)
+        {
+            return g - b;
+        }
+        else
+        {
+            return (g - b) + 1529.0;
+        }
+    }
+    else if (g >= r && g >= b)
+    {
+        return b - r + 510.0;
+    }
+    else if (b >= g && b >= r)
+    {
+        return r - g + 1020.0;
+    }
+    return 0.0;
 }
 
 void main (void)
