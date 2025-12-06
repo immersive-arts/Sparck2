@@ -2,21 +2,24 @@
 
 SPatial Augmented Reality Contruction Kit 2.
 
+## Documention
+
+A new documention is in the making. Check it out (its a work in progress) -> [Welcome to SPARCK - Sparck Documentation](https://immersive-arts.github.io/Sparck2_Documentation/)
+
+
+
+## About this Repo
+
 Also includes QueScript.
 
 There are three flavors of SPARCK:
 
-* The standalone app.
 * Running the app inside Max8. You need [Max8](https://cycling74.com/downloads/) and the SPARCK package, but there is no need for a Max8 license.
 * The SPARCK package for creating [Max](https://cycling74.com/downloads/) patches based on SPARCK nodes. This allows to use the full power of Max8 in combination with SPARCK. This requires a [Max8 license](https://cycling74.com/shop).
 
 ## Installation
 
-read the [instructions](https://github.com/immersive-arts/SPARCK2/wiki/Installation) on how to install the different flavors of SPARCK.
-
-## Usage
-
-see [tecartlab.com](http://tecartlab.com) for more information.
+read the [Documentation](https://immersive-arts.github.io/Sparck2_Documentation/start/setup/)  how to install SPARCK.
 
 ## Building
 
