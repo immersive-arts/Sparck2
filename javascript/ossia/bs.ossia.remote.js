@@ -242,7 +242,7 @@ function unit(_unit){
 
 function description(_desc){
 	clean_address = myCompleteAddress.substring(8);
-    outlet(OUT_GUI, "hint", _desc + myUnit + " | Usage: {set " + clean_address + " <"+myType+">}");
+    outlet(OUT_GUI, "hint", _desc + myUnit + " | propertyPath: {" + clean_address + " <"+myType+">}");
 }
 
 function priority(_clip){

@@ -243,7 +243,7 @@
 , 			{
 				"box" : 				{
 					"clickedimage" : 1,
-					"hint" : "enable {/sparck/node ::<nodename>::enable <0|1>}",
+					"hint" : "enable | propertyPath: {enable <bool>}",
 					"id" : "obj-26",
 					"maxclass" : "pictctrl",
 					"mode" : 1,

@@ -3699,7 +3699,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#2", "#4", 1, "properties", -1, "@hint", "properties | [usage: set node/<nodeName>/<propertypath> <value(s)>]" ],
+					"args" : [ "#2", "#4", 1, "properties", -1, "@hint", "properties | use message [set <propertyPath> <value(s)>] (without node/<nodeName> at the beginning) to set internal properties" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -3999,7 +3999,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#0_id", "#1", "#2", "#3", "#4", "title", "Beamer", "@enable_properties", 1, "@help", "Projector", "@enable_body", 1 ],
+					"args" : [ "#0_id", "#1", "#2", "#3", "#4", "title", "Beamer", "@enable_properties", 1, "@help", "Beamer", "@enable_body", 1 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
