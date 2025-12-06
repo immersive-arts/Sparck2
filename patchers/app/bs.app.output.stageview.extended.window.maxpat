@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 1,
+			"minor" : 6,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 221.0, 51.0, 1219.0, 664.0 ],
+		"rect" : [ 566.0, 419.0, 751.0, 664.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,25 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"bgcolor" : [ 0.694117647058824, 0.694117647058824, 0.694117647058824, 1.0 ],
+					"hint" : "reset stageview camera",
+					"id" : "obj-27",
+					"maxclass" : "textbutton",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 830.500000000000114, 91.5, 41.5, 21.5 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 3.0, 24.0, 43.0, 16.0 ],
+					"rounded" : 2.0,
+					"text" : "reset",
+					"textoncolor" : [ 1.0, 1.0, 1.0, 1.0 ]
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-24",
 					"maxclass" : "newobj",
@@ -85,7 +104,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "jit_gl_texture", "", "" ],
-					"patching_rect" : [ 632.5, 429.0, 111.0, 64.0 ],
+					"patching_rect" : [ 632.5, 429.0, 111.0, 62.0 ],
 					"text" : "jit.gl.node sparck @name stageview @capture 1 @adapt 0"
 				}
 
@@ -177,8 +196,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 1,
+							"minor" : 6,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -498,8 +517,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 1,
+							"minor" : 6,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -652,8 +671,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 5,
-											"revision" : 1,
+											"minor" : 6,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -698,8 +717,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 5,
-															"revision" : 1,
+															"minor" : 6,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2583,8 +2602,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 1,
+							"minor" : 6,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2827,7 +2846,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 354.499999999999886, 197.8333740234375, 168.000000000000114, 50.0 ],
+					"patching_rect" : [ 354.499999999999886, 197.8333740234375, 168.000000000000114, 49.0 ],
 					"text" : "sync 1, visible $1, border $1, idlemouse $1, mousewheel $1, sync 0"
 				}
 
@@ -2993,8 +3012,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 1,
+							"minor" : 6,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3063,8 +3082,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 5,
-											"revision" : 1,
+											"minor" : 6,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3099,6 +3118,17 @@
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
+												"box" : 												{
+													"id" : "obj-3",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 168.0, 221.0, 87.0, 22.0 ],
+													"text" : "print storeRect"
+												}
+
+											}
+, 											{
 												"box" : 												{
 													"id" : "obj-34",
 													"maxclass" : "newobj",
@@ -3154,14 +3184,14 @@
 													"numinlets" : 1,
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
-													"patching_rect" : [ 98.0, 178.333373999999992, 237.0, 22.0 ],
+													"patching_rect" : [ 98.0, 178.333373999999992, 77.0, 22.0 ],
+													"restore" : [ 0 ],
 													"saved_object_attributes" : 													{
-														"initial" : [ "rect", 595, 105, 637, 125 ],
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "pattr position @initial rect 595 105 637 125",
+													"text" : "pattr position",
 													"varname" : "position"
 												}
 
@@ -3223,6 +3253,15 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-16", 0 ],
+													"order" : 1,
+													"source" : [ "obj-61", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-3", 0 ],
+													"order" : 0,
 													"source" : [ "obj-61", 0 ]
 												}
 
@@ -3460,7 +3499,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_matrix", "" ],
-					"patching_rect" : [ 889.0, 502.0, 328.0, 36.0 ],
+					"patching_rect" : [ 889.0, 502.0, 328.0, 35.0 ],
 					"text" : "jit.gl.gridshape stageview @shape sphere @scale 50 50 50 @smooth_shading 1 @layer -1 @enable 0"
 				}
 
@@ -3476,8 +3515,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 1,
+							"minor" : 6,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3847,8 +3886,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 829.000000000000114, 155.5, 43.0, 18.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 197.0, 53.0, 33.0, 18.0 ],
 					"text" : "reset"
 				}
 
@@ -3902,7 +3939,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 877.000000000000114, 126.5, 52.0, 20.0 ],
+					"patching_rect" : [ 877.000000000000114, 91.0, 52.0, 20.0 ],
 					"text" : "loadbang"
 				}
 
@@ -3916,9 +3953,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 877.000000000000114, 155.5, 20.0, 20.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 238.0, 27.0, 19.0, 19.0 ]
+					"patching_rect" : [ 877.000000000000114, 155.5, 20.0, 20.0 ]
 				}
 
 			}
@@ -4070,7 +4105,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 87.833343505859375, 224.0, 210.0, 44.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 210.0, 44.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 188.0, 44.0 ],
 					"proportion" : 0.39,
 					"rounded" : 4,
 					"varname" : "vpl_canvas"
@@ -4228,6 +4263,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-13", 0 ],
 					"source" : [ "obj-26", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-44", 0 ],
+					"source" : [ "obj-27", 0 ]
 				}
 
 			}
@@ -4504,64 +4546,64 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "RenderGroupCell_capture_C.png",
-				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/media",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/media",
 				"patcherrelativepath" : "../../media",
 				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.app.contexter.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/app",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/app",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.math.fov.js",
-				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/math",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/javascript/math",
 				"patcherrelativepath" : "../../javascript/math",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.mouse.orbiter.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/utils",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/utils",
 				"patcherrelativepath" : "../utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.msg.receive.key.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/_obsolete",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/_obsolete",
 				"patcherrelativepath" : "../_obsolete",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.msg.receive.mxe64",
-				"type" : "mx64"
+				"name" : "bs.msg.receive.mxo",
+				"type" : "iLaX"
 			}
 , 			{
-				"name" : "bs.msg.send.mxe64",
-				"type" : "mx64"
+				"name" : "bs.msg.send.mxo",
+				"type" : "iLaX"
 			}
 , 			{
 				"name" : "bs.rendergroup.capture.gui.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/ossia/rendergroup",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/ossia/rendergroup",
 				"patcherrelativepath" : "../ossia/rendergroup",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.rendergroup.js",
-				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/misc",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/javascript/misc",
 				"patcherrelativepath" : "../../javascript/misc",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "icst.button.mxe64",
-				"type" : "mx64"
+				"name" : "icst.button.mxo",
+				"type" : "iLaX"
 			}
  ],
 		"autosave" : 0,
