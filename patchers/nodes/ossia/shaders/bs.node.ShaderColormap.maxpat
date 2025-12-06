@@ -2332,7 +2332,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#2", "#4", 1, "properties", -1, "@hint", "properties" ],
+					"args" : [ "#2", "#4", 1, "properties", -1, "@hint", "properties | [usage: set node/<nodeName>/<propertypath> <value(s)>]" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,

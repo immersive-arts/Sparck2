@@ -195,9 +195,9 @@ function initMenu(){
 	outlet(4, "vpl_menu", "append", "rename");
 	outlet(4, "vpl_menu", "append", "expand");
 	outlet(4, "vpl_menu", "append", "fold");
-	outlet(4, "vpl_menu", "append", "---");
-	outlet(4, "vpl_menu", "append", "duplicate");
-	outlet(4, "vpl_menu", "append", "delete");
+	//outlet(4, "vpl_menu", "append", "---");
+	//outlet(4, "vpl_menu", "append", "duplicate");
+	//outlet(4, "vpl_menu", "append", "delete");
 
 	outlet(4, "vpl_menu", "enableitem", 0, myNodeEnableProperties);
 	outlet(4, "vpl_menu", "enableitem", 1, myNodeEnableHelp);
@@ -342,7 +342,7 @@ function menu(_func){
 		} else if(_func == "delete"){
 			;
 		} else if(_func == "help"){
-			outlet(2, "load", "bs.help.node." + myNodeHelp + ".maxpat");
+			outlet(2, "help", myNodeHelp);
 		}
 	}
 }
