@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 72.0, 577.0, 602.0, 446.0 ],
+		"rect" : [ 475.0, 366.0, 602.0, 446.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -377,7 +377,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 419.333344000000011, 286.0, 59.0, 20.0 ],
+					"patching_rect" : [ 419.333344000000011, 284.0, 59.0, 20.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -443,7 +443,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 59.0, 104.0, 640.0, 480.0 ],
+						"rect" : [ 66.0, 132.0, 640.0, 480.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -484,30 +484,6 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "osc/send", "@types", "oscsend", "@out1", "send", "@offname", "<none>", "@text", "osc send", "@description", "osc send node" ],
-									"bgmode" : 0,
-									"border" : 0,
-									"clickthrough" : 0,
-									"enablehscroll" : 0,
-									"enablevscroll" : 0,
-									"hint" : "",
-									"id" : "obj-8",
-									"lockeddragscroll" : 0,
-									"lockedsize" : 0,
-									"maxclass" : "bpatcher",
-									"name" : "bs.ossia.parameter.msg.maxpat",
-									"numinlets" : 1,
-									"numoutlets" : 17,
-									"offset" : [ 0.0, 0.0 ],
-									"outlettype" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
-									"patching_rect" : [ 96.166686534881592, 53.386352968749975, 183.5, 20.0 ],
-									"varname" : "transformnode",
-									"viewvisibility" : 1
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-24",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
@@ -515,31 +491,6 @@
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 50.0, 205.0, 108.0, 22.0 ],
 									"text" : "routepass set"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-38",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 129.777771017303479, 148.0, 75.0, 22.0 ],
-									"text" : "route default"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 10.0,
-									"id" : "obj-23",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 96.166686534881592, 179.0, 44.0, 20.0 ],
-									"text" : "forward"
 								}
 
 							}
@@ -616,7 +567,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 185.777771017303479, 354.0, 30.0, 30.0 ]
+									"patching_rect" : [ 128.0, 354.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -675,7 +626,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-38", 0 ],
+									"destination" : [ "obj-48", 0 ],
 									"source" : [ "obj-35", 1 ]
 								}
 
@@ -710,29 +661,8 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-23", 0 ],
-									"source" : [ "obj-38", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-48", 0 ],
-									"source" : [ "obj-38", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-35", 0 ],
 									"source" : [ "obj-45", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-23", 0 ],
-									"source" : [ "obj-8", 0 ]
 								}
 
 							}
@@ -1318,7 +1248,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#2", "#4", 2, "type", "@hint", "osc messages that are not sent to the default osc-object" ],
+					"args" : [ "#2", "#4", 2, "type", "@hint", "osc messages" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -1344,7 +1274,7 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "osc messages",
 					"id" : "obj-37",
 					"index" : 0,
 					"maxclass" : "outlet",
@@ -2177,7 +2107,7 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "trigger messages",
 					"id" : "obj-2",
 					"index" : 0,
 					"maxclass" : "outlet",
@@ -2702,7 +2632,7 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "out messages",
 					"id" : "obj-14",
 					"index" : 0,
 					"maxclass" : "outlet",
@@ -2946,10 +2876,6 @@
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "bs.msg.receive.selector.mxo",
-				"type" : "iLaX"
-			}
-, 			{
 				"name" : "bs.node.QueScript.progessBar.maxpat",
 				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/nodes/ossia",
 				"patcherrelativepath" : ".",
@@ -2988,20 +2914,6 @@
 				"name" : "bs.ossia.parameter.menu.maxpat",
 				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/ossia/menu",
 				"patcherrelativepath" : "../../ossia/menu",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.ossia.parameter.msg.js",
-				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/javascript/ossia",
-				"patcherrelativepath" : "../../../javascript/ossia",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.ossia.parameter.msg.maxpat",
-				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/ossia/msg",
-				"patcherrelativepath" : "../../ossia/msg",
 				"type" : "JSON",
 				"implicit" : 1
 			}

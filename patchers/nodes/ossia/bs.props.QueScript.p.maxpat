@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 0,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -145,7 +145,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 0,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -434,30 +434,6 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "osc/send", "@text", "osc send", "@size", 159, 19, "@menutype", "message" ],
-					"bgmode" : 0,
-					"border" : 0,
-					"clickthrough" : 1,
-					"enablehscroll" : 0,
-					"enablevscroll" : 0,
-					"id" : "obj-16",
-					"lockeddragscroll" : 0,
-					"lockedsize" : 0,
-					"maxclass" : "bpatcher",
-					"name" : "bs.ossia.remote.menu.maxpat",
-					"numinlets" : 3,
-					"numoutlets" : 4,
-					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "", "int", "", "" ],
-					"patching_rect" : [ 248.0, 131.0, 201.0, 22.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 100.0, 240.0, 19.0 ],
-					"viewvisibility" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"args" : [ "#1", "script/filewatch" ],
 					"bgmode" : 0,
 					"border" : 0,
@@ -523,7 +499,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 249.5, 447.0, 86.0, 21.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 120.0, 82.0, 19.0 ],
+					"presentation_rect" : [ 0.0, 100.0, 82.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -559,7 +535,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 301.0, 63.0, 64.0, 22.0 ],
+					"patching_rect" : [ 301.0, 63.0, 71.0, 22.0 ],
 					"text" : "sparck.view"
 				}
 
@@ -620,9 +596,9 @@
 					"mode" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 0.0, 0.0, 242.0, 144.0 ],
+					"patching_rect" : [ 0.0, 0.0, 242.0, 124.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 242.0, 144.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 242.0, 124.0 ],
 					"proportion" : 0.39,
 					"varname" : "vpl_canvas_unfolded"
 				}
