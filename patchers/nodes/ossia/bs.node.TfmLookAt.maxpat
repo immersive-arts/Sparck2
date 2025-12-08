@@ -1828,7 +1828,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#0_id", "#1", "#2", "#3", "#4", "title", "TfmLookAt", "@enable_properties", 1, "@help", "TfmNodeLookAt", "@enable_body", 1 ],
+					"args" : [ "#0_id", "#1", "#2", "#3", "#4", "title", "TfmLookAt", "@enable_properties", 1, "@help", "TfmLookAt", "@enable_body", 1 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,

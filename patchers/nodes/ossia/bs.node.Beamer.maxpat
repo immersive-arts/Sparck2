@@ -41,7 +41,7 @@
 		"globalpatchername" : "Beamer_1",
 		"boxes" : [ 			{
 				"box" : 				{
-					"args" : [ "#2", "#4", 3, "type", -1, "@hint", "custom comands. message 'createToXY' creates a new model with calibration vertices relative to the XY-plane: 'createToX  x1  y1  z1  x2  y2  z2  x3  y3  z3  ...'. | message 'addToXY' adds calibration vertices relative to the XY-plane: 'addToX  x1  y1  z1  x2  y2  z2  x3  y3  z3  ...'" ],
+					"args" : [ "#2", "#4", 3, "type", -1, "@hint", "custom commands. message 'createToXY' creates a new model with calibration vertices relative to the XY-plane: 'createToX  x1  y1  z1  x2  y2  z2  x3  y3  z3  ...'. | message 'addToXY' adds calibration vertices relative to the XY-plane: 'addToX  x1  y1  z1  x2  y2  z2  x3  y3  z3  ...'" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
