@@ -38,7 +38,7 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
-		"globalpatchername" : "Beamer_1",
+		"globalpatchername" : "Beamer",
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-6",
@@ -46,8 +46,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 918.0, 402.0, 128.0, 41.0 ],
-					"presentation_linecount" : 3,
+					"patching_rect" : [ 960.0, 365.0, 128.0, 41.0 ],
 					"text" : "videoplane as background for video camera calibration"
 				}
 
@@ -59,7 +58,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 918.0, 162.0, 172.0, 20.0 ],
+					"patching_rect" : [ 960.0, 125.0, 172.0, 20.0 ],
 					"text" : "route disconnect connection"
 				}
 
@@ -71,7 +70,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 918.0, 268.0, 92.0, 20.0 ],
+					"patching_rect" : [ 960.0, 231.0, 92.0, 20.0 ],
 					"text" : "prepend enable"
 				}
 
@@ -83,7 +82,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 918.0, 240.0, 29.5, 20.0 ],
+					"patching_rect" : [ 960.0, 203.0, 29.5, 20.0 ],
 					"text" : "> 1"
 				}
 
@@ -95,7 +94,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 918.0, 214.0, 38.0, 20.0 ],
+					"patching_rect" : [ 960.0, 177.0, 38.0, 20.0 ],
 					"text" : "zl.len"
 				}
 
@@ -110,8 +109,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_matrix", "" ],
-					"patching_rect" : [ 918.0, 302.0, 140.071045039062483, 98.0 ],
-					"presentation_linecount" : 6,
+					"patching_rect" : [ 960.0, 265.0, 140.071045039062483, 98.0 ],
 					"text" : "jit.gl.videoplane editor @enable 0 @transform_reset 2 @layer -1 @depth_enable 0 @drawto #0.editor"
 				}
 
@@ -1424,7 +1422,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 469.0, 496.0, 62.0, 34.0 ],
-									"presentation_linecount" : 2,
 									"text" : "camera node"
 								}
 
@@ -3959,22 +3956,6 @@
 			}
 , 			{
 				"box" : 				{
-					"fontface" : 0,
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"id" : "obj-13",
-					"linecount" : 7,
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "jit_gl_texture", "" ],
-					"patching_rect" : [ 737.8669647770339, 411.0, 166.642135673828307, 105.0 ],
-					"text" : "Jay3DeeCamera @enable 0 @viewport 0. 0. 1. 1. @projection_mode frustum  @drawto #0.editor @setj3dcontext editor @setcameraname #0.cam.editor"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"args" : [ "#0_id", "#1", "#2", "#3", "#4", "title", "Beamer", "@enable_properties", 1, "@help", "Beamer", "@enable_body", 1 ],
 					"bgmode" : 0,
 					"border" : 0,
@@ -3998,6 +3979,50 @@
 				}
 
 			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-7",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 819.0, 363.0, 75.0, 22.0 ],
+					"text" : "route param"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 0,
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-12",
+					"maxclass" : "newobj",
+					"numinlets" : 3,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 772.0, 500.0, 393.0, 22.0 ],
+					"text" : "mxj com.tecartlab.jay3dee.mirror.JitGlCameraMirror #0.cam.editor editor"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-13",
+					"linecount" : 4,
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "jit_gl_texture", "" ],
+					"patching_rect" : [ 665.0, 418.0, 111.0, 64.0 ],
+					"text" : "jit.gl.camera @projection_mode frustum @drawto #0.editor"
+				}
+
+			}
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
@@ -4015,8 +4040,31 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-13", 0 ],
+					"midpoints" : [ 1155.5, 551.0, 1192.0, 551.0, 1192.0, 410.0, 674.5, 410.0 ],
+					"source" : [ "obj-12", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-12", 2 ],
+					"midpoints" : [ 766.5, 495.5, 1155.5, 495.5 ],
+					"source" : [ "obj-13", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-38", 2 ],
 					"source" : [ "obj-18", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-13", 0 ],
+					"source" : [ "obj-19", 1 ]
 				}
 
 			}
@@ -4187,6 +4235,20 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-12", 1 ],
+					"source" : [ "obj-7", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-12", 1 ],
+					"source" : [ "obj-7", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-10", 0 ],
 					"source" : [ "obj-71", 3 ]
 				}
@@ -4195,6 +4257,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-13", 0 ],
+					"order" : 1,
 					"source" : [ "obj-71", 6 ]
 				}
 
@@ -4238,6 +4301,14 @@
 				"patchline" : 				{
 					"destination" : [ "obj-65", 0 ],
 					"source" : [ "obj-71", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-7", 0 ],
+					"order" : 0,
+					"source" : [ "obj-71", 6 ]
 				}
 
 			}
@@ -4392,13 +4463,6 @@
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "Jay3DeeCamera.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/externals",
-				"patcherrelativepath" : "../../../externals",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "Jay3DeeMouseKeyEvents.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/externals",
 				"patcherrelativepath" : "../../../externals",
