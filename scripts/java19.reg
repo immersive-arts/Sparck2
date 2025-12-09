@@ -1,0 +1,29 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\JavaSoft]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\JavaSoft\JDK]
+"CurrentVersion"="1.19"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\JavaSoft\JDK\1.19]
+"JavaHome"="C:\\Program Files\\Java\\jdk-19"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\JavaSoft\Java Development Kit]
+"CurrentVersion"="1.19"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\JavaSoft\Java Development Kit\1.19]
+"JavaHome"="C:\\Program Files\\Java\\jdk-19"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\JavaSoft\JRE]
+"CurrentVersion"="1.19"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\JavaSoft\JRE\1.19]
+"RuntimeLib"="C:\\Program Files\\Java\\jdk-19\\bin\\server\\jvm.dll"
+"JavaHome"="C:\\Program Files\\Java\\jdk-19"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\JavaSoft\Java Runtime Environment]
+"CurrentVersion"="1.19"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\JavaSoft\Java Runtime Environment\1.19]
+"RuntimeLib"="C:\\Program Files\\Java\\jdk-19\\bin\\server\\jvm.dll"
+"JavaHome"="C:\\Program Files\\Java\\jdk-19"
