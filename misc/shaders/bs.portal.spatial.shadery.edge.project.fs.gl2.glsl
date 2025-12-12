@@ -125,22 +125,20 @@ void main()
 	float	vcurve[6];
 	float 	vangle[6];
 	float 	spreadedAngle[6];
-	float 	veepee[6];
-  float   occDepth[6];
+  	float   occDepth[6];
 
 	int   	indexSort[6];
 
 	vec3 	ray, raynormal;
-	vec2 	col;
-	float 	curve, angle, linearCurve, powerCurve, visible;
-  int 	i, j;
+	vec2 	centered, edgeDist, col;
+	float 	curve, angle, bevelScale, linearCurve, powerCurve, visible, depth_diff;
+  	int 	i, j;
 
   for( i = 0; i < 6; i++){
 		vcurve[i] = 0.0;
 		vangle[i] = 0.0;
-		veepee[i] = 0.0;
 		spreadedAngle[i] = 0.0;
-      occDepth[i] = 0.0;
+      	occDepth[i] = 0.0;
 		indexSort[i] = i;
 	}
 
@@ -178,25 +176,31 @@ void main()
 		//calculates the visibility factor for the angle;
 		visible = smoothstep(angle_limit_low[i], angle_limit_high[i], angle);
 
-		// calculate the viewport linear box blend
-		col = (0.5 - abs(beamer_uv[i].xy - 0.5)) * (20. - bevel_size[i] * 18.0);
-		col = clamp(col, 0.0, 1.0);
+		// normalize angle to [0,1] range for consistent blending
+		angle = angle / PI;
 
-		// transform the box blend into a chanfer box
-		linearCurve = (bevel_round[i] == 1)?1.0 - clamp(sqrt(pow(1.0-col.y,2.0) + pow(1.0-col.x,2.0)), 0.0, 1.0):clamp(min(col.x,col.y), 0., 1.);
-
-		veepee[i] = sign(linearCurve);
-
-		// transform the linear blend into an s-shaped blend
-		float powFactor = 1.0 + abs(bevel_curve[i] * 5.0);
-		powerCurve = linearCurve * linearCurve * (3. - 2. * linearCurve);
-		powerCurve = (bevel_curve[i] > 0.)?1.0 - pow(1.0 - powerCurve, powFactor):pow(powerCurve, powFactor);
-
+	    // Vignette/bevel calculation
+	    centered = beamer_uv[i].xy - 0.5;
+	    edgeDist = 0.5 - abs(centered);
+	    bevelScale = 20.0 - bevel_size[i] * 18.0;
+	    col = clamp(edgeDist * bevelScale, 0.0, 1.0);
+	    
+	    // Chamfer vs round bevel
+	    linearCurve = (bevel_round[i] == 1) 
+	        ? 1.0 - length(max(1.0 - col, 0.0))
+	        : min(col.x, col.y);
+	    linearCurve = clamp(linearCurve, 0.0, 1.0);
+	    	    
+	    // Proper bevel curve application
+	    powerCurve = (bevel_curve[i] >= 0.0)
+	        ? mix(linearCurve, sqrt(linearCurve), bevel_curve[i])
+	        : mix(linearCurve, linearCurve * linearCurve, -bevel_curve[i]);
+	 
         // calculate depth-difference to detect occlusions -> allway 1 if occlusion is disabled
-        float depth_diff = (abs(occDepth[i] - depth[i]) > 0.005)? (1. - occlusion): 1.0;
-
+        depth_diff = (abs(occDepth[i] - depth[i]) > 0.005)? (1. - occlusion): 1.0;
+        
 		vcurve[i] = powerCurve * visible * depth_diff;
-		vangle[i] = angle * visible * veepee[i];
+		vangle[i] =  angle * visible * powerCurve * depth_diff;
 	}
 
 	//Sorting the viewport values
@@ -211,12 +215,12 @@ void main()
   }
 
 	//spread the angles and calc the blend factor for each of the four possible beams
-	spreadedAngle[indexSort[0]] = vcurve[indexSort[0]] * vangle[indexSort[0]];
-	spreadedAngle[indexSort[1]] = vcurve[indexSort[1]] * vangle[indexSort[1]] * pow((1. - vangle[indexSort[0]] + vangle[indexSort[1]]), blendSpread);
-	spreadedAngle[indexSort[2]] = vcurve[indexSort[2]] * vangle[indexSort[2]] * pow((1. - vangle[indexSort[0]] + vangle[indexSort[2]]), blendSpread);
-	spreadedAngle[indexSort[3]] = vcurve[indexSort[3]] * vangle[indexSort[3]] * pow((1. - vangle[indexSort[0]] + vangle[indexSort[3]]), blendSpread);
-	spreadedAngle[indexSort[4]] = vcurve[indexSort[4]] * vangle[indexSort[4]] * pow((1. - vangle[indexSort[0]] + vangle[indexSort[4]]), blendSpread);
-	spreadedAngle[indexSort[5]] = vcurve[indexSort[5]] * vangle[indexSort[5]] * pow((1. - vangle[indexSort[0]] + vangle[indexSort[5]]), blendSpread);
+	spreadedAngle[indexSort[0]] = vangle[indexSort[0]];
+	spreadedAngle[indexSort[1]] = vangle[indexSort[1]] * pow((1. - vangle[indexSort[0]] + vangle[indexSort[1]]), blendSpread);
+	spreadedAngle[indexSort[2]] = vangle[indexSort[2]] * pow((1. - vangle[indexSort[0]] + vangle[indexSort[2]]), blendSpread);
+	spreadedAngle[indexSort[3]] = vangle[indexSort[3]] * pow((1. - vangle[indexSort[0]] + vangle[indexSort[3]]), blendSpread);
+	spreadedAngle[indexSort[4]] = vangle[indexSort[4]] * pow((1. - vangle[indexSort[0]] + vangle[indexSort[4]]), blendSpread);
+	spreadedAngle[indexSort[5]] = vangle[indexSort[5]] * pow((1. - vangle[indexSort[0]] + vangle[indexSort[5]]), blendSpread);
 
 	float sumAngle =
 		spreadedAngle[indexSort[0]] +
@@ -228,7 +232,7 @@ void main()
 
 	// normalizing the blend factors for the first time
 	// and multiply it with the curve.
-	float normalizeOne = 1.0 / sumAngle;
+	float normalizeOne = (sumAngle > 0.0001) ? (1.0 / sumAngle) : 0.0;
 
 	spreadedAngle[indexSort[0]] *= normalizeOne;
 	spreadedAngle[indexSort[1]] *= normalizeOne;
@@ -277,8 +281,8 @@ void main()
 		}
 	} else if(mode > 0){
 		// float gradientCorrected = softedgeblend(gradient[int(spreadedAngle[mode - 1] * 100.)]);
-    // gl_FragColor = alphablend(texture2DRect(tex1, camera_texcoord[0]) * gradientCorrected, texture2DRect(tex0, custom_texcoord));
-    // it has to output a mask
+    	// gl_FragColor = alphablend(texture2DRect(tex1, camera_texcoord[0]) * gradientCorrected, texture2DRect(tex0, custom_texcoord));
+    	// it has to output a mask
 		gl_FragColor = vec4(spreadedAngle[mode - 1], spreadedAngle[mode - 1], spreadedAngle[mode - 1], 1.);
 	}
 }

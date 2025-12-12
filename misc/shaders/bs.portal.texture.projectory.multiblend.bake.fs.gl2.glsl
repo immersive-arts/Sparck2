@@ -93,8 +93,8 @@ void main()
 	int   	indexSort[6];
 
 	vec3 	ray, raynormal;
-	vec2 	col;
-	float 	curve, angle, linearCurve, powerCurve, visible, visible2, veepee, distance;
+	vec2 	edgeDist, centered, col;
+	float 	curve, angle, bevelScale, linearCurve, powerCurve, visible, visible2, veepee, distancem, radius, theta, phi;
     int 	i, j;
 
   	for( i = 0; i < 6; i++){
@@ -133,19 +133,24 @@ void main()
         //and apply alpha value of this texture
         visible = visible * getTextureColor(i).a;
 
-		// calculate the viewport linear box blend
-		col = (0.5 - abs(beamer_uv[i].xy - 0.5)) * (20. - bevel_size[i] * 18.0);
-		col = clamp(col, 0.0, 1.0);
-
-		// transform the box blend into a chanfer box
-		linearCurve = (bevel_round[i] == 1)?1.0 - clamp(sqrt(pow(1.0-col.y,2.0) + pow(1.0-col.x,2.0)), 0.0, 1.0):clamp(min(col.x,col.y), 0., 1.);
-
-		veepee = sign(linearCurve);
-
-		// transform the linear blend into an s-shaped blend
-		float powFactor = 1.0 + abs(bevel_curve[i] * 5.0);
-		powerCurve = linearCurve * linearCurve * (3. - 2. * linearCurve);
-		powerCurve = (bevel_curve[i] > 0.)?1.0 - pow(1.0 - powerCurve, powFactor):pow(powerCurve, powFactor);
+		// Vignette/bevel calculation
+		centered = beamer_uv[i].xy - 0.5;
+		edgeDist = 0.5 - abs(centered);
+		bevelScale = 20.0 - bevel_size[i] * 18.0;
+		col = clamp(edgeDist * bevelScale, 0.0, 1.0);
+		
+		// Chamfer vs round bevel
+		linearCurve = (bevel_round[i] == 1) 
+			? 1.0 - length(max(1.0 - col, 0.0))
+			: min(col.x, col.y);
+		linearCurve = clamp(linearCurve, 0.0, 1.0);
+		
+		veepee = step(0.001, linearCurve);  // Faster than sign() for this use case
+		
+		// Proper bevel curve application
+		powerCurve = (bevel_curve[i] >= 0.0)
+			? mix(linearCurve, sqrt(linearCurve), bevel_curve[i])
+			: mix(linearCurve, linearCurve * linearCurve, -bevel_curve[i]);
 
 		vcurve[i] = powerCurve * visible;
 		vangle[i] = angle * visible * veepee;
