@@ -27,7 +27,7 @@
 WARP.MeshMngr = function ( manager ) {
 
     this.geometry = new WARP.Geometry();
-    this.commandHistory = new WARP.CommandHistory(20);
+    this.commandHistory = new WARP.CommandHistory(100);
 
     this.hasItChanged = true;
 	this.hasMeshChanged = true;

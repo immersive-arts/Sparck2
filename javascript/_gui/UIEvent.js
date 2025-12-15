@@ -83,7 +83,32 @@ GUI.UIEvent.prototype = {
         this.hasUpdate = true;
 	},
 
-	key: function ( _keyChar, _pressed ) {
+	modifier: function ( _modifierType ) {
+		// Reset all modifiers first
+		this.special_ShiftKey = false;
+		this.special_CtrlKey = false;
+		this.special_AltKey = false;
+		
+		// Set the active modifier
+		if(_modifierType == 'shift'){
+			this.special_ShiftKey = true;
+		} else if(_modifierType == 'ctrl' || _modifierType == 'command'){
+			this.special_CtrlKey = true;
+		} else if(_modifierType == 'alt' || _modifierType == 'option'){
+			this.special_AltKey = true;
+		}
+		// 'none' means all modifiers are false (already reset above)
+	},
+
+	key: function ( _keyType, _keyChar, _pressed ) {
+		// Handle both old 2-argument and new 3-argument formats
+		if(arguments.length == 2){
+			// Old format: key(keyChar, pressed)
+			_pressed = _keyChar;
+			_keyChar = _keyType;
+			_keyType = 'char';
+		}
+		
 		if((_pressed == 1)?true:false != this.keyPress){
 			if(_pressed == 1){
 				this.keyHit = true;

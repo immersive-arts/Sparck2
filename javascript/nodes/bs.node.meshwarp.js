@@ -235,7 +235,16 @@ function update(){
                 } else if(uiEvent.keyRelease && uiEvent.keyChar >= 0 && uiEvent.keyChar <= 9){  // RECALL STORED SELECTION
                     meshMngr.recallStoreSelection(uiEvent.keyChar);
                 } else if(uiEvent.keyRelease){
-                    var _step = 1. / uiEvent.windowSizeX * cameraAnimNode.position[2];
+                    // Modifier-based step sizes for arrow keys
+                    var _step;
+                    if(uiEvent.special_ShiftKey){
+                        _step = 0.001;  // Fine precision
+                    } else if(uiEvent.special_CtrlKey){
+                        _step = 0.1;    // Coarse precision
+                    } else {
+                        _step = 0.01;   // Normal precision
+                    }
+                    
                     if(uiEvent.keyChar == 'up'){
                         meshMngr.setVertice(new THREE.Vector3(0, _step, 0));
                     } else if(uiEvent.keyChar == 'down'){
@@ -546,10 +555,22 @@ function editor(_enable){
 
 /*
 	Setting uiEvent data for windows interaction
+	Expects either:
+	  - Old format: ui_keys(keyChar, pressed)
+	  - New format: ui_keys('modifier', modifierType) or ui_keys('char'/'sym', keyChar, pressed)
 */
 function ui_keys(){
     init();
-	uiEvent.key(arguments[0], arguments[1]);
+	if(arguments.length == 2 && arguments[0] == 'modifier'){
+		// Modifier message: ui_keys modifier shift/ctrl/alt/none
+		uiEvent.modifier(arguments[1]);
+	} else if(arguments.length == 3){
+		// New format: ui_keys char/sym keyChar pressed
+		uiEvent.key(arguments[0], arguments[1], arguments[2]);
+	} else if(arguments.length == 2){
+		// Old format: ui_keys keyChar pressed
+		uiEvent.key(arguments[0], arguments[1]);
+	}
 }
 
 /*

@@ -28,7 +28,7 @@ WARP.LatticeMngr = function ( manager ) {
 
 	this.manager = 'default';
 	this.lattice = new WARP.Lattice2D();
-    this.commandHistory = new WARP.CommandHistory(20);
+    this.commandHistory = new WARP.CommandHistory(100);
 
     this.hasItChanged = false;
 	this.hasGeomChanged = false;

@@ -141,9 +141,9 @@ DRAW.Warp2d_EditorHelper.prototype = {
 		this.helpLine[7].text  ( "p     : store selection" );
 		this.helpLine[8].text  ( "0..9  : recall store selection" );
 		this.helpLine[9].text  ( "q     : set transformation cursor" );
-		this.helpLine[10].text ( "" );
-		this.helpLine[11].text ( "" );
-		this.helpLine[12].text ( "" );
+		this.helpLine[10].text ( "arrows: move vertices (0.01 step)" );
+		this.helpLine[11].text ( "shift + arrows: move vertices (0.001 step)" );
+		this.helpLine[12].text ( "ctrl + arrows: move vertices (0.1 step)" );
 		this.helpLine[12].text ( "" );
 		this.helpLine[13].text ( "" );
 		this.helpLine[14].text ( "z/Z   : undo / redo" );
