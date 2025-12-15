@@ -26,12 +26,22 @@
 
  var WARP = { REVISION: '01' };
 
+// Load command pattern infrastructure first
+include("CommandHistory.js");
+include("GeometryQueries.js");
+include("LatticeQueries.js");
+include("GeometryCommands.js");
+include("LatticeCommands.js");
+
+// Load data models and utilities
 include("Face3.js");
 include("Geometry.js");
+include("Lattice2D.js");
 include("OBJLoader.js");
 include("OBJWriter.js");
 include("MeshLoader.js");
 include("WarpLoader.js");
-include("LatticeMngr.js");
+
+// Load managers (these depend on commands and queries)
 include("MeshMngr.js");
-include("Lattice2D.js");
+include("LatticeMngr.js");

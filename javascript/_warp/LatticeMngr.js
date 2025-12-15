@@ -28,16 +28,16 @@ WARP.LatticeMngr = function ( manager ) {
 
 	this.manager = 'default';
 	this.lattice = new WARP.Lattice2D();
-    this.latticeEdits = new Array();
-    this.latticeEditsMaxSize = 20;
-
-    this.latticeEdits.push(new WARP.Lattice2D());
-    this.latticeEditsIndex = 0;
+    this.commandHistory = new WARP.CommandHistory(20);
 
     this.hasItChanged = false;
 	this.hasGeomChanged = false;
 
-    this.lastPickRayIndex = -1;
+    this.lastPickRayIndex = [-1, -1];
+    
+    // Initialize with a default 3x3 lattice
+    var cmd = new WARP.CreateLatticeCommand([3, 3, 0., 0., 0., 0.]);
+    cmd.execute(this.lattice);
  };
 
 WARP.LatticeMngr.prototype = {
@@ -45,28 +45,14 @@ WARP.LatticeMngr.prototype = {
 	constructor: WARP.LatticeMngr,
 
     getCurrentLattice: function ( ) {
- 		return this.latticeEdits[this.latticeEditsIndex];
+ 		return this.lattice;
  	},
 
-    // this method clones a new lattice for modification and basically
-    // manages the undo/redo functionality
-    // it returns the newly created lattice
-    makeNewLattice: function ( ) {
-        var plusIndex = this.latticeEditsIndex + 1;
-        // clone a new lattice at the new edits index and remove all the lattices
-        // that follow
-        if(plusIndex == this.latticeEdits.length){
-            this.latticeEdits.push(this.getCurrentLattice().clone());
-        } else {
-            this.latticeEdits.splice(plusIndex, this.latticeEdits.length - plusIndex, this.getCurrentLattice().clone());
-        }
-        // if the list exeeds the maximum size, remove the firt
-        if(this.latticeEditsMaxSize < this.latticeEdits.length){
-            this.latticeEdits.splice(0, 1);
-            plusIndex--;
-        }
-        this.latticeEditsIndex = plusIndex;
- 		return this.getCurrentLattice();
+    // Execute a command and update flags
+    executeCommand: function ( command ) {
+        this.commandHistory.execute(command, this.lattice);
+        this.hasItChanged = true;
+        this.hasGeomChanged = true;
  	},
 
     save: function ( fout ) {
@@ -165,77 +151,65 @@ WARP.LatticeMngr.prototype = {
 	},
 
     load: function ( _dim, _rim, _loadverts ) {
-        this.makeNewLattice().load( _dim, _rim, _loadverts );
-        this.hasItChanged = true;
-        this.hasGeomChanged = true;
+        this.executeCommand(new WARP.LoadLatticeCommand(_dim, _rim, _loadverts));
 	},
 
 	create: function ( _dim ) {
-        this.makeNewLattice().create( _dim );
-        this.hasItChanged = true;
-        this.hasGeomChanged = true;
+        this.executeCommand(new WARP.CreateLatticeCommand(_dim));
 	},
 
-    // called when jumping into a modify mode.
+    // called when jumping into a modify mode - no longer needed with command pattern
     makeClone: function ( ) {
-        this.makeNewLattice();
+        // This method is kept for compatibility but doesn't need to do anything
+        // The command pattern handles cloning internally
     },
 
     undoLattice: function ( ) {
-        if(this.latticeEditsIndex > 0){
-            this.latticeEditsIndex--;
+        if(this.commandHistory.undo(this.lattice)){
             this.hasItChanged = true;
             this.hasGeomChanged = true;
         }
     },
 
     redoLattice: function ( ) {
-        if((this.latticeEditsIndex + 1) < this.latticeEdits.length){
-            this.latticeEditsIndex++;
+        if(this.commandHistory.redo(this.lattice)){
             this.hasItChanged = true;
             this.hasGeomChanged = true;
         }
     },
 
     draw: function ( _lattice_sketch, _drawMode ) {
-        this.getCurrentLattice().draw( _lattice_sketch, _drawMode );
+        WARP.LatticeQueries.draw(this.getCurrentLattice(), _lattice_sketch, _drawMode);
         this.hasItChanged = false;
         this.hasGeomChanged = false;
 	},
 
     hasSelection: function ( ) {
-        return this.getCurrentLattice().hasSelection( );
+        return WARP.LatticeQueries.hasSelection(this.getCurrentLattice());
     },
 
 	select: function ( ) {
-        this.getCurrentLattice().select( );
-        this.hasItChanged = true;
+        this.executeCommand(new WARP.SelectLatticeCommand(this.getCurrentLattice().pickrayindx, false));
 	},
 
 	selectAdd: function ( ) {
-        this.getCurrentLattice().selectAdd( );
-        this.hasItChanged = true;
+        this.executeCommand(new WARP.SelectLatticeCommand(this.getCurrentLattice().pickrayindx, true));
 	},
 
     selectAll: function ( ) {
-        this.getCurrentLattice().selectAll( );
-        this.hasItChanged = true;
+        this.executeCommand(new WARP.SelectAllLatticeCommand());
 	},
 
 	setVertice: function ( _point) {
-        this.getCurrentLattice().setVertice( _point);
-        this.hasItChanged = true;
-        this.hasGeomChanged = true;
+        this.executeCommand(new WARP.MoveLatticeVerticesCommand(_point));
     },
 
 	resetVertice: function ( ) {
-        this.getCurrentLattice().resetVertice( );
-        this.hasItChanged = true;
-        this.hasGeomChanged = true;
+        this.executeCommand(new WARP.ResetLatticeVerticesCommand());
     },
 
 	pickray: function ( _pickray ) {
-        var prindex = this.getCurrentLattice().pickray( _pickray );
+        var prindex = WARP.LatticeQueries.pickRay(this.getCurrentLattice(), _pickray);
         if(prindex[0]*5 + prindex[1] !=  this.lastPickRayIndex[0]*5 + this.lastPickRayIndex[1]){
             this.hasItChanged = true;
         }

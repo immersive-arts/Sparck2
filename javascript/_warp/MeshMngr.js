@@ -26,22 +26,18 @@
  
 WARP.MeshMngr = function ( manager ) {
 
-    this.meshEdits = new Array();
-    this.meshEditsMaxSize = 20;
-
-    var initGeometry = new WARP.Geometry();
-    initGeometry.create(10);
+    this.geometry = new WARP.Geometry();
+    this.commandHistory = new WARP.CommandHistory(20);
 
     this.hasItChanged = true;
 	this.hasMeshChanged = true;
 
-    this.meshEdits.push(initGeometry);
-    this.meshEditsIndex = 0;
-
-    this.modifiedMesh = null;
     this.lastPickRayIndex = -1;
-
     this.interpolateLoadedMesh = false;
+
+    // Initialize with a default geometry
+    var cmd = new WARP.CreateGeometryCommand(10);
+    cmd.execute(this.geometry);
 
  };
 
@@ -51,28 +47,14 @@ WARP.MeshMngr.prototype = {
 
     // returns the current mesh
     getCurrentMesh: function ( ) {
- 		return this.meshEdits[this.meshEditsIndex];
+ 		return this.geometry;
  	},
 
-    // this method clones a new mesh for modification and basically
-    // manages the undo/redo functionality
-    // it returns the newly created mesh
-    makeNewMesh: function ( ) {
-        var plusIndex = this.meshEditsIndex + 1;
-        // clone a new mesh at the new edits index and remove all the meshes
-        // that follow
-        if(plusIndex == this.meshEdits.length){
-            this.meshEdits.push(this.getCurrentMesh().clone());
-        } else {
-            this.meshEdits.splice(plusIndex, this.meshEdits.length - plusIndex, this.getCurrentMesh().clone());
-        }
-        // if the list exeeds the maximum size, remove the firt
-        if(this.meshEditsMaxSize < this.meshEdits.length){
-            this.meshEdits.splice(0, 1);
-            plusIndex--;
-        }
-        this.meshEditsIndex = plusIndex;
- 		return this.getCurrentMesh();
+    // Execute a command and update flags
+    executeCommand: function ( command ) {
+        this.commandHistory.execute(command, this.geometry);
+        this.hasItChanged = true;
+        this.hasMeshChanged = true;
  	},
 
     // save the current geometry
@@ -100,7 +82,7 @@ WARP.MeshMngr.prototype = {
             }
             // selection storage
             for(var i = 0; i < this.getCurrentMesh().selectedStore.length; i++){
-                var ss = this.getCurrentMesh().getSelectStoreList(i);
+                var ss = WARP.GeometryQueries.getSelectStoreList(this.getCurrentMesh(), i);
                 if(ss.length > 0){
                     fout.writeline("ss" + ss);
                 }
@@ -130,16 +112,11 @@ WARP.MeshMngr.prototype = {
 
     // returns the mesh matrix from the current mesh which is modified by the lattice
     generateMatrix: function ( meshMatrix,  _subDiv, _color ) {
-        //post(" generateMatrix "+this.getCurrentMesh().myCursor_mod +"\n");
-        return this.getCurrentMesh().generateMatrix( meshMatrix,  _subDiv, _color );
+        return WARP.GeometryQueries.generateMatrix(this.getCurrentMesh(), meshMatrix, _subDiv, _color);
     },
 
     load: function ( _newGeometry ) {
-//        post(" loading new geom\n");
-        this.makeNewMesh().load( _newGeometry , this.interpolateLoadedMesh);
-        this.hasItChanged = true;
-        this.hasMeshChanged = true;
-//        post(" loading new geom.done\n");
+        this.executeCommand(new WARP.LoadGeometryCommand(_newGeometry, this.interpolateLoadedMesh));
 	},
 
     // set the flag if the newly loaded mesh should be interpolated
@@ -149,40 +126,34 @@ WARP.MeshMngr.prototype = {
 
     // modify the current mesh with the provided lattice
 	modifyWith: function ( _latticeManager ) {
-        //post("modify mesh with lattice: "+this.getCurrentMesh().myCursor_mod.x +"\n");        
         _latticeManager.modify(this.getCurrentMesh(), this.hasMeshChanged);
     },
 
     // apply the lattice modification as the mesh modification
 	applyLattice: function ( ) {
-        this.getCurrentMesh().applyLattice();
-        this.hasItChanged = true;
-        this.hasMeshChanged = true;
+        this.executeCommand(new WARP.ApplyLatticeCommand());
    },
 
     // create a new mesh
 	create: function ( _dim ) {
-        this.makeNewMesh().create( _dim );
-        this.hasItChanged = true;
-        this.hasMeshChanged = true;
+        this.executeCommand(new WARP.CreateGeometryCommand(_dim));
 	},
 
-    // called when jumping into a modify mode.
+    // called when jumping into a modify mode - no longer needed with command pattern
     makeClone: function ( ) {
-        this.makeNewMesh();
+        // This method is kept for compatibility but doesn't need to do anything
+        // The command pattern handles cloning internally
     },
 
     undoMesh: function ( ) {
-        if(this.meshEditsIndex > 0){
-            this.meshEditsIndex--;
+        if(this.commandHistory.undo(this.geometry)){
             this.hasItChanged = true;
             this.hasMeshChanged = true;
         }
    },
 
     redoMesh: function ( ) {
-        if((this.meshEditsIndex + 1) < this.meshEdits.length){
-            this.meshEditsIndex++;
+        if(this.commandHistory.redo(this.geometry)){
             this.hasItChanged = true;
             this.hasMeshChanged = true;
         }
@@ -190,98 +161,80 @@ WARP.MeshMngr.prototype = {
 
     // draw the current mesh, modified by the lattice
 	drawLatMod: function ( _lattice_sketch, _drawMode  ) {
-//        post(" drawLatMod\n");
-        this.getCurrentMesh().draw( _lattice_sketch, _drawMode, 2 );
+        WARP.GeometryQueries.draw(this.getCurrentMesh(), _lattice_sketch, _drawMode, 2);
         this.hasItChanged = false;
         this.hasMeshChanged = false;
 	},
 
     hasSelection: function ( ) {
-        return this.getCurrentMesh().hasSelection( );
+        return WARP.GeometryQueries.hasSelection(this.getCurrentMesh());
     },
 
 	select: function ( ) {
-        this.getCurrentMesh().select( );
-        this.hasItChanged = true;
+        this.executeCommand(new WARP.SelectVerticesCommand(this.getCurrentMesh().pickRayIndx, false));
 	},
 
 	selectAdd: function ( ) {
-        //post("meshmangr: select all :in\n")
-        this.getCurrentMesh().selectAdd( );
-        this.hasItChanged = true;
-        //post("meshmangr: select all :out\n")
+        this.executeCommand(new WARP.SelectVerticesCommand(this.getCurrentMesh().pickRayIndx, true));
 	},
 
     // recall the store for selection
     recallStoreSelection: function ( _storeIndex ) {
-        this.getCurrentMesh().recallStoreSelection( _storeIndex );
-        this.hasItChanged = true;
+        this.executeCommand(new WARP.RecallStoreSelectionCommand(_storeIndex));
 	},
 
     // stores the selected vertice under this index
     storeSelection: function ( _storeIndex ) {
-        this.getCurrentMesh().storeSelection( _storeIndex );
+        this.executeCommand(new WARP.StoreSelectionCommand(_storeIndex));
  	},
 
     selectAll: function ( ) {
-        this.getCurrentMesh().selectAll( );
-        this.hasItChanged = true;
+        this.executeCommand(new WARP.SelectAllVerticesCommand());
     },
 
     setCursor: function ( ) {
-        this.getCurrentMesh().setCursor( );
-        this.hasItChanged = true;
-        this.hasMeshChanged = true;
+        this.executeCommand(new WARP.SetCursorCommand());
     },
 
 	setVertice: function ( _point) {
-//        post("add to Vertice  = " + _point.x + " " + _point.y + " " + _point.z + "\n");
-        this.getCurrentMesh().setVertice( _point);
-        this.hasItChanged = true;
-        this.hasMeshChanged = true;
+        this.executeCommand(new WARP.MoveVerticesCommand(_point));
     },
 
     verticeSnapshot: function ( _currentPoint, _originPoint) {
-        this.getCurrentMesh().verticeSnapshot();
+        // Store snapshot in vertices_mod_tmp for scale/rotate operations
+        this.getCurrentMesh().vertices_mod_tmp = new Array(this.getCurrentMesh().vertices_mod.length);
+        for(var j = 0; j < this.getCurrentMesh().vertices_mod.length; j++){
+            this.getCurrentMesh().vertices_mod_tmp[j] = this.getCurrentMesh().vertices_mod[j].clone();
+        }
     },
 
     // call verticeSnapshot before scaling
 	scaleVertice: function ( _currentPoint, _originPoint) {
-//        post("add to Vertice  = " + _point.x + " " + _point.y + " " + _point.z + "\n");
-        this.getCurrentMesh().scaleVertice( _currentPoint, _originPoint );
-        this.hasItChanged = true;
-        this.hasMeshChanged = true;
+        this.executeCommand(new WARP.ScaleVerticesCommand(_currentPoint, _originPoint, this.getCurrentMesh().myCursor_mod));
     },
 
-    // call verticeSnapshot before scaling
+    // call verticeSnapshot before rotating
 	rotateVertice: function ( _currentPoint, _originPoint) {
-//        post("add to Vertice  = " + _point.x + " " + _point.y + " " + _point.z + "\n");
-        this.getCurrentMesh().rotateVertice( _currentPoint, _originPoint );
-        this.hasItChanged = true;
-        this.hasMeshChanged = true;
+        this.executeCommand(new WARP.RotateVerticesCommand(_currentPoint, _originPoint, this.getCurrentMesh().myCursor_mod));
     },
 
 	resetVertice: function ( ) {
-        this.getCurrentMesh().resetVertice( );
-        this.hasItChanged = true;
-        this.hasMeshChanged = true;
+        this.executeCommand(new WARP.ResetVerticesCommand());
     },
 
     // gets the vertice index from the lattice-modified mesh and passes it to
     // the current mesh
     pickRayLatMod: function ( _pickRay ) {
-        //==>> this should be a pickray that picks  the lattice modified vertices !!!
-        var prindex = this.getCurrentMesh().pickRay_lattice( _pickRay );
-        if(prindex[0]*5 + prindex[1] !=  this.lastPickRayIndex[0]*5 + this.lastPickRayIndex[1]){
+        var prindex = WARP.GeometryQueries.pickRayLattice(this.getCurrentMesh(), _pickRay);
+        if(prindex != this.lastPickRayIndex){
             this.hasItChanged = true;
         }
         this.lastPickRayIndex = prindex;
-        this.getCurrentMesh().pickRayIndx = prindex;
 	},
 
 	pickRay: function ( _pickRay ) {
-        var prindex = this.getCurrentMesh().pickRay( _pickRay );
-        if(prindex[0]*5 + prindex[1] !=  this.lastPickRayIndex[0]*5 + this.lastPickRayIndex[1]){
+        var prindex = WARP.GeometryQueries.pickRay(this.getCurrentMesh(), _pickRay);
+        if(prindex != this.lastPickRayIndex){
            this.hasItChanged = true;
         }
         this.lastPickRayIndex = prindex;

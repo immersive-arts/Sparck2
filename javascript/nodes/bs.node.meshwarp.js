@@ -83,8 +83,13 @@ var isInit = false;
 
 //post("bs.warp2d.js newLoad\n");
 
+function bang(){
+	loadbang();
+}
+
 function loadbang(){
-	init()
+	post("v0.0.1");
+	init();
 }
 
 function init(){

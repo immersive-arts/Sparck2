@@ -336,7 +336,7 @@
 					"bgfillcolor_proportion" : 0.5,
 					"bgfillcolor_type" : "gradient",
 					"id" : "obj-44",
-					"items" : [ "properties", ",", "help", ",", "rename", ",", "expand", ",", "fold", ",", "------", ",", "duplicate", ",", "delete" ],
+					"items" : [ "properties", ",", "help", ",", "rename", ",", "expand", ",", "fold" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
