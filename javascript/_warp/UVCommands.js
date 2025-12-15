@@ -301,3 +301,145 @@ WARP.ApplyUVLatticeCommand.prototype.undo = function(geometry) {
         geometry.uvs_mod[i] = this.previousUVs[i];
     }
 };
+
+/**
+ * Command: Scale UVs
+ * UV space is 0-1, cursor is in viewport coordinates (converted to UV)
+ */
+WARP.ScaleUVsCommand = function(currentPoint, originPoint, cursor) {
+    WARP.Command.call(this);
+    this.name = "ScaleUVs";
+    this.currentPoint = currentPoint.clone();
+    this.originPoint = originPoint.clone();
+    // Cursor is already in UV space (0-1)
+    this.cursor = cursor.clone();
+    this.previousUVs = [];
+    this.affectedIndices = [];
+};
+
+WARP.ScaleUVsCommand.prototype = Object.create(WARP.Command.prototype);
+WARP.ScaleUVsCommand.prototype.constructor = WARP.ScaleUVsCommand;
+
+WARP.ScaleUVsCommand.prototype.execute = function(geometry) {
+    this.previousUVs = [];
+    this.affectedIndices = [];
+    
+    // Convert viewport points to UV space
+    var cursor_current = new THREE.Vector2((this.currentPoint.x + 1.0) * 0.5, (this.currentPoint.y + 1.0) * 0.5);
+    var cursor_origin = new THREE.Vector2((this.originPoint.x + 1.0) * 0.5, (this.originPoint.y + 1.0) * 0.5);
+    
+    var dist_current = cursor_current.distanceTo(this.cursor);
+    var dist_origin = cursor_origin.distanceTo(this.cursor);
+    
+    // Prevent division by zero
+    if(dist_origin < 0.001) return;
+    
+    var scale = dist_current / dist_origin;
+    
+    for(var j = 0; j < geometry.uvs.length; j++){
+        if(geometry.selectedUVs[j] == 1){
+            this.affectedIndices.push(j);
+            this.previousUVs.push(geometry.uvs_mod[j].clone());
+            
+            // Scale from the snapshot, not current state
+            var delta = geometry.uvs_mod_tmp[j].clone().sub(this.cursor);
+            delta.multiplyScalar(scale);
+            
+            // Apply scale and clamp to UV space [0,1]
+            geometry.uvs_mod[j].x = Math.max(0, Math.min(1, this.cursor.x + delta.x));
+            geometry.uvs_mod[j].y = Math.max(0, Math.min(1, this.cursor.y + delta.y));
+        }
+    }
+};
+
+WARP.ScaleUVsCommand.prototype.undo = function(geometry) {
+    for(var i = 0; i < this.affectedIndices.length; i++){
+        var idx = this.affectedIndices[i];
+        geometry.uvs_mod[idx] = this.previousUVs[i];
+    }
+};
+
+WARP.ScaleUVsCommand.prototype.merge = function(newCommand) {
+    if(newCommand.constructor !== WARP.ScaleUVsCommand) return false;
+    // Only merge if they share the same origin and cursor
+    if(!this.originPoint.equals(newCommand.originPoint)) return false;
+    if(!this.cursor.equals(newCommand.cursor)) return false;
+    
+    this.currentPoint = newCommand.currentPoint.clone();
+    return true;
+};
+
+/**
+ * Command: Rotate UVs
+ * UV space is 0-1, cursor is in viewport coordinates (converted to UV)
+ */
+WARP.RotateUVsCommand = function(currentPoint, originPoint, cursor) {
+    WARP.Command.call(this);
+    this.name = "RotateUVs";
+    this.currentPoint = currentPoint.clone();
+    this.originPoint = originPoint.clone();
+    // Cursor is already in UV space (0-1)
+    this.cursor = cursor.clone();
+    this.previousUVs = [];
+    this.affectedIndices = [];
+};
+
+WARP.RotateUVsCommand.prototype = Object.create(WARP.Command.prototype);
+WARP.RotateUVsCommand.prototype.constructor = WARP.RotateUVsCommand;
+
+WARP.RotateUVsCommand.prototype.execute = function(geometry) {
+    this.previousUVs = [];
+    this.affectedIndices = [];
+    
+    // Convert viewport points to UV space
+    var cursor_current = new THREE.Vector2((this.currentPoint.x + 1.0) * 0.5, (this.currentPoint.y + 1.0) * 0.5);
+    var cursor_origin = new THREE.Vector2((this.originPoint.x + 1.0) * 0.5, (this.originPoint.y + 1.0) * 0.5);
+    
+    // Calculate vectors from cursor to origin and current points
+    var vec_origin = cursor_origin.clone().sub(this.cursor);
+    var vec_current = cursor_current.clone().sub(this.cursor);
+    
+    // Calculate the angle between the two vectors using atan2
+    var angle_origin = Math.atan2(vec_origin.y, vec_origin.x);
+    var angle_current = Math.atan2(vec_current.y, vec_current.x);
+    var angle = angle_current - angle_origin;
+    
+    // Precompute sin/cos for rotation
+    var cos_angle = Math.cos(angle);
+    var sin_angle = Math.sin(angle);
+    
+    for(var j = 0; j < geometry.uvs.length; j++){
+        if(geometry.selectedUVs[j] == 1){
+            this.affectedIndices.push(j);
+            this.previousUVs.push(geometry.uvs_mod[j].clone());
+            
+            // Rotate from the snapshot, not current state
+            var delta = geometry.uvs_mod_tmp[j].clone().sub(this.cursor);
+            
+            // Apply 2D rotation
+            var rotated_x = delta.x * cos_angle - delta.y * sin_angle;
+            var rotated_y = delta.x * sin_angle + delta.y * cos_angle;
+            
+            // Apply rotation and clamp to UV space [0,1]
+            geometry.uvs_mod[j].x = Math.max(0, Math.min(1, this.cursor.x + rotated_x));
+            geometry.uvs_mod[j].y = Math.max(0, Math.min(1, this.cursor.y + rotated_y));
+        }
+    }
+};
+
+WARP.RotateUVsCommand.prototype.undo = function(geometry) {
+    for(var i = 0; i < this.affectedIndices.length; i++){
+        var idx = this.affectedIndices[i];
+        geometry.uvs_mod[idx] = this.previousUVs[i];
+    }
+};
+
+WARP.RotateUVsCommand.prototype.merge = function(newCommand) {
+    if(newCommand.constructor !== WARP.RotateUVsCommand) return false;
+    // Only merge if they share the same origin and cursor
+    if(!this.originPoint.equals(newCommand.originPoint)) return false;
+    if(!this.cursor.equals(newCommand.cursor)) return false;
+    
+    this.currentPoint = newCommand.currentPoint.clone();
+    return true;
+};

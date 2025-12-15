@@ -364,12 +364,18 @@ WARP.ScaleVerticesCommand.prototype.execute = function(geometry) {
     var dist_current = this.currentPoint.clone().sub(this.cursor).length();
     var dist_origin = this.originPoint.clone().sub(this.cursor).length();
     
+    // Prevent division by zero or very small numbers
+    if(dist_origin < 0.001) return;
+    
+    var scaleFactor = dist_current / dist_origin;
+    
     for(var j = 0; j < geometry.vertices.length; j++){
         if(geometry.selectedVertices[j] == 1){
             this.affectedIndices.push(j);
             this.previousVertices.push(geometry.vertices_mod[j].clone());
             
-            var dirToCursor = geometry.vertices_mod[j].clone().sub(this.cursor).multiplyScalar(dist_current / dist_origin);
+            // Scale from the snapshot (vertices_mod_tmp), not from the current state
+            var dirToCursor = geometry.vertices_mod_tmp[j].clone().sub(this.cursor).multiplyScalar(scaleFactor);
             geometry.vertices_mod[j] = this.cursor.clone().add(dirToCursor);
         }
     }
@@ -402,25 +408,37 @@ WARP.RotateVerticesCommand.prototype.execute = function(geometry) {
     this.previousVertices = [];
     this.affectedIndices = [];
     
-    var cursor_current = this.currentPoint.clone().sub(this.cursor);
+    // Calculate vectors from cursor to origin and current points
     var cursor_origin = this.originPoint.clone().sub(this.cursor);
-    cursor_current.sub(cursor_origin);
-    var angle = cursor_current.x + cursor_current.y;
+    var cursor_current = this.currentPoint.clone().sub(this.cursor);
     
-    var inverseTransform = new THREE.Matrix4();
-    inverseTransform.makeTranslation(this.cursor.x, this.cursor.y, this.cursor.z);
-    var rotationMatrix = new THREE.Matrix4();
-    rotationMatrix.makeRotationZ(angle);
+    // Calculate the angle between the two vectors using atan2
+    var angle_origin = Math.atan2(cursor_origin.y, cursor_origin.x);
+    var angle_current = Math.atan2(cursor_current.y, cursor_current.x);
+    var angle = angle_current - angle_origin;
+    
+    // Create transformation matrix: translate to cursor, rotate, translate back
     var transform = new THREE.Matrix4();
     transform.makeTranslation(-this.cursor.x, -this.cursor.y, -this.cursor.z);
     
-    inverseTransform.multiply(rotationMatrix).multiply(transform);
+    var rotationMatrix = new THREE.Matrix4();
+    rotationMatrix.makeRotationZ(angle);
+    
+    var inverseTransform = new THREE.Matrix4();
+    inverseTransform.makeTranslation(this.cursor.x, this.cursor.y, this.cursor.z);
+    
+    // Combine transformations
+    var finalTransform = new THREE.Matrix4();
+    finalTransform.multiplyMatrices(inverseTransform, rotationMatrix);
+    finalTransform.multiply(transform);
     
     for(var j = 0; j < geometry.vertices.length; j++){
         if(geometry.selectedVertices[j] == 1){
             this.affectedIndices.push(j);
             this.previousVertices.push(geometry.vertices_mod[j].clone());
-            geometry.vertices_mod[j] = geometry.vertices_mod[j].clone().applyMatrix4(inverseTransform);
+            
+            // Rotate from the snapshot, not from the current state
+            geometry.vertices_mod[j] = geometry.vertices_mod_tmp[j].clone().applyMatrix4(finalTransform);
         }
     }
 };

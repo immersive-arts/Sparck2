@@ -121,15 +121,29 @@ WARP.UVMeshMngr.prototype = {
         this.executeCommand(new WARP.SetUVCursorCommand());
     },
 
-	setUV: function ( _point) {
+    setUV: function ( _point) {
         this.executeCommand(new WARP.MoveUVsCommand(_point));
+    },
+
+    uvSnapshot: function ( ) {
+        // Store snapshot in uvs_mod_tmp for scale/rotate operations
+        this.geometry.uvs_mod_tmp = new Array(this.geometry.uvs_mod.length);
+        for(var j = 0; j < this.geometry.uvs_mod.length; j++){
+            this.geometry.uvs_mod_tmp[j] = this.geometry.uvs_mod[j].clone();
+        }
+    },
+
+    scaleUV: function ( _currentPoint, _originPoint) {
+        this.executeCommand(new WARP.ScaleUVsCommand(_currentPoint, _originPoint, this.geometry.myUVCursor_mod));
+    },
+
+    rotateUV: function ( _currentPoint, _originPoint) {
+        this.executeCommand(new WARP.RotateUVsCommand(_currentPoint, _originPoint, this.geometry.myUVCursor_mod));
     },
 
 	resetUV: function ( ) {
         this.executeCommand(new WARP.ResetUVsCommand());
-    },
-
-    // Pick ray against lattice-modified UVs
+    },    // Pick ray against lattice-modified UVs
     pickRayLatMod: function ( _pickRay ) {
         var prindex = WARP.GeometryQueries.pickRayUVLattice(this.geometry, _pickRay);
         if(prindex != this.lastPickRayIndex){

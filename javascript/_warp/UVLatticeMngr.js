@@ -243,7 +243,7 @@ WARP.UVLatticeMngr.prototype = {
 	},
 
 	resetVertice: function ( ) {
-        this.executeCommand(new WARP.ResetLatticeCommand());
+        this.executeCommand(new WARP.ResetLatticeVerticesCommand());
 	},
 
     /**

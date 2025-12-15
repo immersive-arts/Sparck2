@@ -255,7 +255,7 @@ DRAW.Warp2d_EditorHelper.prototype = {
 		this.helpLine[4].text  ( "q     : set cursor to selection" );
 		this.helpLine[5].text  ( "mouse : select single UV vertex" );
 		this.helpLine[6].text  ( "shift + mouse: select multiple" );
-		this.helpLine[7].text  ( "g     : grab UVs" );
+		this.helpLine[7].text  ( "g/s/r : grab/scale/rotate control points" );
 		this.helpLine[8].text  ( "i     : reset UVs" );
 		this.helpLine[9].text  ( "p     : store selection (then 0-9)" );
 		this.helpLine[10].text ( "0-9   : recall stored selection" );
@@ -297,6 +297,52 @@ DRAW.Warp2d_EditorHelper.prototype = {
 		this.helpLine[0].text  ( "Mode: [ UV - MODIFY ]" );
 		this.helpLine[1].text  ( "mouse : move selected UVs" );
 		this.helpLine[2].text  ( "click : end modify mode" );
+		this.helpLine[3].text  ( "" );
+		this.helpLine[4].text  ( "" );
+		this.helpLine[5].text  ( "" );
+		this.helpLine[6].text  ( "" );
+		this.helpLine[7].text  ( "" );
+		this.helpLine[8].text  ( "" );
+		this.helpLine[9].text  ( "" );
+		this.helpLine[10].text ( "" );
+		this.helpLine[11].text ( "" );
+		this.helpLine[12].text ( "" );
+		this.helpLine[13].text ( "" );
+		this.helpLine[14].text ( "z/Z   : undo / redo" );
+		this.helpLine[15].text ( "f     : save file" );
+		this.helpLine[16].text ( "<alt> + drag mouse: shift canvas" );
+		this.helpLine[17].text ( "<ctrl>+ drag mouse: zoom canvas" );
+		this.helpLine[18].text ( "H     : change help text color" );
+		this.helpLine[19].text ( "h     : toggle this help" );
+	},
+
+    printUV_SCALE: function(){
+		this.helpLine[0].text  ( "Mode: [ UV - SCALE ]" );
+		this.helpLine[1].text  ( "mouse : scale selected UVs" );
+		this.helpLine[2].text  ( "click : end scale mode" );
+		this.helpLine[3].text  ( "" );
+		this.helpLine[4].text  ( "" );
+		this.helpLine[5].text  ( "" );
+		this.helpLine[6].text  ( "" );
+		this.helpLine[7].text  ( "" );
+		this.helpLine[8].text  ( "" );
+		this.helpLine[9].text  ( "" );
+		this.helpLine[10].text ( "" );
+		this.helpLine[11].text ( "" );
+		this.helpLine[12].text ( "" );
+		this.helpLine[13].text ( "" );
+		this.helpLine[14].text ( "z/Z   : undo / redo" );
+		this.helpLine[15].text ( "f     : save file" );
+		this.helpLine[16].text ( "<alt> + drag mouse: shift canvas" );
+		this.helpLine[17].text ( "<ctrl>+ drag mouse: zoom canvas" );
+		this.helpLine[18].text ( "H     : change help text color" );
+		this.helpLine[19].text ( "h     : toggle this help" );
+	},
+
+    printUV_ROTATE: function(){
+		this.helpLine[0].text  ( "Mode: [ UV - ROTATE ]" );
+		this.helpLine[1].text  ( "mouse : rotate selected UVs" );
+		this.helpLine[2].text  ( "click : end rotate mode" );
 		this.helpLine[3].text  ( "" );
 		this.helpLine[4].text  ( "" );
 		this.helpLine[5].text  ( "" );

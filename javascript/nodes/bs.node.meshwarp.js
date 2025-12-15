@@ -53,6 +53,8 @@ var EDITMODE_UV_LATTICE_GRAB = 16;
 var EDITMODE_UV_SELECT = 20;
 var EDITMODE_UV_SELECT_STORE = 21;
 var EDITMODE_UV_GRAB = 25;
+var EDITMODE_UV_SCALE = 26;
+var EDITMODE_UV_ROTATE = 27;
 
 var warploader = new WARP.WarpLoader();
 var meshSaver = new WARP.OBJWriter();
@@ -481,6 +483,18 @@ function update(){
                         help.printUV_MODIFY();
                         uvMeshMngr.makeClone();
                         lastPlacePoint = uiEvent.getPickRay().intersectPlane(editPlane);
+                    } else if((uiEvent.keyChar == 's' || uiEvent.keyChar == 'S') && uvMeshMngr.hasSelection()){
+                        editMode = EDITMODE_UV_SCALE;
+                        help.printUV_SCALE();
+                        uvMeshMngr.makeClone();
+                        uvMeshMngr.uvSnapshot();
+                        lastPlacePoint = uiEvent.getPickRay().intersectPlane(editPlane);
+                    } else if((uiEvent.keyChar == 'r' || uiEvent.keyChar == 'R') && uvMeshMngr.hasSelection()){
+                        editMode = EDITMODE_UV_ROTATE;
+                        help.printUV_ROTATE();
+                        uvMeshMngr.makeClone();
+                        uvMeshMngr.uvSnapshot();
+                        lastPlacePoint = uiEvent.getPickRay().intersectPlane(editPlane);
                     } else if((uiEvent.keyChar == 'a' || uiEvent.keyChar == 'A')){
                         uvMeshMngr.selectAll();
                     }
@@ -512,6 +526,34 @@ function update(){
                     var currentPlacePoint = uiEvent.getPickRay().intersectPlane(editPlane);
                     uvMeshMngr.setUV(currentPlacePoint.sub(lastPlacePoint));
                     lastPlacePoint = uiEvent.getPickRay().intersectPlane(editPlane);
+                }
+
+                if(uiEvent.mouseButtonHit){
+                    editMode = EDITMODE_UV_SELECT;
+                    help.printUV_SELECT();
+                }
+            }
+        }
+
+        if(editMode == EDITMODE_UV_SCALE){
+			if(!isNavigationEvent()){
+                if(uiEvent.hasNewPickRay){
+                    var currentPlacePoint = uiEvent.getPickRay().intersectPlane(editPlane);
+                    uvMeshMngr.scaleUV(currentPlacePoint, lastPlacePoint);
+                }
+
+                if(uiEvent.mouseButtonHit){
+                    editMode = EDITMODE_UV_SELECT;
+                    help.printUV_SELECT();
+                }
+            }
+        }
+
+        if(editMode == EDITMODE_UV_ROTATE){
+			if(!isNavigationEvent()){
+                if(uiEvent.hasNewPickRay){
+                    var currentPlacePoint = uiEvent.getPickRay().intersectPlane(editPlane);
+                    uvMeshMngr.rotateUV(currentPlacePoint, lastPlacePoint);
                 }
 
                 if(uiEvent.mouseButtonHit){
@@ -666,7 +708,7 @@ function draw(_forceRefresh){
         meshMatrix = WARP.GeometryQueries.generateUVMatrix(meshMngr.getCurrentMesh(), meshMatrix, 0, meshColor);
 
         // Use UV-lattice modified matrix if in UV mode
-        if(editMode >= EDITMODE_UV_LATTICE_SELECT && editMode <= EDITMODE_UV_GRAB){
+        if(editMode >= EDITMODE_UV_LATTICE_SELECT && editMode <= EDITMODE_UV_ROTATE){
             meshObj.jit_matrix(planeMatrix.name);
             meshObj.draw_mode = 'triangles';
         } else {
@@ -695,7 +737,7 @@ function draw(_forceRefresh){
         }else if(editMode == EDITMODE_UV_LATTICE_SELECT || editMode == EDITMODE_UV_LATTICE_GRAB){
             uvMeshMngr.drawLatMod(latticeObj, 'bg'); // draw the UVs
             uvLatticeMngr.draw(latticeObj, 'edit'); // draw the UV lattice
-        }else if(editMode == EDITMODE_UV_SELECT || editMode == EDITMODE_UV_SELECT_STORE || editMode == EDITMODE_UV_GRAB){
+        }else if(editMode == EDITMODE_UV_SELECT || editMode == EDITMODE_UV_SELECT_STORE || editMode == EDITMODE_UV_GRAB || editMode == EDITMODE_UV_SCALE || editMode == EDITMODE_UV_ROTATE){
             uvLatticeMngr.draw(latticeObj, 'bg'); // draw the UV lattice
             uvMeshMngr.drawLatMod(latticeObj, 'edit'); // draw the UVs
         }
