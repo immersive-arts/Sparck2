@@ -80,7 +80,9 @@ var cameraObj = null;
 var nodeObj = null;
 var meshObj = null;
 var meshMatrix = new JitterMatrix(12, "float32", 10);
-var meshColor = [1.0, 0.0, 1.0, 1.0];
+var planeMatrix = new JitterMatrix(12, "float32", 1);
+var resolution = 20; // Number of subdivisions per axis
+var meshColor = [1.0, 1.0, 1.0, 1.0];
 
 // global Function Key
 var functionKey;
@@ -131,6 +133,8 @@ function init(){
     	meshObj.enable = editor_enable;
 		calcCameraMatrix();
     	isInit = true;
+
+        generatePlane()
 
 	    draw(false);
  	}
@@ -651,21 +655,25 @@ function loadobj(objpath){
     draw(false);
 }
 
+
 function draw(_forceRefresh){
     init();
-    if(latticeMngr.hasGeometryChanged() || uvLatticeMngr.hasGeometryChanged() || meshMngr.hasGeometryChanged() || uvMeshMngr.hasUVsChanged() || _forceRefresh){
+    if(latticeMngr.hasGeometryChanged() || uvLatticeMngr.hasGeometryChanged() || meshMngr.hasGeometryChanged() || uvMeshMngr.hasUVsChanged() || editModeHasChanged || _forceRefresh){
         meshMngr.modifyWith(latticeMngr); //modifies the current mesh with the lattice
         uvMeshMngr.modifyWith(uvLatticeMngr); //modifies the UVs with the UV lattice
-        
+
+        // meshMatrix = meshMngr.generateMatrix(meshMatrix, 0, meshColor);
+        meshMatrix = WARP.GeometryQueries.generateUVMatrix(meshMngr.getCurrentMesh(), meshMatrix, 0, meshColor);
+
         // Use UV-lattice modified matrix if in UV mode
         if(editMode >= EDITMODE_UV_LATTICE_SELECT && editMode <= EDITMODE_UV_GRAB){
-            meshMatrix = WARP.GeometryQueries.generateUVMatrix(meshMngr.getCurrentMesh(), meshMatrix, 0, meshColor);
+            meshObj.jit_matrix(planeMatrix.name);
+            meshObj.draw_mode = 'triangles';
         } else {
-            meshMatrix = meshMngr.generateMatrix(meshMatrix, 0, meshColor);
+            meshObj.jit_matrix(meshMatrix.name);
+            meshObj.draw_mode = 'triangles';
         }
-        
-        meshObj.jit_matrix(meshMatrix.name);
-        meshObj.draw_mode = 'triangles';
+    
         outlet(OUTLET_MESH, "jit_matrix", meshMatrix.name);
         outlet(OUTLET_MESH, "draw_mode", "triangles");
     }
@@ -817,6 +825,57 @@ function calcCameraMatrix(){
 		camMat[1], camMat[5], camMat[9], camMat[13],
 		camMat[2], camMat[6], camMat[10], camMat[14],
 		camMat[3], camMat[7], camMat[11], camMat[15]);
+}
+
+function generatePlane() {
+    // Calculate number of vertices needed for a triangle-based grid
+    // (resolution-1)^2 quads * 2 triangles * 3 vertices
+    var numQuads = (resolution - 1) * (resolution - 1);
+    var numVertices = numQuads * 2 * 3; // 2 triangles per quad, 3 vertices per triangle
+    
+    planeMatrix.dim = [numVertices];
+    
+    var idx = 0;
+    var step = 2.0 / (resolution - 1); // Step size for -1 to 1 range
+    
+    // Generate grid of triangles
+    for (var y = 0; y < resolution - 1; y++) {
+        for (var x = 0; x < resolution - 1; x++) {
+            // Calculate positions for the four corners of this quad
+            var x0 = -1.0 + x * step;
+            var x1 = -1.0 + (x + 1) * step;
+            var y0 = -1.0 + y * step;
+            var y1 = -1.0 + (y + 1) * step;
+            
+            // Calculate UVs (0 to 1 range)
+            var u0 = x / (resolution - 1);
+            var u1 = (x + 1) / (resolution - 1);
+            var v0 = y / (resolution - 1);
+            var v1 = (y + 1) / (resolution - 1);
+            
+            // Normal pointing up (positive Z)
+            var nx = 0.0, ny = 0.0, nz = 1.0;
+            
+            // Color (white)
+            var r = 1.0, g = 1.0, b = 1.0, a = 1.0;
+            
+            // First triangle (bottom-left, bottom-right, top-left)
+            setVertex(idx++, x0, y0, 0.0, u0, v0, nx, ny, nz, r, g, b, a);
+            setVertex(idx++, x1, y0, 0.0, u1, v0, nx, ny, nz, r, g, b, a);
+            setVertex(idx++, x0, y1, 0.0, u0, v1, nx, ny, nz, r, g, b, a);
+            
+            // Second triangle (bottom-right, top-right, top-left)
+            setVertex(idx++, x1, y0, 0.0, u1, v0, nx, ny, nz, r, g, b, a);
+            setVertex(idx++, x1, y1, 0.0, u1, v1, nx, ny, nz, r, g, b, a);
+            setVertex(idx++, x0, y1, 0.0, u0, v1, nx, ny, nz, r, g, b, a);
+        }
+    }
+    
+    post("Generated plane with " + numVertices + " vertices\n");
+}
+
+function setVertex(idx, px, py, pz, u, v, nx, ny, nz, r, g, b, a) {
+    planeMatrix.setcell(idx, "val", px, py, pz, u, v, nx, ny, nz, r, g, b, a);
 }
 
 function notifydeleted(){
