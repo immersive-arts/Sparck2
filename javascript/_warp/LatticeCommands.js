@@ -259,6 +259,11 @@ WARP.MoveLatticeVerticesCommand.prototype.undo = function(lattice) {
     }
 };
 
+WARP.MoveLatticeVerticesCommand.prototype.merge = function(newCommand) {
+    // Accumulate the delta - this preserves the original starting position
+    this.delta.add(newCommand.delta);
+};
+
 /**
  * Command: Reset Lattice Vertices
  */

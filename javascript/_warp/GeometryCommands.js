@@ -312,6 +312,11 @@ WARP.MoveVerticesCommand.prototype.undo = function(geometry) {
     }
 };
 
+WARP.MoveVerticesCommand.prototype.merge = function(newCommand) {
+    // Accumulate the delta - this preserves the original starting position
+    this.delta.add(newCommand.delta);
+};
+
 /**
  * Command: Scale Vertices
  */

@@ -1430,15 +1430,13 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 10.0,
-									"id" : "obj-17",
+									"id" : "obj-28",
 									"maxclass" : "newobj",
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 399.548599000000024, 269.718261999999982, 93.0, 20.0 ],
-									"text" : "r bs::cmd::specials"
+									"patching_rect" : [ 298.548584000000005, 269.718261999999982, 64.0, 22.0 ],
+									"text" : "r bs::cmds"
 								}
 
 							}
@@ -1451,18 +1449,6 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 298.548584000000005, 296.718261999999982, 97.0, 22.0 ],
 									"text" : "prepend ui_keys"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-28",
-									"maxclass" : "newobj",
-									"numinlets" : 0,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 298.548584000000005, 269.718261999999982, 94.0, 22.0 ],
-									"text" : "r bs::cmd::chars"
 								}
 
 							}
@@ -1561,7 +1547,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 39.0, 20.5, 502.0, 22.0 ],
+									"patching_rect" : [ 39.0, 20.5, 502.0, 35.0 ],
 									"text" : "sparck.parameter editor/bgcolor @type rgba @default 1. 1. 1. 1. @description \"editor bg color\""
 								}
 
@@ -1623,7 +1609,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 82.715087999999923, 89.570435000000003, 181.0, 62.0 ],
+									"patching_rect" : [ 82.715087999999923, 89.570435000000003, 181.0, 76.0 ],
 									"text" : "sparck.parameter mesh/filewatch @type bool @default 0 @description \"enable autoload of changed file\" @priority 2"
 								}
 
@@ -1687,13 +1673,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-23", 0 ],
 									"source" : [ "obj-148", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-24", 0 ],
-									"source" : [ "obj-17", 0 ]
 								}
 
 							}
@@ -3844,6 +3823,13 @@
 		}
 ,
 		"dependency_cache" : [ 			{
+				"name" : "CommandHistory.js",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/javascript/_warp",
+				"patcherrelativepath" : "../../../javascript/_warp",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "EditorHelper.js",
 				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/javascript/_draw",
 				"patcherrelativepath" : "../../../javascript/_draw",
@@ -3865,6 +3851,20 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "GeometryCommands.js",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/javascript/_warp",
+				"patcherrelativepath" : "../../../javascript/_warp",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "GeometryQueries.js",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/javascript/_warp",
+				"patcherrelativepath" : "../../../javascript/_warp",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "Lattice2D.js",
 				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/javascript/_warp",
 				"patcherrelativepath" : "../../../javascript/_warp",
@@ -3872,7 +3872,21 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "LatticeCommands.js",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/javascript/_warp",
+				"patcherrelativepath" : "../../../javascript/_warp",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "LatticeMngr.js",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/javascript/_warp",
+				"patcherrelativepath" : "../../../javascript/_warp",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "LatticeQueries.js",
 				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/javascript/_warp",
 				"patcherrelativepath" : "../../../javascript/_warp",
 				"type" : "TEXT",

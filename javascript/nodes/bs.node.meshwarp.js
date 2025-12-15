@@ -489,7 +489,7 @@ function draw(_forceRefresh){
     }
     if(latticeMngr.hasChanged() || meshMngr.hasChanged() || editModeHasChanged || _forceRefresh){
         latticeObj.reset();
-        latticeObj.glcolor(0., 1., 0., 1.);
+        latticeObj.glcolor(0., 0.5, 0., 1.);
         // draw the unit square
         latticeObj.linesegment(1.0, 1.0, 0.0, -1.0, 1.0, 0.0);
         latticeObj.linesegment(-1.0, 1.0, 0.0, -1.0, -1.0, 0.0);
@@ -499,7 +499,7 @@ function draw(_forceRefresh){
         if(editMode == EDITMODE_LATTICE_SELECT || editMode == EDITMODE_LATTICE_GRAB){
             meshMngr.drawLatMod(latticeObj, 'bg'); // draw the mesh
             latticeMngr.draw(latticeObj, 'edit' ); // draw the lattice
-        }else if(editMode == EDITMODE_MESH_SELECT || EDITMODE_MESH_SELECT_STORE || editMode == EDITMODE_MESH_GRAB ){
+        }else if(editMode == EDITMODE_MESH_SELECT || editMode == EDITMODE_MESH_GRAB ){
             latticeMngr.draw(latticeObj, 'bg'); // draw the lattice
             meshMngr.drawLatMod(latticeObj, 'edit'); // draw the mesh
         }
@@ -594,8 +594,9 @@ function ui_window(){
 		args.splice(0, 1);
         if(cameraObj.enable == 1){
             args = cameraObj.getviewportray(uiEvent.currentPosX, uiEvent.currentPosY);
-            if(args != null)
+            if(args != null){
                 uiEvent.pickray(args[0],args[1],args[2],args[3],args[4],args[5]);
+            }
         }
 	} else if(args[0] == 'size'){
 		args.splice(0, 1);

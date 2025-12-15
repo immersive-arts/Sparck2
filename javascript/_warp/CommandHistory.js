@@ -46,38 +46,111 @@ WARP.Command.prototype = {
 
 /**
  * Command History Manager
- * Manages undo/redo functionality for commands
+ * Manages undo/redo functionality for commands with time-based fencing
  */
-WARP.CommandHistory = function(maxSize) {
+WARP.CommandHistory = function(maxSize, fenceTimeMs) {
     this.maxSize = maxSize || 100;
+    this.fenceTimeMs = fenceTimeMs || 800; // Default 800ms fence window
     this.history = [];
     this.currentIndex = -1;
+    this.lastCommandTime = 0;
+    this.lastCommandType = null;
+    this.fenceEnabled = true; // Can be toggled on/off
 };
 
 WARP.CommandHistory.prototype = {
     constructor: WARP.CommandHistory,
     
     /**
+     * Enable/disable command fencing
+     */
+    setFencing: function(enabled) {
+        this.fenceEnabled = enabled;
+    },
+    
+    /**
+     * Set fence time window in milliseconds
+     */
+    setFenceTime: function(timeMs) {
+        this.fenceTimeMs = timeMs;
+    },
+    
+    /**
+     * Check if command should be fenced with previous command
+     */
+    shouldFence: function(command) {
+        if(!this.fenceEnabled || this.currentIndex < 0){
+            return false;
+        }
+        
+        var now = Date.now();
+        var timeDelta = now - this.lastCommandTime;
+        var lastCommand = this.history[this.currentIndex];
+        
+        // Fence if:
+        // 1. Within time window AND
+        // 2. Same command constructor (same type of operation)
+        return (timeDelta < this.fenceTimeMs && 
+                command.constructor === lastCommand.constructor);
+    },
+    
+    /**
+     * Merge a new command with the last command in history
+     * This preserves the original state while updating the final state
+     */
+    mergeWithLast: function(command) {
+        var lastCommand = this.history[this.currentIndex];
+        
+        // Check if the command has a merge method
+        if(typeof lastCommand.merge === 'function'){
+            lastCommand.merge(command);
+            return true;
+        }
+        
+        return false;
+    },
+    
+    /**
      * Execute a command and add it to history
      */
     execute: function(command, target) {
+        var now = Date.now();
+        
         // Remove any commands after current index (they were undone)
         if(this.currentIndex < this.history.length - 1){
             this.history.splice(this.currentIndex + 1);
         }
         
-        // Execute the command
-        command.execute(target);
-        
-        // Add to history
-        this.history.push(command);
-        this.currentIndex++;
-        
-        // Trim history if needed
-        if(this.history.length > this.maxSize){
-            this.history.shift();
-            this.currentIndex--;
+        // Check if we should fence this command with the previous one
+        if(this.shouldFence(command)){
+            // Try to merge with last command
+            if(this.mergeWithLast(command)){
+                // Execute only the delta/difference of the new command
+                command.execute(target);
+            } else {
+                // Fallback: execute and add as new command
+                command.execute(target);
+                this.history.push(command);
+                this.currentIndex++;
+            }
+        } else {
+            // Execute the command
+            command.execute(target);
+            
+            // Add to history
+            this.history.push(command);
+            this.currentIndex++;
+            
+            // Trim history if needed
+            if(this.history.length > this.maxSize){
+                this.history.shift();
+                this.currentIndex--;
+            }
         }
+        
+        // Update fence tracking
+        this.lastCommandTime = now;
+        this.lastCommandType = command.constructor;
     },
     
     /**

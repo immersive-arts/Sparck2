@@ -74,6 +74,7 @@ WARP.GeometryQueries = {
         geometry.pickRayIndx = bestIndex;
         return bestIndex;
     },
+
     
     /**
      * Get list of selected vertices for a store index
@@ -166,7 +167,7 @@ WARP.GeometryQueries = {
      * Draw geometry
      */
     draw: function(geometry, latticeSketch, drawMode, modFlag) {
-        latticeSketch.glcolor(0., 1., 0., 1.);
+        latticeSketch.glcolor(0., 0.8, 0., 1.);
         latticeSketch.glpointsize(10.);
         
         // Draw first the faces and lines
@@ -191,6 +192,17 @@ WARP.GeometryQueries = {
             latticeSketch.gllinewidth(1.0);
             
             for(var j = 0; j < geometry.vertices.length; j++){
+
+                // If no selection, draw it normally
+                latticeSketch.glcolor(0., 0.6, 0., 1.);
+                if(modFlag == 1)
+                    latticeSketch.moveto(geometry.vertices_mod[j].x, geometry.vertices_mod[j].y, geometry.vertices_mod[j].z);
+                else if(modFlag == 2)
+                    latticeSketch.moveto(geometry.vertices_mod_lat[j].x, geometry.vertices_mod_lat[j].y, geometry.vertices_mod_lat[j].z);
+                else
+                    latticeSketch.moveto(geometry.vertices[j].x, geometry.vertices[j].y, geometry.vertices[j].z);
+                latticeSketch.circle(0.02);
+
                 if(geometry.pickRayIndx == j){
                     latticeSketch.glcolor(0., 0.9, 0., 1.);
                     if(modFlag == 1)
@@ -199,12 +211,12 @@ WARP.GeometryQueries = {
                         latticeSketch.moveto(geometry.vertices_mod_lat[j].x, geometry.vertices_mod_lat[j].y, geometry.vertices_mod_lat[j].z);
                     else
                         latticeSketch.moveto(geometry.vertices[j].x, geometry.vertices[j].y, geometry.vertices[j].z);
-                    latticeSketch.sphere(0.02);
+                    latticeSketch.circle(0.025);
                 }
                 
                 // Draw selected point
                 if(geometry.selectedVertices[j] == 1){
-                    latticeSketch.glcolor(0., 0., 0., 1.);
+                    latticeSketch.glcolor(0., 1., 0., 1.);
                     if(modFlag == 1){
                         latticeSketch.moveto(geometry.vertices_mod[j].x, geometry.vertices_mod[j].y, geometry.vertices_mod[j].z);
                     } else if(modFlag == 2){
@@ -212,18 +224,8 @@ WARP.GeometryQueries = {
                     } else {
                         latticeSketch.moveto(geometry.vertices[j].x, geometry.vertices[j].y, geometry.vertices[j].z);
                     }
-                    latticeSketch.sphere(0.03);
-                } else {
-                    // If no selection, draw it normally
-                    latticeSketch.glcolor(0., 1., 0., 1.);
-                    if(modFlag == 1)
-                        latticeSketch.moveto(geometry.vertices_mod[j].x, geometry.vertices_mod[j].y, geometry.vertices_mod[j].z);
-                    else if(modFlag == 2)
-                        latticeSketch.moveto(geometry.vertices_mod_lat[j].x, geometry.vertices_mod_lat[j].y, geometry.vertices_mod_lat[j].z);
-                    else
-                        latticeSketch.moveto(geometry.vertices[j].x, geometry.vertices[j].y, geometry.vertices[j].z);
-                    latticeSketch.sphere(0.02);
-                }
+                    latticeSketch.circle(0.02);
+                } 
             }
             
             // Draw cursor

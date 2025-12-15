@@ -84,22 +84,22 @@ WARP.LatticeQueries = {
                 
                 // Draw points in edit mode
                 if(drawMode == 'edit'){
-                    latticeSketch.glcolor(1., 0., 0., 1.);
+                    latticeSketch.glcolor(0.5, 0., 0., 1.);
                     latticeSketch.moveto(lattice.vertices[i][j].x, lattice.vertices[i][j].y, lattice.vertices[i][j].z);
-                    latticeSketch.sphere(0.02);
+                    latticeSketch.circle(0.02);
                     
                     // Highlight picked vertex
                     if(lattice.pickrayindx[0] == i && lattice.pickrayindx[1] == j){
-                        latticeSketch.glcolor(0.9, 0., 0., 1.);
+                        latticeSketch.glcolor(0.8, 0., 0., 1.);
                         latticeSketch.moveto(lattice.vertices[i][j].x, lattice.vertices[i][j].y, lattice.vertices[i][j].z);
-                        latticeSketch.sphere(0.02);
+                        latticeSketch.circle(0.02);
                     }
                     
                     // Highlight selected vertices
                     if(lattice.selectedVertices[i][j] == 1){
-                        latticeSketch.glcolor(0., 0., 0., 1.);
+                        latticeSketch.glcolor(1.0, 0., 0., 1.);
                         latticeSketch.moveto(lattice.vertices[i][j].x, lattice.vertices[i][j].y, lattice.vertices[i][j].z);
-                        latticeSketch.sphere(0.03);
+                        latticeSketch.circle(0.03);
                     }
                 }
             }
