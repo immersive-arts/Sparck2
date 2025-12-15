@@ -84,7 +84,7 @@ DRAW.Warp2d_EditorHelper.prototype = {
 
     printLATTICE_SELECT: function(){
 		this.helpLine[0].text  ( "Mode: [ LATTICE - SELECT ]" );
-		this.helpLine[1].text  ( "tab   : switch Mode " );
+		this.helpLine[1].text  ( "<tab> : switch Mode " );
 		this.helpLine[2].text  ( "a     : select all control points" );
 		this.helpLine[3].text  ( "mouse : select single control point" );
 		this.helpLine[4].text  ( "shift + mouse: select multiple control points" );
@@ -132,7 +132,7 @@ DRAW.Warp2d_EditorHelper.prototype = {
 
     printMESH_SELECT: function(_){
 		this.helpLine[0].text  ( "Mode:  [ MESH - SELECT ]");
-		this.helpLine[1].text  ( "tab   : switch Mode " );
+		this.helpLine[1].text  ( "<tab> : switch Mode " );
 		this.helpLine[2].text  ( "a     : select all control points" );
 		this.helpLine[3].text  ( "mouse : select single control point" );
 		this.helpLine[4].text  ( "shift + mouse: select multiple control points" );
@@ -156,7 +156,7 @@ DRAW.Warp2d_EditorHelper.prototype = {
 
     printMESH_SELECT_STORE: function(_){
 		this.helpLine[0].text  ( "Mode:  [ MESH - SELECT - STORE]");
-		this.helpLine[1].text  ( "tab   : exit " );
+		this.helpLine[1].text  ( "<tab> : exit " );
 		this.helpLine[2].text  ( "0..9  : store selection" );
 		this.helpLine[3].text  ( "" );
 		this.helpLine[4].text  ( "" );
@@ -203,8 +203,8 @@ DRAW.Warp2d_EditorHelper.prototype = {
 
     printUV_LATTICE_SELECT: function(){
 		this.helpLine[0].text  ( "Mode: [ UV LATTICE - SELECT ]" );
-		this.helpLine[1].text  ( "tab   : switch to UV editing" );
-		this.helpLine[2].text  ( "shift-tab: switch to mesh mode" );
+		this.helpLine[1].text  ( "<tab> : switch to UV editing" );
+		this.helpLine[2].text  ( "<shift>+<tab>: switch to mesh mode" );
 		this.helpLine[3].text  ( "a     : select all control points" );
 		this.helpLine[4].text  ( "mouse : select single control point" );
 		this.helpLine[5].text  ( "shift + mouse: select multiple" );
@@ -249,8 +249,8 @@ DRAW.Warp2d_EditorHelper.prototype = {
 
     printUV_SELECT: function(){
 		this.helpLine[0].text  ( "Mode: [ UV - SELECT ]" );
-		this.helpLine[1].text  ( "tab   : switch to UV lattice mode" );
-		this.helpLine[2].text  ( "shift-tab: switch to mesh mode" );
+		this.helpLine[1].text  ( "<tab> : switch to UV lattice mode" );
+		this.helpLine[2].text  ( "<shift>+<tab>: switch to mesh mode" );
 		this.helpLine[3].text  ( "a     : select all UV vertices" );
 		this.helpLine[4].text  ( "q     : set cursor to selection" );
 		this.helpLine[5].text  ( "mouse : select single UV vertex" );
@@ -272,7 +272,7 @@ DRAW.Warp2d_EditorHelper.prototype = {
 
     printUV_SELECT_STORE: function(){
 		this.helpLine[0].text  ( "Mode: [ UV - SELECT - STORE ]" );
-		this.helpLine[1].text  ( "tab   : abort" );
+		this.helpLine[1].text  ( "<tab> : abort" );
 		this.helpLine[2].text  ( "0-9   : store current selection" );
 		this.helpLine[3].text  ( "" );
 		this.helpLine[4].text  ( "" );

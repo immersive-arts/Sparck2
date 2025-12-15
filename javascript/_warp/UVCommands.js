@@ -123,8 +123,8 @@ WARP.MoveUVsCommand.prototype.execute = function(geometry) {
     for(var j = 0; j < geometry.uvs.length; j++){
         if(geometry.selectedUVs[j] == 1){
             this.affectedIndices.push(j);
-            geometry.uvs_mod[j].x = Math.max(0, Math.min(1, geometry.uvs_mod[j].x + this.delta.x));
-            geometry.uvs_mod[j].y = Math.max(0, Math.min(1, geometry.uvs_mod[j].y + this.delta.y));
+            geometry.uvs_mod[j].x = geometry.uvs_mod[j].x + this.delta.x;
+            geometry.uvs_mod[j].y = geometry.uvs_mod[j].y + this.delta.y;
         }
     }
 };
@@ -132,8 +132,8 @@ WARP.MoveUVsCommand.prototype.execute = function(geometry) {
 WARP.MoveUVsCommand.prototype.undo = function(geometry) {
     for(var i = 0; i < this.affectedIndices.length; i++){
         var idx = this.affectedIndices[i];
-        geometry.uvs_mod[idx].x = Math.max(0, Math.min(1, geometry.uvs_mod[idx].x - this.delta.x));
-        geometry.uvs_mod[idx].y = Math.max(0, Math.min(1, geometry.uvs_mod[idx].y - this.delta.y));
+        geometry.uvs_mod[idx].x = geometry.uvs_mod[idx].x - this.delta.x;
+        geometry.uvs_mod[idx].y = geometry.uvs_mod[idx].y - this.delta.y;
     }
 };
 
@@ -345,9 +345,9 @@ WARP.ScaleUVsCommand.prototype.execute = function(geometry) {
             var delta = geometry.uvs_mod_tmp[j].clone().sub(this.cursor);
             delta.multiplyScalar(scale);
             
-            // Apply scale and clamp to UV space [0,1]
-            geometry.uvs_mod[j].x = Math.max(0, Math.min(1, this.cursor.x + delta.x));
-            geometry.uvs_mod[j].y = Math.max(0, Math.min(1, this.cursor.y + delta.y));
+            // Apply scale
+            geometry.uvs_mod[j].x = this.cursor.x + delta.x;
+            geometry.uvs_mod[j].y = this.cursor.y + delta.y;
         }
     }
 };
@@ -420,9 +420,9 @@ WARP.RotateUVsCommand.prototype.execute = function(geometry) {
             var rotated_x = delta.x * cos_angle - delta.y * sin_angle;
             var rotated_y = delta.x * sin_angle + delta.y * cos_angle;
             
-            // Apply rotation and clamp to UV space [0,1]
-            geometry.uvs_mod[j].x = Math.max(0, Math.min(1, this.cursor.x + rotated_x));
-            geometry.uvs_mod[j].y = Math.max(0, Math.min(1, this.cursor.y + rotated_y));
+            // Apply rotation
+            geometry.uvs_mod[j].x = this.cursor.x + rotated_x;
+            geometry.uvs_mod[j].y = this.cursor.y + rotated_y;
         }
     }
 };

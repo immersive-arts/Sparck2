@@ -642,10 +642,10 @@ function savewarp(_warpPath){
     fout.writeline("# Warp File created by MeshWarp / sparck");
     fout.writeline("# www.tecartlab.com");
     fout.writeline("o MeshWarp");
-    if(!meshMngr.save(fout, true) || !latticeMngr.save(fout)){
-        error("MeshWarp save: Failed saving lattice to file: " + _warpPath + "\n");
+    if(!meshMngr.save(fout, true) || !latticeMngr.save(fout) || !uvLatticeMngr.save(fout)){
+        error("MeshWarp save: Failed saving to file: " + _warpPath + "\n");
     } else {
-        post("MeshWarp save: Saved lattice to file: " + _warpPath + "\n");
+        post("MeshWarp save: Saved warp (mesh, lattice, UV lattice) to file: " + _warpPath + "\n");
 		fileName = _warpPath;
     }
     fout.close();
@@ -679,6 +679,7 @@ function loadwarp(_warpPath){
     if(warploader.load(_warpPath)){
         fileName = _warpPath;
         warploader.setLattice(latticeMngr);
+        warploader.setUVLattice(uvLatticeMngr);
         warploader.setMesh(meshMngr);
         draw();
     }

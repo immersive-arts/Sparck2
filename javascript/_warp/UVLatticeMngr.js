@@ -62,11 +62,11 @@ WARP.UVLatticeMngr.prototype = {
 
     save: function ( fout ) {
         if (fout.isopen) {
-            fout.writeline("ld " + this.getCurrentLattice().dim[0] + " " + this.getCurrentLattice().dim[1]);
-            fout.writeline("lr " + this.getCurrentLattice().rimL + " " + this.getCurrentLattice().rimR + " " + this.getCurrentLattice().rimB + " " + this.getCurrentLattice().rimT);
+            fout.writeline("uld " + this.getCurrentLattice().dim[0] + " " + this.getCurrentLattice().dim[1]);
+            fout.writeline("ulr " + this.getCurrentLattice().rimL + " " + this.getCurrentLattice().rimR + " " + this.getCurrentLattice().rimB + " " + this.getCurrentLattice().rimT);
             for(var x = 0; x < this.getCurrentLattice().dim[0]; x++){
                 for(var y = 0; y < this.getCurrentLattice().dim[1]; y++){
-                    fout.writeline("lv " + this.getCurrentLattice().vertices[x][y].x + " " + this.getCurrentLattice().vertices[x][y].y + " " + this.getCurrentLattice().vertices[x][y].z);
+                    fout.writeline("ulv " + this.getCurrentLattice().vertices[x][y].x + " " + this.getCurrentLattice().vertices[x][y].y + " " + this.getCurrentLattice().vertices[x][y].z);
                 }
             }
             return true;

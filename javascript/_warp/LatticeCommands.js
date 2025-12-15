@@ -95,7 +95,7 @@ WARP.LoadLatticeCommand.prototype.execute = function(lattice) {
     this.previousState = lattice.clone();
     
     if(this.loadVertices.length !== this.dim[0] * this.dim[1]) {
-        error("LoadLatticeCommand: vertex count mismatch\n");
+        error("LoadLatticeCommand: vertex count mismatch: expected " + (this.dim[0] * this.dim[1]) + " but got " + this.loadVertices.length + "\n");
         return;
     }
     

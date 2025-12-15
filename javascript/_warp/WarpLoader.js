@@ -64,8 +64,9 @@ WARP.WarpLoader.prototype = {
   	parse: function ( lines ) {
 
         this.objects = [];
-		var object, geometry, lattice, material;
+		var object, geometry, lattice, material, uvlattice;
         var ldim, lrim, lvertices;
+        var uldim, ulrim, ulvertices;
 
  		function parseVertexIndex( value ) {
             if ( value !== undefined ){
@@ -115,15 +116,25 @@ WARP.WarpLoader.prototype = {
 
         // ld float float
 
-		var lattice_dim_pattern = /ld( +[\d|\.|\+|\-|e|E]+)( +[\d|\.|\+|\-|e|E]+)/;
+		var lattice_dim_pattern = /^ld( +[\d|\.\+|\-|e|E]+)( +[\d|\.\+|\-|e|E]+)/;
 
         // lr float float float float
 
-		var lattice_rim_pattern = /lr( +[\d|\.|\+|\-|e|E]+)( +[\d|\.|\+|\-|e|E]+)( +[\d|\.|\+|\-|e|E]+)( +[\d|\.|\+|\-|e|E]+)/;
+		var lattice_rim_pattern = /^lr( +[\d|\.\+|\-|e|E]+)( +[\d|\.\+|\-|e|E]+)( +[\d|\.\+|\-|e|E]+)( +[\d|\.\+|\-|e|E]+)/;
 
 		// lv float float float
 
-		var lattice_vertex_pattern = /lv( +[\d|\.|\+|\-|e|E]+)( +[\d|\.|\+|\-|e|E]+)( +[\d|\.|\+|\-|e|E]+)/;
+		var lattice_vertex_pattern = /^lv( +[\d|\.\+|\-|e|E]+)( +[\d|\.\+|\-|e|E]+)( +[\d|\.\+|\-|e|E]+)/;
+
+        // UV Lattice patterns
+        // uld float float
+		var uvlattice_dim_pattern = /uld( +[\d|\.\+|\-|e|E]+)( +[\d|\.\+|\-|e|E]+)/;
+
+        // ulr float float float float
+		var uvlattice_rim_pattern = /ulr( +[\d|\.\+|\-|e|E]+)( +[\d|\.\+|\-|e|E]+)( +[\d|\.\+|\-|e|E]+)( +[\d|\.\+|\-|e|E]+)/;
+
+		// ulv float float float
+		var uvlattice_vertex_pattern = /ulv( +[\d|\.\+|\-|e|E]+)( +[\d|\.\+|\-|e|E]+)( +[\d|\.\+|\-|e|E]+)/;
 
         // ss float float float ...
 
@@ -177,10 +188,20 @@ WARP.WarpLoader.prototype = {
         lrim = [0, 0, 0, 0];
         lvertices = [];
 
+        uldim = [];
+        ulrim = [0, 0, 0, 0];
+        ulvertices = [];
+
         lattice = {
             ldim: ldim,
             lrim: lrim,
             lvertices: lvertices
+        };
+
+        uvlattice = {
+            ldim: uldim,
+            lrim: ulrim,
+            lvertices: ulvertices
         };
 
         material = {
@@ -191,7 +212,8 @@ WARP.WarpLoader.prototype = {
             name: "default",
             geometry: geometry,
             material: material,
-            lattice: lattice
+            lattice: lattice,
+            uvlattice: uvlattice
         };
 
         this.objects.push( object );
@@ -234,6 +256,36 @@ WARP.WarpLoader.prototype = {
 				// ["lv 0.2 0.4 0.0, "0.2", "0.4", "0.0"]
     
 				lattice.lvertices.push(
+                    new THREE.Vector3(
+					parseFloat( result[ 1 ] ),
+					parseFloat( result[ 2 ] ),
+					parseFloat( result[ 3 ] )));
+
+			} else if ( ( result = uvlattice_dim_pattern.exec( line ) ) !== null ) {
+
+				// ["uld 4 8, "4", "8"]
+				post("Parsing uld: " + line + "\n");
+				uvlattice.ldim.push(
+                    parseInt( result[ 1 ] ),
+					parseInt( result[ 2 ] ));
+				post("After push, uvlattice.ldim.length=" + uvlattice.ldim.length + "\n");
+
+			} else if ( ( result = uvlattice_rim_pattern.exec( line ) ) !== null ) {
+
+				// ["ulr 0.1 0.2 0.1 0.0, "0.1", "0.2", "0.1", "0.0"]
+
+                uvlattice.lrim = [];
+				uvlattice.lrim.push(
+                    parseFloat( result[ 1 ] ),
+					parseFloat( result[ 2 ] ),
+					parseFloat( result[ 3 ] ),
+					parseFloat( result[ 4 ] ));
+
+			} else if ( ( result = uvlattice_vertex_pattern.exec( line ) ) !== null ) {
+
+				// ["ulv 0.2 0.4 0.0, "0.2", "0.4", "0.0"]
+    
+				uvlattice.lvertices.push(
                     new THREE.Vector3(
 					parseFloat( result[ 1 ] ),
 					parseFloat( result[ 2 ] ),
@@ -352,10 +404,20 @@ WARP.WarpLoader.prototype = {
                     lrim = [0, 0, 0, 0];
                     lvertices = [];
 
+                    uldim = [];
+                    ulrim = [0, 0, 0, 0];
+                    ulvertices = [];
+
                     lattice = {
                         ldim: ldim,
                         lrim: lrim,
                         lvertices: lvertices
+                    };
+
+                    uvlattice = {
+                        ldim: uldim,
+                        lrim: ulrim,
+                        lvertices: ulvertices
                     };
 
                     material = {
@@ -366,7 +428,8 @@ WARP.WarpLoader.prototype = {
                         name: line.substring( 2 ).trim(),
                         geometry: geometry,
                         material: material,
-                        lattice: lattice
+                        lattice: lattice,
+                        uvlattice: uvlattice
                     };
 
                     this.objects.push( object )
@@ -420,6 +483,22 @@ WARP.WarpLoader.prototype = {
             } else {
                  error( 'WarpLoader: lattice dimension doesnt match with lattice vertices!\n' );
             }
+		}
+    },
+
+    setUVLattice: function ( _uvlattice ) {
+  		for ( var i = 0, l = this.objects.length; i < l; i ++ ) {
+			var object = this.objects[ i ];
+			var uvlattice = object.uvlattice;
+			post("setUVLattice: uvlattice exists=" + (uvlattice != null) + 
+				 ", lvertices.length=" + (uvlattice ? uvlattice.lvertices.length : 0) + 
+				 ", ldim=" + (uvlattice ? uvlattice.ldim : "null") + "\n");
+            if(uvlattice && uvlattice.lvertices.length == uvlattice.ldim[0] * uvlattice.ldim[1]){
+                _uvlattice.load(uvlattice.ldim, uvlattice.lrim, uvlattice.lvertices);
+            } else if(uvlattice && uvlattice.lvertices.length > 0) {
+                 error( 'WarpLoader: UV lattice dimension doesnt match with UV lattice vertices! \n' );
+            }
+            // If no UV lattice data, silently skip (backward compatibility)
 		}
     },
 
