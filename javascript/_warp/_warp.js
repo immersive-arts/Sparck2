@@ -32,6 +32,7 @@ include("GeometryQueries.js");
 include("LatticeQueries.js");
 include("GeometryCommands.js");
 include("LatticeCommands.js");
+include("UVCommands.js");
 
 // Load data models and utilities
 include("Face3.js");
@@ -45,3 +46,5 @@ include("WarpLoader.js");
 // Load managers (these depend on commands and queries)
 include("MeshMngr.js");
 include("LatticeMngr.js");
+include("UVMeshMngr.js");
+include("UVLatticeMngr.js");

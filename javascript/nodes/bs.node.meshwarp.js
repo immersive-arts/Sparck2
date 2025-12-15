@@ -47,6 +47,13 @@ var EDITMODE_MESH_GRAB = 10;
 var EDITMODE_MESH_SCALE = 11;
 var EDITMODE_MESH_ROTATE = 12;
 
+// UV Edit Modes
+var EDITMODE_UV_LATTICE_SELECT = 15;
+var EDITMODE_UV_LATTICE_GRAB = 16;
+var EDITMODE_UV_SELECT = 20;
+var EDITMODE_UV_SELECT_STORE = 21;
+var EDITMODE_UV_GRAB = 25;
+
 var warploader = new WARP.WarpLoader();
 var meshSaver = new WARP.OBJWriter();
 var help = new DRAW.Warp2d_EditorHelper();
@@ -60,6 +67,8 @@ var editMode = EDITMODE_LATTICE_SELECT;
 var lastEditMode = EDITMODE_LATTICE_SELECT;
 var meshMngr = new WARP.MeshMngr();
 var latticeMngr = new WARP.LatticeMngr();
+var uvMeshMngr = null;  // Will be initialized with geometry
+var uvLatticeMngr = new WARP.UVLatticeMngr();
 var cameraMatrix = new THREE.Matrix4();
 var editor_enable = 0;
 var fileName;
@@ -94,6 +103,9 @@ function loadbang(){
 
 function init(){
 	if(isInit == false){
+		// Initialize UV mesh manager with shared geometry
+		uvMeshMngr = new WARP.UVMeshMngr(meshMngr.getCurrentMesh());
+		
 		nodeObj = new JitterObject("jit.gl.node","editor");
     	nodeObj.enable = editor_enable;
 		cameraAnimNode = new JitterObject("jit.anim.node");
@@ -139,13 +151,35 @@ function update(){
 	// This method needs to be called at the beginning
 	if(uiEvent.update_start()){
         if(uiEvent.mouseInWindows && uiEvent.mouseButtonPress == false && uiEvent.keyHit == true){
-            if(uiEvent.keyChar == 'tab'){
+            // SHIFT+TAB: Toggle between mesh and UV editing domains
+            if(uiEvent.special_ShiftKey && uiEvent.keyChar == 'tab'){
+                if(editMode == EDITMODE_LATTICE_SELECT || editMode == EDITMODE_LATTICE_GRAB || 
+                   editMode == EDITMODE_MESH_SELECT || editMode == EDITMODE_MESH_SELECT_STORE || 
+                   editMode == EDITMODE_MESH_GRAB || editMode == EDITMODE_MESH_SCALE || editMode == EDITMODE_MESH_ROTATE){
+                    // Switch to UV lattice mode
+                    editMode = EDITMODE_UV_LATTICE_SELECT;
+                    help.printUV_LATTICE_SELECT();
+                } else if(editMode == EDITMODE_UV_LATTICE_SELECT || editMode == EDITMODE_UV_LATTICE_GRAB ||
+                          editMode == EDITMODE_UV_SELECT || editMode == EDITMODE_UV_SELECT_STORE || editMode == EDITMODE_UV_GRAB){
+                    // Switch back to mesh lattice mode
+                    editMode = EDITMODE_LATTICE_SELECT;
+                    help.printLATTICE_SELECT();
+                }
+            }
+            // TAB: Cycle within current domain (mesh or UV)
+            else if(uiEvent.keyChar == 'tab'){
                 if(editMode == EDITMODE_LATTICE_SELECT){
                     editMode = EDITMODE_MESH_SELECT;
                     help.printMESH_SELECT();
                 }else if(editMode == EDITMODE_MESH_SELECT){
                     editMode = EDITMODE_LATTICE_SELECT;
                     help.printLATTICE_SELECT();
+                }else if(editMode == EDITMODE_UV_LATTICE_SELECT){
+                    editMode = EDITMODE_UV_SELECT;
+                    help.printUV_SELECT();
+                }else if(editMode == EDITMODE_UV_SELECT){
+                    editMode = EDITMODE_UV_LATTICE_SELECT;
+                    help.printUV_LATTICE_SELECT();
                 }
             } else if(uiEvent.keyChar == 'h'){
                help.toggleEnable();
@@ -343,6 +377,146 @@ function update(){
             }
         }
 
+        // UV EDITING MODES
+        
+        if(editMode == EDITMODE_UV_LATTICE_SELECT){
+			if(uiEvent.mouseInWindows && !isNavigationEvent()){
+                if(uiEvent.keyHit && uiEvent.keyChar == 'z'){
+                    uvLatticeMngr.undoLattice();
+                } else if(uiEvent.keyHit && uiEvent.keyChar == 'Z'){
+                    uvLatticeMngr.redoLattice();
+                } else if(uiEvent.keyHit && uiEvent.keyChar == 'i'){
+                    uvLatticeMngr.makeClone();
+                    uvLatticeMngr.resetVertice();
+                } else if(uiEvent.special_ShiftKey && uiEvent.mouseButtonPress == true){
+                    uvLatticeMngr.selectAdd();
+                } else if(uiEvent.mouseButtonPress == true){
+                    uvLatticeMngr.select();
+                } else if(uiEvent.keyRelease){
+                    var _step = 1. / uiEvent.windowSizeX * cameraAnimNode.position[2];
+                    if(uiEvent.keyChar == 'up'){
+                        uvLatticeMngr.setVertice(new THREE.Vector3(0, _step, 0));
+                    }else if(uiEvent.keyChar == 'down'){
+                        uvLatticeMngr.setVertice(new THREE.Vector3(0, -_step, 0));
+                    }else if(uiEvent.keyChar == 'left'){
+                        uvLatticeMngr.setVertice(new THREE.Vector3(-_step, 0, 0));
+                    }else if(uiEvent.keyChar == 'right'){
+                        uvLatticeMngr.setVertice(new THREE.Vector3(_step, 0, 0));
+                    } else if((uiEvent.keyChar == 'g' || uiEvent.keyChar == 'G') && uvLatticeMngr.hasSelection()){
+                        editMode = EDITMODE_UV_LATTICE_GRAB;
+                        help.printUV_LATTICE_GRAB();
+                        uvLatticeMngr.makeClone();
+                        lastPlacePoint = uiEvent.getPickRay().intersectPlane(editPlane);
+                    } else if((uiEvent.keyChar == 'a' || uiEvent.keyChar == 'A')){
+                        uvLatticeMngr.selectAll();
+                    }
+                }
+
+                if(uiEvent.hasNewPickRay){
+                    uvLatticeMngr.pickray(uiEvent.getPickRay());
+                }
+            }
+        }
+
+        if(editMode == EDITMODE_UV_LATTICE_GRAB){
+			if(!isNavigationEvent()){
+                if(uiEvent.hasNewPickRay){
+                    var currentPlacePoint = uiEvent.getPickRay().intersectPlane(editPlane);
+                    uvLatticeMngr.setVertice(currentPlacePoint.sub(lastPlacePoint));
+                    lastPlacePoint = uiEvent.getPickRay().intersectPlane(editPlane);
+                }
+
+                if(uiEvent.mouseButtonHit){
+                    editMode = EDITMODE_UV_LATTICE_SELECT;
+                    help.printUV_LATTICE_SELECT();
+                }
+            }
+        }
+
+        if(editMode == EDITMODE_UV_SELECT){
+			if(uiEvent.mouseInWindows && !isNavigationEvent()){
+                if(uiEvent.keyHit && uiEvent.keyChar == 'z'){
+                    uvMeshMngr.undoUV();
+                } else if(uiEvent.keyHit && uiEvent.keyChar == 'Z'){
+                    uvMeshMngr.redoUV();
+                } else if(uiEvent.keyHit && uiEvent.keyChar == 'q'){
+                    uvMeshMngr.setCursor();
+                } else if(uiEvent.keyHit && uiEvent.keyChar == 'i'){
+                    uvMeshMngr.makeClone();
+                    uvMeshMngr.resetUV();
+                } else if(uiEvent.special_ShiftKey && uiEvent.mouseButtonPress == true){
+                    uvMeshMngr.selectAdd();
+                } else if(uiEvent.mouseButtonPress == true){
+                    uvMeshMngr.select();
+                } else if(uiEvent.keyRelease && uiEvent.keyChar == 'p'){
+                    editMode = EDITMODE_UV_SELECT_STORE;
+                    help.printUV_SELECT_STORE();
+                } else if(uiEvent.keyRelease && uiEvent.keyChar >= 0 && uiEvent.keyChar <= 9){
+                    uvMeshMngr.recallStoreSelection(uiEvent.keyChar);
+                } else if(uiEvent.keyRelease){
+                    // Step sizes for UV editing (smaller because 0-1 space)
+                    var _step;
+                    if(uiEvent.special_ShiftKey){
+                        _step = 0.0005;  // Fine precision
+                    } else if(uiEvent.special_CtrlKey){
+                        _step = 0.05;    // Coarse precision
+                    } else {
+                        _step = 0.005;   // Normal precision
+                    }
+                    
+                    if(uiEvent.keyChar == 'up'){
+                        uvMeshMngr.setUV(new THREE.Vector3(0, _step, 0));
+                    } else if(uiEvent.keyChar == 'down'){
+                        uvMeshMngr.setUV(new THREE.Vector3(0, -_step, 0));
+                    } else if(uiEvent.keyChar == 'left'){
+                        uvMeshMngr.setUV(new THREE.Vector3(-_step, 0, 0));
+                    } else if(uiEvent.keyChar == 'right'){
+                        uvMeshMngr.setUV(new THREE.Vector3(_step, 0, 0));
+                    } else if((uiEvent.keyChar == 'g' || uiEvent.keyChar == 'G') && uvMeshMngr.hasSelection()){
+                        editMode = EDITMODE_UV_GRAB;
+                        help.printUV_MODIFY();
+                        uvMeshMngr.makeClone();
+                        lastPlacePoint = uiEvent.getPickRay().intersectPlane(editPlane);
+                    } else if((uiEvent.keyChar == 'a' || uiEvent.keyChar == 'A')){
+                        uvMeshMngr.selectAll();
+                    }
+                }
+
+                if(uiEvent.hasNewPickRay){
+                    uvMeshMngr.pickRayLatMod(uiEvent.getPickRay());
+                }
+            }
+        }
+
+        if(editMode == EDITMODE_UV_SELECT_STORE){
+			if(uiEvent.mouseInWindows && !isNavigationEvent()){
+                if(uiEvent.keyRelease && uiEvent.keyChar == 'tab'){
+                    editMode = EDITMODE_UV_SELECT;
+                    help.printUV_SELECT();
+                }
+                if(uiEvent.keyRelease && uiEvent.keyChar >= 0 && uiEvent.keyChar <= 9){
+                    uvMeshMngr.storeSelection(uiEvent.keyChar);
+                    editMode = EDITMODE_UV_SELECT;
+                    help.printUV_SELECT();
+                }
+            }
+        }
+
+        if(editMode == EDITMODE_UV_GRAB){
+			if(!isNavigationEvent()){
+                if(uiEvent.hasNewPickRay){
+                    var currentPlacePoint = uiEvent.getPickRay().intersectPlane(editPlane);
+                    uvMeshMngr.setUV(currentPlacePoint.sub(lastPlacePoint));
+                    lastPlacePoint = uiEvent.getPickRay().intersectPlane(editPlane);
+                }
+
+                if(uiEvent.mouseButtonHit){
+                    editMode = EDITMODE_UV_SELECT;
+                    help.printUV_SELECT();
+                }
+            }
+        }
+
     }
 
 
@@ -479,15 +653,23 @@ function loadobj(objpath){
 
 function draw(_forceRefresh){
     init();
-    if(latticeMngr.hasGeometryChanged() || meshMngr.hasGeometryChanged() || _forceRefresh){
+    if(latticeMngr.hasGeometryChanged() || uvLatticeMngr.hasGeometryChanged() || meshMngr.hasGeometryChanged() || uvMeshMngr.hasUVsChanged() || _forceRefresh){
         meshMngr.modifyWith(latticeMngr); //modifies the current mesh with the lattice
-        meshMatrix = meshMngr.generateMatrix(meshMatrix, 0, meshColor);
+        uvMeshMngr.modifyWith(uvLatticeMngr); //modifies the UVs with the UV lattice
+        
+        // Use UV-lattice modified matrix if in UV mode
+        if(editMode >= EDITMODE_UV_LATTICE_SELECT && editMode <= EDITMODE_UV_GRAB){
+            meshMatrix = WARP.GeometryQueries.generateUVMatrix(meshMngr.getCurrentMesh(), meshMatrix, 0, meshColor);
+        } else {
+            meshMatrix = meshMngr.generateMatrix(meshMatrix, 0, meshColor);
+        }
+        
         meshObj.jit_matrix(meshMatrix.name);
         meshObj.draw_mode = 'triangles';
         outlet(OUTLET_MESH, "jit_matrix", meshMatrix.name);
         outlet(OUTLET_MESH, "draw_mode", "triangles");
     }
-    if(latticeMngr.hasChanged() || meshMngr.hasChanged() || editModeHasChanged || _forceRefresh){
+    if(latticeMngr.hasChanged() || uvLatticeMngr.hasChanged() || meshMngr.hasChanged() || uvMeshMngr.hasChanged() || editModeHasChanged || _forceRefresh){
         latticeObj.reset();
         latticeObj.glcolor(0., 0.5, 0., 1.);
         // draw the unit square
@@ -495,13 +677,19 @@ function draw(_forceRefresh){
         latticeObj.linesegment(-1.0, 1.0, 0.0, -1.0, -1.0, 0.0);
         latticeObj.linesegment(-1.0, -1.0, 0.0, 1.0, -1.0, 0.0);
         latticeObj.linesegment(1.0, -1.0, 0.0, 1.0, 1.0, 0.0);
-        // draw the rest...
+        // draw based on mode
         if(editMode == EDITMODE_LATTICE_SELECT || editMode == EDITMODE_LATTICE_GRAB){
             meshMngr.drawLatMod(latticeObj, 'bg'); // draw the mesh
             latticeMngr.draw(latticeObj, 'edit' ); // draw the lattice
-        }else if(editMode == EDITMODE_MESH_SELECT || editMode == EDITMODE_MESH_GRAB ){
+        }else if(editMode == EDITMODE_MESH_SELECT || editMode == EDITMODE_MESH_SELECT_STORE || editMode == EDITMODE_MESH_GRAB || editMode == EDITMODE_MESH_SCALE || editMode == EDITMODE_MESH_ROTATE){
             latticeMngr.draw(latticeObj, 'bg'); // draw the lattice
             meshMngr.drawLatMod(latticeObj, 'edit'); // draw the mesh
+        }else if(editMode == EDITMODE_UV_LATTICE_SELECT || editMode == EDITMODE_UV_LATTICE_GRAB){
+            uvMeshMngr.drawLatMod(latticeObj, 'bg'); // draw the UVs
+            uvLatticeMngr.draw(latticeObj, 'edit'); // draw the UV lattice
+        }else if(editMode == EDITMODE_UV_SELECT || editMode == EDITMODE_UV_SELECT_STORE || editMode == EDITMODE_UV_GRAB){
+            uvLatticeMngr.draw(latticeObj, 'bg'); // draw the UV lattice
+            uvMeshMngr.drawLatMod(latticeObj, 'edit'); // draw the UVs
         }
     }
 }
@@ -517,10 +705,28 @@ function applyLattice(){
     draw(false);
 }
 
+function applyUVLattice(){
+    init();
+    uvMeshMngr.makeClone(); // make a new modification clone
+    uvMeshMngr.applyLattice(); // apply the lattice transformations to the UV changes.
+    uvLatticeMngr.makeClone(); // make a new modfication clone of the UV lattice
+    uvLatticeMngr.selectAll(); // select all lattice vertices
+	uvLatticeMngr.resetVertice(); // resets the UV latice to its original shape.
+    uvLatticeMngr.selectAll(); // deselect all lattice vertices
+    draw(false);
+}
+
 function createLattice(){
     init();
 	var a = arrayfromargs(arguments);
 	latticeMngr.create(a);
+    draw(false);
+}
+
+function createUVLattice(){
+    init();
+	var a = arrayfromargs(arguments);
+	uvLatticeMngr.create(a);
     draw(false);
 }
 

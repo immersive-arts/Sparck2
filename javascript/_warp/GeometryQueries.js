@@ -249,5 +249,185 @@ WARP.GeometryQueries = {
             latticeSketch.layer = 20;
             latticeSketch.glcolor(0.3, 0.3, 0.3, 1.);
         }
+    },
+    
+    /**
+     * UV QUERIES
+     * UV-specific query operations
+     */
+    
+    /**
+     * Check if geometry has selected UVs
+     */
+    hasUVSelection: function(geometry) {
+        return (geometry.hasSelectedUVs > 0) ? true : false;
+    },
+    
+    /**
+     * Pick ray against UVs (in viewport space)
+     * UVs need to be converted to viewport coordinates for picking
+     */
+    pickRayUV: function(geometry, pickRay) {
+        var distance = 10000000;
+        var bestIndex = -1;
+        
+        for(var j = 0; j < geometry.uvs.length; j++){
+            // Convert UV to viewport coordinates
+            var uvViewport = new THREE.Vector3(
+                geometry.uvs[j].x * 2.0 - 1.0,
+                geometry.uvs[j].y * 2.0 - 1.0,
+                0
+            );
+            var dist = pickRay.distanceToPoint(uvViewport);
+            if(dist < distance){
+                distance = dist;
+                bestIndex = j;
+            }
+        }
+        
+        geometry.pickRayUVIndx = bestIndex;
+        return bestIndex;
+    },
+    
+    /**
+     * Pick ray against lattice-modified UVs
+     */
+    pickRayUVLattice: function(geometry, pickRay) {
+        var distance = 10000000;
+        var bestIndex = -1;
+        
+        for(var j = 0; j < geometry.uvs_mod_lat.length; j++){
+            // Convert UV to viewport coordinates
+            var uvViewport = new THREE.Vector3(
+                geometry.uvs_mod_lat[j].x * 2.0 - 1.0,
+                geometry.uvs_mod_lat[j].y * 2.0 - 1.0,
+                0
+            );
+            var dist = pickRay.distanceToPoint(uvViewport);
+            if(dist < distance){
+                distance = dist;
+                bestIndex = j;
+            }
+        }
+        
+        geometry.pickRayUVIndx = bestIndex;
+        return bestIndex;
+    },
+    
+    /**
+     * Get list of selected UVs for a store index
+     */
+    getUVSelectStoreList: function(geometry, storeIndex) {
+        var storeList = "";
+        if(storeIndex < geometry.selectedUVStore.length && geometry.selectedUVStore[storeIndex] != null){
+            for(var j = 0; j < geometry.selectedUVStore[storeIndex].length; j++){
+                storeList = storeList + " " + (geometry.selectedUVStore[storeIndex][j] + 1);
+            }
+        }
+        return storeList;
+    },
+    
+    /**
+     * Generate matrix with lattice-modified UVs
+     */
+    generateUVMatrix: function(geometry, meshMatrix, subDiv, color) {
+        meshMatrix.dim = geometry.faces.length * 3 * Math.pow(4, subDiv);
+        for(var j = 0; j < geometry.faces.length; j++) {
+            geometry.faces[j].populate(meshMatrix, j * 3, subDiv, geometry.vertices_mod_lat, geometry.uvs_mod_lat, geometry.normals, color);
+        }
+        return meshMatrix;
+    },
+    
+    /**
+     * Draw UVs in viewport
+     * modFlag: 0 = original, 1 = modified, 2 = lattice-modified
+     */
+    drawUV: function(geometry, latticeSketch, drawMode, modFlag) {
+        latticeSketch.glcolor(0.8, 0.5, 0., 1.);
+        latticeSketch.glpointsize(10.);
+        
+        // Draw UV faces and lines
+        for(var i = 0; i < geometry.faces.length; i++){
+            var useUV;
+            if(modFlag == 1){
+                useUV = geometry.uvs_mod;
+            } else if(modFlag == 2){
+                useUV = geometry.uvs_mod_lat;
+            } else {
+                useUV = geometry.uvs;
+            }
+            
+            // Convert UV coordinates to viewport for drawing
+            var uvA = new THREE.Vector2(useUV[geometry.faces[i].uvA].x * 2.0 - 1.0, useUV[geometry.faces[i].uvA].y * 2.0 - 1.0);
+            var uvB = new THREE.Vector2(useUV[geometry.faces[i].uvB].x * 2.0 - 1.0, useUV[geometry.faces[i].uvB].y * 2.0 - 1.0);
+            var uvC = new THREE.Vector2(useUV[geometry.faces[i].uvC].x * 2.0 - 1.0, useUV[geometry.faces[i].uvC].y * 2.0 - 1.0);
+            
+            latticeSketch.linesegment(uvA.x, uvA.y, 0, uvB.x, uvB.y, 0);
+            latticeSketch.linesegment(uvB.x, uvB.y, 0, uvC.x, uvC.y, 0);
+            latticeSketch.linesegment(uvA.x, uvA.y, 0, uvC.x, uvC.y, 0);
+        }
+        
+        // Draw UV points
+        if(drawMode == 'edit'){
+            latticeSketch.layer = 30;
+            latticeSketch.gllinewidth(1.0);
+            
+            for(var j = 0; j < geometry.uvs.length; j++){
+                var useUV;
+                if(modFlag == 1)
+                    useUV = geometry.uvs_mod[j];
+                else if(modFlag == 2)
+                    useUV = geometry.uvs_mod_lat[j];
+                else
+                    useUV = geometry.uvs[j];
+                
+                // Convert to viewport coordinates
+                var uvViewport = new THREE.Vector2(useUV.x * 2.0 - 1.0, useUV.y * 2.0 - 1.0);
+                
+                // Normal point
+                latticeSketch.glcolor(0.7, 0.4, 0., 1.);
+                latticeSketch.moveto(uvViewport.x, uvViewport.y, 0);
+                latticeSketch.circle(0.02);
+                
+                // Highlighted point under cursor
+                if(geometry.pickRayUVIndx == j){
+                    latticeSketch.glcolor(0.9, 0.6, 0., 1.);
+                    latticeSketch.moveto(uvViewport.x, uvViewport.y, 0);
+                    latticeSketch.circle(0.025);
+                }
+                
+                // Selected point
+                if(geometry.selectedUVs[j] == 1){
+                    latticeSketch.glcolor(1., 0.7, 0., 1.);
+                    latticeSketch.moveto(uvViewport.x, uvViewport.y, 0);
+                    latticeSketch.circle(0.02);
+                }
+            }
+            
+            // Draw UV cursor
+            var useCursor;
+            if(modFlag == 1){
+                useCursor = geometry.myUVCursor_mod;
+            } else if(modFlag == 2){
+                useCursor = geometry.myUVCursor_mod_lat;
+            } else {
+                useCursor = geometry.myUVCursor;
+            }
+            
+            // Convert cursor to viewport
+            var cursorViewport = new THREE.Vector2(useCursor.x * 2.0 - 1.0, useCursor.y * 2.0 - 1.0);
+            
+            latticeSketch.glcolor(0.7, 0.3, 0., 1.);
+            latticeSketch.linesegment(cursorViewport.x - 0.06, cursorViewport.y, 0, cursorViewport.x + 0.06, cursorViewport.y, 0);
+            latticeSketch.linesegment(cursorViewport.x, cursorViewport.y - 0.06, 0, cursorViewport.x, cursorViewport.y + 0.06, 0);
+            latticeSketch.moveto(cursorViewport.x, cursorViewport.y, 0);
+            latticeSketch.gllinewidth(2.0);
+            latticeSketch.framecircle(.05);
+            
+            latticeSketch.glcolor(0.9, 0.5, 0., 1.);
+        } else {
+            latticeSketch.layer = 20;
+            latticeSketch.glcolor(0.3, 0.3, 0.3, 1.);
+        }
     }
 };

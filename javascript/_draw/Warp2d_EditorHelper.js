@@ -201,6 +201,121 @@ DRAW.Warp2d_EditorHelper.prototype = {
 		this.helpLine[19].text ( "h     : toggle this help" );
 	},
 
+    printUV_LATTICE_SELECT: function(){
+		this.helpLine[0].text  ( "Mode: [ UV LATTICE - SELECT ]" );
+		this.helpLine[1].text  ( "tab   : switch to UV editing" );
+		this.helpLine[2].text  ( "shift-tab: switch to mesh mode" );
+		this.helpLine[3].text  ( "a     : select all control points" );
+		this.helpLine[4].text  ( "mouse : select single control point" );
+		this.helpLine[5].text  ( "shift + mouse: select multiple" );
+		this.helpLine[6].text  ( "g     : grab control points" );
+		this.helpLine[7].text  ( "i     : reset control points" );
+		this.helpLine[8].text  ( "" );
+		this.helpLine[9].text  ( "" );
+		this.helpLine[10].text ( "" );
+		this.helpLine[11].text ( "" );
+		this.helpLine[12].text ( "" );
+		this.helpLine[13].text ( "" );
+		this.helpLine[14].text ( "z/Z   : undo / redo" );
+		this.helpLine[15].text ( "f     : save file" );
+		this.helpLine[16].text ( "<alt> + drag mouse: shift canvas" );
+		this.helpLine[17].text ( "<ctrl>+ drag mouse: zoom canvas" );
+		this.helpLine[18].text ( "H     : change help text color" );
+		this.helpLine[19].text ( "h     : toggle this help" );
+	},
+
+    printUV_LATTICE_GRAB: function(){
+		this.helpLine[0].text  ( "Mode: [ UV LATTICE - GRAB ]" );
+		this.helpLine[1].text  ( "mouse : move control points" );
+		this.helpLine[2].text  ( "click : end grab mode" );
+		this.helpLine[3].text  ( "" );
+		this.helpLine[4].text  ( "" );
+		this.helpLine[5].text  ( "" );
+		this.helpLine[6].text  ( "" );
+		this.helpLine[7].text  ( "" );
+		this.helpLine[8].text  ( "" );
+		this.helpLine[9].text  ( "" );
+		this.helpLine[10].text ( "" );
+		this.helpLine[11].text ( "" );
+		this.helpLine[12].text ( "" );
+		this.helpLine[13].text ( "" );
+		this.helpLine[14].text ( "z/Z   : undo / redo" );
+		this.helpLine[15].text ( "f     : save file" );
+		this.helpLine[16].text ( "<alt> + drag mouse: shift canvas" );
+		this.helpLine[17].text ( "<ctrl>+ drag mouse: zoom canvas" );
+		this.helpLine[18].text ( "H     : change help text color" );
+		this.helpLine[19].text ( "h     : toggle this help" );
+	},
+
+    printUV_SELECT: function(){
+		this.helpLine[0].text  ( "Mode: [ UV - SELECT ]" );
+		this.helpLine[1].text  ( "tab   : switch to UV lattice mode" );
+		this.helpLine[2].text  ( "shift-tab: switch to mesh mode" );
+		this.helpLine[3].text  ( "a     : select all UV vertices" );
+		this.helpLine[4].text  ( "q     : set cursor to selection" );
+		this.helpLine[5].text  ( "mouse : select single UV vertex" );
+		this.helpLine[6].text  ( "shift + mouse: select multiple" );
+		this.helpLine[7].text  ( "g     : grab UVs" );
+		this.helpLine[8].text  ( "i     : reset UVs" );
+		this.helpLine[9].text  ( "p     : store selection (then 0-9)" );
+		this.helpLine[10].text ( "0-9   : recall stored selection" );
+		this.helpLine[11].text ( "arrows: move UVs (shift/ctrl)" );
+		this.helpLine[12].text ( "" );
+		this.helpLine[13].text ( "" );
+		this.helpLine[14].text ( "z/Z   : undo / redo" );
+		this.helpLine[15].text ( "f     : save file" );
+		this.helpLine[16].text ( "<alt> + drag mouse: shift canvas" );
+		this.helpLine[17].text ( "<ctrl>+ drag mouse: zoom canvas" );
+		this.helpLine[18].text ( "H     : change help text color" );
+		this.helpLine[19].text ( "h     : toggle this help" );
+	},
+
+    printUV_SELECT_STORE: function(){
+		this.helpLine[0].text  ( "Mode: [ UV - SELECT - STORE ]" );
+		this.helpLine[1].text  ( "tab   : abort" );
+		this.helpLine[2].text  ( "0-9   : store current selection" );
+		this.helpLine[3].text  ( "" );
+		this.helpLine[4].text  ( "" );
+		this.helpLine[5].text  ( "" );
+		this.helpLine[6].text  ( "" );
+		this.helpLine[7].text  ( "" );
+		this.helpLine[8].text  ( "" );
+		this.helpLine[9].text  ( "" );
+		this.helpLine[10].text ( "" );
+		this.helpLine[11].text ( "" );
+		this.helpLine[12].text ( "" );
+		this.helpLine[13].text ( "" );
+		this.helpLine[14].text ( "" );
+		this.helpLine[15].text ( "f     : save file" );
+		this.helpLine[16].text ( "<alt> + drag mouse: shift canvas" );
+		this.helpLine[17].text ( "<ctrl>+ drag mouse: zoom canvas" );
+		this.helpLine[18].text ( "H     : change help text color" );
+		this.helpLine[19].text ( "h     : toggle this help" );
+	},
+
+    printUV_MODIFY: function(){
+		this.helpLine[0].text  ( "Mode: [ UV - MODIFY ]" );
+		this.helpLine[1].text  ( "mouse : move selected UVs" );
+		this.helpLine[2].text  ( "click : end modify mode" );
+		this.helpLine[3].text  ( "" );
+		this.helpLine[4].text  ( "" );
+		this.helpLine[5].text  ( "" );
+		this.helpLine[6].text  ( "" );
+		this.helpLine[7].text  ( "" );
+		this.helpLine[8].text  ( "" );
+		this.helpLine[9].text  ( "" );
+		this.helpLine[10].text ( "" );
+		this.helpLine[11].text ( "" );
+		this.helpLine[12].text ( "" );
+		this.helpLine[13].text ( "" );
+		this.helpLine[14].text ( "z/Z   : undo / redo" );
+		this.helpLine[15].text ( "f     : save file" );
+		this.helpLine[16].text ( "<alt> + drag mouse: shift canvas" );
+		this.helpLine[17].text ( "<ctrl>+ drag mouse: zoom canvas" );
+		this.helpLine[18].text ( "H     : change help text color" );
+		this.helpLine[19].text ( "h     : toggle this help" );
+	},
+
     freepeer: function(){
         for(var i = 0; i < this.helpLine.length; i++){
             this.helpLine[i].freepeer();

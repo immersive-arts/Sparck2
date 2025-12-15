@@ -32,19 +32,30 @@ WARP.Geometry = function () {
 
     this.uvs = []; // original uv
 	this.uvs_mod = []; // modified uvs
+    this.uvs_mod_lat = []; // modified and latticed deformed uvs
+    this.uvs_mod_tmp = []; // modified uvs temporary storage
 	this.normals = [];
 	this.faces = [];
 
     this.selectedVertices = [];
     this.hasSelectedVertices = -1;
 
+    this.selectedUVs = []; // selected UV vertices
+    this.hasSelectedUVs = -1;
+
     this.selectedStore = []; // selected vertices storage
+    this.selectedUVStore = []; // selected UV storage
 
     this.pickRayIndx = -1;
+    this.pickRayUVIndx = -1;
 
     this.myCursor = new THREE.Vector3(0, 0, 0);
     this.myCursor_mod = new THREE.Vector3(0, 0, 0);
     this.myCursor_mod_lat = new THREE.Vector3(0, 0, 0);
+    
+    this.myUVCursor = new THREE.Vector2(0.5, 0.5);
+    this.myUVCursor_mod = new THREE.Vector2(0.5, 0.5);
+    this.myUVCursor_mod_lat = new THREE.Vector2(0.5, 0.5);
 };
 
 WARP.Geometry.prototype = {
@@ -88,6 +99,16 @@ WARP.Geometry.prototype = {
             clon.uvs_mod[i] = this.uvs_mod[i].clone();
         }
 
+        clon.uvs_mod_lat = new Array( this.uvs_mod_lat.length );
+        for(var i = 0; i < this.uvs_mod_lat.length; i++){
+            clon.uvs_mod_lat[i] = this.uvs_mod_lat[i].clone();
+        }
+
+        clon.uvs_mod_tmp = new Array( this.uvs_mod_tmp.length );
+        for(var i = 0; i < this.uvs_mod_tmp.length; i++){
+            clon.uvs_mod_tmp[i] = this.uvs_mod_tmp[i].clone();
+        }
+
         clon.normals = new Array( this.normals.length );
         for(var i = 0; i < this.normals.length; i++){
             clon.normals[i] = this.normals[i].clone();
@@ -102,16 +123,32 @@ WARP.Geometry.prototype = {
 
         clon.hasSelectedVertices = this.hasSelectedVertices;
 
+        clon.selectedUVs = this.selectedUVs.slice(0,this.selectedUVs.length);
+
+        clon.hasSelectedUVs = this.hasSelectedUVs;
+
         clon.selectedStore = new Array(this.selectedStore.length);
         for(var i = 0; i < this.selectedStore.length; i++){
             if(this.selectedStore[i] != null)
                 clon.selectedStore[i] = this.selectedStore[i].slice(0);
         }
 
+        clon.selectedUVStore = new Array(this.selectedUVStore.length);
+        for(var i = 0; i < this.selectedUVStore.length; i++){
+            if(this.selectedUVStore[i] != null)
+                clon.selectedUVStore[i] = this.selectedUVStore[i].slice(0);
+        }
+
         clon.myCursor = new THREE.Vector3(this.myCursor.x, this.myCursor.y, this.myCursor.z);
         clon.myCursor_mod = new THREE.Vector3(this.myCursor_mod.x, this.myCursor_mod.y, this.myCursor_mod.z);
         clon.myCursor_mod_lat = new THREE.Vector3(this.myCursor_mod_lat.x, this.myCursor_mod_lat.y, this.myCursor_mod_lat.z);
+        
+        clon.myUVCursor = new THREE.Vector2(this.myUVCursor.x, this.myUVCursor.y);
+        clon.myUVCursor_mod = new THREE.Vector2(this.myUVCursor_mod.x, this.myUVCursor_mod.y);
+        clon.myUVCursor_mod_lat = new THREE.Vector2(this.myUVCursor_mod_lat.x, this.myUVCursor_mod_lat.y);
+        
         clon.pickRayIndx = this.pickRayIndx;
+        clon.pickRayUVIndx = this.pickRayUVIndx;
 
         return clon;
     },

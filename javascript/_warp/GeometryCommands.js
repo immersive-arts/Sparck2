@@ -49,6 +49,8 @@ WARP.CreateGeometryCommand.prototype.execute = function(geometry) {
     geometry.selectedVertices = new Array(this.dim * this.dim);
     geometry.uvs = new Array(this.dim * this.dim);
     geometry.uvs_mod = new Array(this.dim * this.dim);
+    geometry.uvs_mod_lat = new Array(this.dim * this.dim);
+    geometry.selectedUVs = new Array(this.dim * this.dim);
     
     for(var x = 0; x < this.dim; x++){
         for(var y = 0; y < this.dim; y++){
@@ -59,6 +61,8 @@ WARP.CreateGeometryCommand.prototype.execute = function(geometry) {
             geometry.selectedVertices[idx] = 0;
             geometry.uvs[idx] = new THREE.Vector2(x * UVstepSize, y * UVstepSize);
             geometry.uvs_mod[idx] = new THREE.Vector2(x * UVstepSize, y * UVstepSize);
+            geometry.uvs_mod_lat[idx] = new THREE.Vector2(x * UVstepSize, y * UVstepSize);
+            geometry.selectedUVs[idx] = 0;
         }
     }
     
@@ -82,9 +86,13 @@ WARP.CreateGeometryCommand.prototype.execute = function(geometry) {
     }
     
     geometry.selectedStore = new Array(10);
+    geometry.selectedUVStore = new Array(10);
     geometry.myCursor = new THREE.Vector3(0, 0, 0);
     geometry.myCursor_mod = new THREE.Vector3(0, 0, 0);
+    geometry.myUVCursor = new THREE.Vector2(0.5, 0.5);
+    geometry.myUVCursor_mod = new THREE.Vector2(0.5, 0.5);
     geometry.hasSelectedVertices = -1;
+    geometry.hasSelectedUVs = -1;
 };
 
 WARP.CreateGeometryCommand.prototype.undo = function(geometry) {
@@ -171,13 +179,18 @@ WARP.LoadGeometryCommand.prototype.execute = function(geometry) {
     // Handle UVs
     geometry.uvs = new Array(this.newGeometry.uvs.length);
     geometry.uvs_mod = new Array(this.newGeometry.uvs.length);
+    geometry.uvs_mod_lat = new Array(this.newGeometry.uvs.length);
+    geometry.selectedUVs = new Array(this.newGeometry.uvs.length);
     for(var i = 0; i < geometry.uvs.length; i++){
         geometry.uvs[i] = this.newGeometry.uvs[i].clone();
         if(this.newGeometry.uvs_mod[i] != null){
             geometry.uvs_mod[i] = this.newGeometry.uvs_mod[i].clone();
+            geometry.uvs_mod_lat[i] = this.newGeometry.uvs_mod[i].clone();
         } else {
             geometry.uvs_mod[i] = geometry.uvs[i].clone();
+            geometry.uvs_mod_lat[i] = geometry.uvs[i].clone();
         }
+        geometry.selectedUVs[i] = 0;
     }
     
     geometry.normals = new Array(this.newGeometry.normals.length);
@@ -195,8 +208,19 @@ WARP.LoadGeometryCommand.prototype.execute = function(geometry) {
         geometry.selectedStore[i] = this.newGeometry.selectedStore[i].slice(0);
     }
     
+    geometry.selectedUVStore = new Array(10);
+    if(this.newGeometry.selectedUVStore){
+        for(var i = 0; i < this.newGeometry.selectedUVStore.length; i++){
+            if(this.newGeometry.selectedUVStore[i]){
+                geometry.selectedUVStore[i] = this.newGeometry.selectedUVStore[i].slice(0);
+            }
+        }
+    }
+    
     geometry.myCursor = new THREE.Vector3(0, 0, 0);
     geometry.myCursor_mod = new THREE.Vector3(0, 0, 0);
+    geometry.myUVCursor = new THREE.Vector2(0.5, 0.5);
+    geometry.myUVCursor_mod = new THREE.Vector2(0.5, 0.5);
 };
 
 WARP.LoadGeometryCommand.prototype.undo = function(geometry) {
