@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 0,
+			"minor" : 6,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -71,7 +71,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 482.0, 225.0, 129.0, 50.0 ],
-					"presentation_linecount" : 3,
 					"text" : ";\r\nmax launchbrowser http:/localhost:9100"
 				}
 
@@ -100,7 +99,9 @@
 					"patching_rect" : [ 482.0, 188.0, 100.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 255.0, 69.0, 283.0, 21.0 ],
-					"text" : "Look at namespace inside the webbrowser"
+					"text" : "Look at namespace inside the webbrowser",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"textoncolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -201,7 +202,8 @@
 					"patching_rect" : [ 5.083373999999992, 63.0, 59.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 9.0, 13.0, 59.0, 20.0 ],
-					"text" : "Connect"
+					"text" : "Connect",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -244,6 +246,7 @@
 					"patching_rect" : [ 463.083373999999992, 13.0, 54.0, 21.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 193.0, 69.0, 54.0, 21.0 ],
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "OSCQueryMainInputPortUDP"
 				}
 
@@ -260,13 +263,14 @@
 					"patching_rect" : [ 321.583373999999992, 13.0, 138.0, 34.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 9.0, 69.0, 174.0, 20.0 ],
-					"text" : "OSCQuery Input Port UDP"
+					"text" : "OSCQuery Input Port UDP",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"bgcolor" : [ 0.0, 0.0, 0.0, 0.1 ],
+					"bgcolor" : [ 0.443137254901961, 0.443137254901961, 0.443137254901961, 1.0 ],
 					"border" : 1.0,
 					"fontname" : "Courier New",
 					"id" : "obj-14",
@@ -279,7 +283,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 255.0, 43.0, 283.0, 19.0 ],
 					"text" : "/node/<nodeName>/<command> <value>",
-					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -341,6 +345,7 @@
 					"patching_rect" : [ 151.083373999999992, 13.0, 54.0, 21.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 193.0, 41.0, 54.0, 21.0 ],
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "OSCMainInputPortUDP"
 				}
 
@@ -356,7 +361,8 @@
 					"patching_rect" : [ 9.583373999999999, 13.0, 138.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 9.0, 41.0, 138.0, 20.0 ],
-					"text" : "OSC Input Port UDP"
+					"text" : "OSC Input Port UDP",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}

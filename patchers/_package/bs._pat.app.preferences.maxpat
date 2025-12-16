@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 0,
+			"minor" : 6,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -174,23 +174,24 @@
 					"enablevscroll" : 0,
 					"id" : "obj-9",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"numinlets" : 2,
 					"numoutlets" : 3,
-					"offset" : [ 0.0, -300.0 ],
+					"offset" : [ 0.0, -1200.0 ],
 					"outlettype" : [ "", "", "" ],
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 6,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 133.0, 85.0, 651.0, 783.0 ],
+						"rect" : [ 402.0, 535.0, 655.0, 783.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
 						"default_fontsize" : 12.0,
@@ -227,6 +228,7 @@
 									"enablevscroll" : 0,
 									"id" : "obj-3",
 									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
 									"maxclass" : "bpatcher",
 									"name" : "bs.app.prefs.stats.maxpat",
 									"numinlets" : 1,
@@ -330,6 +332,7 @@
 									"enablevscroll" : 0,
 									"id" : "obj-7",
 									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
 									"maxclass" : "bpatcher",
 									"name" : "bs.app.prefs.editor.maxpat",
 									"numinlets" : 0,
@@ -352,6 +355,7 @@
 									"enablevscroll" : 0,
 									"id" : "obj-5",
 									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
 									"maxclass" : "bpatcher",
 									"name" : "bs.app.prefs.general.maxpat",
 									"numinlets" : 0,
@@ -375,6 +379,7 @@
 									"enablevscroll" : 0,
 									"id" : "obj-6",
 									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
 									"maxclass" : "bpatcher",
 									"name" : "bs.app.prefs.stageview.maxpat",
 									"numinlets" : 0,
@@ -397,6 +402,7 @@
 									"enablevscroll" : 0,
 									"id" : "obj-1",
 									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
 									"maxclass" : "bpatcher",
 									"name" : "bs.app.prefs.ossia.maxpat",
 									"numinlets" : 0,
@@ -464,13 +470,13 @@
 								"name" : "AudioStatus_Menu",
 								"default" : 								{
 									"bgfillcolor" : 									{
-										"type" : "color",
+										"angle" : 270.0,
+										"autogradient" : 0,
 										"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 										"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "color"
 									}
 
 								}
@@ -478,7 +484,8 @@
 								"parentstyle" : "",
 								"multi" : 0
 							}
- ]
+ ],
+						"editing_bgcolor" : [ 0.223529411764706, 0.223529411764706, 0.223529411764706, 1.0 ]
 					}
 ,
 					"patching_rect" : [ 158.583373999999992, 472.02642800000001, 422.0, 126.0 ],
@@ -537,8 +544,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 6,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1243,7 +1250,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 181.583373999999992, 289.5, 364.0, 22.0 ]
+					"patching_rect" : [ 181.583373999999992, 289.5, 472.0, 22.0 ],
+					"text" : "writexml C:/Users/IAAdmin/AppData/Roaming/SPARCK/setup/patcher_preferences.xml"
 				}
 
 			}
@@ -1322,11 +1330,11 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-16",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "int" ],
 					"patching_rect" : [ 91.083374000000006, 441.5, 25.0, 25.0 ]
 				}
 
@@ -1335,7 +1343,7 @@
 				"box" : 				{
 					"comment" : "autoload path",
 					"id" : "obj-20",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -1374,6 +1382,7 @@
 			}
 , 			{
 				"box" : 				{
+					"autorestore" : "patcher_preferences.xml",
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-44",
@@ -1398,15 +1407,14 @@
 				"box" : 				{
 					"angle" : 270.0,
 					"background" : 1,
+					"bgcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ],
 					"border" : 2,
 					"bordercolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"drag_window" : 1,
-					"grad1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
-					"grad2" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 					"id" : "obj-17",
 					"ignoreclick" : 0,
 					"maxclass" : "panel",
-					"mode" : 1,
+					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 598.083374000000049, 60.0, 128.0, 128.0 ],
@@ -1678,75 +1686,17 @@
 
 			}
  ],
-		"dependency_cache" : [ 			{
-				"name" : "bs.app.prefs.ossia.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/app",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.app.prefs.stageview.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/app",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.node.logo.default.png",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/media",
-				"type" : "PNG",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.gui.util.color.values.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/gui",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.app.contexter.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/app",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.app.prefs.general.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/app",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.app.prefs.editor.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/app",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.app.prefs.stats.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/app",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mxj.mxe64",
-				"type" : "mx64"
-			}
-, 			{
-				"name" : "bs.msg.send.mxe64",
-				"type" : "mx64"
-			}
- ],
-		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "AudioStatus_Menu",
 				"default" : 				{
 					"bgfillcolor" : 					{
-						"type" : "color",
+						"angle" : 270.0,
+						"autogradient" : 0,
 						"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 						"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "color"
 					}
 
 				}

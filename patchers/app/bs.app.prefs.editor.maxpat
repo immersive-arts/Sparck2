@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 0,
+			"minor" : 6,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 530.0, 267.0, 582.0, 545.0 ],
+		"rect" : [ 454.0, 617.0, 647.0, 319.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -60,7 +60,8 @@
 					"patching_rect" : [ 268.77777100000003, 263.0, 138.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 7.5, 216.0, 160.0, 20.0 ],
-					"text" : "set to default"
+					"text" : "set to default",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -92,7 +93,8 @@
 					"patching_rect" : [ 56.388855000000007, 410.0, 167.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 7.5, 103.0, 181.0, 20.0 ],
-					"text" : "default editor window:"
+					"text" : "default editor window:",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -107,7 +109,8 @@
 					"patching_rect" : [ 56.388855000000007, 295.0, 138.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 7.5, 190.0, 160.0, 20.0 ],
-					"text" : "set to current pos"
+					"text" : "set to current pos",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -163,6 +166,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-36",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"numinlets" : 3,
 					"numoutlets" : 1,
@@ -172,8 +176,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 6,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -410,9 +414,9 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 208.833373999999992, 222.0, 50.0, 19.0 ],
+									"patching_rect" : [ 208.833373999999992, 222.0, 50.0, 20.0 ],
 									"presentation" : 1,
-									"presentation_rect" : [ 1.0, 22.0, 58.0, 19.0 ],
+									"presentation_rect" : [ 1.0, 22.0, 58.0, 20.0 ],
 									"varname" : "upperLeftX"
 								}
 
@@ -610,13 +614,13 @@
 								"name" : "AudioStatus_Menu",
 								"default" : 								{
 									"bgfillcolor" : 									{
-										"type" : "color",
+										"angle" : 270.0,
+										"autogradient" : 0,
 										"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 										"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "color"
 									}
 
 								}
@@ -668,7 +672,8 @@
 					"patching_rect" : [ 329.5, 139.675353999999999, 191.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 7.5, 35.0, 126.0, 20.0 ],
-					"text" : "update frequency"
+					"text" : "update frequency",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -679,7 +684,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 224.685181, 47.0, 151.0, 33.0 ],
+					"patching_rect" : [ 224.685181, 47.0, 151.0, 34.0 ],
 					"text" : "is being sent by the editor app node"
 				}
 
@@ -800,7 +805,8 @@
 					"patching_rect" : [ 47.777771000000001, 62.166626000000008, 155.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 7.5, 7.0, 104.0, 20.0 ],
-					"text" : "use antialias"
+					"text" : "use antialias",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -1072,17 +1078,17 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "bs.node.logo.default.png",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/media",
-				"patcherrelativepath" : "../../media",
-				"type" : "PNG",
+				"name" : "bs.app.contexter.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/app",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.app.contexter.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/app",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
+				"name" : "bs.node.logo.default.png",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/media",
+				"patcherrelativepath" : "../../media",
+				"type" : "PNG",
 				"implicit" : 1
 			}
  ],
@@ -1091,13 +1097,13 @@
 				"name" : "AudioStatus_Menu",
 				"default" : 				{
 					"bgfillcolor" : 					{
-						"type" : "color",
+						"angle" : 270.0,
+						"autogradient" : 0,
 						"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 						"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "color"
 					}
 
 				}

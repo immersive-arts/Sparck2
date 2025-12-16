@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 6,
+			"minor" : 6,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 115.0, 244.0, 675.0, 556.0 ],
+		"rect" : [ 149.0, 563.0, 675.0, 485.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -46,8 +46,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 184.638733000000002, 479.0, 125.0, 49.0 ],
-					"text" : ";\rmax setmirrortoconsole $1"
+					"patching_rect" : [ 184.638733000000002, 479.0, 125.0, 50.0 ],
+					"text" : ";\r\nmax setmirrortoconsole $1"
 				}
 
 			}
@@ -72,6 +72,7 @@
 			}
 , 			{
 				"box" : 				{
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 					"fontname" : "Courier New",
 					"fontsize" : 12.0,
 					"id" : "obj-35",
@@ -82,7 +83,8 @@
 					"patching_rect" : [ 15.722106999999994, 440.0, 167.0, 34.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 182.222106999999994, 136.570067999999992, 292.0, 20.0 ],
-					"text" : "stream sparck console to system console"
+					"text" : "stream sparck console to system console",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -136,6 +138,7 @@
 			}
 , 			{
 				"box" : 				{
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 					"fontname" : "Courier New",
 					"fontsize" : 12.0,
 					"hidden" : 1,
@@ -146,7 +149,8 @@
 					"patching_rect" : [ 201.222106999999994, 391.0, 37.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 506.0, 110.570067999999992, 37.0, 20.0 ],
-					"text" : "port"
+					"text" : "port",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -272,6 +276,7 @@
 			}
 , 			{
 				"box" : 				{
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 					"fontname" : "Courier New",
 					"fontsize" : 12.0,
 					"id" : "obj-24",
@@ -282,7 +287,8 @@
 					"patching_rect" : [ 154.222106999999994, 285.0, 167.0, 34.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 257.222106999999994, 110.570067999999992, 217.0, 20.0 ],
-					"text" : "stream sparck console via udp"
+					"text" : "stream sparck console via udp",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -314,13 +320,14 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 492.0, 260.0, 142.0, 35.0 ],
-					"text" : ";\rbs::app::global debug $1"
+					"patching_rect" : [ 492.0, 260.0, 142.0, 36.0 ],
+					"text" : ";\r\nbs::app::global debug $1"
 				}
 
 			}
 , 			{
 				"box" : 				{
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 					"fontname" : "Courier New",
 					"fontsize" : 12.0,
 					"id" : "obj-17",
@@ -330,7 +337,8 @@
 					"patching_rect" : [ 444.138733000000002, 159.894713999999993, 90.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 334.5, 62.894714, 90.0, 20.0 ],
-					"text" : "debug js"
+					"text" : "debug js",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -359,6 +367,7 @@
 			}
 , 			{
 				"box" : 				{
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 					"fontname" : "Courier New",
 					"fontsize" : 10.0,
 					"id" : "obj-7",
@@ -370,7 +379,8 @@
 					"presentation" : 1,
 					"presentation_linecount" : 8,
 					"presentation_rect" : [ 8.5, 57.0, 177.0, 97.0 ],
-					"text" : "how to recover: \nautosave creates a sparck-project inside the <project>/_settings folder. simply move the file to the <project> folder and load it. don't forget to save it again under a new name."
+					"text" : "how to recover: \nautosave creates a sparck-project inside the <project>/_settings folder. simply move the file to the <project> folder and load it. don't forget to save it again under a new name.",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -432,6 +442,7 @@
 			}
 , 			{
 				"box" : 				{
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 					"fontname" : "Courier New",
 					"fontsize" : 12.0,
 					"hidden" : 1,
@@ -442,7 +453,8 @@
 					"patching_rect" : [ 25.0, 100.894713999999993, 147.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 23.5, 35.0, 111.0, 20.0 ],
-					"text" : "autosave nodes"
+					"text" : "autosave nodes",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -524,6 +536,7 @@
 			}
 , 			{
 				"box" : 				{
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 					"fontname" : "Courier New",
 					"fontsize" : 12.0,
 					"id" : "obj-2",
@@ -533,7 +546,8 @@
 					"patching_rect" : [ 11.0, 6.894714, 192.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 8.5, 9.0, 97.0, 20.0 ],
-					"text" : "use autosave"
+					"text" : "use autosave",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -557,6 +571,7 @@
 			}
 , 			{
 				"box" : 				{
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 					"fontname" : "Courier New",
 					"fontsize" : 12.0,
 					"id" : "obj-6",
@@ -566,7 +581,8 @@
 					"patching_rect" : [ 444.138733000000002, 321.0, 90.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 334.5, 41.0, 90.0, 20.0 ],
-					"text" : "debug level"
+					"text" : "debug level",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -642,6 +658,7 @@
 			}
 , 			{
 				"box" : 				{
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 					"fontname" : "Courier New",
 					"fontsize" : 12.0,
 					"id" : "obj-5",
@@ -651,7 +668,8 @@
 					"patching_rect" : [ 343.0, 21.894714, 192.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 283.5, 11.0, 192.0, 20.0 ],
-					"text" : "lowfrequency refresh rate"
+					"text" : "lowfrequency refresh rate",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -1002,10 +1020,14 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "bs.node.logo.default.png",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/media",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/media",
 				"patcherrelativepath" : "../../media",
 				"type" : "PNG",
 				"implicit" : 1
+			}
+, 			{
+				"name" : "mxj.mxe64",
+				"type" : "mx64"
 			}
  ],
 		"autosave" : 0,
@@ -1013,13 +1035,13 @@
 				"name" : "AudioStatus_Menu",
 				"default" : 				{
 					"bgfillcolor" : 					{
-						"type" : "color",
+						"angle" : 270.0,
+						"autogradient" : 0,
 						"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 						"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "color"
 					}
 
 				}

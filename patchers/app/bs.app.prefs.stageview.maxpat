@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 5,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 389.0, 242.0, 829.0, 563.0 ],
+		"rect" : [ 388.0, 617.0, 829.0, 563.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -60,7 +60,8 @@
 					"patching_rect" : [ 685.0, 297.666626000000065, 138.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 11.83331298828125, 244.0, 160.0, 20.0 ],
-					"text" : "set to default"
+					"text" : "set to default",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -92,7 +93,8 @@
 					"patching_rect" : [ 470.000000000000114, 444.0, 167.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 10.83331298828125, 125.0, 181.0, 20.0 ],
-					"text" : "default editor window:"
+					"text" : "default editor window:",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -107,7 +109,8 @@
 					"patching_rect" : [ 470.000000000000114, 329.0, 138.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 11.83331298828125, 218.0, 160.0, 20.0 ],
-					"text" : "set to current pos"
+					"text" : "set to current pos",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -174,7 +177,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 5,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -363,9 +366,9 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 208.749390000000119, 175.0, 50.0, 19.0 ],
+									"patching_rect" : [ 208.749390000000119, 175.0, 50.0, 20.0 ],
 									"presentation" : 1,
-									"presentation_rect" : [ 1.0, 22.0, 58.0, 19.0 ],
+									"presentation_rect" : [ 1.0, 22.0, 58.0, 20.0 ],
 									"varname" : "upperLeftX"
 								}
 
@@ -594,7 +597,8 @@
 					"patching_rect" : [ 670.888915999999995, 104.666626000000008, 126.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 234.83331298828125, 140.0, 109.0, 20.0 ],
-					"text" : "position"
+					"text" : "position",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -678,7 +682,8 @@
 					"patching_rect" : [ 670.888915999999995, 82.0, 126.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 234.83331298828125, 119.0, 126.0, 20.0 ],
-					"text" : "specular color"
+					"text" : "specular color",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -719,7 +724,8 @@
 					"patching_rect" : [ 670.888915999999995, 28.0, 361.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 234.83331298828125, 76.0, 174.0, 20.0 ],
-					"text" : "default light:"
+					"text" : "default light:",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -734,7 +740,8 @@
 					"patching_rect" : [ 670.888915999999995, 57.0, 126.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 234.83331298828125, 98.0, 126.0, 20.0 ],
-					"text" : "diffuse color"
+					"text" : "diffuse color",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -807,7 +814,8 @@
 					"patching_rect" : [ 257.888915999999995, 302.0, 169.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 10.83331298828125, 102.0, 169.0, 20.0 ],
-					"text" : "publish transformation"
+					"text" : "publish transformation",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -836,7 +844,8 @@
 					"patching_rect" : [ 129.888915999999995, 28.0, 126.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 234.83331298828125, 55.0, 126.0, 20.0 ],
-					"text" : "background color"
+					"text" : "background color",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -896,7 +905,8 @@
 					"patching_rect" : [ 87.0, 127.0, 97.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 10.83331298828125, 79.0, 140.0, 20.0 ],
-					"text" : "blend enable"
+					"text" : "blend enable",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -1007,7 +1017,8 @@
 					"patching_rect" : [ 66.777771000000001, 60.666626000000001, 147.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 10.83331298828125, 55.0, 140.0, 20.0 ],
-					"text" : "antialias"
+					"text" : "antialias",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -1075,7 +1086,8 @@
 					"patching_rect" : [ 66.777771000000001, 270.666626000000008, 140.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 10.83331298828125, 32.0, 140.0, 20.0 ],
-					"text" : "floating win"
+					"text" : "floating win",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -1115,7 +1127,8 @@
 					"patching_rect" : [ 252.5, 201.0, 176.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 10.83331298828125, 9.0, 176.0, 20.0 ],
-					"text" : "drawing fix for windows"
+					"text" : "drawing fix for windows",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -1197,7 +1210,8 @@
 					"patching_rect" : [ 554.888915999999995, 100.5, 111.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 234.83331298828125, 32.0, 111.0, 20.0 ],
-					"text" : "clip far"
+					"text" : "clip far",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -1232,7 +1246,8 @@
 					"patching_rect" : [ 252.5, 78.5, 119.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 234.83331298828125, 9.0, 119.0, 20.0 ],
-					"text" : "clip near"
+					"text" : "clip near",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -1515,21 +1530,21 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "bs.app.contexter.maxpat",
-				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/app",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/app",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.gui.util.color.values.maxpat",
-				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/gui",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/gui",
 				"patcherrelativepath" : "../gui",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.node.logo.default.png",
-				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/media",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/media",
 				"patcherrelativepath" : "../../media",
 				"type" : "PNG",
 				"implicit" : 1
