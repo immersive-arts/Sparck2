@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 241.0, 124.0, 750.0, 518.0 ],
+		"rect" : [ 825.0, 380.0, 750.0, 518.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -1810,7 +1810,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 126.0, 83.0, 1280.0, 783.0 ],
+						"rect" : [ 397.0, 300.0, 1280.0, 783.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1840,6 +1840,34 @@
 						"assistshowspatchername" : 0,
 						"title" : "Canvas",
 						"boxes" : [ 							{
+								"box" : 								{
+									"fontface" : 0,
+									"fontname" : "Arial",
+									"fontsize" : 9.0,
+									"id" : "obj-7",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 462.0, 574.0, 89.0, 19.0 ],
+									"text" : "prepend subdivision"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
+									"id" : "obj-3",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 462.0, 540.0, 729.0, 22.0 ],
+									"text" : "sparck.parameter subdivision @type int @default 0 @range 0 4 @clip both @description \"subdivides the output for nicer render results\""
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"comment" : "",
 									"id" : "obj-2",
@@ -1923,7 +1951,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 33.201598999999987, 455.737060570312451, 514.0, 22.0 ],
+									"patching_rect" : [ 33.201598999999987, 455.737060570312451, 514.0, 35.0 ],
 									"text" : "sparck.parameter render/showaxis @type bool @default false @description \"render object axes\""
 								}
 
@@ -1977,7 +2005,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 248.201598999999987, 229.0, 571.0, 22.0 ],
+									"patching_rect" : [ 248.201598999999987, 229.0, 571.0, 35.0 ],
 									"text" : "sparck.parameter depth/layer @type int @default 0 @min -1 @clip low @description \"Manual render order\""
 								}
 
@@ -2017,7 +2045,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 572.201598999999987, 316.5, 441.0, 22.0 ],
+									"patching_rect" : [ 572.201598999999987, 316.5, 441.0, 35.0 ],
 									"text" : "sparck.parameter color @type rgba @default 1. 1. 1. 1. @description \"object color\""
 								}
 
@@ -2059,7 +2087,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 395.0, 285.070434999999918, 714.0, 22.0 ],
+									"patching_rect" : [ 395.0, 285.070434999999918, 714.0, 35.0 ],
 									"text" : "sparck.parameter polyMode/back @type int @default 0 @range 0 2 @description \"drawmode for backface (0=poly, 1=lines, 2=points)\""
 								}
 
@@ -2085,7 +2113,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 353.5, 261.070434999999918, 772.0, 22.0 ],
+									"patching_rect" : [ 353.5, 261.070434999999918, 772.0, 35.0 ],
 									"text" : "sparck.parameter polyMode/front @type int @default 0 @range 0 2 @clip both @description \"drawmode for frontface (0=poly, 1=lines, 2=points)\""
 								}
 
@@ -2267,6 +2295,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-7", 0 ],
+									"source" : [ "obj-3", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-14", 0 ],
 									"source" : [ "obj-30", 0 ]
 								}
@@ -2345,6 +2380,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-14", 0 ],
 									"source" : [ "obj-66", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-27", 0 ],
+									"source" : [ "obj-7", 0 ]
 								}
 
 							}
@@ -3924,6 +3966,27 @@
 				"name" : "UIEvent.js",
 				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/javascript/_gui",
 				"patcherrelativepath" : "../../../javascript/_gui",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "UVCommands.js",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/javascript/_warp",
+				"patcherrelativepath" : "../../../javascript/_warp",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "UVLatticeMngr.js",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/javascript/_warp",
+				"patcherrelativepath" : "../../../javascript/_warp",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "UVMeshMngr.js",
+				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/javascript/_warp",
+				"patcherrelativepath" : "../../../javascript/_warp",
 				"type" : "TEXT",
 				"implicit" : 1
 			}

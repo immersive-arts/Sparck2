@@ -156,9 +156,10 @@ WARP.GeometryQueries = {
      * Generate matrix from geometry for rendering
      */
     generateMatrix: function(geometry, meshMatrix, subDiv, color) {
-        meshMatrix.dim = geometry.faces.length * 3 * Math.pow(4, subDiv);
+        var verticesPerFace = 3 * Math.pow(4, subDiv);
+        meshMatrix.dim = geometry.faces.length * verticesPerFace;
         for(var j = 0; j < geometry.faces.length; j++) {
-            geometry.faces[j].populate(meshMatrix, j * 3, subDiv, geometry.vertices_mod_lat, geometry.uvs_mod, geometry.normals, color);
+            geometry.faces[j].populate(meshMatrix, j * verticesPerFace, subDiv, geometry.vertices_mod_lat, geometry.uvs_mod, geometry.normals, color);
         }
         return meshMatrix;
     },
@@ -331,9 +332,10 @@ WARP.GeometryQueries = {
      * Generate matrix with lattice-modified UVs
      */
     generateUVMatrix: function(geometry, meshMatrix, subDiv, color) {
-        meshMatrix.dim = geometry.faces.length * 3 * Math.pow(4, subDiv);
+        var verticesPerFace = 3 * Math.pow(4, subDiv);
+        meshMatrix.dim = geometry.faces.length * verticesPerFace;
         for(var j = 0; j < geometry.faces.length; j++) {
-            geometry.faces[j].populate(meshMatrix, j * 3, subDiv, geometry.vertices_mod_lat, geometry.uvs_mod_lat, geometry.normals, color);
+            geometry.faces[j].populate(meshMatrix, j * verticesPerFace, subDiv, geometry.vertices_mod_lat, geometry.uvs_mod_lat, geometry.normals, color);
         }
         return meshMatrix;
     },

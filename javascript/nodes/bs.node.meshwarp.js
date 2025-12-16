@@ -84,6 +84,7 @@ var meshObj = null;
 var meshMatrix = new JitterMatrix(12, "float32", 10);
 var planeMatrix = new JitterMatrix(12, "float32", 1);
 var resolution = 20; // Number of subdivisions per axis
+var meshSubdivision = 0; // Mesh subdivision level (0 = no subdivision, 1 = 4x triangles, 2 = 16x triangles, etc.)
 var meshColor = [1.0, 1.0, 1.0, 1.0];
 
 // global Function Key
@@ -705,8 +706,8 @@ function draw(_forceRefresh){
         meshMngr.modifyWith(latticeMngr); //modifies the current mesh with the lattice
         uvMeshMngr.modifyWith(uvLatticeMngr); //modifies the UVs with the UV lattice
 
-        // meshMatrix = meshMngr.generateMatrix(meshMatrix, 0, meshColor);
-        meshMatrix = WARP.GeometryQueries.generateUVMatrix(meshMngr.getCurrentMesh(), meshMatrix, 0, meshColor);
+        // meshMatrix = meshMngr.generateMatrix(meshMatrix, meshSubdivision, meshColor);
+        meshMatrix = WARP.GeometryQueries.generateUVMatrix(meshMngr.getCurrentMesh(), meshMatrix, meshSubdivision, meshColor);
 
         // Use UV-lattice modified matrix if in UV mode
         if(editMode >= EDITMODE_UV_LATTICE_SELECT && editMode <= EDITMODE_UV_ROTATE){
@@ -785,6 +786,13 @@ function createUVLattice(){
 function color(){
 	init();
 	meshColor = arrayfromargs(arguments);
+	draw(true);
+}
+
+function subdivision(_level){
+	init();
+	meshSubdivision = Math.max(0, Math.min(4, Math.floor(_level))); // Clamp to 0-4 range
+	post("Mesh subdivision level set to: " + meshSubdivision + "\n");
 	draw(true);
 }
 

@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 0,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -40,6 +40,30 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"args" : [ "#1", "subdivision", "@text", "subdivision" ],
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 1,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"id" : "obj-28",
+					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "bs.ossia.remote.int.maxpat",
+					"numinlets" : 3,
+					"numoutlets" : 3,
+					"offset" : [ 0.0, 0.0 ],
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 517.0, 560.0, 206.0, 21.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 120.0, 60.0, 120.0, 19.0 ],
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-27",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -50,7 +74,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 0,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -548,14 +572,14 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 252.0, 497.0, 81.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 321.0, 82.0, 19.0 ],
+					"presentation_rect" : [ 0.0, 320.0, 82.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "color", "@text", "object color", "@size", 179, 19 ],
+					"args" : [ "#1", "color", "@text", "object color", "@size", 59, 19 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -572,7 +596,7 @@
 					"outlettype" : [ "list", "", "" ],
 					"patching_rect" : [ 520.0, 292.0, 200.0, 19.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 60.0, 240.0, 19.0 ],
+					"presentation_rect" : [ 0.0, 60.0, 120.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -596,7 +620,7 @@
 					"outlettype" : [ "", "int", "", "" ],
 					"patching_rect" : [ 249.5, 474.0, 212.0, 19.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 120.0, 301.0, 120.0, 19.0 ],
+					"presentation_rect" : [ 120.0, 300.0, 120.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -620,7 +644,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 249.5, 447.0, 86.0, 21.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 301.0, 82.0, 19.0 ],
+					"presentation_rect" : [ 0.0, 300.0, 82.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -644,7 +668,7 @@
 					"outlettype" : [ "int", "", "", "" ],
 					"patching_rect" : [ 384.0, 584.0, 125.0, 19.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 120.0, 281.0, 120.0, 19.0 ],
+					"presentation_rect" : [ 120.0, 280.0, 120.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -668,7 +692,7 @@
 					"outlettype" : [ "int", "", "", "" ],
 					"patching_rect" : [ 250.0, 584.0, 125.0, 21.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 281.0, 120.0, 19.0 ],
+					"presentation_rect" : [ 0.0, 280.0, 120.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -731,7 +755,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 252.0, 537.0, 206.0, 21.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 120.0, 321.0, 120.0, 19.0 ],
+					"presentation_rect" : [ 120.0, 320.0, 120.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -816,7 +840,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 301.0, 63.0, 64.0, 22.0 ],
+					"patching_rect" : [ 301.0, 63.0, 71.0, 22.0 ],
 					"text" : "sparck.view"
 				}
 
