@@ -26,7 +26,7 @@
 
  DRAW.Warp2d_EditorHelper = function ( ) {
     this.helpLine = new Array(20);
-    this.currentColor = 0.4;
+    this.currentColor = 0.5;
 
     for(var i = 0; i < this.helpLine.length; i++){
         this.helpLine[i] = new JitterObject("jit.gl.text");

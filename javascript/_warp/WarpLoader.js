@@ -107,9 +107,10 @@ WARP.WarpLoader.prototype = {
 			var	ind = parseNormalIndex( nd );
 
             if ( d !== undefined ) {
-                geometry.faces.push(new WARP.Face3(ia, ib, id, iua, iub, iud, ina, inb, ind));
-                geometry.faces.push(new WARP.Face3(ib, ic, id, iub, iuc, iud, inb, inc, ind));
+                // Store as a quad with all 4 vertices
+                geometry.faces.push(new WARP.Face3(ia, ib, ic, iua, iub, iuc, ina, inb, inc, id, iud, ind));
 			} else {
+                // Store as a triangle
                 geometry.faces.push(new WARP.Face3(ia, ib, ic, iua, iub, iuc, ina, inb, inc));
             }
 		}

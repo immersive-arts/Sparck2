@@ -70,18 +70,18 @@ WARP.CreateGeometryCommand.prototype.execute = function(geometry) {
     geometry.normals[0] = new THREE.Vector3(0, 0, 1);
     
     var faceDim = (this.dim - 1) * (this.dim - 1);
-    geometry.faces = new Array(faceDim * 2);
+    geometry.faces = new Array(faceDim); // Now storing quads, not 2 triangles per quad
     
     for(var x = 0; x < (this.dim - 1); x++){
         for(var y = 0; y < (this.dim - 1); y++){
+            // Store as a quad with all 4 vertices
             geometry.faces[x + y * (this.dim - 1)] = new WARP.Face3(
-                x+y*this.dim, x+1+y*this.dim, x+1+(y+1)*this.dim,
-                x+y*this.dim, x+1+y*this.dim, x+1+(y+1)*this.dim,
-                0, 0, 0);
-            geometry.faces[x + y * (this.dim - 1) + faceDim] = new WARP.Face3(
-                x+1+(y+1)*this.dim, x+(y+1)*this.dim, x+y*this.dim,
-                x+1+(y+1)*this.dim, x+(y+1)*this.dim, x+y*this.dim,
-                0, 0, 0);
+                x+y*this.dim, x+1+y*this.dim, x+1+(y+1)*this.dim,           // A, B, C
+                x+y*this.dim, x+1+y*this.dim, x+1+(y+1)*this.dim,           // uvA, uvB, uvC
+                0, 0, 0,                                                      // normA, normB, normC
+                x+(y+1)*this.dim,                                            // D (4th vertex)
+                x+(y+1)*this.dim,                                            // uvD
+                0);                                                           // normD
         }
     }
     

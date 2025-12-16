@@ -56,14 +56,24 @@ WARP.OBJWriter.prototype = {
         for (var i = 0; i < _geometry.uvs.length; i++) {
         	this.texture(_geometry.uvs[i].x, _geometry.uvs[i].y);
         }
-        // faces
+        // faces - preserve quad topology
         var texNum = 0;
 //        post("exporting _geometry.faces.length : " + _geometry.faces.length)
         for (var i = 0; i < _geometry.faces.length; i++) {
-        	this.faceWithNormals(
-        			_geometry.faces[i].vertA + vOffset, _geometry.faces[i].vertB + vOffset, _geometry.faces[i].vertC + vOffset,
-        			_geometry.faces[i].uvA + tOffset, _geometry.faces[i].uvB + tOffset, _geometry.faces[i].uvC + tOffset,
-        			_geometry.faces[i].normA + nOffset, _geometry.faces[i].normB + nOffset, _geometry.faces[i].normC + nOffset);
+            var face = _geometry.faces[i];
+            if(face.isQuad) {
+                // Write quad (4 vertices)
+                this.faceWithNormalsQuad(
+                    face.vertA + vOffset, face.vertB + vOffset, face.vertC + vOffset, face.vertD + vOffset,
+                    face.uvA + tOffset, face.uvB + tOffset, face.uvC + tOffset, face.uvD + tOffset,
+                    face.normA + nOffset, face.normB + nOffset, face.normC + nOffset, face.normD + nOffset);
+            } else {
+                // Write triangle (3 vertices)
+        		this.faceWithNormals(
+        			face.vertA + vOffset, face.vertB + vOffset, face.vertC + vOffset,
+        			face.uvA + tOffset, face.uvB + tOffset, face.uvC + tOffset,
+        			face.normA + nOffset, face.normB + nOffset, face.normC + nOffset);
+            }
         }
         this.endSave();
 
@@ -106,6 +116,14 @@ WARP.OBJWriter.prototype = {
                 _a + "/" + _ta + "/" + _na + " " +
                 _b + "/" + _tb + "/" + _nb + " " +
                 _c + "/" + _tc + "/" + _nc);
+	},
+
+    faceWithNormalsQuad: function ( _a, _b, _c, _d, _ta, _tb, _tc, _td, _na, _nb, _nc, _nd ) {
+        this.fileWriter.writeline("f " +
+                _a + "/" + _ta + "/" + _na + " " +
+                _b + "/" + _tb + "/" + _nb + " " +
+                _c + "/" + _tc + "/" + _nc + " " +
+                _d + "/" + _td + "/" + _nd);
 	},
 
     getCurrNormalOffset: function () {

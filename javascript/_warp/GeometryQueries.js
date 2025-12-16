@@ -156,10 +156,23 @@ WARP.GeometryQueries = {
      * Generate matrix from geometry for rendering
      */
     generateMatrix: function(geometry, meshMatrix, subDiv, color) {
-        var verticesPerFace = 3 * Math.pow(4, subDiv);
-        meshMatrix.dim = geometry.faces.length * verticesPerFace;
+        // Calculate total vertices needed, accounting for quads vs triangles
+        var totalVertices = 0;
         for(var j = 0; j < geometry.faces.length; j++) {
-            geometry.faces[j].populate(meshMatrix, j * verticesPerFace, subDiv, geometry.vertices_mod_lat, geometry.uvs_mod, geometry.normals, color);
+            var face = geometry.faces[j];
+            if(face.isQuad) {
+                // Quad: subdivides to 4^subDiv quads, each triangulated to 2 triangles (6 vertices)
+                totalVertices += 6 * Math.pow(4, subDiv);
+            } else {
+                // Triangle: subdivides to 4^subDiv triangles (3 vertices each)
+                totalVertices += 3 * Math.pow(4, subDiv);
+            }
+        }
+        
+        meshMatrix.dim = totalVertices;
+        var offset = 0;
+        for(var j = 0; j < geometry.faces.length; j++) {
+            offset += geometry.faces[j].populate(meshMatrix, offset, subDiv, geometry.vertices_mod_lat, geometry.uvs_mod, geometry.normals, color);
         }
         return meshMatrix;
     },
@@ -170,6 +183,7 @@ WARP.GeometryQueries = {
     draw: function(geometry, latticeSketch, drawMode, modFlag) {
         latticeSketch.glcolor(0., 0.8, 0., 1.);
         latticeSketch.glpointsize(10.);
+        latticeSketch.gllinewidth(2.0);
         
         // Draw first the faces and lines
         for(var i = 0; i < geometry.faces.length; i++){
@@ -182,15 +196,25 @@ WARP.GeometryQueries = {
                 useVertice = geometry.vertices;
             }
             
-            latticeSketch.linesegment(useVertice[geometry.faces[i].vertA].x, useVertice[geometry.faces[i].vertA].y, useVertice[geometry.faces[i].vertA].z, useVertice[geometry.faces[i].vertB].x, useVertice[geometry.faces[i].vertB].y, useVertice[geometry.faces[i].vertB].z);
-            latticeSketch.linesegment(useVertice[geometry.faces[i].vertB].x, useVertice[geometry.faces[i].vertB].y, useVertice[geometry.faces[i].vertB].z, useVertice[geometry.faces[i].vertC].x, useVertice[geometry.faces[i].vertC].y, useVertice[geometry.faces[i].vertC].z);
-            latticeSketch.linesegment(useVertice[geometry.faces[i].vertA].x, useVertice[geometry.faces[i].vertA].y, useVertice[geometry.faces[i].vertA].z, useVertice[geometry.faces[i].vertC].x, useVertice[geometry.faces[i].vertC].y, useVertice[geometry.faces[i].vertC].z);
+            var face = geometry.faces[i];
+            
+            if(face.isQuad) {
+                // For quads: draw all 4 edges + diagonal B-D to match triangulation (A-B-D and B-C-D)
+                latticeSketch.linesegment(useVertice[face.vertA].x, useVertice[face.vertA].y, useVertice[face.vertA].z, useVertice[face.vertB].x, useVertice[face.vertB].y, useVertice[face.vertB].z);
+                latticeSketch.linesegment(useVertice[face.vertB].x, useVertice[face.vertB].y, useVertice[face.vertB].z, useVertice[face.vertC].x, useVertice[face.vertC].y, useVertice[face.vertC].z);
+                latticeSketch.linesegment(useVertice[face.vertC].x, useVertice[face.vertC].y, useVertice[face.vertC].z, useVertice[face.vertD].x, useVertice[face.vertD].y, useVertice[face.vertD].z);
+                latticeSketch.linesegment(useVertice[face.vertD].x, useVertice[face.vertD].y, useVertice[face.vertD].z, useVertice[face.vertA].x, useVertice[face.vertA].y, useVertice[face.vertA].z);
+            } else {
+                // For triangles: draw all 3 edges
+                latticeSketch.linesegment(useVertice[face.vertA].x, useVertice[face.vertA].y, useVertice[face.vertA].z, useVertice[face.vertB].x, useVertice[face.vertB].y, useVertice[face.vertB].z);
+                latticeSketch.linesegment(useVertice[face.vertB].x, useVertice[face.vertB].y, useVertice[face.vertB].z, useVertice[face.vertC].x, useVertice[face.vertC].y, useVertice[face.vertC].z);
+                latticeSketch.linesegment(useVertice[face.vertA].x, useVertice[face.vertA].y, useVertice[face.vertA].z, useVertice[face.vertC].x, useVertice[face.vertC].y, useVertice[face.vertC].z);
+            }
         }
         
         // Then draw the points
         if(drawMode == 'edit'){
             latticeSketch.layer = 30;
-            latticeSketch.gllinewidth(1.0);
             
             for(var j = 0; j < geometry.vertices.length; j++){
 
@@ -332,10 +356,23 @@ WARP.GeometryQueries = {
      * Generate matrix with lattice-modified UVs
      */
     generateUVMatrix: function(geometry, meshMatrix, subDiv, color) {
-        var verticesPerFace = 3 * Math.pow(4, subDiv);
-        meshMatrix.dim = geometry.faces.length * verticesPerFace;
+        // Calculate total vertices needed, accounting for quads vs triangles
+        var totalVertices = 0;
         for(var j = 0; j < geometry.faces.length; j++) {
-            geometry.faces[j].populate(meshMatrix, j * verticesPerFace, subDiv, geometry.vertices_mod_lat, geometry.uvs_mod_lat, geometry.normals, color);
+            var face = geometry.faces[j];
+            if(face.isQuad) {
+                // Quad: subdivides to 4^subDiv quads, each triangulated to 2 triangles (6 vertices)
+                totalVertices += 6 * Math.pow(4, subDiv);
+            } else {
+                // Triangle: subdivides to 4^subDiv triangles (3 vertices each)
+                totalVertices += 3 * Math.pow(4, subDiv);
+            }
+        }
+        
+        meshMatrix.dim = totalVertices;
+        var offset = 0;
+        for(var j = 0; j < geometry.faces.length; j++) {
+            offset += geometry.faces[j].populate(meshMatrix, offset, subDiv, geometry.vertices_mod_lat, geometry.uvs_mod_lat, geometry.normals, color);
         }
         return meshMatrix;
     },
@@ -345,9 +382,10 @@ WARP.GeometryQueries = {
      * modFlag: 0 = original, 1 = modified, 2 = lattice-modified
      */
     drawUV: function(geometry, latticeSketch, drawMode, modFlag) {
-        latticeSketch.glcolor(0.8, 0.5, 0., 1.);
+        latticeSketch.glcolor(0.0, 0.7, 0.7, 1.);
         latticeSketch.glpointsize(10.);
-        
+        latticeSketch.gllinewidth(2.0);
+
         // Draw UV faces and lines
         for(var i = 0; i < geometry.faces.length; i++){
             var useUV;
@@ -359,20 +397,31 @@ WARP.GeometryQueries = {
                 useUV = geometry.uvs;
             }
             
-            // Convert UV coordinates to viewport for drawing
-            var uvA = new THREE.Vector2(useUV[geometry.faces[i].uvA].x * 2.0 - 1.0, useUV[geometry.faces[i].uvA].y * 2.0 - 1.0);
-            var uvB = new THREE.Vector2(useUV[geometry.faces[i].uvB].x * 2.0 - 1.0, useUV[geometry.faces[i].uvB].y * 2.0 - 1.0);
-            var uvC = new THREE.Vector2(useUV[geometry.faces[i].uvC].x * 2.0 - 1.0, useUV[geometry.faces[i].uvC].y * 2.0 - 1.0);
+            var face = geometry.faces[i];
             
-            latticeSketch.linesegment(uvA.x, uvA.y, 0, uvB.x, uvB.y, 0);
-            latticeSketch.linesegment(uvB.x, uvB.y, 0, uvC.x, uvC.y, 0);
-            latticeSketch.linesegment(uvA.x, uvA.y, 0, uvC.x, uvC.y, 0);
+            // Convert UV coordinates to viewport for drawing
+            var uvA = new THREE.Vector2(useUV[face.uvA].x * 2.0 - 1.0, useUV[face.uvA].y * 2.0 - 1.0);
+            var uvB = new THREE.Vector2(useUV[face.uvB].x * 2.0 - 1.0, useUV[face.uvB].y * 2.0 - 1.0);
+            var uvC = new THREE.Vector2(useUV[face.uvC].x * 2.0 - 1.0, useUV[face.uvC].y * 2.0 - 1.0);
+            
+            if(face.isQuad) {
+                // For quads: draw all 4 edges (no diagonal needed for UV display)
+                var uvD = new THREE.Vector2(useUV[face.uvD].x * 2.0 - 1.0, useUV[face.uvD].y * 2.0 - 1.0);
+                latticeSketch.linesegment(uvA.x, uvA.y, 0, uvB.x, uvB.y, 0);
+                latticeSketch.linesegment(uvB.x, uvB.y, 0, uvC.x, uvC.y, 0);
+                latticeSketch.linesegment(uvC.x, uvC.y, 0, uvD.x, uvD.y, 0);
+                latticeSketch.linesegment(uvD.x, uvD.y, 0, uvA.x, uvA.y, 0);
+            } else {
+                // For triangles: draw all 3 edges
+                latticeSketch.linesegment(uvA.x, uvA.y, 0, uvB.x, uvB.y, 0);
+                latticeSketch.linesegment(uvB.x, uvB.y, 0, uvC.x, uvC.y, 0);
+                latticeSketch.linesegment(uvA.x, uvA.y, 0, uvC.x, uvC.y, 0);
+            }
         }
         
         // Draw UV points
         if(drawMode == 'edit'){
             latticeSketch.layer = 30;
-            latticeSketch.gllinewidth(1.0);
             
             for(var j = 0; j < geometry.uvs.length; j++){
                 var useUV;
@@ -387,20 +436,20 @@ WARP.GeometryQueries = {
                 var uvViewport = new THREE.Vector2(useUV.x * 2.0 - 1.0, useUV.y * 2.0 - 1.0);
                 
                 // Normal point
-                latticeSketch.glcolor(0.7, 0.4, 0., 1.);
+                latticeSketch.glcolor(0.0, 0.7, 0.7, 1.);
                 latticeSketch.moveto(uvViewport.x, uvViewport.y, 0);
                 latticeSketch.circle(0.02);
                 
                 // Highlighted point under cursor
                 if(geometry.pickRayUVIndx == j){
-                    latticeSketch.glcolor(0.9, 0.6, 0., 1.);
+                    latticeSketch.glcolor(0.0, 0.9, 0.9, 1.);
                     latticeSketch.moveto(uvViewport.x, uvViewport.y, 0);
                     latticeSketch.circle(0.025);
                 }
                 
                 // Selected point
                 if(geometry.selectedUVs[j] == 1){
-                    latticeSketch.glcolor(1., 0.7, 0., 1.);
+                    latticeSketch.glcolor(0.0, 1.0, 1.0, 1.);
                     latticeSketch.moveto(uvViewport.x, uvViewport.y, 0);
                     latticeSketch.circle(0.02);
                 }
@@ -419,7 +468,7 @@ WARP.GeometryQueries = {
             // Convert cursor to viewport
             var cursorViewport = new THREE.Vector2(useCursor.x * 2.0 - 1.0, useCursor.y * 2.0 - 1.0);
             
-            latticeSketch.glcolor(0.7, 0.3, 0., 1.);
+            latticeSketch.glcolor(0.7, 0.7, 0., 1.);
             latticeSketch.linesegment(cursorViewport.x - 0.06, cursorViewport.y, 0, cursorViewport.x + 0.06, cursorViewport.y, 0);
             latticeSketch.linesegment(cursorViewport.x, cursorViewport.y - 0.06, 0, cursorViewport.x, cursorViewport.y + 0.06, 0);
             latticeSketch.moveto(cursorViewport.x, cursorViewport.y, 0);

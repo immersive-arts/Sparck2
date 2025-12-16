@@ -75,10 +75,21 @@ WARP.MeshMngr.prototype = {
             }
             //faces
             for(var i = 0; i < this.getCurrentMesh().faces.length; i++){
-                fout.writeline("f " +
-                (this.getCurrentMesh().faces[i].vertA + 1) + "/" + (this.getCurrentMesh().faces[i].uvA + 1) + "/" + (this.getCurrentMesh().faces[i].normA + 1) + " " +
-                (this.getCurrentMesh().faces[i].vertB + 1) + "/" + (this.getCurrentMesh().faces[i].uvB + 1) + "/" + (this.getCurrentMesh().faces[i].normB + 1) + " " +
-                (this.getCurrentMesh().faces[i].vertC + 1) + "/" + (this.getCurrentMesh().faces[i].uvC + 1) + "/" + (this.getCurrentMesh().faces[i].normC + 1));
+                var face = this.getCurrentMesh().faces[i];
+                if(face.isQuad) {
+                    // Save as quad (4 vertices)
+                    fout.writeline("f " +
+                    (face.vertA + 1) + "/" + (face.uvA + 1) + "/" + (face.normA + 1) + " " +
+                    (face.vertB + 1) + "/" + (face.uvB + 1) + "/" + (face.normB + 1) + " " +
+                    (face.vertC + 1) + "/" + (face.uvC + 1) + "/" + (face.normC + 1) + " " +
+                    (face.vertD + 1) + "/" + (face.uvD + 1) + "/" + (face.normD + 1));
+                } else {
+                    // Save as triangle (3 vertices)
+                    fout.writeline("f " +
+                    (face.vertA + 1) + "/" + (face.uvA + 1) + "/" + (face.normA + 1) + " " +
+                    (face.vertB + 1) + "/" + (face.uvB + 1) + "/" + (face.normB + 1) + " " +
+                    (face.vertC + 1) + "/" + (face.uvC + 1) + "/" + (face.normC + 1));
+                }
             }
             // selection storage
             for(var i = 0; i < this.getCurrentMesh().selectedStore.length; i++){
@@ -95,6 +106,44 @@ WARP.MeshMngr.prototype = {
                 }
                 for(var i = 0; i < this.getCurrentMesh().uvs.length; i++){
                     fout.writeline("vtm " + this.getCurrentMesh().uvs_mod[i].x + " " + this.getCurrentMesh().uvs_mod[i].y);
+                }
+            }
+            return true;
+        }
+        return false;
+    },
+
+    // save only the modified mesh (lattice-modified vertices)
+    saveModifiedOnly: function ( fout ) {
+        if (fout.isopen) {
+            //vertices - use lattice-modified vertices
+            for(var i = 0; i < this.getCurrentMesh().vertices_mod_lat.length; i++){
+                fout.writeline("v " + this.getCurrentMesh().vertices_mod_lat[i].x + " " + this.getCurrentMesh().vertices_mod_lat[i].y + " " + this.getCurrentMesh().vertices_mod_lat[i].z);
+            }
+            //texturecoord - use original or modified UVs
+            for(var i = 0; i < this.getCurrentMesh().uvs.length; i++){
+                fout.writeline("vt " + this.getCurrentMesh().uvs[i].x + " " + this.getCurrentMesh().uvs[i].y);
+            }
+            //normals
+            for(var i = 0; i < this.getCurrentMesh().normals.length; i++){
+                fout.writeline("vn " + this.getCurrentMesh().normals[i].x + " " + this.getCurrentMesh().normals[i].y + " " + this.getCurrentMesh().normals[i].z);
+            }
+            //faces - preserve quad topology
+            for(var i = 0; i < this.getCurrentMesh().faces.length; i++){
+                var face = this.getCurrentMesh().faces[i];
+                if(face.isQuad) {
+                    // Save as quad (4 vertices)
+                    fout.writeline("f " +
+                    (face.vertA + 1) + "/" + (face.uvA + 1) + "/" + (face.normA + 1) + " " +
+                    (face.vertB + 1) + "/" + (face.uvB + 1) + "/" + (face.normB + 1) + " " +
+                    (face.vertC + 1) + "/" + (face.uvC + 1) + "/" + (face.normC + 1) + " " +
+                    (face.vertD + 1) + "/" + (face.uvD + 1) + "/" + (face.normD + 1));
+                } else {
+                    // Save as triangle (3 vertices)
+                    fout.writeline("f " +
+                    (face.vertA + 1) + "/" + (face.uvA + 1) + "/" + (face.normA + 1) + " " +
+                    (face.vertB + 1) + "/" + (face.uvB + 1) + "/" + (face.normB + 1) + " " +
+                    (face.vertC + 1) + "/" + (face.uvC + 1) + "/" + (face.normC + 1));
                 }
             }
             return true;
