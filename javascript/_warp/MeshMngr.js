@@ -209,8 +209,8 @@ WARP.MeshMngr.prototype = {
    },
 
     // draw the current mesh, modified by the lattice
-	drawLatMod: function ( _lattice_sketch, _drawMode  ) {
-        WARP.GeometryQueries.draw(this.getCurrentMesh(), _lattice_sketch, _drawMode, 2);
+	drawLatMod: function ( _lattice_sketch, _drawMode, _cameraScale ) {
+        WARP.GeometryQueries.draw(this.getCurrentMesh(), _lattice_sketch, _drawMode, 2, _cameraScale);
         this.hasItChanged = false;
         this.hasMeshChanged = false;
 	},

@@ -216,8 +216,8 @@ WARP.UVLatticeMngr.prototype = {
         }
 	},
 
-    draw: function ( _lattice_sketch, _drawMode ) {
-        WARP.LatticeQueries.draw(this.getCurrentLattice(), _lattice_sketch, _drawMode);
+    draw: function ( _lattice_sketch, _drawMode, _cameraScale ) {
+        WARP.LatticeQueries.draw(this.getCurrentLattice(), _lattice_sketch, _drawMode, _cameraScale);
         this.hasItChanged = false;
         this.hasGeomChanged = false;
 	},

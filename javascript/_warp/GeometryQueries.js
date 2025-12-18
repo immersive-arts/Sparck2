@@ -180,7 +180,10 @@ WARP.GeometryQueries = {
     /**
      * Draw geometry
      */
-    draw: function(geometry, latticeSketch, drawMode, modFlag) {
+    draw: function(geometry, latticeSketch, drawMode, modFlag, cameraScale) {
+        // Default cameraScale to 1.0 if not provided
+        if(typeof cameraScale === 'undefined') cameraScale = 1.0;
+        
         latticeSketch.glcolor(0., 0.8, 0., 1.);
         latticeSketch.glpointsize(10.);
         latticeSketch.gllinewidth(2.0);
@@ -226,7 +229,7 @@ WARP.GeometryQueries = {
                     latticeSketch.moveto(geometry.vertices_mod_lat[j].x, geometry.vertices_mod_lat[j].y, geometry.vertices_mod_lat[j].z);
                 else
                     latticeSketch.moveto(geometry.vertices[j].x, geometry.vertices[j].y, geometry.vertices[j].z);
-                latticeSketch.circle(0.02);
+                latticeSketch.circle(0.02 * cameraScale);
 
                 if(geometry.pickRayIndx == j){
                     latticeSketch.glcolor(0., 0.9, 0., 1.);
@@ -236,7 +239,7 @@ WARP.GeometryQueries = {
                         latticeSketch.moveto(geometry.vertices_mod_lat[j].x, geometry.vertices_mod_lat[j].y, geometry.vertices_mod_lat[j].z);
                     else
                         latticeSketch.moveto(geometry.vertices[j].x, geometry.vertices[j].y, geometry.vertices[j].z);
-                    latticeSketch.circle(0.025);
+                    latticeSketch.circle(0.025 * cameraScale);
                 }
                 
                 // Draw selected point
@@ -249,7 +252,7 @@ WARP.GeometryQueries = {
                     } else {
                         latticeSketch.moveto(geometry.vertices[j].x, geometry.vertices[j].y, geometry.vertices[j].z);
                     }
-                    latticeSketch.circle(0.02);
+                    latticeSketch.circle(0.02 * cameraScale);
                 } 
             }
             
@@ -263,11 +266,12 @@ WARP.GeometryQueries = {
                 useCursor = geometry.myCursor;
             }
             latticeSketch.glcolor(0., 0., 0., 1.);
-            latticeSketch.linesegment(useCursor.x - 0.06, useCursor.y, useCursor.z, useCursor.x + 0.06, useCursor.y, useCursor.z);
-            latticeSketch.linesegment(useCursor.x, useCursor.y - 0.06, useCursor.z, useCursor.x, useCursor.y + 0.06, useCursor.z);
+            var cursorLineSize = 0.06 * cameraScale;
+            latticeSketch.linesegment(useCursor.x - cursorLineSize, useCursor.y, useCursor.z, useCursor.x + cursorLineSize, useCursor.y, useCursor.z);
+            latticeSketch.linesegment(useCursor.x, useCursor.y - cursorLineSize, useCursor.z, useCursor.x, useCursor.y + cursorLineSize, useCursor.z);
             latticeSketch.moveto(useCursor.x, useCursor.y, useCursor.z);
             latticeSketch.gllinewidth(2.0);
-            latticeSketch.framecircle(.05);
+            latticeSketch.framecircle(0.05 * cameraScale);
             
             latticeSketch.glcolor(0.7, 0.0, 0.7, 1.);
         } else {
@@ -381,7 +385,10 @@ WARP.GeometryQueries = {
      * Draw UVs in viewport
      * modFlag: 0 = original, 1 = modified, 2 = lattice-modified
      */
-    drawUV: function(geometry, latticeSketch, drawMode, modFlag) {
+    drawUV: function(geometry, latticeSketch, drawMode, modFlag, cameraScale) {
+        // Default cameraScale to 1.0 if not provided
+        if(typeof cameraScale === 'undefined') cameraScale = 1.0;
+        
         latticeSketch.glcolor(0.0, 0.7, 0.7, 1.);
         latticeSketch.glpointsize(10.);
         latticeSketch.gllinewidth(2.0);
@@ -438,20 +445,20 @@ WARP.GeometryQueries = {
                 // Normal point
                 latticeSketch.glcolor(0.0, 0.7, 0.7, 1.);
                 latticeSketch.moveto(uvViewport.x, uvViewport.y, 0);
-                latticeSketch.circle(0.02);
+                latticeSketch.circle(0.02 * cameraScale);
                 
                 // Highlighted point under cursor
                 if(geometry.pickRayUVIndx == j){
                     latticeSketch.glcolor(0.0, 0.9, 0.9, 1.);
                     latticeSketch.moveto(uvViewport.x, uvViewport.y, 0);
-                    latticeSketch.circle(0.025);
+                    latticeSketch.circle(0.025 * cameraScale);
                 }
                 
                 // Selected point
                 if(geometry.selectedUVs[j] == 1){
                     latticeSketch.glcolor(0.0, 1.0, 1.0, 1.);
                     latticeSketch.moveto(uvViewport.x, uvViewport.y, 0);
-                    latticeSketch.circle(0.02);
+                    latticeSketch.circle(0.02 * cameraScale);
                 }
             }
             
@@ -469,11 +476,12 @@ WARP.GeometryQueries = {
             var cursorViewport = new THREE.Vector2(useCursor.x * 2.0 - 1.0, useCursor.y * 2.0 - 1.0);
             
             latticeSketch.glcolor(0.7, 0.7, 0., 1.);
-            latticeSketch.linesegment(cursorViewport.x - 0.06, cursorViewport.y, 0, cursorViewport.x + 0.06, cursorViewport.y, 0);
-            latticeSketch.linesegment(cursorViewport.x, cursorViewport.y - 0.06, 0, cursorViewport.x, cursorViewport.y + 0.06, 0);
+            var cursorLineSize = 0.06 * cameraScale;
+            latticeSketch.linesegment(cursorViewport.x - cursorLineSize, cursorViewport.y, 0, cursorViewport.x + cursorLineSize, cursorViewport.y, 0);
+            latticeSketch.linesegment(cursorViewport.x, cursorViewport.y - cursorLineSize, 0, cursorViewport.x, cursorViewport.y + cursorLineSize, 0);
             latticeSketch.moveto(cursorViewport.x, cursorViewport.y, 0);
             latticeSketch.gllinewidth(2.0);
-            latticeSketch.framecircle(.05);
+            latticeSketch.framecircle(0.05 * cameraScale);
             
             latticeSketch.glcolor(0.9, 0.5, 0., 1.);
         } else {

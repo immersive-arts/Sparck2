@@ -85,8 +85,8 @@ WARP.UVMeshMngr.prototype = {
    },
 
     // Draw UVs, modified by the lattice
-	drawLatMod: function ( _lattice_sketch, _drawMode  ) {
-        WARP.GeometryQueries.drawUV(this.geometry, _lattice_sketch, _drawMode, 2);
+	drawLatMod: function ( _lattice_sketch, _drawMode, _cameraScale ) {
+        WARP.GeometryQueries.drawUV(this.geometry, _lattice_sketch, _drawMode, 2, _cameraScale);
         this.hasItChanged = false;
         this.hasUVChanged = false;
 	},

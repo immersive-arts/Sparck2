@@ -650,8 +650,8 @@ function isNavigationEvent(){
 //        post("isNavigationEvent - zoom\n");
         return true;
     } else if(uiEvent.special_AltKey){
-        var diffY = (uiEvent.lastDragPosY - uiEvent.currentPosY) / 10.;
-        var diffX = (uiEvent.lastDragPosX - uiEvent.currentPosX) / 10.;
+        var diffY = (uiEvent.lastDragPosY - uiEvent.currentPosY) / 40.;
+        var diffX = (uiEvent.lastDragPosX - uiEvent.currentPosX) / 40.;
         if(diffY != 0 || diffX != 0){
 //				post("in zoom mode " + diff + " + " + cameraObj.position[2] + " \n");
             if((cameraAnimNode.position[1] - diffY / 10.0) > -2.0 && (cameraAnimNode.position[1] - diffY / 10.0) < 2.){
@@ -787,19 +787,21 @@ function draw(_forceRefresh){
         latticeObj.linesegment(-1.0, 1.0, 0.0, -1.0, -1.0, 0.0);
         latticeObj.linesegment(-1.0, -1.0, 0.0, 1.0, -1.0, 0.0);
         latticeObj.linesegment(1.0, -1.0, 0.0, 1.0, 1.0, 0.0);
+        // calculate camera scale for adaptive vertex sizing using trigonometric FOV relationship
+        var cameraScale = Math.atan((cameraObj.lens_angle * Math.PI / 90.0));
         // draw based on mode
         if(editMode == EDITMODE_LATTICE_SELECT || editMode == EDITMODE_LATTICE_GRAB){
-            meshMngr.drawLatMod(latticeObj, 'bg'); // draw the mesh
-            latticeMngr.draw(latticeObj, 'edit' ); // draw the lattice
+            meshMngr.drawLatMod(latticeObj, 'bg', cameraScale); // draw the mesh
+            latticeMngr.draw(latticeObj, 'edit', cameraScale); // draw the lattice
         }else if(editMode == EDITMODE_MESH_SELECT || editMode == EDITMODE_MESH_SELECT_STORE || editMode == EDITMODE_MESH_GRAB || editMode == EDITMODE_MESH_SCALE || editMode == EDITMODE_MESH_ROTATE){
-            latticeMngr.draw(latticeObj, 'bg'); // draw the lattice
-            meshMngr.drawLatMod(latticeObj, 'edit'); // draw the mesh
+            latticeMngr.draw(latticeObj, 'bg', cameraScale); // draw the lattice
+            meshMngr.drawLatMod(latticeObj, 'edit', cameraScale); // draw the mesh
         }else if(editMode == EDITMODE_UV_LATTICE_SELECT || editMode == EDITMODE_UV_LATTICE_GRAB){
-            uvMeshMngr.drawLatMod(latticeObj, 'bg'); // draw the UVs
-            uvLatticeMngr.draw(latticeObj, 'edit'); // draw the UV lattice
+            uvMeshMngr.drawLatMod(latticeObj, 'bg', cameraScale); // draw the UVs
+            uvLatticeMngr.draw(latticeObj, 'edit', cameraScale); // draw the UV lattice
         }else if(editMode == EDITMODE_UV_SELECT || editMode == EDITMODE_UV_SELECT_STORE || editMode == EDITMODE_UV_GRAB || editMode == EDITMODE_UV_SCALE || editMode == EDITMODE_UV_ROTATE){
-            uvLatticeMngr.draw(latticeObj, 'bg'); // draw the UV lattice
-            uvMeshMngr.drawLatMod(latticeObj, 'edit'); // draw the UVs
+            uvLatticeMngr.draw(latticeObj, 'bg', cameraScale); // draw the UV lattice
+            uvMeshMngr.drawLatMod(latticeObj, 'edit', cameraScale); // draw the UVs
         }
     }
 }

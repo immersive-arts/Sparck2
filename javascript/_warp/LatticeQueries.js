@@ -61,7 +61,10 @@ WARP.LatticeQueries = {
     /**
      * Draw lattice
      */
-    draw: function(lattice, latticeSketch, drawMode) {
+    draw: function(lattice, latticeSketch, drawMode, cameraScale) {
+        // Default cameraScale to 1.0 if not provided
+        if(typeof cameraScale === 'undefined') cameraScale = 1.0;
+        
         latticeSketch.glpointsize(10.);
         
         for(var i = 0; i < lattice.dim[0]; i++){
@@ -86,20 +89,20 @@ WARP.LatticeQueries = {
                 if(drawMode == 'edit'){
                     latticeSketch.glcolor(0.5, 0., 0., 1.);
                     latticeSketch.moveto(lattice.vertices[i][j].x, lattice.vertices[i][j].y, lattice.vertices[i][j].z);
-                    latticeSketch.circle(0.02);
+                    latticeSketch.circle(0.02 * cameraScale);
                     
                     // Highlight picked vertex
                     if(lattice.pickrayindx[0] == i && lattice.pickrayindx[1] == j){
                         latticeSketch.glcolor(0.8, 0., 0., 1.);
                         latticeSketch.moveto(lattice.vertices[i][j].x, lattice.vertices[i][j].y, lattice.vertices[i][j].z);
-                        latticeSketch.circle(0.02);
+                        latticeSketch.circle(0.02 * cameraScale);
                     }
                     
                     // Highlight selected vertices
                     if(lattice.selectedVertices[i][j] == 1){
                         latticeSketch.glcolor(1.0, 0., 0., 1.);
                         latticeSketch.moveto(lattice.vertices[i][j].x, lattice.vertices[i][j].y, lattice.vertices[i][j].z);
-                        latticeSketch.circle(0.03);
+                        latticeSketch.circle(0.03 * cameraScale);
                     }
                 }
             }
