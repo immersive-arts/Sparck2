@@ -344,12 +344,13 @@ WARP.MoveVerticesCommand.prototype.merge = function(newCommand) {
 /**
  * Command: Scale Vertices
  */
-WARP.ScaleVerticesCommand = function(currentPoint, originPoint, cursor) {
+WARP.ScaleVerticesCommand = function(currentPoint, originPoint, cursor, axisConstraint) {
     WARP.Command.call(this);
     this.name = "ScaleVertices";
     this.currentPoint = currentPoint.clone();
     this.originPoint = originPoint.clone();
     this.cursor = cursor.clone();
+    this.axisConstraint = axisConstraint || null; // null, 'x', or 'y'
     this.previousVertices = null;
     this.affectedIndices = [];
 };
@@ -361,13 +362,26 @@ WARP.ScaleVerticesCommand.prototype.execute = function(geometry) {
     this.previousVertices = [];
     this.affectedIndices = [];
     
-    var dist_current = this.currentPoint.clone().sub(this.cursor).length();
-    var dist_origin = this.originPoint.clone().sub(this.cursor).length();
+    var cursor_current = this.currentPoint.clone().sub(this.cursor);
+    var cursor_origin = this.originPoint.clone().sub(this.cursor);
     
-    // Prevent division by zero or very small numbers
-    if(dist_origin < 0.001) return;
+    var scaleFactor;
     
-    var scaleFactor = dist_current / dist_origin;
+    if(this.axisConstraint == 'x') {
+        // Scale only in X axis
+        if(Math.abs(cursor_origin.x) < 0.001) return;
+        scaleFactor = cursor_current.x / cursor_origin.x;
+    } else if(this.axisConstraint == 'y') {
+        // Scale only in Y axis
+        if(Math.abs(cursor_origin.y) < 0.001) return;
+        scaleFactor = cursor_current.y / cursor_origin.y;
+    } else {
+        // Uniform scale (original behavior)
+        var dist_current = cursor_current.length();
+        var dist_origin = cursor_origin.length();
+        if(dist_origin < 0.001) return;
+        scaleFactor = dist_current / dist_origin;
+    }
     
     for(var j = 0; j < geometry.vertices.length; j++){
         if(geometry.selectedVertices[j] == 1){
@@ -375,7 +389,16 @@ WARP.ScaleVerticesCommand.prototype.execute = function(geometry) {
             this.previousVertices.push(geometry.vertices_mod[j].clone());
             
             // Scale from the snapshot (vertices_mod_tmp), not from the current state
-            var dirToCursor = geometry.vertices_mod_tmp[j].clone().sub(this.cursor).multiplyScalar(scaleFactor);
+            var dirToCursor = geometry.vertices_mod_tmp[j].clone().sub(this.cursor);
+            
+            if(this.axisConstraint == 'x') {
+                dirToCursor.x *= scaleFactor;
+            } else if(this.axisConstraint == 'y') {
+                dirToCursor.y *= scaleFactor;
+            } else {
+                dirToCursor.multiplyScalar(scaleFactor);
+            }
+            
             geometry.vertices_mod[j] = this.cursor.clone().add(dirToCursor);
         }
     }

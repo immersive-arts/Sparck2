@@ -67,6 +67,7 @@ var editModeHasChanged = false;
 
 var editMode = EDITMODE_LATTICE_SELECT;
 var lastEditMode = EDITMODE_LATTICE_SELECT;
+var axisConstraint = null; // null = free, 'x' = x-axis only, 'y' = y-axis only
 var meshMngr = new WARP.MeshMngr();
 var latticeMngr = new WARP.LatticeMngr();
 var uvMeshMngr = null;  // Will be initialized with geometry
@@ -343,13 +344,32 @@ function update(){
 
         if(editMode == EDITMODE_MESH_GRAB){
 			if(!isNavigationEvent()){
+                // Check for axis constraint keys
+                if(uiEvent.keyHit && (uiEvent.keyChar == 'x' || uiEvent.keyChar == 'X')){
+                    axisConstraint = 'x';
+                } else if(uiEvent.keyHit && (uiEvent.keyChar == 'y' || uiEvent.keyChar == 'Y')){
+                    axisConstraint = 'y';
+                }
+                
                 if(uiEvent.hasNewPickRay){
                     var currentPlacePoint = uiEvent.getPickRay().intersectPlane(editPlane);
-                    meshMngr.setVertice(currentPlacePoint.sub(lastPlacePoint));
+                    var delta = currentPlacePoint.sub(lastPlacePoint);
+                    
+                    // Apply axis constraint
+                    if(axisConstraint == 'x'){
+                        delta.y = 0;
+                        delta.z = 0;
+                    } else if(axisConstraint == 'y'){
+                        delta.x = 0;
+                        delta.z = 0;
+                    }
+                    
+                    meshMngr.setVertice(delta);
                     lastPlacePoint = uiEvent.getPickRay().intersectPlane(editPlane);
                 }
 
                 if(uiEvent.mouseButtonHit){
+                    axisConstraint = null;
                     editMode = EDITMODE_MESH_SELECT;
                     help.printMESH_SELECT();
                 }
@@ -358,12 +378,20 @@ function update(){
 
         if(editMode == EDITMODE_MESH_SCALE){
 			if(!isNavigationEvent()){
+                // Check for axis constraint keys
+                if(uiEvent.keyHit && (uiEvent.keyChar == 'x' || uiEvent.keyChar == 'X')){
+                    axisConstraint = 'x';
+                } else if(uiEvent.keyHit && (uiEvent.keyChar == 'y' || uiEvent.keyChar == 'Y')){
+                    axisConstraint = 'y';
+                }
+                
                 if(uiEvent.hasNewPickRay){
                     var currentPlacePoint = uiEvent.getPickRay().intersectPlane(editPlane);
-                    meshMngr.scaleVertice(currentPlacePoint, lastPlacePoint);
+                    meshMngr.scaleVertice(currentPlacePoint, lastPlacePoint, axisConstraint);
                 }
 
                 if(uiEvent.mouseButtonHit){
+                    axisConstraint = null;
                     editMode = EDITMODE_MESH_SELECT;
                     help.printMESH_SELECT();
                 }
@@ -523,13 +551,32 @@ function update(){
 
         if(editMode == EDITMODE_UV_GRAB){
 			if(!isNavigationEvent()){
+                // Check for axis constraint keys
+                if(uiEvent.keyHit && (uiEvent.keyChar == 'x' || uiEvent.keyChar == 'X')){
+                    axisConstraint = 'x';
+                } else if(uiEvent.keyHit && (uiEvent.keyChar == 'y' || uiEvent.keyChar == 'Y')){
+                    axisConstraint = 'y';
+                }
+                
                 if(uiEvent.hasNewPickRay){
                     var currentPlacePoint = uiEvent.getPickRay().intersectPlane(editPlane);
-                    uvMeshMngr.setUV(currentPlacePoint.sub(lastPlacePoint));
+                    var delta = currentPlacePoint.sub(lastPlacePoint);
+                    
+                    // Apply axis constraint
+                    if(axisConstraint == 'x'){
+                        delta.y = 0;
+                        delta.z = 0;
+                    } else if(axisConstraint == 'y'){
+                        delta.x = 0;
+                        delta.z = 0;
+                    }
+                    
+                    uvMeshMngr.setUV(delta);
                     lastPlacePoint = uiEvent.getPickRay().intersectPlane(editPlane);
                 }
 
                 if(uiEvent.mouseButtonHit){
+                    axisConstraint = null;
                     editMode = EDITMODE_UV_SELECT;
                     help.printUV_SELECT();
                 }
@@ -538,12 +585,20 @@ function update(){
 
         if(editMode == EDITMODE_UV_SCALE){
 			if(!isNavigationEvent()){
+                // Check for axis constraint keys
+                if(uiEvent.keyHit && (uiEvent.keyChar == 'x' || uiEvent.keyChar == 'X')){
+                    axisConstraint = 'x';
+                } else if(uiEvent.keyHit && (uiEvent.keyChar == 'y' || uiEvent.keyChar == 'Y')){
+                    axisConstraint = 'y';
+                }
+                
                 if(uiEvent.hasNewPickRay){
                     var currentPlacePoint = uiEvent.getPickRay().intersectPlane(editPlane);
-                    uvMeshMngr.scaleUV(currentPlacePoint, lastPlacePoint);
+                    uvMeshMngr.scaleUV(currentPlacePoint, lastPlacePoint, axisConstraint);
                 }
 
                 if(uiEvent.mouseButtonHit){
+                    axisConstraint = null;
                     editMode = EDITMODE_UV_SELECT;
                     help.printUV_SELECT();
                 }

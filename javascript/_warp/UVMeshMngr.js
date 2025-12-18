@@ -133,8 +133,8 @@ WARP.UVMeshMngr.prototype = {
         }
     },
 
-    scaleUV: function ( _currentPoint, _originPoint) {
-        this.executeCommand(new WARP.ScaleUVsCommand(_currentPoint, _originPoint, this.geometry.myUVCursor_mod));
+    scaleUV: function ( _currentPoint, _originPoint, _axisConstraint) {
+        this.executeCommand(new WARP.ScaleUVsCommand(_currentPoint, _originPoint, this.geometry.myUVCursor_mod, _axisConstraint));
     },
 
     rotateUV: function ( _currentPoint, _originPoint) {

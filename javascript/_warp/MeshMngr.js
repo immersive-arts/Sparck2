@@ -258,11 +258,9 @@ WARP.MeshMngr.prototype = {
     },
 
     // call verticeSnapshot before scaling
-	scaleVertice: function ( _currentPoint, _originPoint) {
-        this.executeCommand(new WARP.ScaleVerticesCommand(_currentPoint, _originPoint, this.getCurrentMesh().myCursor_mod));
-    },
-
-    // call verticeSnapshot before rotating
+	scaleVertice: function ( _currentPoint, _originPoint, _axisConstraint) {
+        this.executeCommand(new WARP.ScaleVerticesCommand(_currentPoint, _originPoint, this.getCurrentMesh().myCursor_mod, _axisConstraint));
+	},    // call verticeSnapshot before rotating
 	rotateVertice: function ( _currentPoint, _originPoint) {
         this.executeCommand(new WARP.RotateVerticesCommand(_currentPoint, _originPoint, this.getCurrentMesh().myCursor_mod));
     },

@@ -181,7 +181,7 @@ DRAW.Warp2d_EditorHelper.prototype = {
 		this.helpLine[0].text  ( "Mode: [ MESH - MODIFY ]" );
 		this.helpLine[1].text  ( "" );
 		this.helpLine[2].text  ( "mouse : set points" );
-		this.helpLine[3].text  ( "" );
+		this.helpLine[3].text  ( "x/y   : constrain to axis" );
 		this.helpLine[4].text  ( "" );
 		this.helpLine[5].text  ( "" );
 		this.helpLine[6].text  ( "" );
@@ -297,7 +297,7 @@ DRAW.Warp2d_EditorHelper.prototype = {
 		this.helpLine[0].text  ( "Mode: [ UV - MODIFY ]" );
 		this.helpLine[1].text  ( "mouse : move selected UVs" );
 		this.helpLine[2].text  ( "click : end modify mode" );
-		this.helpLine[3].text  ( "" );
+		this.helpLine[3].text  ( "x/y   : constrain to axis" );
 		this.helpLine[4].text  ( "" );
 		this.helpLine[5].text  ( "" );
 		this.helpLine[6].text  ( "" );
@@ -320,7 +320,7 @@ DRAW.Warp2d_EditorHelper.prototype = {
 		this.helpLine[0].text  ( "Mode: [ UV - SCALE ]" );
 		this.helpLine[1].text  ( "mouse : scale selected UVs" );
 		this.helpLine[2].text  ( "click : end scale mode" );
-		this.helpLine[3].text  ( "" );
+		this.helpLine[3].text  ( "x/y   : constrain to axis" );
 		this.helpLine[4].text  ( "" );
 		this.helpLine[5].text  ( "" );
 		this.helpLine[6].text  ( "" );

@@ -306,13 +306,14 @@ WARP.ApplyUVLatticeCommand.prototype.undo = function(geometry) {
  * Command: Scale UVs
  * UV space is 0-1, cursor is in viewport coordinates (converted to UV)
  */
-WARP.ScaleUVsCommand = function(currentPoint, originPoint, cursor) {
+WARP.ScaleUVsCommand = function(currentPoint, originPoint, cursor, axisConstraint) {
     WARP.Command.call(this);
     this.name = "ScaleUVs";
     this.currentPoint = currentPoint.clone();
     this.originPoint = originPoint.clone();
     // Cursor is already in UV space (0-1)
     this.cursor = cursor.clone();
+    this.axisConstraint = axisConstraint || null; // null, 'x', or 'y'
     this.previousUVs = [];
     this.affectedIndices = [];
 };
@@ -328,13 +329,26 @@ WARP.ScaleUVsCommand.prototype.execute = function(geometry) {
     var cursor_current = new THREE.Vector2((this.currentPoint.x + 1.0) * 0.5, (this.currentPoint.y + 1.0) * 0.5);
     var cursor_origin = new THREE.Vector2((this.originPoint.x + 1.0) * 0.5, (this.originPoint.y + 1.0) * 0.5);
     
-    var dist_current = cursor_current.distanceTo(this.cursor);
-    var dist_origin = cursor_origin.distanceTo(this.cursor);
+    var cursor_current_delta = cursor_current.clone().sub(this.cursor);
+    var cursor_origin_delta = cursor_origin.clone().sub(this.cursor);
     
-    // Prevent division by zero
-    if(dist_origin < 0.001) return;
+    var scale;
     
-    var scale = dist_current / dist_origin;
+    if(this.axisConstraint == 'x') {
+        // Scale only in X (U) axis
+        if(Math.abs(cursor_origin_delta.x) < 0.001) return;
+        scale = cursor_current_delta.x / cursor_origin_delta.x;
+    } else if(this.axisConstraint == 'y') {
+        // Scale only in Y (V) axis
+        if(Math.abs(cursor_origin_delta.y) < 0.001) return;
+        scale = cursor_current_delta.y / cursor_origin_delta.y;
+    } else {
+        // Uniform scale (original behavior)
+        var dist_current = cursor_current.distanceTo(this.cursor);
+        var dist_origin = cursor_origin.distanceTo(this.cursor);
+        if(dist_origin < 0.001) return;
+        scale = dist_current / dist_origin;
+    }
     
     for(var j = 0; j < geometry.uvs.length; j++){
         if(geometry.selectedUVs[j] == 1){
@@ -343,7 +357,14 @@ WARP.ScaleUVsCommand.prototype.execute = function(geometry) {
             
             // Scale from the snapshot, not current state
             var delta = geometry.uvs_mod_tmp[j].clone().sub(this.cursor);
-            delta.multiplyScalar(scale);
+            
+            if(this.axisConstraint == 'x') {
+                delta.x *= scale;
+            } else if(this.axisConstraint == 'y') {
+                delta.y *= scale;
+            } else {
+                delta.multiplyScalar(scale);
+            }
             
             // Apply scale
             geometry.uvs_mod[j].x = this.cursor.x + delta.x;
