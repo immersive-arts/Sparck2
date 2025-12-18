@@ -146,10 +146,10 @@ function init(){
 
 function enable(_enable){
     init();
-	nodeObj.enable = _enable;
-	cameraObj.enable = _enable;
-	latticeObj.enable = _enable;
-	meshObj.enable = _enable;
+	if(nodeObj) nodeObj.enable = _enable;
+	if(cameraObj) cameraObj.enable = _enable;
+	if(latticeObj) latticeObj.enable = _enable;
+	if(meshObj) meshObj.enable = _enable;
 }
 
 function update(){
@@ -318,6 +318,9 @@ function update(){
                     } else if((uiEvent.keyChar == 'a' || uiEvent.keyChar == 'A')){
                         //post("got a \n");
                         meshMngr.selectAll();
+                    } else if((uiEvent.keyChar == 'x' || uiEvent.keyChar == 'X') && meshMngr.hasSelection()){
+                        // Delete selected vertices
+                        meshMngr.deleteVertices();
                     }
                 }
 
@@ -853,12 +856,16 @@ function subdivision(_level){
 
 function texture(){
     init();
-    meshObj.texture = arrayfromargs(arguments);
+    if(meshObj){
+        meshObj.texture = arrayfromargs(arguments);
+    }
 }
 
 function mesh_poly_mode(){
     init();
-    meshObj.poly_mode = [arguments[0], arguments[1]];
+    if(meshObj){
+        meshObj.poly_mode = [arguments[0], arguments[1]];
+    }
 }
 
 function editor(_enable){
@@ -866,10 +873,10 @@ function editor(_enable){
 	var args = arrayfromargs(arguments);
 	if(args[0] == 'enable'){
         editor_enable = args[1];
-        nodeObj.enable = args[1];
-        cameraObj.enable = args[1];
-        latticeObj.enable = args[1];
-        meshObj.enable = args[1];
+        if(nodeObj) nodeObj.enable = args[1];
+        if(cameraObj) cameraObj.enable = args[1];
+        if(latticeObj) latticeObj.enable = args[1];
+        if(meshObj) meshObj.enable = args[1];
     }
 }
 
@@ -985,14 +992,13 @@ function setVertex(idx, px, py, pz, u, v, nx, ny, nz, r, g, b, a) {
 }
 
 function notifydeleted(){
-   	init();
-    latticeObj.freepeer();
-    cameraAnimNode.freepeer();
-    cameraObj.freepeer();
-    nodeObj.freepeer();
-    meshObj.freepeer();
-    meshMatrix.freepeer();
-	help.freepeer();
+   	if(latticeObj) latticeObj.freepeer();
+    if(cameraAnimNode) cameraAnimNode.freepeer();
+    if(cameraObj) cameraObj.freepeer();
+    if(nodeObj) nodeObj.freepeer();
+    if(meshObj) meshObj.freepeer();
+    if(meshMatrix) meshMatrix.freepeer();
+	if(help) help.freepeer();
 }
 
 // error("What just happened?\n");

@@ -269,6 +269,10 @@ WARP.MeshMngr.prototype = {
         this.executeCommand(new WARP.ResetVerticesCommand());
     },
 
+    deleteVertices: function ( ) {
+        this.executeCommand(new WARP.DeleteVerticesCommand());
+    },
+
     // gets the vertice index from the lattice-modified mesh and passes it to
     // the current mesh
     pickRayLatMod: function ( _pickRay ) {

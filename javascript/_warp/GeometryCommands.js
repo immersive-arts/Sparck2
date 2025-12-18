@@ -625,23 +625,268 @@ WARP.SetCursorCommand.prototype.execute = function(geometry) {
     this.previousCursor = geometry.myCursor.clone();
     this.previousCursorMod = geometry.myCursor_mod.clone();
     
-    geometry.myCursor.set(0, 0, 0);
-    geometry.myCursor_mod.set(0, 0, 0);
-    var counter = 0;
+    var count = 0;
+    var center = new THREE.Vector3(0, 0, 0);
     for(var j = 0; j < geometry.vertices.length; j++){
         if(geometry.selectedVertices[j] == 1){
-            geometry.myCursor.add(geometry.vertices[j]);
-            geometry.myCursor_mod.add(geometry.vertices_mod[j]);
-            counter++;
+            center.add(geometry.vertices[j]);
+            count++;
         }
     }
-    if(counter > 0){
-        geometry.myCursor.multiplyScalar(1.0 / counter);
-        geometry.myCursor_mod.multiplyScalar(1.0 / counter);
+    
+    if(count > 0){
+        center.divideScalar(count);
+        geometry.myCursor = center.clone();
+        
+        // Also update modified cursor
+        var centerMod = new THREE.Vector3(0, 0, 0);
+        for(var j = 0; j < geometry.vertices_mod.length; j++){
+            if(geometry.selectedVertices[j] == 1){
+                centerMod.add(geometry.vertices_mod[j]);
+            }
+        }
+        centerMod.divideScalar(count);
+        geometry.myCursor_mod = centerMod;
     }
 };
 
 WARP.SetCursorCommand.prototype.undo = function(geometry) {
     geometry.myCursor = this.previousCursor;
     geometry.myCursor_mod = this.previousCursorMod;
+};
+
+/**
+ * Command: Delete Vertices
+ * Deletes selected vertices and all faces/UVs that reference them
+ */
+WARP.DeleteVerticesCommand = function() {
+    WARP.Command.call(this);
+    this.name = "DeleteVertices";
+    this.previousState = null;
+};
+
+WARP.DeleteVerticesCommand.prototype = Object.create(WARP.Command.prototype);
+WARP.DeleteVerticesCommand.prototype.constructor = WARP.DeleteVerticesCommand;
+
+WARP.DeleteVerticesCommand.prototype.execute = function(geometry) {
+    // Save complete state for undo
+    this.previousState = geometry.clone();
+    
+    // Build list of selected vertex indices
+    var selectedIndices = [];
+    for(var i = 0; i < geometry.selectedVertices.length; i++){
+        if(geometry.selectedVertices[i] == 1){
+            selectedIndices.push(i);
+        }
+    }
+    
+    if(selectedIndices.length === 0) return;
+    
+    // FIRST PASS: Mark selected vertices for deletion
+    var markedForDeletion = new Array(geometry.vertices.length);
+    for(var i = 0; i < geometry.vertices.length; i++){
+        markedForDeletion[i] = (geometry.selectedVertices[i] == 1);
+    }
+    
+    // Identify faces that would be removed due to deleted vertices
+    var remainingFaces = [];
+    for(var i = 0; i < geometry.faces.length; i++){
+        var face = geometry.faces[i];
+        var faceUsesDeletedVertex = false;
+        
+        // Check if any vertex in this face is marked for deletion
+        if(markedForDeletion[face.vertA] || markedForDeletion[face.vertB] || markedForDeletion[face.vertC]){
+            faceUsesDeletedVertex = true;
+        }
+        if(face.isQuad && markedForDeletion[face.vertD]){
+            faceUsesDeletedVertex = true;
+        }
+        
+        if(!faceUsesDeletedVertex){
+            remainingFaces.push(face);
+        }
+    }
+    
+    // SECOND PASS: Identify which vertices are actually used by remaining faces
+    var vertexIsUsed = new Array(geometry.vertices.length);
+    for(var i = 0; i < geometry.vertices.length; i++){
+        vertexIsUsed[i] = false;
+    }
+    
+    for(var i = 0; i < remainingFaces.length; i++){
+        var face = remainingFaces[i];
+        vertexIsUsed[face.vertA] = true;
+        vertexIsUsed[face.vertB] = true;
+        vertexIsUsed[face.vertC] = true;
+        if(face.isQuad){
+            vertexIsUsed[face.vertD] = true;
+        }
+    }
+    
+    // Create a map: old vertex index -> new vertex index (or -1 if deleted/unused)
+    var indexMap = new Array(geometry.vertices.length);
+    var newIndex = 0;
+    for(var i = 0; i < geometry.vertices.length; i++){
+        if(vertexIsUsed[i]){
+            indexMap[i] = newIndex;
+            newIndex++;
+        } else {
+            indexMap[i] = -1; // Mark as deleted/unused
+        }
+    }
+    
+    // Filter out deleted/unused vertices
+    var newVertices = [];
+    var newVertices_mod = [];
+    var newVertices_mod_lat = [];
+    var newVertices_mod_tmp = [];
+    var newSelectedVertices = [];
+    
+    for(var i = 0; i < geometry.vertices.length; i++){
+        if(indexMap[i] !== -1){
+            newVertices.push(geometry.vertices[i]);
+            newVertices_mod.push(geometry.vertices_mod[i]);
+            newVertices_mod_lat.push(geometry.vertices_mod_lat[i]);
+            newVertices_mod_tmp.push(geometry.vertices_mod_tmp[i]);
+            newSelectedVertices.push(0); // Deselect all after deletion
+        }
+    }
+    
+    // Identify used UVs and normals from remaining faces
+    var usedUVIndices = {};
+    var usedNormalIndices = {};
+    
+    for(var i = 0; i < remainingFaces.length; i++){
+        var face = remainingFaces[i];
+        
+        // Track which UVs and normals are still used (using object as set)
+        usedUVIndices[face.uvA] = true;
+        usedUVIndices[face.uvB] = true;
+        usedUVIndices[face.uvC] = true;
+        usedNormalIndices[face.normA] = true;
+        usedNormalIndices[face.normB] = true;
+        usedNormalIndices[face.normC] = true;
+        
+        if(face.isQuad){
+            usedUVIndices[face.uvD] = true;
+            usedNormalIndices[face.normD] = true;
+        }
+    }
+    
+    // Create UV index map: old UV index -> new UV index (or -1 if unused)
+    var uvIndexMap = new Array(geometry.uvs.length);
+    var newUVIndex = 0;
+    for(var i = 0; i < geometry.uvs.length; i++){
+        if(usedUVIndices[i]){
+            uvIndexMap[i] = newUVIndex;
+            newUVIndex++;
+        } else {
+            uvIndexMap[i] = -1;
+        }
+    }
+    
+    // Filter out unused UVs
+    var newUVs = [];
+    var newUVs_mod = [];
+    var newUVs_mod_lat = [];
+    var newUVs_mod_tmp = [];
+    var newSelectedUVs = [];
+    
+    for(var i = 0; i < geometry.uvs.length; i++){
+        if(uvIndexMap[i] !== -1){
+            newUVs.push(geometry.uvs[i]);
+            newUVs_mod.push(geometry.uvs_mod[i]);
+            newUVs_mod_lat.push(geometry.uvs_mod_lat[i]);
+            if(geometry.uvs_mod_tmp[i]){
+                newUVs_mod_tmp.push(geometry.uvs_mod_tmp[i]);
+            }
+            newSelectedUVs.push(0); // Deselect all UVs after deletion
+        }
+    }
+    
+    // Create normal index map: old normal index -> new normal index (or -1 if unused)
+    var normalIndexMap = new Array(geometry.normals.length);
+    var newNormalIndex = 0;
+    for(var i = 0; i < geometry.normals.length; i++){
+        if(usedNormalIndices[i]){
+            normalIndexMap[i] = newNormalIndex;
+            newNormalIndex++;
+        } else {
+            normalIndexMap[i] = -1;
+        }
+    }
+    
+    // Filter out unused normals
+    var newNormals = [];
+    for(var i = 0; i < geometry.normals.length; i++){
+        if(normalIndexMap[i] !== -1){
+            newNormals.push(geometry.normals[i]);
+        }
+    }
+    
+    // Now create faces with remapped vertex, UV, and normal indices
+    var newFaces = [];
+    for(var i = 0; i < remainingFaces.length; i++){
+        var face = remainingFaces[i];
+        
+        // Remap all indices
+        var newFace = new WARP.Face3(
+            indexMap[face.vertA],
+            indexMap[face.vertB],
+            indexMap[face.vertC],
+            uvIndexMap[face.uvA],
+            uvIndexMap[face.uvB],
+            uvIndexMap[face.uvC],
+            normalIndexMap[face.normA],
+            normalIndexMap[face.normB],
+            normalIndexMap[face.normC],
+            face.isQuad ? indexMap[face.vertD] : undefined,
+            face.isQuad ? uvIndexMap[face.uvD] : undefined,
+            face.isQuad ? normalIndexMap[face.normD] : undefined
+        );
+        newFaces.push(newFace);
+    }
+    
+    // Update geometry
+    geometry.vertices = newVertices;
+    geometry.vertices_mod = newVertices_mod;
+    geometry.vertices_mod_lat = newVertices_mod_lat;
+    geometry.vertices_mod_tmp = newVertices_mod_tmp;
+    geometry.selectedVertices = newSelectedVertices;
+    
+    geometry.uvs = newUVs;
+    geometry.uvs_mod = newUVs_mod;
+    geometry.uvs_mod_lat = newUVs_mod_lat;
+    geometry.uvs_mod_tmp = newUVs_mod_tmp;
+    geometry.selectedUVs = newSelectedUVs;
+    
+    geometry.normals = newNormals;
+    
+    geometry.faces = newFaces;
+    geometry.hasSelectedVertices = 0;
+    geometry.hasSelectedUVs = 0;
+    
+    // Reset pick ray index if it was deleted
+    if(geometry.pickRayIndx >= 0 && indexMap[geometry.pickRayIndx] === -1){
+        geometry.pickRayIndx = -1;
+    } else if(geometry.pickRayIndx >= 0){
+        geometry.pickRayIndx = indexMap[geometry.pickRayIndx];
+    }
+    
+    // Reset UV pick ray index if the UV was deleted
+    if(geometry.pickRayUVIndx >= 0 && uvIndexMap[geometry.pickRayUVIndx] === -1){
+        geometry.pickRayUVIndx = -1;
+    } else if(geometry.pickRayUVIndx >= 0){
+        geometry.pickRayUVIndx = uvIndexMap[geometry.pickRayUVIndx];
+    }
+};
+
+WARP.DeleteVerticesCommand.prototype.undo = function(geometry) {
+    if(this.previousState){
+        // Restore complete geometry state
+        var keys = Object.keys(this.previousState);
+        for(var i = 0; i < keys.length; i++){
+            geometry[keys[i]] = this.previousState[keys[i]];
+        }
+    }
 };

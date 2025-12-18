@@ -86,7 +86,9 @@ WARP.Geometry.prototype = {
 
         clon.vertices_mod_tmp = new Array( this.vertices_mod_tmp.length );
         for(var i = 0; i < this.vertices_mod_tmp.length; i++){
-            clon.vertices_mod_tmp[i] = this.vertices_mod_tmp[i].clone();
+            if(this.vertices_mod_tmp[i]){
+                clon.vertices_mod_tmp[i] = this.vertices_mod_tmp[i].clone();
+            }
         }
 
         clon.uvs = new Array( this.uvs.length );
@@ -106,7 +108,9 @@ WARP.Geometry.prototype = {
 
         clon.uvs_mod_tmp = new Array( this.uvs_mod_tmp.length );
         for(var i = 0; i < this.uvs_mod_tmp.length; i++){
-            clon.uvs_mod_tmp[i] = this.uvs_mod_tmp[i].clone();
+            if(this.uvs_mod_tmp[i]){
+                clon.uvs_mod_tmp[i] = this.uvs_mod_tmp[i].clone();
+            }
         }
 
         clon.normals = new Array( this.normals.length );
