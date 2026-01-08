@@ -27,6 +27,8 @@
 package com.tecartlab.sparck.newcalib;
 
 import com.cycling74.max.Atom;
+import com.cycling74.max.MaxQelem;
+import com.cycling74.max.Callback;
 import com.tecartlab.jay3dee.CallBackInterface;
 import com.tecartlab.jay3dee.FileManager;
 import com.tecartlab.jay3dee.model.*;
@@ -44,12 +46,15 @@ public class SimpleModelContainer implements CallBackInterface {
 	public String modelname;
 	public FileManager fileManager;
 	private SimpleObjectContainer parentContainer;
+	private MaxQelem modelLoadQelem;
+	private volatile String pendingMessage;
 
 	public SimpleModelContainer(SimpleObjectContainer parent) {
 		model = new ModelData(this);
 		fileManager = new FileManager(10);
 		modelname = "simple_model";
 		this.parentContainer = parent;
+		modelLoadQelem = new MaxQelem(new Callback(this, "modelLoad_deferred"));
 	}
 
 	/****************************************************************
@@ -197,11 +202,25 @@ public class SimpleModelContainer implements CallBackInterface {
 
 	/**
 	 * Called by the model when it needs to notify about changes.
-	 * Notifies parent container when file parsing is complete.
+	 * This is called from ModelData's worker thread, so we defer GL operations to main thread.
 	 */
 	public void dataEvent(String message) {
 		if(message.equals("fileparsed") && parentContainer != null) {
+			// Store message and defer to main thread for GL operations
+			pendingMessage = message;
+			modelLoadQelem.set();
+		}
+	}
+
+	/**
+	 * Deferred callback executed on Max main thread to safely perform GL operations.
+	 */
+	public void modelLoad_deferred() {
+		if(pendingMessage != null && pendingMessage.equals("fileparsed")) {
+			// Refresh geometry on main thread before initializing drawer
+			model.refreshGeometry();
 			parentContainer.modelLoadComplete();
+			pendingMessage = null;
 		}
 	}
 }

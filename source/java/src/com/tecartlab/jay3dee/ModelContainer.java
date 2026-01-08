@@ -100,12 +100,16 @@ public class ModelContainer implements CallBackInterface {
 	private float textureShiftY = -0.5f;
 
 	private ArrayList<ModelDrawer> drawingListeners;
+	
+	private MaxQelem dataEventQelem;
+	private volatile String pendingEventMessage;
 
 	public ModelContainer() {
 		model = new ModelData(this);
 		publisher = new ModelPublisher();
 		fileManager = new FileManager(10);
 		drawingListeners = new ArrayList<ModelDrawer>();
+		dataEventQelem = new MaxQelem(new Callback(this, "dataEvent_deferred"));
 	}
 
 	public void init(String _modelName) throws DynException{
@@ -1374,11 +1378,25 @@ public class ModelContainer implements CallBackInterface {
 
 	/**
 	 * These method is called by the ModelData Threads to tell their tasks have been
-	 * accomplished
+	 * accomplished. Defers GL operations to main thread.
 	 */
 	public synchronized void dataEvent(String message) {
-		if(message.equals(LIST_MSG_FILEPARSED))
-			callDrawers(message);
+		if(message.equals(LIST_MSG_FILEPARSED)) {
+			pendingEventMessage = message;
+			dataEventQelem.set();
+		}
+	}
+
+	/**
+	 * Deferred callback executed on Max main thread to safely perform GL operations.
+	 */
+	public void dataEvent_deferred() {
+		if(pendingEventMessage != null) {
+			// Refresh geometry on main thread before calling drawers
+			model.refreshGeometry();
+			callDrawers(pendingEventMessage);
+			pendingEventMessage = null;
+		}
 	}
 
 	public synchronized void callDrawers(String _message){

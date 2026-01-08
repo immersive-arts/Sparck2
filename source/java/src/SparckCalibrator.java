@@ -94,6 +94,13 @@ public class SparckCalibrator extends MaxObject implements ProjProps.Listener{
 
 	private Callback infoOutlet;
 
+	// MaxQelem for deferred GL operations
+	private MaxQelem createQelem;
+	private MaxQelem addQelem;
+	private volatile Atom[] pendingCreateVertices;
+	private volatile Atom[] pendingAddVertices;
+	private final Object verticesLock = new Object();
+
 	int editMode = 0;
 
 	boolean isEnabled;
@@ -112,7 +119,12 @@ public class SparckCalibrator extends MaxObject implements ProjProps.Listener{
 		calibObject = new Calibrations();
 		props = new ProjProps(this);
 		trackerSubscriber = new TrackerSubscriber();
-		modelObject = new SimpleObjectContainer();		if (args.length < 1)
+		modelObject = new SimpleObjectContainer();		
+		// Initialize MaxQelem for deferred GL operations
+		createQelem = new MaxQelem(new Callback(this, "createToXY_deferred"));
+		addQelem = new MaxQelem(new Callback(this, "addToXY_deferred"));
+		
+		if (args.length < 1)
 			Debug.warning("SparckCalibrator", "needs an editorname and optionally a trackername as arguments. otherwise use 'seteditorname', 'settracker'.");
 		else{
 			setmsgtitle(args[0].toString());
@@ -269,12 +281,28 @@ public class SparckCalibrator extends MaxObject implements ProjProps.Listener{
 	 */
 	public void createToXY(Atom[] vertices) {
 		if((vertices.length % 3) == 0){
-			if(modelObject != null){
-				modelObject.createToXY(vertices);
-				updateCalibrationObject();
+			// Store vertices and defer GL operations to main thread
+			synchronized(verticesLock) {
+				pendingCreateVertices = vertices;
 			}
+			createQelem.set();
 		} else {
 			Debug.error("SparckCalibrator", "'createToXY' the number of values need to be multiple of 3.");
+		}
+	}
+
+	/**
+	 * Deferred callback executed on Max main thread to safely perform GL operations.
+	 */
+	public void createToXY_deferred() {
+		Atom[] vertices;
+		synchronized(verticesLock) {
+			vertices = pendingCreateVertices;
+			pendingCreateVertices = null;
+		}
+		if(vertices != null && modelObject != null) {
+			modelObject.createToXY(vertices);
+			updateCalibrationObject();
 		}
 	}
 
@@ -285,12 +313,28 @@ public class SparckCalibrator extends MaxObject implements ProjProps.Listener{
 	 */
 	public void addToXY(Atom[] vertices) {
 		if((vertices.length % 3) == 0){
-			if(modelObject != null){
-				modelObject.addToXY(vertices);
-				updateCalibrationObject();
+			// Store vertices and defer GL operations to main thread
+			synchronized(verticesLock) {
+				pendingAddVertices = vertices;
 			}
+			addQelem.set();
 		} else {
 			Debug.error("SparckCalibrator", "'addToXY' the number of values need to be multiple of 3.");
+		}
+	}
+
+	/**
+	 * Deferred callback executed on Max main thread to safely perform GL operations.
+	 */
+	public void addToXY_deferred() {
+		Atom[] vertices;
+		synchronized(verticesLock) {
+			vertices = pendingAddVertices;
+			pendingAddVertices = null;
+		}
+		if(vertices != null && modelObject != null) {
+			modelObject.addToXY(vertices);
+			updateCalibrationObject();
 		}
 	}
 
@@ -969,6 +1013,10 @@ public class SparckCalibrator extends MaxObject implements ProjProps.Listener{
 	 */
 	public void notifyDeleted(){
 		stopcrunch();
+		if(createQelem != null)
+			createQelem.release();
+		if(addQelem != null)
+			addQelem.release();
 		trackerSubscriber.notifyDeleted();
 		if(modelObject != null)
 			modelObject.notifyDeleted();

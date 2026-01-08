@@ -747,13 +747,13 @@ public class ModelData implements Constants{
 				Segment currentModelSegment = defaultSegment;
 
 				// this factor will determine which plan the vector will be projected to.
-				float[] fac = new float[]{(_plane == 2)?0:1, (_plane == 1)?0:1, (_plane == 0)?0:1};
+				float[] fac = new float[]{(_plane == 2)?1:0, (_plane == 1)?1:0, (_plane == 0)?1:0};
 
 				for(Vertice vertice: _vertices){
 					Vertice tmpvOrig = new Vertice(vertice);
 					modelVertices.add(tmpvOrig);
 					tmpvOrig.index = modelVertices.indexOf(tmpvOrig);
-					Vertice tmpvPrj = new Vertice(vertice.x() * fac[0], vertice.y() * fac[1], vertice.z() * fac[2]);
+					Vertice tmpvPrj = new Vertice(vertice.x() - fac[0], vertice.y() - fac[1], vertice.z() - fac[2]);
 					tmpvPrj.isPickable = false;
 					modelVertices.add(tmpvPrj);
 					tmpvPrj.index = modelVertices.indexOf(tmpvPrj);
@@ -768,7 +768,7 @@ public class ModelData implements Constants{
 					currentModelSegment.faces.add(f);
 				}
 				updateSegments();
-				refreshGeometry();
+				// refreshGeometry() removed - will be called by container on main thread
 				myContainer.dataEvent(ModelContainer.LIST_MSG_FILEPARSED);
 
 			}
@@ -800,7 +800,7 @@ public class ModelData implements Constants{
 				}
 
 				// this factor will determine which plan the vector will be projected to.
-				float[] fac = new float[]{(_plane == 2)?0:1, (_plane == 1)?0:1, (_plane == 0)?0:1};
+				float[] fac = new float[]{(_plane == 2)?1:0, (_plane == 1)?1:0, (_plane == 0)?1:0};
 
 				for(Vertice vertice: _vertices){
 					Face f = new Face();
@@ -809,7 +809,7 @@ public class ModelData implements Constants{
 					Vertice tmpvOrig = new Vertice(vertice);
 					modelVertices.add(tmpvOrig);
 					tmpvOrig.index = modelVertices.indexOf(tmpvOrig);
-					Vertice tmpvPrj = new Vertice(vertice.x() * fac[0], vertice.y() * fac[1], vertice.z() * fac[2]);
+					Vertice tmpvPrj = new Vertice(vertice.x() - fac[0], vertice.y() - fac[1], vertice.z() - fac[2]);
 					tmpvPrj.isPickable = false;
 					modelVertices.add(tmpvPrj);
 					tmpvPrj.index = modelVertices.indexOf(tmpvPrj);
@@ -822,7 +822,7 @@ public class ModelData implements Constants{
 				}
 				
 				updateSegments();
-				refreshGeometry();
+				// refreshGeometry() removed - will be called by container on main thread
 				myContainer.dataEvent(ModelContainer.LIST_MSG_FILEPARSED);
 
 			}
@@ -1004,7 +1004,7 @@ public class ModelData implements Constants{
 					}
 
 					updateSegments();
-					refreshGeometry();
+					// refreshGeometry() removed - will be called by container on main thread
 
 				} catch (Exception e) {
 					Debug.error("Jay3dModel", "Error while trying to read file");
