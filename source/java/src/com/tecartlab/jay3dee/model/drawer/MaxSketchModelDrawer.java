@@ -78,8 +78,8 @@ public class MaxSketchModelDrawer implements ModelDrawer {
 	private float textureShiftX = -0.5f;
 	private float textureShiftY = -0.5f;
 
-	public float pointSize 				= 5.f;
-	public float pickedPointSize 		= 7.f;
+	public float pointSize 				= 0.02f;
+	public float pickedPointSize 		= 0.03f;
 
 	private boolean isInitialized = false;
 	private boolean hasModelChanged = false;
@@ -326,18 +326,17 @@ public class MaxSketchModelDrawer implements ModelDrawer {
 
 			if(v.isPicked()){
 				sketchPointCommands.add(MaxSketchMessageFactory.sketch_glcolor(pickedPointColor));
-				sketchPointCommands.add(MaxSketchMessageFactory.sketch_glpointSize(pickedPointSize));
-				sketchPointCommands.add(MaxSketchMessageFactory.sketch_point(v.x(), v.y(), v.z()));
+				sketchPointCommands.add(MaxSketchMessageFactory.sketch_moveto(v.x(), v.y(), v.z()));
+				sketchPointCommands.add(MaxSketchMessageFactory.sketch_sphere(pickedPointSize));
 			}
 
 			if(v.isSelected()){
 				sketchPointCommands.add(MaxSketchMessageFactory.sketch_glcolor(selectedPointColor));
-
+				sketchPointCommands.add(MaxSketchMessageFactory.sketch_moveto(v.x(), v.y(), v.z()));
+				sketchPointCommands.add(MaxSketchMessageFactory.sketch_sphere(pointSize));
 			}else{
 				sketchPointCommands.add(MaxSketchMessageFactory.sketch_glcolor(pointColor));
 			}
-			sketchPointCommands.add(MaxSketchMessageFactory.sketch_glpointSize(pointSize));
-			sketchPointCommands.add(MaxSketchMessageFactory.sketch_point(v.x(), v.y(), v.z()));
 		}
 	}
 
@@ -350,17 +349,16 @@ public class MaxSketchModelDrawer implements ModelDrawer {
 			v = model.getTextureVertice(f);
 			if(v.isPicked()){
 				sketchTexPointCommands.add(MaxSketchMessageFactory.sketch_glcolor(pickedPointColor));
-				sketchTexPointCommands.add(MaxSketchMessageFactory.sketch_glpointSize(pickedPointSize));
-				sketchTexPointCommands.add(MaxSketchMessageFactory.sketch_point(v.x()+textureShiftX, v.y()+textureShiftY, v.z()));
+				sketchTexPointCommands.add(MaxSketchMessageFactory.sketch_moveto(v.x()+textureShiftX, v.y()+textureShiftY, v.z()));
+				sketchTexPointCommands.add(MaxSketchMessageFactory.sketch_sphere(pickedPointSize));
 			}
 			if(v.isSelected()){
 				sketchTexPointCommands.add(MaxSketchMessageFactory.sketch_glcolor(selectedPointColor));
-
+				sketchTexPointCommands.add(MaxSketchMessageFactory.sketch_sphere(pointSize));
+				sketchTexPointCommands.add(MaxSketchMessageFactory.sketch_moveto(v.x()+textureShiftX, v.y()+textureShiftY, v.z()));
 			}else{
 				sketchTexPointCommands.add(MaxSketchMessageFactory.sketch_glcolor(pointColor));
 			}
-			sketchTexPointCommands.add(MaxSketchMessageFactory.sketch_glpointSize(pointSize));
-			sketchTexPointCommands.add(MaxSketchMessageFactory.sketch_point(v.x()+textureShiftX, v.y()+textureShiftY, v.z()));
 		}
 	}
 

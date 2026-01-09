@@ -94,10 +94,10 @@ public class MaxSketchModelMeshDrawer implements ModelDrawer {
 	private float textureShiftX = -0.5f;
 	private float textureShiftY = -0.5f;
 
-	public float pointSizeFront 		= 5.f;
-	public float pointSizeBack	 		= 1.f;
-	public float pickedPointSize 		= 7.f;
-	public float selectedPointSize      = 9.f;
+	public float pointSizeFront 		= 0.02f;
+	public float pointSizeBack	 		= 0.01f;
+	public float pickedPointSize 		= 0.03f;
+	public float selectedPointSize      = 0.02f;
 
 	private boolean isInitialized = false;
 	private boolean hasModelChanged = false;
@@ -430,16 +430,17 @@ public class MaxSketchModelMeshDrawer implements ModelDrawer {
 
 			if(v.isSelected()){
 				selSketchPointCommands.add(MaxSketchMessageFactory.sketch_glcolor(selectedPointColor));
-				selSketchPointCommands.add(MaxSketchMessageFactory.sketch_glpointSize(selectedPointSize));
-				selSketchPointCommands.add(MaxSketchMessageFactory.sketch_point(v.x(), v.y(), v.z()));
+				selSketchPointCommands.add(MaxSketchMessageFactory.sketch_moveto(v.x(), v.y(), v.z()));
+				selSketchPointCommands.add(MaxSketchMessageFactory.sketch_sphere(selectedPointSize));
 			} else if(v.isPicked()){
 				selSketchPointCommands.add(MaxSketchMessageFactory.sketch_glcolor(pickedPointColor));
-				selSketchPointCommands.add(MaxSketchMessageFactory.sketch_glpointSize(pickedPointSize));
-				selSketchPointCommands.add(MaxSketchMessageFactory.sketch_point(v.x(), v.y(), v.z()));
+				selSketchPointCommands.add(MaxSketchMessageFactory.sketch_moveto(v.x(), v.y(), v.z()));
+				selSketchPointCommands.add(MaxSketchMessageFactory.sketch_sphere(pickedPointSize));
 			} else {
-				selSketchPointCommands.add(MaxSketchMessageFactory.sketch_glcolor(pointColor));
-				selSketchPointCommands.add(MaxSketchMessageFactory.sketch_glpointSize(pointSizeBack));
-				selSketchPointCommands.add(MaxSketchMessageFactory.sketch_point(v.x(), v.y(), v.z()));
+				// lets not draw unselected points for the time being
+				//selSketchPointCommands.add(MaxSketchMessageFactory.sketch_glcolor(pointColor));
+				//selSketchPointCommands.add(MaxSketchMessageFactory.sketch_moveto(v.x(), v.y(), v.z()));
+				//elSketchPointCommands.add(MaxSketchMessageFactory.sketch_sphere(pointSizeBack));
 			}
 		}
 	}
@@ -453,8 +454,8 @@ public class MaxSketchModelMeshDrawer implements ModelDrawer {
 			v = model.getTextureVertice(f);
 			if(v.isPicked()){
 				sketchTexPointCommands.add(MaxSketchMessageFactory.sketch_glcolor(pickedPointColor));
-				sketchTexPointCommands.add(MaxSketchMessageFactory.sketch_glpointSize(pickedPointSize));
-				sketchTexPointCommands.add(MaxSketchMessageFactory.sketch_point(v.x()+textureShiftX, v.y()+textureShiftY, v.z()));
+				sketchTexPointCommands.add(MaxSketchMessageFactory.sketch_moveto(v.x()+textureShiftX, v.y()+textureShiftY, v.z()));
+				sketchTexPointCommands.add(MaxSketchMessageFactory.sketch_sphere(pickedPointSize));
 			}
 			if(v.isSelected()){
 				sketchTexPointCommands.add(MaxSketchMessageFactory.sketch_glcolor(selectedPointColor));
@@ -462,8 +463,8 @@ public class MaxSketchModelMeshDrawer implements ModelDrawer {
 			}else{
 				sketchTexPointCommands.add(MaxSketchMessageFactory.sketch_glcolor(pointColor));
 			}
-			sketchTexPointCommands.add(MaxSketchMessageFactory.sketch_glpointSize(pointSizeBack));
-			sketchTexPointCommands.add(MaxSketchMessageFactory.sketch_point(v.x()+textureShiftX, v.y()+textureShiftY, v.z()));
+			sketchTexPointCommands.add(MaxSketchMessageFactory.sketch_moveto(v.x()+textureShiftX, v.y()+textureShiftY, v.z()));
+			sketchTexPointCommands.add(MaxSketchMessageFactory.sketch_sphere(pointSizeBack));
 		}
 	}
 

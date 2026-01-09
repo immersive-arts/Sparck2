@@ -43,9 +43,17 @@ import com.tecartlab.utils.Debug;
  */
 public class SimpleObjectContainer {
 
+	/**
+	 * Interface for listening to model load completion events.
+	 */
+	public interface LoadCompleteListener {
+		void onModelLoadComplete(SimpleObjectContainer container);
+	}
+
 	private SimpleModelContainer model;
 	public MaxSketchModelMeshDrawer drawer;
 	String modelname;
+	private LoadCompleteListener loadCompleteListener;
 
 	public Node objTransformation;
 
@@ -58,6 +66,14 @@ public class SimpleObjectContainer {
 		drawer.setRenderMode(MaxSketchModelMeshDrawer.RENDER_ALL);
 		// Initialize drawer in disabled state, like Jay3DeeObject does
 		drawer.anything("enable", Atom.newAtom(0));
+	}
+
+	/**
+	 * Set listener to be notified when model loading is complete.
+	 * @param listener the listener to notify
+	 */
+	public void setLoadCompleteListener(LoadCompleteListener listener) {
+		this.loadCompleteListener = listener;
 	}
 
 	/**
@@ -83,6 +99,10 @@ public class SimpleObjectContainer {
 			// Call draw() like ObjectContainer does, not drawraw()
 			drawer.draw();
 			Debug.info("SimpleObjectContainer", "Model loaded and initialized: " + modelname);
+			// Notify listener if set
+			if(loadCompleteListener != null) {
+				loadCompleteListener.onModelLoadComplete(this);
+			}
 		} else {
 			Debug.error("SimpleObjectContainer", "Failed to initialize model after loading: " + modelname);
 		}
@@ -310,9 +330,12 @@ public class SimpleObjectContainer {
 	 * @param vertices array of floats (x,y,z triplets)
 	 */
 	public void createToXY(Atom[] vertices) {
-		if(model != null){
-			model.createToXY(vertices);
+		// Initialize model container if it doesn't exist (allows createToXY without loadModel)
+		if(model == null) {
+			model = new SimpleModelContainer(this);
+			modelname = "created_model";
 		}
+		model.createToXY(vertices);
 	}
 
 	/**
@@ -321,9 +344,12 @@ public class SimpleObjectContainer {
 	 * @param vertices array of floats (x,y,z triplets)
 	 */
 	public void addToXY(Atom[] vertices) {
-		if(model != null){
-			model.addToXY(vertices);
+		// Initialize model container if it doesn't exist (allows addToXY without loadModel)
+		if(model == null) {
+			model = new SimpleModelContainer(this);
+			modelname = "created_model";
 		}
+		model.addToXY(vertices);
 	}
 
 	/**

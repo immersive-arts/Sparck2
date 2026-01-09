@@ -57,6 +57,10 @@ public class MaxSketchMessageFactory {
 		return new MaxSketchMessage(new Atom[]{Atom.newAtom("glpointsize"), Atom.newAtom(size)});
 	}
 
+	public static MaxSketchMessage sketch_sphere(float size){
+		return new MaxSketchMessage(new Atom[]{Atom.newAtom("sphere"), Atom.newAtom(size)});
+	}
+
 	public static MaxSketchMessage sketch_enable(int enable){
 		return new MaxSketchMessage(new Atom[]{Atom.newAtom("enable"), Atom.newAtom(enable)});
 	}

@@ -66,7 +66,7 @@ import com.tecartlab.jay3dee.tracker.GuiTracker;
 import com.tecartlab.jay3dee.tracker.TrackerEvent;
 import com.tecartlab.jay3dee.tracker.TrackerListener;
 
-public class SparckCalibrator extends MaxObject implements ProjProps.Listener{
+public class SparckCalibrator extends MaxObject implements ProjProps.Listener, SimpleObjectContainer.LoadCompleteListener{
 
 	static final int EDIT_M_TARGET = 0;
 	static final int EDIT_M_WARP = 1;
@@ -100,6 +100,10 @@ public class SparckCalibrator extends MaxObject implements ProjProps.Listener{
 	private volatile Atom[] pendingCreateVertices;
 	private volatile Atom[] pendingAddVertices;
 	private final Object verticesLock = new Object();
+	// Flag to track whether calibration update is needed after model loading
+	private volatile boolean needsCalibrationUpdate = false;
+	// Flag to track if createToXY has been called since calibration was loaded from file
+	private boolean createToXYCalledAfterCalibLoad = false;
 
 	int editMode = 0;
 
@@ -119,7 +123,9 @@ public class SparckCalibrator extends MaxObject implements ProjProps.Listener{
 		calibObject = new Calibrations();
 		props = new ProjProps(this);
 		trackerSubscriber = new TrackerSubscriber();
-		modelObject = new SimpleObjectContainer();		
+		modelObject = new SimpleObjectContainer();
+		// Set this as listener to be notified when model loading completes
+		modelObject.setLoadCompleteListener(this);
 		// Initialize MaxQelem for deferred GL operations
 		createQelem = new MaxQelem(new Callback(this, "createToXY_deferred"));
 		addQelem = new MaxQelem(new Callback(this, "addToXY_deferred"));
@@ -273,7 +279,7 @@ public class SparckCalibrator extends MaxObject implements ProjProps.Listener{
 			modelObject.anything(message, args);
 		}
 	}
-
+	
 	/**
 	 * Creates a model with the specified points.
 	 * Three points make a vertice, with each vertice drawing a line to the XY plane.
@@ -301,8 +307,18 @@ public class SparckCalibrator extends MaxObject implements ProjProps.Listener{
 			pendingCreateVertices = null;
 		}
 		if(vertices != null && modelObject != null) {
+			// If this is the first createToXY call after loading calibration from file,
+			// clear the calibration vertices since we're creating a new unrelated model
+			if(!createToXYCalledAfterCalibLoad && calibObject != null && calibObject.isLoaded()) {
+				calibObject.reset();
+				Debug.info("SparckCalibrator", "Cleared calibration vertices for new model created by createToXY");
+			}
+			createToXYCalledAfterCalibLoad = true;
+			
 			modelObject.createToXY(vertices);
-			updateCalibrationObject();
+			// Mark that calibration needs updating after model loads
+			needsCalibrationUpdate = true;
+			// Note: actual update happens in modelLoadComplete() after async loading
 		}
 	}
 
@@ -334,7 +350,9 @@ public class SparckCalibrator extends MaxObject implements ProjProps.Listener{
 		}
 		if(vertices != null && modelObject != null) {
 			modelObject.addToXY(vertices);
-			updateCalibrationObject();
+			// Mark that calibration needs updating after model loads
+			needsCalibrationUpdate = true;
+			// Note: actual update happens in modelLoadComplete() after async loading
 		}
 	}
 
@@ -378,6 +396,8 @@ public class SparckCalibrator extends MaxObject implements ProjProps.Listener{
 	public void read(String _filepath){
 		filePath = _filepath;
 		calibObject.load(filePath);
+		// Reset flag so first createToXY call will clear calibration vertices
+		createToXYCalledAfterCalibLoad = false;
 		if(isOperational() && filePath != null){
 			props.applyTo(virtualCamera);
 			updateCalibrationObject();
@@ -1022,6 +1042,19 @@ public class SparckCalibrator extends MaxObject implements ProjProps.Listener{
 			modelObject.notifyDeleted();
 		calibObject.notifyDeleted();
 		//crunchy.notifyDeleted();
+	}
+
+	/**
+	 * Called by SimpleObjectContainer when async model loading is complete.
+	 * This is where we update the calibration object once the model is ready.
+	 */
+	@Override
+	public void onModelLoadComplete(SimpleObjectContainer container) {
+		if(needsCalibrationUpdate) {
+			needsCalibrationUpdate = false;
+			updateCalibrationObject();
+			Debug.info("SparckCalibrator", "Calibration updated after model load");
+		}
 	}
 
 	/**

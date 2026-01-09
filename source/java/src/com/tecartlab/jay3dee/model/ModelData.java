@@ -719,6 +719,104 @@ public class ModelData implements Constants{
 	}
 
 	/**
+	 * Helper method to create a pyramid shape for a single vertex pointing to a projection plane.
+	 * Creates 5 vertices (1 tip + 4 base) and 4 triangular faces with 1:3 width:height ratio.
+	 * Only the tip vertex is pickable.
+	 * @param vertice the tip vertex position
+	 * @param _plane 0 = xy, 1 = xz, 2 = yz
+	 * @param segment the segment to add faces to
+	 */
+	private void createPyramidToPlane(Vertice vertice, int _plane, Segment segment) {
+		// this factor will determine which plane the vector will be projected to
+		float[] fac = new float[]{(_plane == 2)?1:0, (_plane == 1)?1:0, (_plane == 0)?1:0};
+		
+		// Create tip vertex (pickable)
+		Vertice tipVertex = new Vertice(vertice);
+		modelVertices.add(tipVertex);
+		tipVertex.index = modelVertices.indexOf(tipVertex);
+		
+		// Calculate pyramid base on the projection plane
+		// Height is the distance from tip to plane, width is 1/3 of height
+		float height = 1.0f;
+		float width = Math.abs(height) / 3.0f;
+		
+		// Base center on projection plane
+		float baseCenterX = vertice.x() - fac[0];
+		float baseCenterY = vertice.y() - fac[1];
+		float baseCenterZ = vertice.z() - fac[2];
+		
+		// Create perpendicular vectors to form the square base
+		float[] perp1 = new float[3];
+		float[] perp2 = new float[3];
+		
+		if(_plane == 0) { // XY plane
+			perp1 = new float[]{width, 0, 0};
+			perp2 = new float[]{0, width, 0};
+		} else if(_plane == 1) { // XZ plane
+			perp1 = new float[]{width, 0, 0};
+			perp2 = new float[]{0, 0, width};
+		} else { // YZ plane
+			perp1 = new float[]{0, width, 0};
+			perp2 = new float[]{0, 0, width};
+		}
+		
+		// Create 4 corners of the base square (not pickable)
+		Vertice base1 = new Vertice(
+			baseCenterX + perp1[0] + perp2[0],
+			baseCenterY + perp1[1] + perp2[1],
+			baseCenterZ + perp1[2] + perp2[2]
+		);
+		base1.isPickable = false;
+		modelVertices.add(base1);
+		base1.index = modelVertices.indexOf(base1);
+		
+		Vertice base2 = new Vertice(
+			baseCenterX - perp1[0] + perp2[0],
+			baseCenterY - perp1[1] + perp2[1],
+			baseCenterZ - perp1[2] + perp2[2]
+		);
+		base2.isPickable = false;
+		modelVertices.add(base2);
+		base2.index = modelVertices.indexOf(base2);
+		
+		Vertice base3 = new Vertice(
+			baseCenterX - perp1[0] - perp2[0],
+			baseCenterY - perp1[1] - perp2[1],
+			baseCenterZ - perp1[2] - perp2[2]
+		);
+		base3.isPickable = false;
+		modelVertices.add(base3);
+		base3.index = modelVertices.indexOf(base3);
+		
+		Vertice base4 = new Vertice(
+			baseCenterX + perp1[0] - perp2[0],
+			baseCenterY + perp1[1] - perp2[1],
+			baseCenterZ + perp1[2] - perp2[2]
+		);
+		base4.isPickable = false;
+		modelVertices.add(base4);
+		base4.index = modelVertices.indexOf(base4);
+		
+		// Create 4 triangular faces forming the pyramid
+		// Face 1: tip, base1, base2
+		Face f1 = new Face();
+		f1.indexType = TRIANGLE;
+		f1.vertexIndices.add(tipVertex.index + 1);
+		f1.vertexIndices.add(base1.index + 1);
+		f1.vertexIndices.add(base3.index + 1);
+		segment.faces.add(f1);
+		
+		// Face 2: tip, base2, base3
+		Face f2 = new Face();
+		f2.indexType = TRIANGLE;
+		f2.vertexIndices.add(tipVertex.index + 1);
+		f2.vertexIndices.add(base2.index + 1);
+		f2.vertexIndices.add(base4.index + 1);
+		segment.faces.add(f2);
+		
+	}
+
+	/**
 	 * This creates a 3d model from a list of vertices
 	 * Lines from the vertices to the indicated plane are drawn
 	 * @param _vertices
@@ -746,26 +844,8 @@ public class ModelData implements Constants{
 
 				Segment currentModelSegment = defaultSegment;
 
-				// this factor will determine which plan the vector will be projected to.
-				float[] fac = new float[]{(_plane == 2)?1:0, (_plane == 1)?1:0, (_plane == 0)?1:0};
-
 				for(Vertice vertice: _vertices){
-					Vertice tmpvOrig = new Vertice(vertice);
-					modelVertices.add(tmpvOrig);
-					tmpvOrig.index = modelVertices.indexOf(tmpvOrig);
-					Vertice tmpvPrj = new Vertice(vertice.x() - fac[0], vertice.y() - fac[1], vertice.z() - fac[2]);
-					tmpvPrj.isPickable = false;
-					modelVertices.add(tmpvPrj);
-					tmpvPrj.index = modelVertices.indexOf(tmpvPrj);
-
-					Face f = new Face();
-					f.indexType = LINE;
-
-					// we have to add a 1 here because obj files start their indices with 1 and not with 0
-					f.vertexIndices.add(tmpvOrig.index + 1);
-					f.vertexIndices.add(tmpvPrj.index + 1);
-
-					currentModelSegment.faces.add(f);
+					createPyramidToPlane(vertice, _plane, currentModelSegment);
 				}
 				updateSegments();
 				// refreshGeometry() removed - will be called by container on main thread
@@ -799,28 +879,10 @@ public class ModelData implements Constants{
 					customSegment.clear();
 				}
 
-				// this factor will determine which plan the vector will be projected to.
-				float[] fac = new float[]{(_plane == 2)?1:0, (_plane == 1)?1:0, (_plane == 0)?1:0};
-
 				for(Vertice vertice: _vertices){
-					Face f = new Face();
-					f.indexType = LINE;
-
-					Vertice tmpvOrig = new Vertice(vertice);
-					modelVertices.add(tmpvOrig);
-					tmpvOrig.index = modelVertices.indexOf(tmpvOrig);
-					Vertice tmpvPrj = new Vertice(vertice.x() - fac[0], vertice.y() - fac[1], vertice.z() - fac[2]);
-					tmpvPrj.isPickable = false;
-					modelVertices.add(tmpvPrj);
-					tmpvPrj.index = modelVertices.indexOf(tmpvPrj);
-
-					// we have to add a 1 here because obj files start their indices with 1 and not with 0
-					f.vertexIndices.add(tmpvOrig.index + 1);
-					f.vertexIndices.add(tmpvPrj.index + 1);
-
-					customSegment.faces.add(f);
+					createPyramidToPlane(vertice, _plane, customSegment);
 				}
-				
+
 				updateSegments();
 				// refreshGeometry() removed - will be called by container on main thread
 				myContainer.dataEvent(ModelContainer.LIST_MSG_FILEPARSED);
