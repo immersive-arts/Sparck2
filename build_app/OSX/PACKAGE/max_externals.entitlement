@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- CRITICAL: Allow JIT compilation (required for many Max externals) -->
+    <key>com.apple.security.cs.allow-jit</key>
+    <true/>
+    
+    <!-- CRITICAL: Allow unsigned executable memory (for dynamic code generation) -->
+    <key>com.apple.security.cs.allow-unsigned-executable-memory</key>
+    <true/>
+    
+    <!-- CRITICAL: Disable library validation (allows loading of unsigned/different signature libraries) -->
+    <key>com.apple.security.cs.disable-library-validation</key>
+    <true/>
+    
+    <!-- Allow DYLD environment variables (important for library loading) -->
+    <key>com.apple.security.cs.allow-dyld-environment-variables</key>
+    <true/>
+    
+    <!-- Disable executable page protection (sometimes needed for JIT) -->
+    <key>com.apple.security.cs.disable-executable-page-protection</key>
+    <true/>
+    
+    <!-- Audio device access (if your externals use audio I/O) -->
+    <key>com.apple.security.device.audio-input</key>
+    <true/>
+    
+    <!-- Camera access (if your externals use video input) -->
+    <key>com.apple.security.device.camera</key>
+    <true/>
+    
+    <!-- USB access (if your externals use USB devices) -->
+    <key>com.apple.security.device.usb</key>
+    <true/>
+    
+    <!-- Network access (for externals that communicate over network) -->
+    <key>com.apple.security.network.client</key>
+    <true/>
+    <key>com.apple.security.network.server</key>
+    <true/>
+    
+    <!-- File access -->
+    <key>com.apple.security.files.user-selected.read-write</key>
+    <true/>
+</dict>
+</plist>

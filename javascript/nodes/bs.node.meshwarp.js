@@ -103,7 +103,7 @@ function bang(){
 }
 
 function loadbang(){
-	post("v0.0.1");
+	//post("v0.0.1");
 	init();
 }
 
@@ -852,7 +852,7 @@ function color(){
 function subdivision(_level){
 	init();
 	meshSubdivision = Math.max(0, Math.min(4, Math.floor(_level))); // Clamp to 0-4 range
-	post("Mesh subdivision level set to: " + meshSubdivision + "\n");
+	//post("Mesh subdivision level set to: " + meshSubdivision + "\n");
 	draw(true);
 }
 
@@ -986,7 +986,7 @@ function generatePlane() {
         }
     }
     
-    post("Generated plane with " + numVertices + " vertices\n");
+    //post("Generated plane with " + numVertices + " vertices\n");
 }
 
 function setVertex(idx, px, py, pz, u, v, nx, ny, nz, r, g, b, a) {

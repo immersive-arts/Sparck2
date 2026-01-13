@@ -265,12 +265,11 @@ WARP.WarpLoader.prototype = {
 			} else if ( ( result = uvlattice_dim_pattern.exec( line ) ) !== null ) {
 
 				// ["uld 4 8, "4", "8"]
-				post("Parsing uld: " + line + "\n");
+				//post("Parsing uld: " + line + "\n");
 				uvlattice.ldim.push(
                     parseInt( result[ 1 ] ),
 					parseInt( result[ 2 ] ));
-				post("After push, uvlattice.ldim.length=" + uvlattice.ldim.length + "\n");
-
+				//post("After push, uvlattice.ldim.length=" + uvlattice.ldim.length + "\n");
 			} else if ( ( result = uvlattice_rim_pattern.exec( line ) ) !== null ) {
 
 				// ["ulr 0.1 0.2 0.1 0.0, "0.1", "0.2", "0.1", "0.0"]
@@ -491,9 +490,6 @@ WARP.WarpLoader.prototype = {
   		for ( var i = 0, l = this.objects.length; i < l; i ++ ) {
 			var object = this.objects[ i ];
 			var uvlattice = object.uvlattice;
-			post("setUVLattice: uvlattice exists=" + (uvlattice != null) + 
-				 ", lvertices.length=" + (uvlattice ? uvlattice.lvertices.length : 0) + 
-				 ", ldim=" + (uvlattice ? uvlattice.ldim : "null") + "\n");
             if(uvlattice && uvlattice.lvertices.length == uvlattice.ldim[0] * uvlattice.ldim[1]){
                 _uvlattice.load(uvlattice.ldim, uvlattice.lrim, uvlattice.lvertices);
             } else if(uvlattice && uvlattice.lvertices.length > 0) {
