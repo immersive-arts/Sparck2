@@ -146,11 +146,27 @@ function init(){
 
 function enable(_enable){
     init();
+	if(nodeObj) nodeObj.drawto = "editor";
 	if(nodeObj) nodeObj.enable = _enable;
 	if(cameraObj) cameraObj.enable = _enable;
 	if(latticeObj) latticeObj.enable = _enable;
 	if(meshObj) meshObj.enable = _enable;
 }
+
+
+function editor(_enable){
+    init();
+	var args = arrayfromargs(arguments);
+	if(args[0] == 'enable'){
+        editor_enable = args[1];
+		if(nodeObj) nodeObj.drawto = "editor";
+        if(nodeObj) nodeObj.enable = args[1];
+        if(cameraObj) cameraObj.enable = args[1];
+        if(latticeObj) latticeObj.enable = args[1];
+        if(meshObj) meshObj.enable = args[1];
+    }
+}
+
 
 function update(){
     init();
@@ -761,6 +777,7 @@ function loadobj(objpath){
 function draw(_forceRefresh){
     init();
     if(latticeMngr.hasGeometryChanged() || uvLatticeMngr.hasGeometryChanged() || meshMngr.hasGeometryChanged() || uvMeshMngr.hasUVsChanged() || editModeHasChanged || _forceRefresh){
+
         meshMngr.modifyWith(latticeMngr); //modifies the current mesh with the lattice
         uvMeshMngr.modifyWith(uvLatticeMngr); //modifies the UVs with the UV lattice
 
@@ -779,8 +796,8 @@ function draw(_forceRefresh){
         outlet(OUTLET_MESH, "jit_matrix", meshMatrix.name);
         outlet(OUTLET_MESH, "draw_mode", "triangles");
     }
-    if(latticeMngr.hasChanged() || uvLatticeMngr.hasChanged() || meshMngr.hasChanged() || uvMeshMngr.hasChanged() || editModeHasChanged || _forceRefresh){
-        latticeObj.reset();
+    if(latticeMngr.hasChanged() || uvLatticeMngr.hasChanged() || meshMngr.hasChanged() || uvMeshMngr.hasChanged() || uvMeshMngr.hasUVsChanged() || editModeHasChanged || _forceRefresh){
+       	latticeObj.reset();
         latticeObj.glcolor(0., 0.5, 0., 1.);
         // draw the unit square
         latticeObj.linesegment(1.0, 1.0, 0.0, -1.0, 1.0, 0.0);
@@ -803,7 +820,8 @@ function draw(_forceRefresh){
             uvLatticeMngr.draw(latticeObj, 'bg', cameraScale); // draw the UV lattice
             uvMeshMngr.drawLatMod(latticeObj, 'edit', cameraScale); // draw the UVs
         }
-    }
+		uvMeshMngr.cleanChangedFlag()
+   }
 }
 
 function applyLattice(){
@@ -872,6 +890,7 @@ function mesh_poly_mode(){
 
 function editor(_enable){
     init();
+	/*
 	var args = arrayfromargs(arguments);
 	if(args[0] == 'enable'){
         editor_enable = args[1];
@@ -880,6 +899,7 @@ function editor(_enable){
         if(latticeObj) latticeObj.enable = args[1];
         if(meshObj) meshObj.enable = args[1];
     }
+	*/
 }
 
 /*

@@ -91,6 +91,11 @@ WARP.UVMeshMngr.prototype = {
         this.hasUVChanged = false;
 	},
 
+    cleanChangedFlag: function ( ) {
+        this.hasItChanged = false;
+        this.hasUVChanged = false;    
+    },
+    
     hasSelection: function ( ) {
         return WARP.GeometryQueries.hasUVSelection(this.geometry);
     },
