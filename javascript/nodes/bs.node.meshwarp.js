@@ -146,24 +146,18 @@ function init(){
 
 function enable(_enable){
     init();
-	if(nodeObj) nodeObj.drawto = "editor";
-	if(nodeObj) nodeObj.enable = _enable;
-	if(cameraObj) cameraObj.enable = _enable;
-	if(latticeObj) latticeObj.enable = _enable;
-	if(meshObj) meshObj.enable = _enable;
+    editor_enable = _enable;
+    if(nodeObj) nodeObj.enable = _enable;
+    if(cameraObj) cameraObj.enable = _enable;
+    if(latticeObj) latticeObj.enable = _enable;
+    if(meshObj) meshObj.enable = _enable;
 }
 
 
-function editor(_enable){
-    init();
+function editor(){
 	var args = arrayfromargs(arguments);
 	if(args[0] == 'enable'){
-        editor_enable = args[1];
-		if(nodeObj) nodeObj.drawto = "editor";
-        if(nodeObj) nodeObj.enable = args[1];
-        if(cameraObj) cameraObj.enable = args[1];
-        if(latticeObj) latticeObj.enable = args[1];
-        if(meshObj) meshObj.enable = args[1];
+        enable(args[1])
     }
 }
 
@@ -213,7 +207,7 @@ function update(){
                 save();
             }
         }
-
+        //OK
         if(editMode == EDITMODE_LATTICE_SELECT){
 			if(uiEvent.mouseInWindows && !isNavigationEvent()){
                 if(uiEvent.keyHit && uiEvent.keyChar == 'z'){
@@ -254,7 +248,7 @@ function update(){
                 }
             }
         }
-
+        //OK
         if(editMode == EDITMODE_LATTICE_GRAB){
 			if(!isNavigationEvent()){
                 if(uiEvent.hasNewPickRay){
@@ -821,7 +815,7 @@ function draw(_forceRefresh){
             uvMeshMngr.drawLatMod(latticeObj, 'edit', cameraScale); // draw the UVs
         }
 		uvMeshMngr.cleanChangedFlag()
-   }
+    }
 }
 
 function applyLattice(){
@@ -876,7 +870,7 @@ function subdivision(_level){
 
 function texture(){
     init();
-    if(meshObj){
+    if(meshObj && editor_enable){
         meshObj.texture = arrayfromargs(arguments);
     }
 }
@@ -888,19 +882,6 @@ function mesh_poly_mode(){
     }
 }
 
-function editor(_enable){
-    init();
-	/*
-	var args = arrayfromargs(arguments);
-	if(args[0] == 'enable'){
-        editor_enable = args[1];
-        if(nodeObj) nodeObj.enable = args[1];
-        if(cameraObj) cameraObj.enable = args[1];
-        if(latticeObj) latticeObj.enable = args[1];
-        if(meshObj) meshObj.enable = args[1];
-    }
-	*/
-}
 
 /*
 	Setting uiEvent data for windows interaction

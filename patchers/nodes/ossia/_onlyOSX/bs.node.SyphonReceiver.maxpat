@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 6,
-			"revision" : 5,
+			"minor" : 5,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 134.0, 172.0, 984.0, 457.0 ],
+		"rect" : [ 1266.0, 445.0, 984.0, 457.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -110,7 +110,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 681.0, 320.0, 134.0, 42.0 ],
+					"patching_rect" : [ 681.0, 320.0, 134.0, 43.0 ],
 					"text" : "bs.ossia.parameter.syphon app \"syphon app\" appname getavailableservers"
 				}
 
@@ -123,7 +123,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 521.0, 320.0, 154.0, 42.0 ],
+					"patching_rect" : [ 521.0, 320.0, 154.0, 43.0 ],
 					"text" : "bs.ossia.parameter.syphon server \"syphon server\" servername getavailableservers"
 				}
 
@@ -234,8 +234,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 6,
-							"revision" : 5,
+							"minor" : 5,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -510,8 +510,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 6,
-							"revision" : 5,
+							"minor" : 5,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -880,8 +880,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_gl_texture", "" ],
-					"patching_rect" : [ 317.555511000000024, 320.0, 181.0, 22.0 ],
-					"text" : "jit.gl.slab special @file bs.flip.jxs"
+					"patching_rect" : [ 317.555511000000024, 320.0, 177.0, 22.0 ],
+					"text" : "jit.gl.slab sparck @file bs.flip.jxs"
 				}
 
 			}
@@ -894,7 +894,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
-					"outlettype" : [ "jit_gl_texture", "" ],
+					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 499.333344000000011, 227.5, 143.0, 22.0 ],
 					"text" : "jit.gl.syphonclient special"
 				}
@@ -1235,7 +1235,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-75", 0 ],
-					"order" : 1,
+					"order" : 0,
 					"source" : [ "obj-4", 0 ]
 				}
 
@@ -1243,7 +1243,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-84", 0 ],
-					"order" : 0,
+					"order" : 1,
 					"source" : [ "obj-4", 0 ]
 				}
 
@@ -1361,113 +1361,102 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "bs.node.gui.button.menu.png",
-				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/media",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/media",
 				"patcherrelativepath" : "../../../../media",
 				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.node.logo.power.png",
-				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/media",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/media",
 				"patcherrelativepath" : "../../../../media",
 				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.parameter.syphon.maxpat",
-				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/ossia/syphon",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/ossia/syphon",
 				"patcherrelativepath" : "../../../ossia/syphon",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.util.doubleBang.maxpat",
-				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/utils",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/utils",
 				"patcherrelativepath" : "../../../utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.util.special.render.gate.maxpat",
-				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/utils",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/utils",
 				"patcherrelativepath" : "../../../utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.logic.js",
-				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/javascript/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/vpl",
 				"patcherrelativepath" : "../../../../javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.logic.maxpat",
-				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/vpl",
 				"patcherrelativepath" : "../../../vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.pbody.js",
-				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/javascript/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/vpl",
 				"patcherrelativepath" : "../../../../javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.pbody.maxpat",
-				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/vpl",
 				"patcherrelativepath" : "../../../vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.title.js",
-				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/javascript/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/vpl",
 				"patcherrelativepath" : "../../../../javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.util.inlet.maxpat",
-				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/vpl",
 				"patcherrelativepath" : "../../../vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.util.outlet.maxpat",
-				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/patchers/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/patchers/vpl",
 				"patcherrelativepath" : "../../../vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "jit.gl.syphonclient.mxo",
-				"type" : "iLaX"
-			}
-, 			{
 				"name" : "node.classes.js",
-				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/javascript/vpl/classes",
+				"bootpath" : "~/Documents/Max 8/Packages/Sparck2/javascript/vpl/classes",
 				"patcherrelativepath" : "../../../../javascript/vpl/classes",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "node.iolets.js",
-				"bootpath" : "/Volumes/Ddrive/00_core/MaxMSP_Packages/Sparck2/javascript/vpl/classes",
-				"patcherrelativepath" : "../../../../javascript/vpl/classes",
-				"type" : "TEXT",
-				"implicit" : 1
+				"name" : "sparck.model.mxe64",
+				"type" : "mx64"
 			}
 , 			{
-				"name" : "sparck.model.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "sparck.parameter.mxo",
-				"type" : "iLaX"
+				"name" : "sparck.parameter.mxe64",
+				"type" : "mx64"
 			}
  ],
 		"autosave" : 0,
