@@ -288,8 +288,8 @@
                                                     "maxclass": "comment",
                                                     "numinlets": 1,
                                                     "numoutlets": 0,
-                                                    "patching_rect": [ 389.0, 511.0, 150.0, 20.0 ],
-                                                    "text": "Bug - Bug - Bug Fix"
+                                                    "patching_rect": [ 421.5833333333334, 484.0, 150.0, 20.0 ],
+                                                    "text": "Bug - Bug - Bug -Bug Fix"
                                                 }
                                             },
                                             {
@@ -332,7 +332,7 @@
                                                     "numinlets": 1,
                                                     "numoutlets": 2,
                                                     "outlettype": [ "int", "int" ],
-                                                    "patching_rect": [ 405.0, 479.0, 63.0, 22.0 ],
+                                                    "patching_rect": [ 405.0833333333335, 509.0, 63.0, 22.0 ],
                                                     "text": "t i i"
                                                 }
                                             },
@@ -834,6 +834,18 @@
                                             },
                                             {
                                                 "patchline": {
+                                                    "destination": [ "obj-25", 0 ],
+                                                    "source": [ "obj-21", 0 ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
+                                                    "destination": [ "obj-3", 0 ],
+                                                    "source": [ "obj-21", 1 ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
                                                     "destination": [ "obj-14", 0 ],
                                                     "source": [ "obj-22", 0 ]
                                                 }
@@ -962,18 +974,6 @@
                                                 "patchline": {
                                                     "destination": [ "obj-20", 0 ],
                                                     "source": [ "obj-30", 0 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-21", 0 ],
-                                                    "source": [ "obj-30", 3 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-21", 0 ],
-                                                    "source": [ "obj-30", 2 ]
                                                 }
                                             },
                                             {
@@ -2835,7 +2835,7 @@
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
                                     "patching_rect": [ 30.5, 288.0, 113.0, 36.0 ],
-                                    "text": "to_texture u424013782"
+                                    "text": "to_texture u730003662"
                                 }
                             },
                             {
@@ -2857,7 +2857,7 @@
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
                                     "patching_rect": [ 178.5, 391.0, 835.0, 22.0 ],
-                                    "text": "exportimage D:/04_projects/26xx_EcologicalsInteractions/UnderwaterDrone/SPARCK/_export/_textures/Window.png png"
+                                    "text": "exportimage D:/04_projects/26xx_EcologicalsInteractions/Balloon/SPARCK/_export/_textures/Window.png png"
                                 }
                             }
                         ],
